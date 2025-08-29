@@ -197,10 +197,10 @@ All colors MUST be HSL.
   
   /* Professional CTA styles */
   .cta-primary {
-    @apply bg-accent hover:bg-accent/90 text-accent-foreground shadow-button transition-blueprint;
+    @apply bg-orange-500 hover:bg-orange-600 text-white border-0 shadow-button transition-blueprint;
   }
   
   .cta-secondary {
-    @apply bg-primary hover:bg-primary/90 text-primary-foreground shadow-button transition-blueprint;
+    @apply bg-muted hover:bg-muted/80 text-foreground border border-border transition-blueprint;
   }
 }
