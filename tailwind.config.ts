@@ -18,6 +18,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'sans': ['Montserrat', 'system-ui', 'sans-serif'],
+				'montserrat': ['Montserrat', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -65,12 +69,14 @@ export default {
 			},
 			backgroundImage: {
 				'gradient-hero': 'var(--gradient-hero)',
-				'gradient-section': 'var(--gradient-section)'
+				'gradient-section': 'var(--gradient-section)',
+				'gradient-professional': 'var(--gradient-professional)'
 			},
 			boxShadow: {
 				'card': 'var(--shadow-card)',
 				'button': 'var(--shadow-button)',
-				'elevated': 'var(--shadow-elevated)'
+				'elevated': 'var(--shadow-elevated)',
+				'blueprint': 'var(--shadow-blueprint)'
 			},
 			fontSize: {
 				'hero': 'var(--font-size-hero)',

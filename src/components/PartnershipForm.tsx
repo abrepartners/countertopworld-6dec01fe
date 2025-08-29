@@ -78,13 +78,13 @@ const PartnershipForm = () => {
   };
 
   return (
-    <Card className="shadow-elevated">
-      <CardHeader className="text-center">
-        <CardTitle className="text-section-title">Request a Partnership Consultation</CardTitle>
-        <p className="text-muted-foreground">Fill out the form below and a partnership specialist will contact you within 24 hours.</p>
+    <Card className="shadow-elevated card-blueprint">
+      <CardHeader className="text-center pb-8">
+        <CardTitle className="text-section-title font-bold text-foreground mb-4">Request a Partnership Consultation</CardTitle>
+        <p className="text-muted-foreground leading-relaxed">Fill out the form below and a partnership specialist will contact you within 24 hours.</p>
       </CardHeader>
-      <CardContent>
-        <form onSubmit={handleSubmit} className="space-y-6">
+      <CardContent className="px-8 pb-8">
+        <form onSubmit={handleSubmit} className="space-y-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="fullName">Full Name *</Label>
@@ -175,7 +175,7 @@ const PartnershipForm = () => {
             type="submit" 
             size="lg" 
             disabled={isSubmitting}
-            className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-button transition-smooth"
+            className="w-full cta-secondary text-lg py-4 font-semibold rounded-lg"
           >
             {isSubmitting ? "Submitting..." : "Request Partnership Consultation"}
           </Button>
