@@ -1,10 +1,19 @@
 import { useEffect, useState, useRef, useCallback, type ReactNode } from 'react';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import {
   ArrowRight, ArrowUpRight, Phone, MapPin, Clock, Star,
   Shield, Gem, Ruler, Home, Hammer, PenTool
 } from 'lucide-react';
 import { useReveal } from './hooks/useReveal';
 import './index.css';
+
+// Lazy-load stone pages
+import EngineeredQuartzPage from './pages/EngineeredQuartz';
+import NaturalGranitePage from './pages/NaturalGranite';
+import MarblePage from './pages/Marble';
+import QuartzitePage from './pages/Quartzite';
+import PorcelainPage from './pages/Porcelain';
+import SoapstoneOnyxPage from './pages/SoapstoneOnyx';
 
 /* ──────────────────────────────────────────────────────────
    REVEAL WRAPPER — intersection-observer scroll animations
@@ -65,7 +74,7 @@ function ChapterDivider({ label }: { label?: string }) {
       </div>
       {label && (
         <div className="relative flex justify-center">
-          <span className="bg-white px-6 text-[10px] text-gray-300 tracking-[0.3em] uppercase font-light">{label}</span>
+          <span className="bg-white px-6 text-[10px] text-gray-400 tracking-[0.3em] uppercase font-light">{label}</span>
         </div>
       )}
     </div>
@@ -200,7 +209,7 @@ function Hero() {
           <br /><span className="font-semibold">Stone, refined.</span>
         </h1>
 
-        <p className="text-[17px] md:text-[19px] text-gray-400 font-light leading-relaxed max-w-xl mb-10">
+        <p className="text-[17px] md:text-[19px] text-gray-600 font-light leading-relaxed max-w-xl mb-10">
           Arkansas' largest stone fabrication studio. Granite. Quartz. Marble. Quartzite. Precision-cut and hand-finished in-house — since 2016.
         </p>
 
@@ -225,7 +234,7 @@ function Hero() {
           {metrics.map((m, i) => (
             <div key={i} className="text-center">
               <div className="text-[26px] md:text-[32px] font-extralight text-black tracking-tight mb-1">{m.value}</div>
-              <div className="text-[11px] text-gray-400 tracking-widest font-light uppercase">{m.label}</div>
+              <div className="text-[11px] text-gray-500 tracking-widest font-light uppercase">{m.label}</div>
             </div>
           ))}
         </div>
@@ -236,7 +245,6 @@ function Hero() {
 
 /* ══════════════════════════════════════════════════════════
    CHAPTER 2 — ABOUT (Story + Technology combined)
-   Two halves of the same story in one flowing section
    ══════════════════════════════════════════════════════════ */
 
 function About() {
@@ -253,11 +261,11 @@ function About() {
         <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           <Reveal>
             <div>
-              <p className="text-[12px] text-gray-400 tracking-[0.2em] uppercase font-light mb-4">Our story</p>
+              <p className="text-[12px] text-gray-500 tracking-[0.2em] uppercase font-light mb-4">Our story</p>
               <h2 id="story-heading" className="text-[clamp(1.8rem,4vw,3rem)] font-light text-black tracking-tight leading-tight mb-8">
                 From a napkin sketch<br />to Arkansas' largest.
               </h2>
-              <div className="space-y-5 text-[16px] text-gray-400 font-light leading-relaxed">
+              <div className="space-y-5 text-[16px] text-gray-600 font-light leading-relaxed">
                 <p>David McDougall spent his 20s in Denver working corporate sales. When the loss of his brothers brought him home to Arkansas, he worked through the grief with his hands — taking a job at a small granite shop in Jonesboro.</p>
                 <p>What started as a sketch on the back of a napkin became Countertop World — now the largest stone fabricator in Central Arkansas. Together with co-owner Conor Lawrence and a team with almost 100 years of combined experience, they've built something that honors both craft and innovation.</p>
                 <p>Today, Countertop World operates from two state-of-the-art facilities: the flagship in Bryant and the brand-new 18,700 sq ft showroom in Rogers — precision stone craftsmanship for all of Arkansas.</p>
@@ -281,18 +289,18 @@ function About() {
         <div className="max-w-[1440px] mx-auto">
           <Reveal>
             <div className="max-w-2xl mb-20 md:mb-28">
-              <p className="text-[12px] text-gray-400 tracking-[0.2em] uppercase font-light mb-4">Technology</p>
+              <p className="text-[12px] text-gray-500 tracking-[0.2em] uppercase font-light mb-4">Technology</p>
               <h3 className="text-[clamp(1.8rem,4vw,3rem)] font-light text-black tracking-tight leading-tight mb-6">Uncompromising precision.</h3>
-              <p className="text-[17px] text-gray-400 font-light leading-relaxed">Exclusive machinery that no other Arkansas fabricator operates. The result is a surface that feels inevitable.</p>
+              <p className="text-[17px] text-gray-600 font-light leading-relaxed">Exclusive machinery that no other Arkansas fabricator operates. The result is a surface that feels inevitable.</p>
             </div>
           </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
             {features.map((f, i) => (
               <Reveal key={i} delay={i + 1}>
                 <div className="flex flex-col py-10 md:py-0 md:px-10 first:md:pl-0 last:md:pr-0 border-t md:border-t-0 md:border-l first:border-t-0 first:md:border-l-0 border-gray-200/50">
-                  <span className="text-[11px] text-gray-300 font-mono tracking-wider mb-6">{f.num}</span>
+                  <span className="text-[11px] text-gray-400 font-mono tracking-wider mb-6">{f.num}</span>
                   <h4 className="text-[18px] text-black font-medium tracking-tight mb-4">{f.title}</h4>
-                  <p className="text-[14px] text-gray-400 leading-relaxed font-light">{f.desc}</p>
+                  <p className="text-[14px] text-gray-500 leading-relaxed font-light">{f.desc}</p>
                 </div>
               </Reveal>
             ))}
@@ -323,18 +331,18 @@ function Materials() {
         <div className="max-w-[1440px] mx-auto">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16 md:mb-20 gap-6">
             <div>
-              <p className="text-[12px] text-gray-400 tracking-[0.2em] uppercase font-light mb-4">Materials</p>
+              <p className="text-[12px] text-gray-500 tracking-[0.2em] uppercase font-light mb-4">Materials</p>
               <h2 id="materials-heading" className="text-[clamp(1.8rem,4vw,3rem)] font-light text-black tracking-tight leading-tight">The earth's finest surfaces.</h2>
             </div>
-            <p className="text-[14px] text-gray-400 font-light max-w-sm leading-relaxed">We stock the most exclusive slabs in Arkansas with multiple new shipments arriving weekly.</p>
+            <p className="text-[14px] text-gray-500 font-light max-w-sm leading-relaxed">We stock the most exclusive slabs in Arkansas with multiple new shipments arriving weekly.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[1px] bg-gray-200/40 rounded-2xl overflow-hidden">
             {materials.map((mat, idx) => (
               <article key={idx} className="bg-white p-8 md:p-10 group cursor-pointer hover:bg-gray-50/50 transition-all duration-500">
-                <span className="inline-block text-[10px] font-medium tracking-[0.15em] uppercase text-gray-400 border border-gray-200 rounded-full px-3 py-1 mb-6">{mat.tag}</span>
+                <span className="inline-block text-[10px] font-medium tracking-[0.15em] uppercase text-gray-500 border border-gray-200 rounded-full px-3 py-1 mb-6">{mat.tag}</span>
                 <h3 className="text-[20px] text-black font-medium tracking-tight mb-3 group-hover:translate-x-1 transition-transform duration-500">{mat.name}</h3>
-                <p className="text-[13px] text-gray-400 leading-relaxed font-light">{mat.desc}</p>
+                <p className="text-[13px] text-gray-500 leading-relaxed font-light">{mat.desc}</p>
               </article>
             ))}
           </div>
@@ -353,7 +361,6 @@ function Materials() {
 
 /* ══════════════════════════════════════════════════════════
    CHAPTER 4 — WHO WE SERVE (Tabbed — the key redesign)
-   Three audiences in ONE section with tabs, not stacked
    ══════════════════════════════════════════════════════════ */
 
 type AudienceKey = 'homeowners' | 'builders' | 'designers';
@@ -442,18 +449,16 @@ function WhoWeServe() {
     <Reveal>
       <section id="services" aria-labelledby="serve-heading" className="py-28 md:py-36 px-6 lg:px-10 bg-white">
         <div className="max-w-[1440px] mx-auto">
-          {/* Section header */}
           <div className="text-center mb-16 md:mb-20">
-            <p className="text-[12px] text-gray-400 tracking-[0.2em] uppercase font-light mb-6">Who we serve</p>
+            <p className="text-[12px] text-gray-500 tracking-[0.2em] uppercase font-light mb-6">Who we serve</p>
             <h2 id="serve-heading" className="text-[clamp(2rem,5vw,3.5rem)] font-extralight text-black tracking-tight leading-tight mb-6">
               Three audiences.<br />One standard of excellence.
             </h2>
-            <p className="text-[17px] text-gray-400 font-light max-w-lg mx-auto leading-relaxed">
+            <p className="text-[17px] text-gray-500 font-light max-w-lg mx-auto leading-relaxed">
               Whether you're designing your dream kitchen, building a subdivision, or specifying for a luxury client — we've engineered a process just for you.
             </p>
           </div>
 
-          {/* Tab navigation — ARIA tablist pattern */}
           <div ref={tabListRef} className="flex flex-wrap justify-center gap-3 md:gap-4 mb-16" role="tablist" aria-label="Select your audience">
             {(Object.keys(audienceData) as AudienceKey[]).map((key) => {
               const d = audienceData[key];
@@ -481,7 +486,6 @@ function WhoWeServe() {
             })}
           </div>
 
-          {/* Tab panel — content changes based on active tab */}
           <div
             key={active}
             role="tabpanel"
@@ -491,7 +495,6 @@ function WhoWeServe() {
             className="animate-fade-in"
           >
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-              {/* Image + testimonial side */}
               <div className="relative">
                 <div className="aspect-[4/5] overflow-hidden bg-gray-100 rounded-2xl">
                   <img src={data.image} alt={data.imageAlt}
@@ -502,11 +505,10 @@ function WhoWeServe() {
                     {[...Array(5)].map((_, i) => <Star key={i} size={11} className="fill-amber-400 text-amber-400" />)}
                   </div>
                   <p className="text-[13px] text-gray-600 font-light leading-relaxed italic mb-2">"{data.testimonial.text}"</p>
-                  <cite className="text-[11px] text-gray-400 font-medium not-italic">— {data.testimonial.cite}</cite>
+                  <cite className="text-[11px] text-gray-500 font-medium not-italic">— {data.testimonial.cite}</cite>
                 </blockquote>
               </div>
 
-              {/* Content side */}
               <div className="pt-8 lg:pt-0">
                 <div className="inline-flex items-center gap-2 mb-8">
                   <div className={`w-8 h-8 rounded-full flex items-center justify-center border ${iconBg[data.color as keyof typeof iconBg]}`}>
@@ -518,7 +520,7 @@ function WhoWeServe() {
                 <h3 className="text-[clamp(1.8rem,4vw,2.8rem)] font-light text-black tracking-tight leading-tight mb-4">
                   {data.heading}
                 </h3>
-                <p className="text-[16px] text-gray-400 font-light leading-relaxed mb-10 max-w-md">{data.description}</p>
+                <p className="text-[16px] text-gray-600 font-light leading-relaxed mb-10 max-w-md">{data.description}</p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
                   {data.benefits.map((b, i) => (
@@ -527,7 +529,7 @@ function WhoWeServe() {
                         <b.Icon size={18} className={iconColor[data.color as keyof typeof iconColor]} />
                       </div>
                       <h4 className="text-[15px] text-black font-medium tracking-tight mb-1.5">{b.title}</h4>
-                      <p className="text-[13px] text-gray-400 font-light leading-relaxed">{b.desc}</p>
+                      <p className="text-[13px] text-gray-500 font-light leading-relaxed">{b.desc}</p>
                     </div>
                   ))}
                 </div>
@@ -570,16 +572,16 @@ function Process() {
       <section id="process" aria-labelledby="process-heading" className="py-28 md:py-36 px-6 lg:px-10 bg-gray-50/30 border-y border-gray-100">
         <div className="max-w-[1440px] mx-auto">
           <div className="text-center mb-16 md:mb-20">
-            <p className="text-[12px] text-gray-400 tracking-[0.2em] uppercase font-light mb-4">Process</p>
+            <p className="text-[12px] text-gray-500 tracking-[0.2em] uppercase font-light mb-4">Process</p>
             <h2 id="process-heading" className="text-[clamp(1.8rem,4vw,3rem)] font-light text-black tracking-tight">From selection to installation.</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-5 gap-0">
             {steps.map((step, idx) => (
               <Reveal key={idx} delay={idx + 1}>
                 <div className="relative p-6 md:p-8 border-t md:border-t-0 md:border-l first:border-t-0 first:md:border-l-0 border-gray-200/50">
-                  <span className="text-[36px] font-extralight text-gray-200 tracking-tight block mb-3" aria-hidden="true">{step.num}</span>
+                  <span className="text-[36px] font-extralight text-gray-300 tracking-tight block mb-3" aria-hidden="true">{step.num}</span>
                   <h3 className="text-[15px] text-black font-medium tracking-tight mb-2">{step.title}</h3>
-                  <p className="text-[12px] text-gray-400 leading-relaxed font-light">{step.desc}</p>
+                  <p className="text-[12px] text-gray-500 leading-relaxed font-light">{step.desc}</p>
                 </div>
               </Reveal>
             ))}
@@ -597,9 +599,9 @@ function Process() {
 const stoneTypes = [
   {
     name: 'Quartz',
-    accent: '#7C8FA6',       // cool slate blue — engineered, modern, clean
+    accent: '#7C8FA6',
     swatch: 'linear-gradient(135deg, #f5f0ea 0%, #e8ddd0 40%, #c9bfb0 60%, #f5f0ea 100%)',
-    link: '/stones/engineered-quartz.html',
+    link: '/stones/engineered-quartz',
     images: [
       { src: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=1600&auto=format&fit=crop', label: 'Calacatta Quartz — Kitchen Island' },
       { src: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=1600&auto=format&fit=crop', label: 'White Quartz — Bathroom Vanity' },
@@ -609,9 +611,9 @@ const stoneTypes = [
   },
   {
     name: 'Granite',
-    accent: '#4A5568',       // deep charcoal — natural strength, earthy solidity
+    accent: '#4A5568',
     swatch: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #3a3530 60%, #1a1a2e 100%)',
-    link: '/stones/natural-granite.html',
+    link: '/stones/natural-granite',
     images: [
       { src: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1600&auto=format&fit=crop', label: 'Black Galaxy Granite — Modern Kitchen' },
       { src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop', label: 'White Ice Granite — Open Layout' },
@@ -621,9 +623,9 @@ const stoneTypes = [
   },
   {
     name: 'Marble',
-    accent: '#C19A5B',       // warm gold — luxury, classic elegance
+    accent: '#C19A5B',
     swatch: 'linear-gradient(135deg, #faf6f0 0%, #e8dfd0 30%, #c5a96e 50%, #faf6f0 70%)',
-    link: '/stones/marble.html',
+    link: '/stones/marble',
     images: [
       { src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop', label: 'Calacatta Gold — Luxury Kitchen' },
       { src: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=1600&auto=format&fit=crop', label: 'Carrara White — Master Bath' },
@@ -633,9 +635,9 @@ const stoneTypes = [
   },
   {
     name: 'Quartzite',
-    accent: '#B8860B',       // dark goldenrod — warm, exotic, earthy luxury
+    accent: '#B8860B',
     swatch: 'linear-gradient(135deg, #f5efe5 0%, #e2d5c0 30%, #c8b79a 50%, #f5efe5 100%)',
-    link: '/stones/quartzite.html',
+    link: '/stones/quartzite',
     images: [
       { src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop', label: 'Taj Mahal Quartzite — Open Kitchen' },
       { src: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=1600&auto=format&fit=crop', label: 'Super White Quartzite — Minimal Kitchen' },
@@ -645,9 +647,9 @@ const stoneTypes = [
   },
   {
     name: 'Porcelain',
-    accent: '#8B9DAF',       // steel blue-gray — modern, industrial, precise
+    accent: '#8B9DAF',
     swatch: 'linear-gradient(135deg, #a09890 0%, #8c8480 40%, #787070 60%, #a09890 100%)',
-    link: '/stones/porcelain.html',
+    link: '/stones/porcelain',
     images: [
       { src: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1600&auto=format&fit=crop', label: 'Concrete Porcelain — Modern Kitchen' },
       { src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop', label: 'Marble-Look Porcelain — Kitchen' },
@@ -657,9 +659,9 @@ const stoneTypes = [
   },
   {
     name: 'Soapstone',
-    accent: '#5B7A5E',       // forest green — organic, natural, artisan
+    accent: '#5B7A5E',
     swatch: 'linear-gradient(135deg, #5a5a5a 0%, #4a4a4a 40%, #3a3a3a 60%, #5a5a5a 100%)',
-    link: '/stones/soapstone-onyx.html',
+    link: '/stones/soapstone-onyx',
     images: [
       { src: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1600&auto=format&fit=crop', label: 'Classic Soapstone — Farmhouse Kitchen' },
       { src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop', label: 'Backlit Onyx — Luxury Bar' },
@@ -679,16 +681,15 @@ function Portfolio() {
         <div className="px-6 lg:px-10 mb-8 max-w-[1440px] mx-auto">
           <div className="flex items-end justify-between mb-10">
             <div>
-              <p className="text-[12px] text-gray-400 tracking-[0.2em] uppercase font-light mb-4">Portfolio</p>
+              <p className="text-[12px] text-gray-500 tracking-[0.2em] uppercase font-light mb-4">Portfolio</p>
               <h2 id="portfolio-heading" className="text-[clamp(1.8rem,4vw,3rem)] font-light text-black tracking-tight">See it in your space.</h2>
             </div>
-            <a href={active.link}
+            <Link to={active.link}
               className="hidden md:inline-flex items-center gap-1 text-[12px] text-black font-medium hover:text-gray-500 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 rounded-sm">
               Explore {active.name} guide <ArrowUpRight size={12} />
-            </a>
+            </Link>
           </div>
 
-          {/* Stone Type Selector */}
           <div className="flex gap-3 overflow-x-auto pb-4 -mx-1 px-1 no-scrollbar" role="group" aria-label="Choose a stone type">
             {stoneTypes.map((stone, idx) => (
               <button
@@ -714,14 +715,13 @@ function Portfolio() {
                   }}
                 />
                 <span className={`text-[11px] font-medium tracking-wide transition-colors duration-300 ${
-                  idx === activeStone ? 'text-black' : 'text-gray-400'
+                  idx === activeStone ? 'text-black' : 'text-gray-500'
                 }`}>{stone.name}</span>
               </button>
             ))}
           </div>
         </div>
 
-        {/* Gallery — updates based on selected stone */}
         <div className="flex gap-4 overflow-x-auto pb-8 px-6 lg:px-10 snap-x snap-mandatory no-scrollbar cursor-grab active:cursor-grabbing"
           role="region" aria-label={`${active.name} project gallery`} tabIndex={0}>
           {active.images.map((img, idx) => (
@@ -730,17 +730,16 @@ function Portfolio() {
               <div className="aspect-[16/10] overflow-hidden bg-gray-100 rounded-xl mb-4">
                 <img src={img.src} alt={img.label} className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-[2000ms] ease-out" loading="lazy" />
               </div>
-              <figcaption className="text-[12px] text-gray-400 font-light tracking-wide">{img.label}</figcaption>
+              <figcaption className="text-[12px] text-gray-500 font-light tracking-wide">{img.label}</figcaption>
             </figure>
           ))}
         </div>
 
-        {/* Mobile link to stone guide */}
         <div className="md:hidden px-6 mt-4 text-center">
-          <a href={active.link}
+          <Link to={active.link}
             className="inline-flex items-center gap-1 text-[12px] text-black font-medium hover:text-gray-500 transition-colors">
             Explore full {active.name} guide <ArrowUpRight size={12} />
-          </a>
+          </Link>
         </div>
       </section>
     </Reveal>
@@ -749,7 +748,6 @@ function Portfolio() {
 
 /* ══════════════════════════════════════════════════════════
    CHAPTER 7 — VISIT (Showrooms + Contact combined)
-   The final "take action" chapter
    ══════════════════════════════════════════════════════════ */
 
 function Visit() {
@@ -775,14 +773,13 @@ function Visit() {
 
   return (
     <section className="bg-white">
-      {/* Showrooms */}
       <div id="showrooms" className="py-28 md:py-36 px-6 lg:px-10 bg-gray-50/30 border-t border-gray-100">
         <div className="max-w-[1440px] mx-auto">
           <Reveal>
             <div className="text-center mb-16 md:mb-20">
-              <p className="text-[12px] text-gray-400 tracking-[0.2em] uppercase font-light mb-4">Showrooms</p>
+              <p className="text-[12px] text-gray-500 tracking-[0.2em] uppercase font-light mb-4">Showrooms</p>
               <h2 id="showrooms-heading" className="text-[clamp(1.8rem,4vw,3rem)] font-light text-black tracking-tight mb-4">Two locations. One standard.</h2>
-              <p className="text-[15px] text-gray-400 font-light max-w-md mx-auto">See it. Touch it. Choose it. Visit a showroom to experience our stone selection firsthand.</p>
+              <p className="text-[15px] text-gray-500 font-light max-w-md mx-auto">See it. Touch it. Choose it. Visit a showroom to experience our stone selection firsthand.</p>
             </div>
           </Reveal>
 
@@ -802,13 +799,13 @@ function Visit() {
                       }`}>{loc.badge}</span>
                     </div>
                     <address className="not-italic space-y-3 mb-6">
-                      <div className="flex items-start gap-3"><MapPin size={14} className="text-gray-300 mt-0.5 flex-shrink-0" aria-hidden="true" /><span className="text-[13px] text-gray-500 font-light">{loc.address}</span></div>
-                      <div className="flex items-center gap-3"><Phone size={14} className="text-gray-300 flex-shrink-0" aria-hidden="true" /><a href={`tel:${loc.phone.replace(/[^0-9]/g, '')}`} className="text-[13px] text-black font-medium hover:text-gray-500 transition-colors">{loc.phone}</a></div>
-                      <div className="flex items-center gap-3"><Clock size={14} className="text-gray-300 flex-shrink-0" aria-hidden="true" /><span className="text-[13px] text-gray-500 font-light">{loc.hours}</span></div>
+                      <div className="flex items-start gap-3"><MapPin size={14} className="text-gray-400 mt-0.5 flex-shrink-0" aria-hidden="true" /><span className="text-[13px] text-gray-500 font-light">{loc.address}</span></div>
+                      <div className="flex items-center gap-3"><Phone size={14} className="text-gray-400 flex-shrink-0" aria-hidden="true" /><a href={`tel:${loc.phone.replace(/[^0-9]/g, '')}`} className="text-[13px] text-black font-medium hover:text-gray-500 transition-colors">{loc.phone}</a></div>
+                      <div className="flex items-center gap-3"><Clock size={14} className="text-gray-400 flex-shrink-0" aria-hidden="true" /><span className="text-[13px] text-gray-500 font-light">{loc.hours}</span></div>
                     </address>
                     <div className="flex flex-wrap gap-2 mb-8">
                       {loc.features.map((f, i) => (
-                        <span key={i} className="text-[11px] text-gray-400 font-light border border-gray-100 rounded-full px-3 py-1">{f}</span>
+                        <span key={i} className="text-[11px] text-gray-500 font-light border border-gray-100 rounded-full px-3 py-1">{f}</span>
                       ))}
                     </div>
                     <PillButton href="#contact">Schedule a visit <ArrowRight size={14} className="ml-2" /></PillButton>
@@ -820,37 +817,36 @@ function Visit() {
         </div>
       </div>
 
-      {/* Contact Form */}
       <Reveal>
         <div id="contact" className="py-28 md:py-36 px-6 lg:px-10 bg-white border-t border-gray-100">
           <div className="max-w-[800px] mx-auto">
             <div className="text-center mb-16">
-              <p className="text-[12px] text-gray-400 tracking-[0.2em] uppercase font-light mb-4">Contact</p>
+              <p className="text-[12px] text-gray-500 tracking-[0.2em] uppercase font-light mb-4">Contact</p>
               <h2 id="contact-heading" className="text-[clamp(2rem,5vw,3.5rem)] font-extralight text-black tracking-tight leading-tight">
                 Tell us about<br />your project.
               </h2>
             </div>
             <form className="flex flex-col gap-8" onSubmit={(e) => e.preventDefault()} aria-labelledby="contact-heading">
               <fieldset className="flex flex-col gap-3 border-none p-0">
-                <legend className="text-[12px] text-gray-400 font-light tracking-wide">I am a:</legend>
+                <legend className="text-[12px] text-gray-500 font-light tracking-wide">I am a:</legend>
                 <div className="flex flex-wrap gap-3" role="radiogroup" aria-label="Client type">
                   {['Homeowner', 'Builder / Contractor', 'Designer / Architect'].map((type) => (
                     <button key={type} type="button" role="radio" aria-checked={clientType === type}
                       onClick={() => setClientType(type)}
                       className={`px-5 py-2.5 rounded-full text-[13px] tracking-wide transition-all duration-500 border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 ${
-                        clientType === type ? 'border-black bg-black text-white' : 'border-gray-200 text-gray-400 hover:border-gray-400 hover:text-black'
+                        clientType === type ? 'border-black bg-black text-white' : 'border-gray-200 text-gray-500 hover:border-gray-400 hover:text-black'
                       }`}>{type}</button>
                   ))}
                 </div>
               </fieldset>
               <fieldset className="flex flex-col gap-3 border-none p-0">
-                <legend className="text-[12px] text-gray-400 font-light tracking-wide">Preferred showroom:</legend>
+                <legend className="text-[12px] text-gray-500 font-light tracking-wide">Preferred showroom:</legend>
                 <div className="flex gap-3" role="radiogroup" aria-label="Preferred showroom location">
                   {['Rogers', 'Bryant'].map((loc) => (
                     <button key={loc} type="button" role="radio" aria-checked={location === loc}
                       onClick={() => setLocation(loc)}
                       className={`px-5 py-2.5 rounded-full text-[13px] tracking-wide transition-all duration-500 border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 ${
-                        location === loc ? 'border-black bg-black text-white' : 'border-gray-200 text-gray-400 hover:border-gray-400 hover:text-black'
+                        location === loc ? 'border-black bg-black text-white' : 'border-gray-200 text-gray-500 hover:border-gray-400 hover:text-black'
                       }`}>{loc === 'Rogers' ? 'Rogers / NWA' : 'Bryant / Little Rock'}</button>
                   ))}
                 </div>
@@ -858,25 +854,25 @@ function Visit() {
               <div className="flex flex-col md:flex-row gap-8">
                 <div className="w-full">
                   <label htmlFor="name" className="sr-only">Name</label>
-                  <input id="name" type="text" placeholder="Name" className="w-full bg-transparent border-b border-gray-200 py-4 text-[15px] text-black font-light placeholder:text-gray-300 outline-none focus:border-black focus-visible:ring-0 transition-colors duration-500" />
+                  <input id="name" type="text" placeholder="Name" className="w-full bg-transparent border-b border-gray-200 py-4 text-[15px] text-black font-light placeholder:text-gray-400 outline-none focus:border-black focus-visible:ring-0 transition-colors duration-500" />
                 </div>
                 <div className="w-full">
                   <label htmlFor="phone" className="sr-only">Phone number</label>
-                  <input id="phone" type="tel" placeholder="Phone" className="w-full bg-transparent border-b border-gray-200 py-4 text-[15px] text-black font-light placeholder:text-gray-300 outline-none focus:border-black focus-visible:ring-0 transition-colors duration-500" />
+                  <input id="phone" type="tel" placeholder="Phone" className="w-full bg-transparent border-b border-gray-200 py-4 text-[15px] text-black font-light placeholder:text-gray-400 outline-none focus:border-black focus-visible:ring-0 transition-colors duration-500" />
                 </div>
               </div>
               <div>
                 <label htmlFor="email" className="sr-only">Email address</label>
-                <input id="email" type="email" placeholder="Email" className="w-full bg-transparent border-b border-gray-200 py-4 text-[15px] text-black font-light placeholder:text-gray-300 outline-none focus:border-black focus-visible:ring-0 transition-colors duration-500" />
+                <input id="email" type="email" placeholder="Email" className="w-full bg-transparent border-b border-gray-200 py-4 text-[15px] text-black font-light placeholder:text-gray-400 outline-none focus:border-black focus-visible:ring-0 transition-colors duration-500" />
               </div>
               <div>
                 <label htmlFor="scope" className="sr-only">Project scope</label>
-                <input id="scope" type="text" placeholder="Project scope (e.g., Kitchen remodel, new build, commercial)" className="w-full bg-transparent border-b border-gray-200 py-4 text-[15px] text-black font-light placeholder:text-gray-300 outline-none focus:border-black focus-visible:ring-0 transition-colors duration-500" />
+                <input id="scope" type="text" placeholder="Project scope (e.g., Kitchen remodel, new build, commercial)" className="w-full bg-transparent border-b border-gray-200 py-4 text-[15px] text-black font-light placeholder:text-gray-400 outline-none focus:border-black focus-visible:ring-0 transition-colors duration-500" />
               </div>
               <div>
                 <label htmlFor="details" className="sr-only">Project details</label>
                 <textarea id="details" placeholder="Tell us more about your project..." rows={3}
-                  className="w-full bg-transparent border-b border-gray-200 py-4 text-[15px] text-black font-light placeholder:text-gray-300 outline-none focus:border-black focus-visible:ring-0 transition-colors duration-500 resize-none" />
+                  className="w-full bg-transparent border-b border-gray-200 py-4 text-[15px] text-black font-light placeholder:text-gray-400 outline-none focus:border-black focus-visible:ring-0 transition-colors duration-500 resize-none" />
               </div>
               <div className="mt-4 text-center">
                 <PillButton dark size="lg">Submit inquiry</PillButton>
@@ -900,7 +896,7 @@ function SiteFooter() {
         <div className="flex flex-col lg:flex-row justify-between gap-16 mb-20">
           <div className="max-w-sm">
             <span className="text-[17px] font-semibold tracking-tight text-black block mb-4">countertop world</span>
-            <p className="text-[13px] text-gray-400 font-light leading-relaxed mb-4">
+            <p className="text-[13px] text-gray-500 font-light leading-relaxed mb-4">
               Arkansas' largest stone fabrication studio. Laser-measured. CNC-machined. Hand-finished. Family-owned since 2016.
             </p>
             <a href="https://countertopworldar.com" target="_blank" rel="noopener noreferrer"
@@ -908,7 +904,7 @@ function SiteFooter() {
               countertopworldar.com <ArrowUpRight size={12} />
             </a>
           </div>
-          <div className="flex flex-col sm:flex-row gap-12 sm:gap-20 text-[13px] font-light text-gray-400">
+          <div className="flex flex-col sm:flex-row gap-12 sm:gap-20 text-[13px] font-light text-gray-500">
             <address className="not-italic">
               <h4 className="text-black font-medium mb-4 text-[11px] tracking-[0.15em] uppercase">Northwest Arkansas</h4>
               <p className="mb-1">1706 Commerce Dr</p>
@@ -929,7 +925,7 @@ function SiteFooter() {
             </div>
           </div>
         </div>
-        <div className="pt-8 border-t border-gray-100 flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px] text-gray-300 font-light">
+        <div className="pt-8 border-t border-gray-100 flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px] text-gray-400 font-light">
           <p>&copy; {new Date().getFullYear()} Countertop World, LLC. All rights reserved.</p>
           <div className="flex items-center gap-6">
             <span>BBB Accredited</span><span aria-hidden="true">·</span><span>4.5 ★ · 109+ Reviews</span><span aria-hidden="true">·</span><span>Precision guaranteed.</span>
@@ -941,42 +937,25 @@ function SiteFooter() {
 }
 
 /* ══════════════════════════════════════════════════════════
-   MAIN APP — Structured chapters with visual breaks
+   HOME PAGE — Landing page layout
    ══════════════════════════════════════════════════════════ */
 
-export default function App() {
+function HomePage() {
   return (
     <div className="min-h-screen bg-white antialiased">
       <SkipLink />
       <GlassNav />
       <main id="main-content">
-        {/* Chapter 1: The Hook */}
         <Hero />
-
-        {/* Chapter 2: Who We Are */}
         <About />
-
         <ChapterDivider />
-
-        {/* Chapter 3: What We Work With */}
         <Materials />
-
         <ChapterDivider label="tailored for you" />
-
-        {/* Chapter 4: Who We Serve — TABBED (the big change) */}
         <WhoWeServe />
-
         <ChapterDivider />
-
-        {/* Chapter 5: How It Works */}
         <Process />
-
-        {/* Chapter 6: Proof */}
         <Portfolio />
-
         <ChapterDivider label="come see us" />
-
-        {/* Chapter 7: Take Action */}
         <Visit />
       </main>
       <SiteFooter />
@@ -988,5 +967,25 @@ export default function App() {
         </div>
       </div>
     </div>
+  );
+}
+
+/* ══════════════════════════════════════════════════════════
+   APP — Router
+   ══════════════════════════════════════════════════════════ */
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/stones/engineered-quartz" element={<EngineeredQuartzPage />} />
+        <Route path="/stones/natural-granite" element={<NaturalGranitePage />} />
+        <Route path="/stones/marble" element={<MarblePage />} />
+        <Route path="/stones/quartzite" element={<QuartzitePage />} />
+        <Route path="/stones/porcelain" element={<PorcelainPage />} />
+        <Route path="/stones/soapstone-onyx" element={<SoapstoneOnyxPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
