@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef, useCallback, type ReactNode } from 'react';
 import {
   ArrowRight, ArrowUpRight, Phone, MapPin, Clock, Star,
-  Shield, Gem, Ruler, Home, Hammer, PenTool, ChevronDown
+  Shield, Gem, Ruler, Home, Hammer, PenTool
 } from 'lucide-react';
 import { useReveal } from './hooks/useReveal';
 import './index.css';
@@ -419,7 +419,6 @@ function WhoWeServe() {
   const [active, setActive] = useState<AudienceKey>('homeowners');
   const tabListRef = useRef<HTMLDivElement>(null);
   const data = audienceData[active];
-  const colorMap = { amber: 'bg-amber-50 text-amber-700 border-amber-200', slate: 'bg-slate-100 text-slate-700 border-slate-200', stone: 'bg-stone-100 text-stone-700 border-stone-300' };
   const iconBg = { amber: 'bg-amber-50 border-amber-100', slate: 'bg-slate-50 border-slate-200', stone: 'bg-stone-50 border-stone-200' };
   const iconColor = { amber: 'text-amber-600', slate: 'text-slate-600', stone: 'text-stone-600' };
   const ctaBg = { amber: 'bg-amber-600 hover:bg-amber-700', slate: 'bg-slate-700 hover:bg-slate-800', stone: 'bg-stone-800 hover:bg-stone-900' };
