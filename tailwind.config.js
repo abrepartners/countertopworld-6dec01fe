@@ -41,25 +41,24 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Countertop World design tokens
-        slate: {
-          dark: '#1B2A3D',
-          medium: '#5A6B7A',
+        // Mythic brand tokens
+        obsidian: '#0D0D0D',
+        granite: '#1A1A1A',
+        elevated: '#242424',
+        'stone-gold': {
+          DEFAULT: '#C9A96E',
+          light: '#D4BA8A',
+          dark: '#A8893E',
         },
-        gold: {
-          DEFAULT: '#C19A5B',
-          light: '#D4B47A',
-          dark: '#A07D45',
-        },
-        cream: '#F7F3EE',
-        warm: {
-          50: '#FFFBF5',
-          100: '#FFF5E8',
-        },
+        'vein-white': '#E8E2D6',
+        'cool-gray': '#8A8A8A',
+        copper: '#B87333',
+        'accent-marble': '#F5F0E8',
       },
       fontFamily: {
-        display: ['"SF Pro Display"', 'system-ui', '-apple-system', 'sans-serif'],
-        body: ['"SF Pro Text"', 'system-ui', '-apple-system', 'sans-serif'],
+        display: ['"Cormorant Garamond"', 'serif'],
+        body: ['"Inter"', '-apple-system', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'monospace'],
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -91,9 +90,10 @@ module.exports = {
           from: { opacity: "0", transform: "scale(0.95)" },
           to: { opacity: "1", transform: "scale(1)" },
         },
-        "counter": {
-          from: { "--num": "0" },
-          to: { "--num": "var(--target)" },
+        "vein-drift": {
+          "0%": { transform: "translateX(0) translateY(0)" },
+          "50%": { transform: "translateX(8px) translateY(-4px)" },
+          "100%": { transform: "translateX(0) translateY(0)" },
         },
       },
       animation: {
@@ -103,6 +103,7 @@ module.exports = {
         "fade-in": "fade-in 0.6s ease-out forwards",
         "slide-in-right": "slide-in-right 0.8s ease-out forwards",
         "scale-in": "scale-in 0.6s ease-out forwards",
+        "vein-drift": "vein-drift 20s ease-in-out infinite",
       },
     },
   },
