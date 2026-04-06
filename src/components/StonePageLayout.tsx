@@ -179,8 +179,27 @@ export default function StonePageLayout({ data }: { data: StonePageData }) {
     document.title = data.metaTitle;
     const meta = document.querySelector('meta[name="description"]');
     if (meta) meta.setAttribute('content', data.metaDescription);
+
+    // Inject FAQ structured data for AEO/SEO
+    const existingScript = document.getElementById('faq-schema');
+    if (existingScript) existingScript.remove();
+    const script = document.createElement('script');
+    script.id = 'faq-schema';
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      'mainEntity': data.faq.map(item => ({
+        '@type': 'Question',
+        'name': item.question,
+        'acceptedAnswer': { '@type': 'Answer', 'text': item.answer }
+      }))
+    });
+    document.head.appendChild(script);
+
     window.scrollTo(0, 0);
-  }, [data.metaTitle, data.metaDescription]);
+    return () => { script.remove(); };
+  }, [data.metaTitle, data.metaDescription, data.faq]);
 
   const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
     const keys = tabLabels.map(t => t.key);

@@ -49,7 +49,7 @@ const data: StonePageData = {
     highlight: "Worth considering: If you love marble's look but need more durability, marble-look quartz or quartzite can deliver a similar aesthetic at a different price and maintenance level. We'll help you explore all options.",
   },
   design: {
-    intro: 'Marble is a statement material that elevates any space it touches.',
+    intro: 'Marble makes a room. Here are the most popular ways our customers use it.',
     cards: [
       { title: 'Luxury Kitchen Islands', desc: 'A Calacatta marble island is the crown jewel of high-end kitchen design. Pair with dark cabinetry and brass fixtures for maximum impact.' },
       { title: 'Master Bath Vanities', desc: "Marble transforms bathrooms into spa-like retreats. The luminous surface pairs beautifully with warm lighting and natural materials." },

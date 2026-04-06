@@ -90,7 +90,7 @@ function GlassNav() {
 function Hero() {
   const [loaded, setLoaded] = useState(false);
   useEffect(() => { setLoaded(true); }, []);
-  const metrics = [{ value: '18,700', label: 'Sq ft Rogers facility' },{ value: 'Only', label: 'Sasso-Lux in Arkansas' },{ value: '100+', label: 'Years combined experience' },{ value: '4.5★', label: '109+ verified reviews' }];
+  const metrics = [{ value: '18,700', label: 'Sq ft Rogers facility' },{ value: 'Only', label: 'Sasso-Lux in Arkansas' },{ value: '100+', label: 'Years combined experience' },{ value: '4.4★', label: '109+ verified reviews' }];
   return (
     <section aria-labelledby="hero-heading" className="relative min-h-screen flex flex-col items-center justify-center pt-28 pb-0 px-6 overflow-hidden bg-obsidian">
       <div className="absolute inset-0"><div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 80% 60% at 50% 40%, rgba(201,169,110,0.04) 0%, transparent 70%)' }} /><MarbleVeins /></div>
@@ -99,8 +99,8 @@ function Hero() {
           <span className="w-1.5 h-1.5 rounded-full bg-stone-gold animate-pulse" aria-hidden="true" />
           <span className="font-mono text-[11px] text-cool-gray tracking-[3px] uppercase">Now Open — Rogers Showroom</span>
         </div>
-        <h1 id="hero-heading" className="font-display text-[clamp(2.5rem,7vw,5.5rem)] font-light text-vein-white tracking-tighter leading-[1.05] mb-8">The alchemy of earth<br />and engineering.<br /><span className="font-semibold text-stone-gold">Stone, refined.</span></h1>
-        <p className="text-[17px] md:text-[19px] text-cool-gray font-light leading-relaxed max-w-xl mb-10">Arkansas' largest stone fabrication studio. Granite. Quartz. Marble. Quartzite. Precision-cut and hand-finished in-house.</p>
+        <h1 id="hero-heading" className="font-display text-[clamp(2.5rem,7vw,5.5rem)] font-light text-vein-white tracking-tighter leading-[1.05] mb-8">Your countertops,<br />built right here<br /><span className="font-semibold text-stone-gold">in Arkansas.</span></h1>
+        <p className="text-[17px] md:text-[19px] text-cool-gray font-light leading-relaxed max-w-xl mb-10">Family-owned stone fabrication with two showrooms — Bryant and Rogers. We cut, finish, and install granite, quartz, marble, and quartzite in-house. No middlemen.</p>
         <div className="flex flex-wrap gap-4 justify-center">
           <PillButton href="#work" size="lg">View the gallery <ArrowRight size={14} className="ml-2" /></PillButton>
           <PillButton href="#contact" gold size="lg">Schedule a visit</PillButton>
@@ -122,9 +122,9 @@ function Hero() {
 /* ── ABOUT ── */
 function About() {
   const features = [
-    { num: '01', title: 'Sasso-Lux finishing.', desc: 'The only fabricator in Arkansas equipped with Sasso-Lux robotics. Perfectly honed mattes, tactile leathered finishes, and glass-smooth polish.' },
-    { num: '02', title: 'Laser-measured precision.', desc: 'Advanced laser scanning maps your space with millimeter accuracy. Combined with CNC saws, polishers, and edgers. Zero margin for error.' },
-    { num: '03', title: 'Digital vein-matching.', desc: "High-res slab digitization aligns vein patterns across seams and waterfall edges. Nature's flow, uninterrupted." },
+    { num: '01', title: 'Sasso-Lux finishing.', desc: "We're the only shop in Arkansas with a Sasso-Lux. It gives us leathered, honed, and polished finishes that other fabricators have to outsource or skip entirely." },
+    { num: '02', title: 'Laser templating + CNC.', desc: "We laser-scan your space down to the millimeter, then cut on CNC saws and polishers. The stone fits right the first time." },
+    { num: '03', title: 'Digital vein-matching.', desc: "We digitize each slab so we can line up veins across seams and waterfall edges. The pattern flows through — no awkward breaks." },
   ];
   return (
     <section id="story" aria-labelledby="story-heading" className="bg-obsidian">
@@ -132,11 +132,11 @@ function About() {
         <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           <Reveal><div>
             <p className="font-mono text-[11px] text-stone-gold tracking-[4px] uppercase mb-4">Our Story</p>
-            <h2 id="story-heading" className="font-display text-[clamp(1.8rem,4vw,3rem)] font-light text-vein-white tracking-tight leading-tight mb-8">From a napkin sketch<br />to Arkansas' largest.</h2>
+            <h2 id="story-heading" className="font-display text-[clamp(1.8rem,4vw,3rem)] font-light text-vein-white tracking-tight leading-tight mb-8">Started with a napkin sketch.<br />Now the largest in Arkansas.</h2>
             <div className="space-y-5 text-[16px] text-cool-gray font-light leading-relaxed">
-              <p>David McDougall spent his 20s in Denver working corporate sales. When the loss of his brothers brought him home to Arkansas, he worked through the grief with his hands. Taking a job at a small granite shop in Jonesboro.</p>
-              <p>What started as a sketch on the back of a napkin became Countertop World. Now the largest stone fabricator in Central Arkansas. Together with co-owner Conor Lawrence and a team with almost 100 years of combined experience, they built something that honors both craft and innovation.</p>
-              <p>Today, Countertop World operates from two state-of-the-art facilities. The flagship in Bryant. The brand-new 18,700 sq ft showroom in Rogers. Precision stone craftsmanship for all of Arkansas.</p>
+              <p>David McDougall was working corporate sales in Denver when he lost his brothers. He came home to Arkansas and needed to do something with his hands. He took a job at a small granite shop in Jonesboro and never looked back.</p>
+              <p>He sketched out a plan on the back of a napkin. That became Countertop World. He and co-owner Conor Lawrence have grown it into the largest stone fabricator in Central Arkansas — with a front-office team that has nearly 100 years of combined experience.</p>
+              <p>Today they run two locations: the flagship shop in Bryant and a brand-new 18,700 sq ft facility in Rogers. Every slab is cut, finished, and installed by their own crew.</p>
             </div>
             <div className="mt-10"><PillButton href="#showrooms">Visit a showroom <ArrowRight size={14} className="ml-2" /></PillButton></div>
           </div></Reveal>
@@ -147,8 +147,8 @@ function About() {
         <div className="max-w-[1440px] mx-auto">
           <Reveal><div className="max-w-2xl mb-20 md:mb-28">
             <p className="font-mono text-[11px] text-stone-gold tracking-[4px] uppercase mb-4">Technology</p>
-            <h3 className="font-display text-[clamp(1.8rem,4vw,3rem)] font-light text-vein-white tracking-tight leading-tight mb-6">Uncompromising precision.</h3>
-            <p className="text-[17px] text-cool-gray font-light leading-relaxed">Exclusive machinery that no other Arkansas fabricator operates. The result is a surface that feels inevitable.</p>
+            <h3 className="font-display text-[clamp(1.8rem,4vw,3rem)] font-light text-vein-white tracking-tight leading-tight mb-6">Equipment nobody else in Arkansas has.</h3>
+            <p className="text-[17px] text-cool-gray font-light leading-relaxed">We invested in machinery that lets us do things other shops can't. Better cuts, better finishes, better fit.</p>
           </div></Reveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
             {features.map((f, i) => <Reveal key={i} delay={i + 1}><div className="flex flex-col py-10 md:py-0 md:px-10 first:md:pl-0 last:md:pr-0 border-t md:border-t-0 md:border-l first:border-t-0 first:md:border-l-0 border-stone-gold/10">
@@ -177,8 +177,8 @@ function Materials() {
     <Reveal><section id="materials" aria-labelledby="materials-heading" className="py-28 md:py-36 px-6 lg:px-10 bg-obsidian">
       <div className="max-w-[1440px] mx-auto">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16 md:mb-20 gap-6">
-          <div><p className="font-mono text-[11px] text-stone-gold tracking-[4px] uppercase mb-4">Materials</p><h2 id="materials-heading" className="font-display text-[clamp(1.8rem,4vw,3rem)] font-light text-vein-white tracking-tight leading-tight">The earth's finest surfaces.</h2></div>
-          <p className="text-[14px] text-cool-gray font-light max-w-sm leading-relaxed">We stock the most exclusive slabs in Arkansas with multiple new shipments arriving weekly.</p>
+          <div><p className="font-mono text-[11px] text-stone-gold tracking-[4px] uppercase mb-4">Materials</p><h2 id="materials-heading" className="font-display text-[clamp(1.8rem,4vw,3rem)] font-light text-vein-white tracking-tight leading-tight">1,000+ slabs in stock.</h2></div>
+          <p className="text-[14px] text-cool-gray font-light max-w-sm leading-relaxed">New shipments arrive every week. Come pick your exact slab in person at either showroom.</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[1px] bg-stone-gold/15 rounded-[12px] overflow-hidden">
           {materials.map((mat, idx) => <Link key={idx} to={mat.link} className="bg-granite p-8 md:p-10 group cursor-pointer hover:bg-elevated transition-all duration-500 no-underline">
@@ -199,45 +199,45 @@ type AudienceKey = 'homeowners' | 'builders' | 'designers';
 const audienceData = {
   homeowners: {
     Icon: Home, label: 'Homeowners',
-    heading: <>Your dream kitchen.<br /><span className="text-stone-gold">Realized in stone.</span></>,
-    description: 'This is the most important surface in your home. We make the process personal. From your first showroom visit to the moment your installer leaves.',
+    heading: <>Your kitchen deserves<br /><span className="text-stone-gold">the right stone.</span></>,
+    description: "Walk into our showroom, pick your slab, and we handle the rest — measuring, cutting, finishing, and installing. You deal with one team the whole way.",
     image: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?q=80&w=1600&auto=format&fit=crop', imageAlt: 'Beautiful kitchen with stone countertops',
     testimonial: { text: 'Very professional and patient. Measurements were precise, and the staff was customer service oriented. We couldn\'t be happier.', cite: 'Verified Homeowner' },
     benefits: [
-      { Icon: Gem, title: 'Hand-pick your slab.', desc: 'Visit our 5,000+ sq ft showrooms. See it. Touch it. Choose the exact stone.' },
-      { Icon: Ruler, title: 'Laser-measured fit.', desc: 'Millimeter-precision templates. No gaps. No guesswork. No surprises.' },
-      { Icon: Shield, title: 'Precision guaranteed.', desc: 'Professional installation. BBB Accredited with 109+ five-star reviews.' },
-      { Icon: Star, title: 'Full project coverage.', desc: 'Kitchens. Bathrooms. Outdoor living. Fireplaces. Anywhere stone belongs.' },
+      { Icon: Gem, title: 'Pick your actual slab.', desc: "Don't choose from a tiny sample. Come see full slabs in our showroom and pick the exact one that goes in your kitchen." },
+      { Icon: Ruler, title: 'Laser-measured fit.', desc: 'We laser-scan your counters so the stone fits perfectly. No shimming, no gaps, no callbacks.' },
+      { Icon: Shield, title: 'BBB A+ accredited.', desc: '109+ reviews and a 4.4-star rating. We stand behind every install.' },
+      { Icon: Star, title: 'Kitchens, baths, and more.', desc: 'Countertops, vanities, fireplaces, outdoor kitchens — if stone goes there, we do it.' },
     ],
     cta: { text: 'Schedule a free consultation', href: '#contact' },
     secondaryCta: { text: 'Browse slabs', href: 'https://countertopworldar.com/inventory/', external: true },
   },
   builders: {
     Icon: Hammer, label: 'Builders & Contractors',
-    heading: <>Reliability you can<br /><span className="text-stone-gold">build a business on.</span></>,
-    description: "We don't just fabricate stone. We protect your timeline, your margin, and your reputation with every project.",
+    heading: <>On time, on budget,<br /><span className="text-stone-gold">every project.</span></>,
+    description: "You need a fabricator who won't hold up your build. We hit our deadlines, price competitively, and do it all under one roof.",
     image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1600&auto=format&fit=crop', imageAlt: 'Construction site with stone installation',
     testimonial: { text: "Used David and Countertop World for four houses now. Best selection of slabs in Arkansas with great prices. Turnaround time is unmatched.", cite: 'Builder Customer, NWA' },
     benefits: [
-      { Icon: Clock, title: '2-week turnaround.', desc: 'Dedicated builder program delivers strict two-week turnarounds on standard projects.' },
-      { Icon: Shield, title: '100% in-house.', desc: 'No outsourcing. No middlemen. Every cut under our quality control.' },
-      { Icon: Ruler, title: '0mm tolerance.', desc: 'Precision laser scanning eliminates costly re-cuts. Millimeter-perfect before cutting.' },
-      { Icon: Star, title: 'Volume pricing.', desc: 'Priority scheduling and competitive pricing for multi-unit and subdivision projects.' },
+      { Icon: Clock, title: '2-week turnaround.', desc: 'Standard projects go from template to install in two weeks. We keep your build on schedule.' },
+      { Icon: Shield, title: '100% in-house.', desc: "We don't sub anything out. Every cut, every finish, every install is done by our crew." },
+      { Icon: Ruler, title: 'Laser-perfect templates.', desc: 'Laser scanning means the stone is right before we cut. No re-cuts, no wasted time.' },
+      { Icon: Star, title: 'Volume pricing.', desc: 'Multi-unit and subdivision projects get priority scheduling and builder rates. Call us.' },
     ],
     cta: { text: 'Partner with us', href: '#contact' },
     secondaryCta: { text: 'Call (479) 900-9119', href: 'tel:+14799009119', external: false },
   },
   designers: {
     Icon: PenTool, label: 'Designers & Architects',
-    heading: <>Your grandest visions.<br /><span className="text-stone-gold">Millimeter precision.</span></>,
-    description: 'When your client expects perfection, you need a fabrication partner who delivers it. Rare materials. Advanced finishing. Meticulous attention.',
+    heading: <>The fabrication partner<br /><span className="text-stone-gold">your clients expect.</span></>,
+    description: "We carry stones you won't find at other Arkansas shops — and we can finish them in ways other fabricators can't. Your spec, executed exactly.",
     image: 'https://images.unsplash.com/photo-1600585154526-990dced4ea0d?q=80&w=1600&auto=format&fit=crop', imageAlt: 'Luxury stone design detail',
     testimonial: { text: "The pricing was great and they turned it around in just over a week. The quality of the stone and finish is truly exceptional.", cite: 'Design Professional' },
     benefits: [
-      { Icon: Gem, title: 'Rare and exotic stones.', desc: "Globally-sourced slabs you won't find elsewhere. Calacatta. Taj Mahal quartzite. Backlit onyx." },
-      { Icon: Ruler, title: 'Custom Sasso-Lux.', desc: 'Leathered. Honed. Brushed. Textures your clients have never experienced.' },
-      { Icon: Shield, title: 'Digital vein-matching.', desc: 'Seamless waterfall edges and bookmatched slabs with invisible joints.' },
-      { Icon: Star, title: 'Dedicated PM.', desc: 'One point of contact from spec to install. White-glove service for luxury projects.' },
+      { Icon: Gem, title: 'Stones you can\'t get elsewhere.', desc: 'We source globally — Calacatta, Taj Mahal quartzite, backlit onyx. If your client wants it, we can probably get it.' },
+      { Icon: Ruler, title: 'Sasso-Lux finishes.', desc: 'Leathered, honed, brushed — finishes your clients will notice. No other Arkansas fab shop offers this.' },
+      { Icon: Shield, title: 'Vein-matched seams.', desc: 'We digitize slabs and align veins across seams and waterfall edges. The joints disappear.' },
+      { Icon: Star, title: 'One point of contact.', desc: 'You get a dedicated project manager from spec to install. No chasing down updates.' },
     ],
     cta: { text: 'Start a project', href: '#contact' },
     secondaryCta: { text: 'View portfolio', href: 'https://countertopworldar.com/work/', external: true },
@@ -260,8 +260,8 @@ function WhoWeServe() {
       <div className="max-w-[1440px] mx-auto">
         <div className="text-center mb-16 md:mb-20">
           <p className="font-mono text-[11px] text-stone-gold tracking-[4px] uppercase mb-6">Who We Serve</p>
-          <h2 id="serve-heading" className="font-display text-[clamp(2rem,5vw,3.5rem)] font-light text-vein-white tracking-tight leading-tight mb-6">Three audiences.<br />One standard of excellence.</h2>
-          <p className="text-[17px] text-cool-gray font-light max-w-lg mx-auto leading-relaxed">Whether you are designing your dream kitchen, building a subdivision, or specifying for a luxury client. We have engineered a process just for you.</p>
+          <h2 id="serve-heading" className="font-display text-[clamp(2rem,5vw,3.5rem)] font-light text-vein-white tracking-tight leading-tight mb-6">We work with homeowners,<br />builders, and designers.</h2>
+          <p className="text-[17px] text-cool-gray font-light max-w-lg mx-auto leading-relaxed">Different people need different things from a stone fabricator. Here's how we handle each.</p>
         </div>
         <div ref={tabListRef} className="flex flex-wrap justify-center gap-3 md:gap-4 mb-16" role="tablist">
           {(Object.keys(audienceData) as AudienceKey[]).map((key) => {
@@ -307,11 +307,11 @@ function WhoWeServe() {
 /* ── PROCESS ── */
 function Process() {
   const steps = [
-    { num: '01', title: 'Consultation.', desc: 'Visit our showroom. Meet a designer. Explore materials that match your vision and budget.' },
-    { num: '02', title: 'Selection.', desc: 'Hand-pick your exact slab from massive inventory. New shipments arrive weekly.' },
-    { num: '03', title: 'Templating.', desc: 'Laser-scanning measures your space with millimeter precision. No guesswork.' },
-    { num: '04', title: 'Fabrication.', desc: 'CNC robotics and Sasso-Lux cut and finish your stone. 100% in-house quality control.' },
-    { num: '05', title: 'Installation.', desc: 'Expert crew installs with care. Flawless edges and a surface that lasts a lifetime.' },
+    { num: '01', title: 'Come see us.', desc: 'Stop by either showroom. Tell us what you need and we\'ll walk you through your options.' },
+    { num: '02', title: 'Pick your slab.', desc: 'Choose from 1,000+ slabs on-site. New inventory shows up every week.' },
+    { num: '03', title: 'We measure.', desc: 'Our team laser-scans your space for a perfect fit. Takes about 30 minutes.' },
+    { num: '04', title: 'We cut and finish.', desc: 'CNC saws and our Sasso-Lux handle the fabrication. Everything stays in-house.' },
+    { num: '05', title: 'We install.', desc: 'Our crew handles the install. We clean up and walk you through care before we leave.' },
   ];
   return (
     <Reveal><section id="process" aria-labelledby="process-heading" className="py-28 md:py-36 px-6 lg:px-10 bg-granite/50 border-y border-stone-gold/10">
@@ -376,7 +376,7 @@ function Portfolio() {
     <Reveal><section id="work" aria-labelledby="portfolio-heading" className="py-28 md:py-36 bg-obsidian overflow-hidden">
       <div className="px-6 lg:px-10 mb-8 max-w-[1440px] mx-auto">
         <div className="flex items-end justify-between mb-10">
-          <div><p className="font-mono text-[11px] text-stone-gold tracking-[4px] uppercase mb-4">Portfolio</p><h2 id="portfolio-heading" className="font-display text-[clamp(1.8rem,4vw,3rem)] font-light text-vein-white tracking-tight">See it in your space.</h2></div>
+          <div><p className="font-mono text-[11px] text-stone-gold tracking-[4px] uppercase mb-4">Portfolio</p><h2 id="portfolio-heading" className="font-display text-[clamp(1.8rem,4vw,3rem)] font-light text-vein-white tracking-tight">Recent projects.</h2></div>
           <Link to={active.link} className="hidden md:inline-flex items-center gap-1 text-[12px] text-stone-gold font-medium hover:text-stone-gold-light transition-colors">Explore {active.name} guide <ArrowUpRight size={12} /></Link>
         </div>
         <div className="flex gap-3 overflow-x-auto pb-4 -mx-1 px-1 no-scrollbar" role="group">
@@ -404,14 +404,14 @@ function Visit() {
   const [location, setLocation] = useState('Rogers');
   const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
   const locations = [
-    { name: 'Northwest Arkansas', city: 'Rogers', badge: 'New', address: '1706 Commerce Dr, Rogers, AR 72756', phone: '(479) 900-9119', hours: 'Mon–Fri 8am–5pm · Sat by appointment', features: ['18,700 sq ft facility', 'Premium slab gallery', 'Expert design team'], img: 'https://images.unsplash.com/photo-1600607687644-c7171b42498f?q=80&w=1600&auto=format&fit=crop' },
+    { name: 'Northwest Arkansas', city: 'Rogers', badge: 'New', address: '1706 Commerce Dr, Rogers, AR 72756', phone: '(479) 900-9119', hours: 'Mon–Fri 8am–5pm · Sat by appointment', features: ['18,700 sq ft facility', '1,000+ slabs on-site', 'Expert design team'], img: 'https://storage.googleapis.com/gpt-engineer-file-uploads/wQneyghQcNSs2stXUaHo0G5Qhxe2/social-images/social-1772306326393-countertop_world_northwest_arkansas1.webp' },
     { name: 'Central Arkansas', city: 'Bryant', badge: 'Flagship', address: '26096 Interstate 30, Bryant, AR 72022', phone: '(501) 481-8117', hours: 'Mon–Fri 8am–5pm · Sat by appointment', features: ['5,000+ sq ft showroom', 'On-site fabrication', 'Sasso-Lux technology center'], img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop' },
   ];
   return (
     <section className="bg-obsidian">
       <div id="showrooms" className="py-28 md:py-36 px-6 lg:px-10 bg-granite/30 border-t border-stone-gold/10">
         <div className="max-w-[1440px] mx-auto">
-          <Reveal><div className="text-center mb-16 md:mb-20"><p className="font-mono text-[11px] text-stone-gold tracking-[4px] uppercase mb-4">Showrooms</p><h2 className="font-display text-[clamp(1.8rem,4vw,3rem)] font-light text-vein-white tracking-tight mb-4">Two locations. One standard.</h2><p className="text-[15px] text-cool-gray font-light max-w-md mx-auto">See it. Touch it. Choose it. Visit a showroom to experience our stone selection firsthand.</p></div></Reveal>
+          <Reveal><div className="text-center mb-16 md:mb-20"><p className="font-mono text-[11px] text-stone-gold tracking-[4px] uppercase mb-4">Showrooms</p><h2 className="font-display text-[clamp(1.8rem,4vw,3rem)] font-light text-vein-white tracking-tight mb-4">Come see the slabs in person.</h2><p className="text-[15px] text-cool-gray font-light max-w-md mx-auto">Photos don't do stone justice. Stop by and see the color, the veining, and the finish up close.</p></div></Reveal>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {locations.map((loc, idx) => <Reveal key={idx} delay={idx + 1}><article className="border border-stone-gold/10 rounded-[12px] overflow-hidden group hover:border-stone-gold/25 transition-all duration-500 bg-granite">
               <div className="aspect-[16/9] overflow-hidden bg-obsidian"><img src={loc.img} alt={`${loc.name} showroom`} className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-[1500ms] brightness-[0.75]" loading="lazy" /></div>
@@ -431,7 +431,7 @@ function Visit() {
       </div>
       <Reveal><div id="contact" className="py-28 md:py-36 px-6 lg:px-10 bg-obsidian border-t border-stone-gold/10">
         <div className="max-w-[800px] mx-auto">
-          <div className="text-center mb-16"><p className="font-mono text-[11px] text-stone-gold tracking-[4px] uppercase mb-4">Contact</p><h2 className="font-display text-[clamp(2rem,5vw,3.5rem)] font-light text-vein-white tracking-tight leading-tight">Tell us about<br />your project.</h2></div>
+          <div className="text-center mb-16"><p className="font-mono text-[11px] text-stone-gold tracking-[4px] uppercase mb-4">Contact</p><h2 className="font-display text-[clamp(2rem,5vw,3.5rem)] font-light text-vein-white tracking-tight leading-tight">Get a free estimate.</h2></div>
           {formStatus === 'success' ? (
             <div className="text-center py-16 animate-fade-in">
               <div className="w-16 h-16 rounded-full bg-stone-gold/10 border border-stone-gold/20 flex items-center justify-center mx-auto mb-6"><Star size={28} className="text-stone-gold" /></div>
@@ -471,9 +471,13 @@ function SiteFooter() {
         <div className="flex flex-col lg:flex-row justify-between gap-16 mb-20">
           <div className="max-w-sm">
             <span className="font-display text-[20px] font-medium tracking-tight text-stone-gold block mb-4">Countertop World</span>
-            <p className="text-[13px] text-cool-gray font-light leading-relaxed mb-4">Arkansas' largest stone fabrication studio. Laser-measured. CNC-machined. Hand-finished. Family-owned since 2016.</p>
+            <p className="text-[13px] text-cool-gray font-light leading-relaxed mb-4">Family-owned stone fabrication since 2016. Two Arkansas locations. Everything cut, finished, and installed by our crew.</p>
             <p className="font-mono text-[11px] text-cool-gray tracking-[3px] uppercase mb-4">Strength. Set in Stone.</p>
-            <a href="https://countertopworldar.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-[13px] text-stone-gold font-medium hover:text-stone-gold-light transition-colors">countertopworldar.com <ArrowUpRight size={12} /></a>
+            <div className="flex items-center gap-4">
+              <a href="https://countertopworldar.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-[13px] text-stone-gold font-medium hover:text-stone-gold-light transition-colors">countertopworldar.com <ArrowUpRight size={12} /></a>
+              <a href="https://www.instagram.com/countertopworld/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-cool-gray hover:text-stone-gold transition-colors"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></a>
+              <a href="https://www.facebook.com/countertopworld/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-cool-gray hover:text-stone-gold transition-colors"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            </div>
           </div>
           <div className="flex flex-col sm:flex-row gap-12 sm:gap-20 text-[13px] font-light text-cool-gray">
             <address className="not-italic"><h4 className="font-mono text-stone-gold/80 font-medium mb-4 text-[10px] tracking-[3px] uppercase">Northwest Arkansas</h4><p className="mb-1">1706 Commerce Dr</p><p className="mb-3">Rogers, AR 72756</p><a href="tel:+14799009119" className="text-vein-white font-medium hover:text-stone-gold transition-colors">(479) 900-9119</a></address>
@@ -483,7 +487,7 @@ function SiteFooter() {
         </div>
         <div className="pt-8 border-t border-stone-gold/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px] text-cool-gray font-light">
           <p>&copy; {new Date().getFullYear()} Countertop World, LLC. All rights reserved.</p>
-          <div className="flex items-center gap-6"><span>BBB Accredited</span><span className="text-stone-gold/30">·</span><span>4.5 ★ · 109+ Reviews</span><span className="text-stone-gold/30">·</span><span>Precision guaranteed.</span></div>
+          <div className="flex items-center gap-6"><span>BBB A+ Accredited</span><span className="text-stone-gold/30">·</span><span>4.4 ★ · 109+ Reviews</span><span className="text-stone-gold/30">·</span><span>Family-owned since 2016</span></div>
         </div>
       </div>
     </footer>
