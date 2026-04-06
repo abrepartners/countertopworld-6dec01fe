@@ -1,4 +1,4 @@
-import { useState, useCallback, useRef, type ReactNode } from 'react';
+import { useState, useCallback, useRef, useEffect, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, ChevronDown } from 'lucide-react';
 
@@ -174,6 +174,13 @@ const tabLabels: { key: TabKey; label: string }[] = [
 export default function StonePageLayout({ data }: { data: StonePageData }) {
   const [activeTab, setActiveTab] = useState<TabKey>('overview');
   const tabListRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    document.title = data.metaTitle;
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute('content', data.metaDescription);
+    window.scrollTo(0, 0);
+  }, [data.metaTitle, data.metaDescription]);
 
   const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
     const keys = tabLabels.map(t => t.key);

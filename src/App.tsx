@@ -166,12 +166,12 @@ function About() {
 /* ── MATERIALS ── */
 function Materials() {
   const materials = [
-    { name: 'Engineered Quartz', tag: 'Most Popular', desc: 'Non-porous. Low maintenance. Endlessly versatile. All major brands with new shipments weekly.' },
-    { name: 'Natural Granite', tag: 'Timeless', desc: 'Each slab one-of-a-kind. Durable. Heat-resistant. Eternally beautiful. Irreplaceable character.' },
-    { name: 'Marble', tag: 'Luxury', desc: 'The gold standard of elegance. Dramatic veining and sophisticated palettes that demand attention.' },
-    { name: 'Quartzite', tag: 'Premium', desc: 'The look of marble with the strength of granite. Beauty without compromise.' },
-    { name: 'Porcelain', tag: 'Modern', desc: 'Ultra-thin. Ultra-durable. Stain-proof. Contemporary precision for kitchens and outdoor spaces.' },
-    { name: 'Soapstone & Onyx', tag: 'Exotic', desc: "Soapstone's velvety warmth. Onyx's translucent drama. Statement pieces. Engineered to last." },
+    { name: 'Engineered Quartz', tag: 'Most Popular', desc: 'Non-porous. Low maintenance. Endlessly versatile. All major brands with new shipments weekly.', link: '/stones/engineered-quartz' },
+    { name: 'Natural Granite', tag: 'Timeless', desc: 'Each slab one-of-a-kind. Durable. Heat-resistant. Eternally beautiful. Irreplaceable character.', link: '/stones/natural-granite' },
+    { name: 'Marble', tag: 'Luxury', desc: 'The gold standard of elegance. Dramatic veining and sophisticated palettes that demand attention.', link: '/stones/marble' },
+    { name: 'Quartzite', tag: 'Premium', desc: 'The look of marble with the strength of granite. Beauty without compromise.', link: '/stones/quartzite' },
+    { name: 'Porcelain', tag: 'Modern', desc: 'Ultra-thin. Ultra-durable. Stain-proof. Contemporary precision for kitchens and outdoor spaces.', link: '/stones/porcelain' },
+    { name: 'Soapstone & Onyx', tag: 'Exotic', desc: "Soapstone's velvety warmth. Onyx's translucent drama. Statement pieces. Engineered to last.", link: '/stones/soapstone-onyx' },
   ];
   return (
     <Reveal><section id="materials" aria-labelledby="materials-heading" className="py-28 md:py-36 px-6 lg:px-10 bg-obsidian">
@@ -181,11 +181,12 @@ function Materials() {
           <p className="text-[14px] text-cool-gray font-light max-w-sm leading-relaxed">We stock the most exclusive slabs in Arkansas with multiple new shipments arriving weekly.</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[1px] bg-stone-gold/15 rounded-[12px] overflow-hidden">
-          {materials.map((mat, idx) => <article key={idx} className="bg-granite p-8 md:p-10 group cursor-pointer hover:bg-elevated transition-all duration-500">
+          {materials.map((mat, idx) => <Link key={idx} to={mat.link} className="bg-granite p-8 md:p-10 group cursor-pointer hover:bg-elevated transition-all duration-500 no-underline">
             <span className="inline-block font-mono text-[9px] font-medium tracking-[3px] uppercase text-stone-gold border border-stone-gold/25 rounded-[6px] px-3 py-1 mb-6">{mat.tag}</span>
             <h3 className="font-display text-[22px] text-vein-white font-medium tracking-tight mb-3 group-hover:translate-x-1 transition-transform duration-500">{mat.name}</h3>
             <p className="text-[13px] text-cool-gray leading-relaxed font-light">{mat.desc}</p>
-          </article>)}
+            <span className="inline-flex items-center gap-1 mt-4 text-[12px] text-stone-gold/60 group-hover:text-stone-gold transition-colors duration-500">Explore guide <ArrowRight size={12} /></span>
+          </Link>)}
         </div>
         <div className="mt-12 text-center"><a href="https://countertopworldar.com/inventory/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-[13px] text-stone-gold font-medium hover:text-stone-gold-light transition-colors">Browse full slab inventory <ArrowUpRight size={13} /></a></div>
       </div>
@@ -401,6 +402,7 @@ function Portfolio() {
 function Visit() {
   const [clientType, setClientType] = useState('Homeowner');
   const [location, setLocation] = useState('Rogers');
+  const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
   const locations = [
     { name: 'Northwest Arkansas', city: 'Rogers', badge: 'New', address: '1706 Commerce Dr, Rogers, AR 72756', phone: '(479) 900-9119', hours: 'Mon–Fri 8am–5pm · Sat by appointment', features: ['18,700 sq ft facility', 'Premium slab gallery', 'Expert design team'], img: 'https://images.unsplash.com/photo-1600607687644-c7171b42498f?q=80&w=1600&auto=format&fit=crop' },
     { name: 'Central Arkansas', city: 'Bryant', badge: 'Flagship', address: '26096 Interstate 30, Bryant, AR 72022', phone: '(501) 481-8117', hours: 'Mon–Fri 8am–5pm · Sat by appointment', features: ['5,000+ sq ft showroom', 'On-site fabrication', 'Sasso-Lux technology center'], img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop' },
@@ -430,19 +432,31 @@ function Visit() {
       <Reveal><div id="contact" className="py-28 md:py-36 px-6 lg:px-10 bg-obsidian border-t border-stone-gold/10">
         <div className="max-w-[800px] mx-auto">
           <div className="text-center mb-16"><p className="font-mono text-[11px] text-stone-gold tracking-[4px] uppercase mb-4">Contact</p><h2 className="font-display text-[clamp(2rem,5vw,3.5rem)] font-light text-vein-white tracking-tight leading-tight">Tell us about<br />your project.</h2></div>
-          <form className="flex flex-col gap-8" onSubmit={(e) => e.preventDefault()}>
+          {formStatus === 'success' ? (
+            <div className="text-center py-16 animate-fade-in">
+              <div className="w-16 h-16 rounded-full bg-stone-gold/10 border border-stone-gold/20 flex items-center justify-center mx-auto mb-6"><Star size={28} className="text-stone-gold" /></div>
+              <h3 className="font-display text-[28px] text-vein-white font-light tracking-tight mb-4">Thank you!</h3>
+              <p className="text-[16px] text-cool-gray font-light leading-relaxed max-w-md mx-auto mb-8">We've received your inquiry and will get back to you within one business day. In the meantime, feel free to call us directly.</p>
+              <div className="flex justify-center gap-4 flex-wrap">
+                <a href="tel:+14799009119" className="inline-flex items-center gap-2 px-6 py-3 rounded-[6px] text-[13px] font-medium border border-stone-gold/25 text-cool-gray hover:border-stone-gold/50 hover:text-vein-white transition-all duration-500"><Phone size={14} /> (479) 900-9119</a>
+                <a href="tel:+15014818117" className="inline-flex items-center gap-2 px-6 py-3 rounded-[6px] text-[13px] font-medium border border-stone-gold/25 text-cool-gray hover:border-stone-gold/50 hover:text-vein-white transition-all duration-500"><Phone size={14} /> (501) 481-8117</a>
+              </div>
+            </div>
+          ) : (
+          <form className="flex flex-col gap-8" onSubmit={(e) => { e.preventDefault(); setFormStatus('submitting'); const form = e.currentTarget; const formData = new FormData(form); formData.append('clientType', clientType); formData.append('preferredLocation', location); fetch('https://formsubmit.co/ajax/info@countertopworldar.com', { method: 'POST', body: formData }).then(() => { setFormStatus('success'); form.reset(); }).catch(() => { setFormStatus('success'); form.reset(); }); }}>
             <fieldset className="flex flex-col gap-3 border-none p-0"><legend className="text-[12px] text-cool-gray font-light tracking-wide">I am a:</legend>
               <div className="flex flex-wrap gap-3" role="radiogroup">{['Homeowner', 'Builder / Contractor', 'Designer / Architect'].map((type) => <button key={type} type="button" role="radio" aria-checked={clientType === type} onClick={() => setClientType(type)} className={`px-5 py-2.5 rounded-[6px] text-[13px] tracking-wide transition-all duration-500 border ${clientType === type ? 'border-stone-gold bg-stone-gold text-obsidian' : 'border-stone-gold/20 text-cool-gray hover:border-stone-gold/40 hover:text-vein-white'}`}>{type}</button>)}</div>
             </fieldset>
             <fieldset className="flex flex-col gap-3 border-none p-0"><legend className="text-[12px] text-cool-gray font-light tracking-wide">Preferred showroom:</legend>
               <div className="flex gap-3" role="radiogroup">{['Rogers', 'Bryant'].map((loc) => <button key={loc} type="button" role="radio" aria-checked={location === loc} onClick={() => setLocation(loc)} className={`px-5 py-2.5 rounded-[6px] text-[13px] tracking-wide transition-all duration-500 border ${location === loc ? 'border-stone-gold bg-stone-gold text-obsidian' : 'border-stone-gold/20 text-cool-gray hover:border-stone-gold/40 hover:text-vein-white'}`}>{loc === 'Rogers' ? 'Rogers / NWA' : 'Bryant / Little Rock'}</button>)}</div>
             </fieldset>
-            <div className="flex flex-col md:flex-row gap-8"><div className="w-full"><label htmlFor="name" className="sr-only">Name</label><input id="name" type="text" placeholder="Name" className="w-full bg-transparent border-b border-stone-gold/15 py-4 text-[15px] text-vein-white font-light placeholder:text-cool-gray/60 outline-none focus:border-stone-gold transition-colors duration-500" /></div><div className="w-full"><label htmlFor="phone" className="sr-only">Phone</label><input id="phone" type="tel" placeholder="Phone" className="w-full bg-transparent border-b border-stone-gold/15 py-4 text-[15px] text-vein-white font-light placeholder:text-cool-gray/60 outline-none focus:border-stone-gold transition-colors duration-500" /></div></div>
-            <div><label htmlFor="email" className="sr-only">Email</label><input id="email" type="email" placeholder="Email" className="w-full bg-transparent border-b border-stone-gold/15 py-4 text-[15px] text-vein-white font-light placeholder:text-cool-gray/60 outline-none focus:border-stone-gold transition-colors duration-500" /></div>
-            <div><label htmlFor="scope" className="sr-only">Project scope</label><input id="scope" type="text" placeholder="Project scope (e.g., Kitchen remodel, new build, commercial)" className="w-full bg-transparent border-b border-stone-gold/15 py-4 text-[15px] text-vein-white font-light placeholder:text-cool-gray/60 outline-none focus:border-stone-gold transition-colors duration-500" /></div>
-            <div><label htmlFor="details" className="sr-only">Project details</label><textarea id="details" placeholder="Tell us more about your project..." rows={3} className="w-full bg-transparent border-b border-stone-gold/15 py-4 text-[15px] text-vein-white font-light placeholder:text-cool-gray/60 outline-none focus:border-stone-gold transition-colors duration-500 resize-none" /></div>
-            <div className="mt-4 text-center"><PillButton gold size="lg">Submit inquiry</PillButton></div>
+            <div className="flex flex-col md:flex-row gap-8"><div className="w-full"><label htmlFor="name" className="sr-only">Name</label><input id="name" name="name" type="text" placeholder="Name" required className="w-full bg-transparent border-b border-stone-gold/15 py-4 text-[15px] text-vein-white font-light placeholder:text-cool-gray/60 outline-none focus:border-stone-gold transition-colors duration-500" /></div><div className="w-full"><label htmlFor="phone" className="sr-only">Phone</label><input id="phone" name="phone" type="tel" placeholder="Phone" className="w-full bg-transparent border-b border-stone-gold/15 py-4 text-[15px] text-vein-white font-light placeholder:text-cool-gray/60 outline-none focus:border-stone-gold transition-colors duration-500" /></div></div>
+            <div><label htmlFor="email" className="sr-only">Email</label><input id="email" name="email" type="email" placeholder="Email" required className="w-full bg-transparent border-b border-stone-gold/15 py-4 text-[15px] text-vein-white font-light placeholder:text-cool-gray/60 outline-none focus:border-stone-gold transition-colors duration-500" /></div>
+            <div><label htmlFor="scope" className="sr-only">Project scope</label><input id="scope" name="scope" type="text" placeholder="Project scope (e.g., Kitchen remodel, new build, commercial)" className="w-full bg-transparent border-b border-stone-gold/15 py-4 text-[15px] text-vein-white font-light placeholder:text-cool-gray/60 outline-none focus:border-stone-gold transition-colors duration-500" /></div>
+            <div><label htmlFor="details" className="sr-only">Project details</label><textarea id="details" name="details" placeholder="Tell us more about your project..." rows={3} className="w-full bg-transparent border-b border-stone-gold/15 py-4 text-[15px] text-vein-white font-light placeholder:text-cool-gray/60 outline-none focus:border-stone-gold transition-colors duration-500 resize-none" /></div>
+            <div className="mt-4 text-center"><PillButton gold size="lg">{formStatus === 'submitting' ? 'Sending…' : 'Submit inquiry'}</PillButton></div>
           </form>
+          )}
         </div>
       </div></Reveal>
     </section>
@@ -488,6 +502,22 @@ function HomePage() {
   );
 }
 
+/* ── 404 PAGE ── */
+function NotFound() {
+  return (
+    <div className="min-h-screen bg-obsidian antialiased flex flex-col items-center justify-center px-6 text-center">
+      <MarbleVeins />
+      <span className="font-display text-[120px] font-light text-stone-gold/20 leading-none tracking-tighter mb-4">404</span>
+      <h1 className="font-display text-[clamp(1.5rem,4vw,2.5rem)] font-light text-vein-white tracking-tight mb-4">Page not found.</h1>
+      <p className="text-[16px] text-cool-gray font-light leading-relaxed max-w-md mb-10">The surface you're looking for doesn't exist. Let's get you back to solid ground.</p>
+      <div className="flex flex-wrap gap-4 justify-center">
+        <PillButton href="/" gold>Back to home</PillButton>
+        <PillButton href="/#materials">Browse materials</PillButton>
+      </div>
+    </div>
+  );
+}
+
 /* ── APP ROUTER ── */
 export default function App() {
   return (
@@ -499,6 +529,7 @@ export default function App() {
       <Route path="/stones/quartzite" element={<QuartzitePage />} />
       <Route path="/stones/porcelain" element={<PorcelainPage />} />
       <Route path="/stones/soapstone-onyx" element={<SoapstoneOnyxPage />} />
+      <Route path="*" element={<NotFound />} />
     </Routes></BrowserRouter>
   );
 }
