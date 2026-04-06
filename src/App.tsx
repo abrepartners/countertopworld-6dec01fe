@@ -404,8 +404,8 @@ function Visit() {
   const [location, setLocation] = useState('Rogers');
   const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
   const locations = [
-    { name: 'Northwest Arkansas', city: 'Rogers', badge: 'New', address: '1706 Commerce Dr, Rogers, AR 72756', phone: '(479) 900-9119', hours: 'Mon–Fri 8am–5pm · Sat by appointment', features: ['18,700 sq ft facility', '1,000+ slabs on-site', 'Expert design team'], img: 'https://storage.googleapis.com/gpt-engineer-file-uploads/wQneyghQcNSs2stXUaHo0G5Qhxe2/social-images/social-1772306326393-countertop_world_northwest_arkansas1.webp' },
-    { name: 'Central Arkansas', city: 'Bryant', badge: 'Flagship', address: '26096 Interstate 30, Bryant, AR 72022', phone: '(501) 481-8117', hours: 'Mon–Fri 8am–5pm · Sat by appointment', features: ['5,000+ sq ft showroom', 'On-site fabrication', 'Sasso-Lux technology center'], img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop' },
+    { name: 'Northwest Arkansas', city: 'Rogers', badge: 'New', address: '1706 Commerce Dr, Rogers, AR 72756', phone: '(479) 900-9119', hours: 'Mon–Fri 8am–5pm · Sat by appt', features: ['18,700 sq ft facility', '1,000+ slabs on-site', 'Expert design team'], img: 'https://storage.googleapis.com/gpt-engineer-file-uploads/wQneyghQcNSs2stXUaHo0G5Qhxe2/social-images/social-1772306326393-countertop_world_northwest_arkansas1.webp' },
+    { name: 'Central Arkansas', city: 'Bryant', badge: 'Flagship', address: '26096 Interstate 30, Bryant, AR 72022', phone: '(501) 481-8117', hours: 'Mon–Fri 8am–5pm · Sat 9am–1pm', features: ['5,000+ sq ft showroom', 'On-site fabrication', 'Sasso-Lux technology center'], img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop' },
   ];
   return (
     <section className="bg-obsidian">
@@ -482,7 +482,7 @@ function SiteFooter() {
           <div className="flex flex-col sm:flex-row gap-12 sm:gap-20 text-[13px] font-light text-cool-gray">
             <address className="not-italic"><h4 className="font-mono text-stone-gold/80 font-medium mb-4 text-[10px] tracking-[3px] uppercase">Northwest Arkansas</h4><p className="mb-1">1706 Commerce Dr</p><p className="mb-3">Rogers, AR 72756</p><a href="tel:+14799009119" className="text-vein-white font-medium hover:text-stone-gold transition-colors">(479) 900-9119</a></address>
             <address className="not-italic"><h4 className="font-mono text-stone-gold/80 font-medium mb-4 text-[10px] tracking-[3px] uppercase">Central Arkansas</h4><p className="mb-1">26096 Interstate 30</p><p className="mb-3">Bryant, AR 72022</p><a href="tel:+15014818117" className="text-vein-white font-medium hover:text-stone-gold transition-colors">(501) 481-8117</a></address>
-            <div><h4 className="font-mono text-stone-gold/80 font-medium mb-4 text-[10px] tracking-[3px] uppercase">Hours</h4><p className="mb-1">Monday – Friday</p><p className="mb-1">8:00 am – 5:00 pm</p><p className="mt-3">Saturday by appt</p></div>
+            <div><h4 className="font-mono text-stone-gold/80 font-medium mb-4 text-[10px] tracking-[3px] uppercase">Hours</h4><p className="mb-1">Monday – Friday</p><p className="mb-1">8:00 am – 5:00 pm</p><p className="mt-3">Saturday 9am–1pm (Bryant)</p><p className="mb-1">Saturday by appt (Rogers)</p></div>
           </div>
         </div>
         <div className="pt-8 border-t border-stone-gold/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px] text-cool-gray font-light">
