@@ -391,9 +391,14 @@ export default function StonePageLayout({ data }: { data: StonePageData }) {
             <div className="font-display text-[18px] font-medium">(479) 900-9119</div>
           </a>
         </div>
-        <Link to="/#contact" className="inline-flex items-center px-8 py-3.5 rounded-[6px] bg-stone-gold text-obsidian text-[14px] font-semibold tracking-wide hover:bg-stone-gold-light transition-colors no-underline">
-          Request Free Quote
-        </Link>
+        <div className="flex flex-wrap justify-center gap-3">
+          <Link to="/#contact" className="inline-flex items-center px-8 py-3.5 rounded-[6px] bg-stone-gold text-obsidian text-[14px] font-semibold tracking-wide hover:bg-stone-gold-light transition-colors no-underline">
+            Request Free Quote
+          </Link>
+          <Link to="/book" className="inline-flex items-center px-8 py-3.5 rounded-[6px] border border-stone-gold/30 text-vein-white text-[14px] font-medium tracking-wide hover:border-stone-gold hover:bg-stone-gold/5 transition-colors no-underline">
+            Book a showroom visit
+          </Link>
+        </div>
       </section>
 
       {/* Footer */}

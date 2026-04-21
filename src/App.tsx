@@ -68,7 +68,7 @@ function GlassNav() {
   return (
     <header role="banner"><nav aria-label="Main navigation" className={`fixed top-0 w-full z-50 transition-all duration-700 ${scrolled ? 'bg-obsidian/80 backdrop-blur-xl border-b border-stone-gold/10' : 'bg-transparent'}`}>
       <div className="max-w-[1440px] mx-auto px-6 lg:px-10 py-5 flex justify-between items-center">
-        <a href="#" className="flex items-baseline gap-1.5 group" aria-label="Countertop World"><span className="font-display text-[18px] font-medium tracking-tight text-stone-gold group-hover:opacity-70 transition-opacity duration-500">Countertop World</span></a>
+        <Link to="/" className="flex items-baseline gap-1.5 group" aria-label="Countertop World"><span className="font-display text-[18px] font-medium tracking-tight text-stone-gold group-hover:opacity-70 transition-opacity duration-500">Countertop World</span></Link>
         <div className="hidden lg:flex items-center gap-8">
           <div className="flex gap-7 text-[12.5px] text-cool-gray tracking-wide font-light">
             {links.map(item => <a key={item.label} href={item.href} className="hover:text-vein-white transition-colors duration-500 relative group py-1">{item.label}<span className="absolute -bottom-1 left-0 w-0 h-[0.5px] bg-stone-gold transition-all duration-500 group-hover:w-full" /></a>)}
@@ -189,7 +189,7 @@ function Materials() {
             <span className="inline-flex items-center gap-1 mt-4 text-[12px] text-stone-gold/60 group-hover:text-stone-gold transition-colors duration-500">Explore guide <ArrowRight size={12} /></span>
           </Link>)}
         </div>
-        <div className="mt-12 text-center"><a href="https://countertopworldar.com/inventory/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-[13px] text-stone-gold font-medium hover:text-stone-gold-light transition-colors">Browse full slab inventory <ArrowUpRight size={13} /></a></div>
+        <div className="mt-12 text-center"><a href="#work" className="inline-flex items-center gap-1.5 text-[13px] text-stone-gold font-medium hover:text-stone-gold-light transition-colors">See recent installs <ArrowRight size={13} /></a></div>
       </div>
     </section></Reveal>
   );
@@ -210,8 +210,8 @@ const audienceData = {
       { Icon: Shield, title: 'BBB A+ accredited.', desc: '109+ reviews and a 4.4-star rating. We stand behind every install.' },
       { Icon: Star, title: 'Kitchens, baths, and more.', desc: 'Countertops, vanities, fireplaces, outdoor kitchens — if stone goes there, we do it.' },
     ],
-    cta: { text: 'Schedule a free consultation', href: '#contact' },
-    secondaryCta: { text: 'Browse slabs', href: 'https://countertopworldar.com/inventory/', external: true },
+    cta: { text: 'Schedule a free consultation', href: '/book' },
+    secondaryCta: { text: 'Browse materials', href: '/#materials', external: false },
   },
   builders: {
     Icon: Hammer, label: 'Builders & Contractors',
@@ -241,7 +241,7 @@ const audienceData = {
       { Icon: Star, title: 'One point of contact.', desc: 'You get a dedicated project manager from spec to install. No chasing down updates.' },
     ],
     cta: { text: 'Start a project', href: '#contact' },
-    secondaryCta: { text: 'View portfolio', href: 'https://countertopworldar.com/work/', external: true },
+    secondaryCta: { text: 'View portfolio', href: '/#work', external: false },
   },
 };
 
@@ -475,7 +475,7 @@ function SiteFooter() {
             <p className="text-[13px] text-cool-gray font-light leading-relaxed mb-4">Family-owned stone fabrication since 2016. Two Arkansas locations. Everything cut, finished, and installed by our crew.</p>
             <p className="font-mono text-[11px] text-cool-gray tracking-[3px] uppercase mb-4">Strength. Set in Stone.</p>
             <div className="flex items-center gap-4">
-              <a href="https://countertopworldar.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-[13px] text-stone-gold font-medium hover:text-stone-gold-light transition-colors">countertopworldar.com <ArrowUpRight size={12} /></a>
+              <span className="inline-flex items-center gap-1 text-[13px] text-stone-gold font-medium">countertopworldar.com</span>
               <a href="https://www.instagram.com/countertopworld/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-cool-gray hover:text-stone-gold transition-colors"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></a>
               <a href="https://www.facebook.com/countertopworld/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-cool-gray hover:text-stone-gold transition-colors"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
             </div>
