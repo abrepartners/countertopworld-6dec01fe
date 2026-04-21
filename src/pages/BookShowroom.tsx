@@ -10,7 +10,7 @@ const CALENDARS = {
     id: '7ITzPxNAzfzVzHoYDm5G',
     label: 'Bryant · Central Arkansas',
     address: '26096 Interstate 30, Bryant, AR 72022',
-    hours: 'Mon–Fri 8am–5pm · Sat 9am–1pm',
+    hours: 'By appointment — books directly with David',
   },
   rogers: {
     id: 'nr2uPqa8ofKqFcSXjhsN',
