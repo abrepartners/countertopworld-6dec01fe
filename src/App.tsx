@@ -208,7 +208,7 @@ const audienceData = {
     Icon: Home, label: 'Homeowners',
     heading: <>Your kitchen deserves<br /><span className="text-stone-gold">the right stone.</span></>,
     description: "Walk into our showroom, pick your slab, and we handle the rest — measuring, cutting, finishing, and installing. You deal with one team the whole way.",
-    image: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?q=80&w=1600&auto=format&fit=crop', imageAlt: 'Beautiful kitchen with stone countertops',
+    image: '/materials/insp/aud-homeowners.webp', imageAlt: 'Warm morning kitchen moment with polished Taj Mahal quartzite counters, white oak cabinetry, and soft natural light',
     testimonial: { text: 'Very professional and patient. Measurements were precise, and the staff was customer service oriented. We couldn\'t be happier.', cite: 'Verified Homeowner' },
     benefits: [
       { Icon: Gem, title: 'Pick your actual slab.', desc: "Don't choose from a tiny sample. Come see full slabs in our showroom and pick the exact one that goes in your kitchen." },
@@ -223,7 +223,7 @@ const audienceData = {
     Icon: Hammer, label: 'Builders & Contractors',
     heading: <>On time, on budget,<br /><span className="text-stone-gold">every project.</span></>,
     description: "You need a fabricator who won't hold up your build. We hit our deadlines, price competitively, and do it all under one roof.",
-    image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1600&auto=format&fit=crop', imageAlt: 'Construction site with stone installation',
+    image: '/materials/insp/aud-builders.webp', imageAlt: 'New-construction kitchen at handoff — polished white granite counters with protective cloth pulled back, laser measure and steel tape on the island',
     testimonial: { text: "Used David and Countertop World for four houses now. Best selection of slabs in Arkansas with great prices. Turnaround time is unmatched.", cite: 'Builder Customer, NWA' },
     benefits: [
       { Icon: Clock, title: '2-week turnaround.', desc: 'Standard projects go from template to install in two weeks. We keep your build on schedule.' },
