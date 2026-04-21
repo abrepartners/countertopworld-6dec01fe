@@ -336,43 +336,47 @@ function Process() {
   );
 }
 
-/* ── PORTFOLIO ── */
+/* ── INSPIRATION ── */
+// Scene images generated via Nano Banana 2 using the MeiGen/fire formula
+// from the image-gen-engine skill: editorial photographer role + material
+// specificity + Architectural Digest anchor + Sony A7R V / 35mm f/4 + Fuji
+// Velvia 50 emulation + composition + warm aspirational mood + anti-patterns.
 const stoneTypes = [
   { name: 'Quartz', accent: '#C9A96E', swatch: 'linear-gradient(135deg, #f5f0ea 0%, #e8ddd0 40%, #c9bfb0 60%, #f5f0ea 100%)', link: '/stones/engineered-quartz', images: [
-    { src: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=1600&auto=format&fit=crop', label: 'Calacatta Quartz — Kitchen Island' },
-    { src: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=1600&auto=format&fit=crop', label: 'White Quartz — Bathroom Vanity' },
-    { src: 'https://images.unsplash.com/photo-1600585154526-990dced4ea0d?q=80&w=1600&auto=format&fit=crop', label: 'Quartz — Waterfall Edge Detail' },
-    { src: 'https://images.unsplash.com/photo-1600573472556-e636c2acda9e?q=80&w=1600&auto=format&fit=crop', label: 'Quartz — Full-Height Backsplash' },
+    { src: '/materials/insp/qz-calacatta-island.webp', label: 'Calacatta Quartz — Kitchen Island' },
+    { src: '/materials/insp/qz-white-vanity.webp', label: 'Solid White Quartz — Bathroom Vanity' },
+    { src: '/materials/insp/qz-waterfall-edge.webp', label: 'Quartz — Waterfall Edge Detail' },
+    { src: '/materials/insp/qz-backsplash.webp', label: 'Quartz — Full-Height Backsplash' },
   ]},
   { name: 'Granite', accent: '#8A8A8A', swatch: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #3a3530 60%, #1a1a2e 100%)', link: '/stones/natural-granite', images: [
-    { src: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1600&auto=format&fit=crop', label: 'Black Galaxy Granite — Modern Kitchen' },
-    { src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop', label: 'White Ice Granite — Open Layout' },
-    { src: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1600&auto=format&fit=crop', label: 'Leathered Granite — Rustic Kitchen' },
-    { src: 'https://images.unsplash.com/photo-1600607687644-c7171b42498f?q=80&w=1600&auto=format&fit=crop', label: 'Santa Cecilia Granite — Traditional' },
+    { src: '/materials/insp/gr-black-galaxy.webp', label: 'Black Galaxy — Modern Kitchen' },
+    { src: '/materials/insp/gr-white-ice.webp', label: 'White Ice — Open Layout' },
+    { src: '/materials/insp/gr-leathered-rustic.webp', label: 'Leathered Granite — Rustic Kitchen' },
+    { src: '/materials/insp/gr-santa-cecilia.webp', label: 'Santa Cecilia — Traditional' },
   ]},
   { name: 'Marble', accent: '#D4BA8A', swatch: 'linear-gradient(135deg, #faf6f0 0%, #e8dfd0 30%, #c5a96e 50%, #faf6f0 70%)', link: '/stones/marble', images: [
-    { src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop', label: 'Calacatta Gold — Luxury Kitchen' },
-    { src: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=1600&auto=format&fit=crop', label: 'Carrara White — Master Bath' },
-    { src: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?q=80&w=1600&auto=format&fit=crop', label: 'Statuario — Spa Bathroom' },
-    { src: 'https://images.unsplash.com/photo-1600573472556-e636c2acda9e?q=80&w=1600&auto=format&fit=crop', label: 'Emperador Dark — Bar Top' },
+    { src: '/materials/insp/mar-calacatta-luxury.webp', label: 'Calacatta Gold — Luxury Kitchen' },
+    { src: '/materials/insp/mar-carrara-bath.webp', label: 'Carrara White — Master Bath' },
+    { src: '/materials/insp/mar-statuario-spa.webp', label: 'Statuario — Spa Bathroom' },
+    { src: '/materials/insp/mar-emperador-bar.webp', label: 'Emperador Dark — Home Bar' },
   ]},
   { name: 'Quartzite', accent: '#B87333', swatch: 'linear-gradient(135deg, #f5efe5 0%, #e2d5c0 30%, #c8b79a 50%, #f5efe5 100%)', link: '/stones/quartzite', images: [
-    { src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop', label: 'Taj Mahal Quartzite — Open Kitchen' },
-    { src: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=1600&auto=format&fit=crop', label: 'Super White Quartzite — Minimal Kitchen' },
-    { src: 'https://images.unsplash.com/photo-1600607687644-c7171b42498f?q=80&w=1600&auto=format&fit=crop', label: 'Fusion Quartzite — Statement Island' },
-    { src: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1600&auto=format&fit=crop', label: 'Taj Mahal Quartzite — Breakfast Bar' },
+    { src: '/materials/insp/qt-taj-mahal-kitchen.webp', label: 'Taj Mahal — Open Kitchen' },
+    { src: '/materials/insp/qt-super-white-minimal.webp', label: 'Super White — Minimalist Kitchen' },
+    { src: '/materials/insp/qt-fusion-statement.webp', label: 'Fusion Wow — Statement Island' },
+    { src: '/materials/insp/qt-taj-breakfast-bar.webp', label: 'Taj Mahal — Breakfast Bar' },
   ]},
   { name: 'Porcelain', accent: '#8A8A8A', swatch: 'linear-gradient(135deg, #a09890 0%, #8c8480 40%, #787070 60%, #a09890 100%)', link: '/stones/porcelain', images: [
-    { src: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1600&auto=format&fit=crop', label: 'Concrete Porcelain — Modern Kitchen' },
-    { src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop', label: 'Marble-Look Porcelain — Kitchen' },
-    { src: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=1600&auto=format&fit=crop', label: 'Porcelain — Bathroom Counter' },
-    { src: 'https://images.unsplash.com/photo-1600210492493-0946911123ea?q=80&w=1600&auto=format&fit=crop', label: 'Porcelain — Outdoor Kitchen' },
+    { src: '/materials/insp/pc-concrete-modern.webp', label: 'Concrete-Look Porcelain — Modern Kitchen' },
+    { src: '/materials/insp/pc-marble-look.webp', label: 'Marble-Look Porcelain — Kitchen' },
+    { src: '/materials/insp/pc-bath-counter.webp', label: 'Porcelain — Powder Room' },
+    { src: '/materials/insp/pc-outdoor-kitchen.webp', label: 'Porcelain — Outdoor Kitchen' },
   ]},
   { name: 'Soapstone', accent: '#8A8A8A', swatch: 'linear-gradient(135deg, #5a5a5a 0%, #4a4a4a 40%, #3a3a3a 60%, #5a5a5a 100%)', link: '/stones/soapstone-onyx', images: [
-    { src: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1600&auto=format&fit=crop', label: 'Classic Soapstone — Farmhouse Kitchen' },
-    { src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop', label: 'Backlit Onyx — Luxury Bar' },
-    { src: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?q=80&w=1600&auto=format&fit=crop', label: 'Soapstone — Bathroom Vanity' },
-    { src: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1600&auto=format&fit=crop', label: 'Onyx — Reception Desk' },
+    { src: '/materials/insp/ss-classic-farmhouse.webp', label: 'Classic Soapstone — Farmhouse Kitchen' },
+    { src: '/materials/insp/ss-backlit-onyx-bar.webp', label: 'Backlit Onyx — Home Bar' },
+    { src: '/materials/insp/ss-soapstone-vanity.webp', label: 'Soapstone — Guest Bathroom' },
+    { src: '/materials/insp/ss-onyx-reception.webp', label: 'Backlit Onyx — Reception Desk' },
   ]},
 ];
 
