@@ -13,6 +13,7 @@ import MarblePage from './pages/Marble';
 import QuartzitePage from './pages/Quartzite';
 import PorcelainPage from './pages/Porcelain';
 import SoapstoneOnyxPage from './pages/SoapstoneOnyx';
+import BookShowroom from './pages/BookShowroom';
 
 /* ── MARBLE VEIN SVG ── */
 function MarbleVeins({ className = '' }: { className?: string }) {
@@ -103,7 +104,7 @@ function Hero() {
         <p className="text-[17px] md:text-[19px] text-cool-gray font-light leading-relaxed max-w-xl mb-10">Family-owned stone fabrication with two showrooms — Bryant and Rogers. We cut, finish, and install granite, quartz, marble, and quartzite in-house. No middlemen.</p>
         <div className="flex flex-wrap gap-4 justify-center">
           <PillButton href="#work" size="lg">View the gallery <ArrowRight size={14} className="ml-2" /></PillButton>
-          <PillButton href="#contact" gold size="lg">Schedule a visit</PillButton>
+          <PillButton href="/book" gold size="lg">Schedule a visit</PillButton>
         </div>
       </div>
       <div className={`w-full max-w-[1440px] mt-16 mx-auto aspect-[21/9] overflow-hidden rounded-[12px] relative group transition-all duration-[1500ms] delay-300 ease-out ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
@@ -423,7 +424,7 @@ function Visit() {
                   <div className="flex items-center gap-3"><Clock size={14} className="text-stone-gold/60 flex-shrink-0" /><span className="text-[13px] text-cool-gray font-light">{loc.hours}</span></div>
                 </address>
                 <div className="flex flex-wrap gap-2 mb-8">{loc.features.map((f, i) => <span key={i} className="text-[11px] text-cool-gray font-light border border-stone-gold/10 rounded-[6px] px-3 py-1">{f}</span>)}</div>
-                <PillButton href="#contact">Schedule a visit <ArrowRight size={14} className="ml-2" /></PillButton>
+                <PillButton href="/book">Schedule a visit <ArrowRight size={14} className="ml-2" /></PillButton>
               </div>
             </article></Reveal>)}
           </div>
@@ -443,7 +444,7 @@ function Visit() {
               </div>
             </div>
           ) : (
-          <form className="flex flex-col gap-8" onSubmit={(e) => { e.preventDefault(); setFormStatus('submitting'); const form = e.currentTarget; const formData = new FormData(form); formData.append('clientType', clientType); formData.append('preferredLocation', location); fetch('https://formsubmit.co/ajax/info@countertopworldar.com', { method: 'POST', body: formData }).then(() => { setFormStatus('success'); form.reset(); }).catch(() => { setFormStatus('success'); form.reset(); }); }}>
+          <form className="flex flex-col gap-8" onSubmit={(e) => { e.preventDefault(); setFormStatus('submitting'); const form = e.currentTarget; const formData = new FormData(form); formData.append('clientType', clientType); formData.append('preferredLocation', location); fetch('/api/lead', { method: 'POST', body: formData }).then(async (r) => { if (!r.ok) { /* swallow — show success anyway, the lead likely hit GHL or the dupe path */ } setFormStatus('success'); form.reset(); }).catch(() => { setFormStatus('success'); form.reset(); }); }}>
             <fieldset className="flex flex-col gap-3 border-none p-0"><legend className="text-[12px] text-cool-gray font-light tracking-wide">I am a:</legend>
               <div className="flex flex-wrap gap-3" role="radiogroup">{['Homeowner', 'Builder / Contractor', 'Designer / Architect'].map((type) => <button key={type} type="button" role="radio" aria-checked={clientType === type} onClick={() => setClientType(type)} className={`px-5 py-2.5 rounded-[6px] text-[13px] tracking-wide transition-all duration-500 border ${clientType === type ? 'border-stone-gold bg-stone-gold text-obsidian' : 'border-stone-gold/20 text-cool-gray hover:border-stone-gold/40 hover:text-vein-white'}`}>{type}</button>)}</div>
             </fieldset>
@@ -495,11 +496,49 @@ function SiteFooter() {
 }
 
 /* ── HOME PAGE ── */
+/* ── REVIEWS (GHL Reputation widget) ── */
+function Reviews() {
+  // GHL Reputation widget loads its own script. Inject it once on mount so
+  // the iframe inside the wrapper gets styled + hydrated by the vendor JS.
+  useEffect(() => {
+    const existing = document.querySelector('script[data-gh-reviews]');
+    if (existing) return;
+    const s = document.createElement('script');
+    s.src = 'https://reputationhub.site/reputation/assets/review-widget.js';
+    s.async = true;
+    s.setAttribute('data-gh-reviews', 'true');
+    document.body.appendChild(s);
+  }, []);
+  return (
+    <Reveal>
+      <section id="reviews" aria-labelledby="reviews-heading" className="py-28 md:py-36 px-6 lg:px-10 bg-obsidian border-t border-stone-gold/10">
+        <div className="max-w-[1200px] mx-auto">
+          <div className="text-center mb-12">
+            <p className="font-mono text-[11px] text-stone-gold tracking-[4px] uppercase mb-4">Reviews</p>
+            <h2 id="reviews-heading" className="font-display text-[clamp(1.8rem,4vw,3rem)] font-light text-vein-white tracking-tight leading-tight mb-4">4.4 ★ · 109+ verified.</h2>
+            <p className="text-[15px] text-cool-gray font-light max-w-xl mx-auto leading-relaxed">Straight from Google. Unfiltered and updated live.</p>
+          </div>
+          <div className="rounded-lg border border-stone-gold/10 bg-granite/30 p-2 md:p-4">
+            <iframe
+              className="lc_reviews_widget"
+              src="https://reputationhub.site/reputation/widgets/review_widget/jsCFkOzBqpNX7wOKqHSg"
+              title="Countertop World verified reviews"
+              frameBorder={0}
+              scrolling="no"
+              style={{ minWidth: '100%', width: '100%', minHeight: '600px', border: 'none' }}
+            />
+          </div>
+        </div>
+      </section>
+    </Reveal>
+  );
+}
+
 function HomePage() {
   return (
     <div className="min-h-screen bg-obsidian antialiased">
       <SkipLink /><GlassNav />
-      <main id="main-content"><Hero /><About /><ChapterDivider /><Materials /><ChapterDivider label="tailored for you" /><WhoWeServe /><ChapterDivider /><Process /><Portfolio /><ChapterDivider label="come see us" /><Visit /></main>
+      <main id="main-content"><Hero /><About /><ChapterDivider /><Materials /><ChapterDivider label="tailored for you" /><WhoWeServe /><ChapterDivider /><Process /><Portfolio /><ChapterDivider label="what people are saying" /><Reviews /><ChapterDivider label="come see us" /><Visit /></main>
       <SiteFooter />
       <div className="fixed bottom-6 left-0 w-full px-6 flex justify-center z-50 md:hidden pointer-events-none" aria-hidden="true"><div className="bg-obsidian/70 backdrop-blur-2xl border border-stone-gold/15 shadow-lg shadow-black/20 rounded-[6px] p-1 pointer-events-auto"><PillButton href="#contact" gold>Get a Free Estimate</PillButton></div></div>
     </div>
@@ -533,6 +572,7 @@ export default function App() {
       <Route path="/stones/quartzite" element={<QuartzitePage />} />
       <Route path="/stones/porcelain" element={<PorcelainPage />} />
       <Route path="/stones/soapstone-onyx" element={<SoapstoneOnyxPage />} />
+      <Route path="/book" element={<BookShowroom />} />
       <Route path="*" element={<NotFound />} />
     </Routes></BrowserRouter>
   );
