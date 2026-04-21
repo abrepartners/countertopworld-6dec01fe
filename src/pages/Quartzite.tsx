@@ -65,22 +65,13 @@ const data: StonePageData = {
     ],
     varieties: [
       { name: 'Taj Mahal', swatch: 'linear-gradient(135deg, #f5efe5 0%, #e2d5c0 30%, #c8b79a 50%, #f5efe5 100%)', images: [
-        { src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop', alt: 'Taj Mahal quartzite open kitchen', caption: 'Taj Mahal quartzite open kitchen' },
-        { src: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=800&auto=format&fit=crop', alt: 'Taj Mahal quartzite bath', caption: 'Taj Mahal quartzite bath' },
-        { src: 'https://images.unsplash.com/photo-1600585154526-990dced4ea0d?q=80&w=800&auto=format&fit=crop', alt: 'Taj Mahal waterfall edge', caption: 'Taj Mahal waterfall edge' },
-        { src: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=800&auto=format&fit=crop', alt: 'Taj Mahal quartzite island', caption: 'Taj Mahal quartzite island' },
+        { src: '/materials/quartzite.webp', alt: 'Taj Mahal quartzite slab detail with soft taupe and amber movement', caption: 'Taj Mahal — creamy with soft amber movement' },
       ]},
       { name: 'Super White', swatch: 'linear-gradient(135deg, #faf8f4 0%, #ece8e0 30%, #d8d2c8 50%, #faf8f4 100%)', images: [
-        { src: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=800&auto=format&fit=crop', alt: 'Super White quartzite minimal kitchen', caption: 'Super White quartzite minimal kitchen' },
-        { src: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?q=80&w=800&auto=format&fit=crop', alt: 'Super White quartzite bathroom', caption: 'Super White quartzite bathroom' },
-        { src: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=800&auto=format&fit=crop', alt: 'Super White waterfall counter', caption: 'Super White waterfall counter' },
-        { src: 'https://images.unsplash.com/photo-1600210492493-0946911123ea?q=80&w=800&auto=format&fit=crop', alt: 'Super White quartzite laundry', caption: 'Super White quartzite laundry' },
+        { src: '/materials/var-quartzite-super-white.webp', alt: 'Super White quartzite slab detail, pristine bright white with cool gray striations', caption: 'Super White — pristine, refined, minimalist' },
       ]},
       { name: 'Fusion Wow', swatch: 'linear-gradient(135deg, #d4c4a8 0%, #a08060 30%, #6b4e38 50%, #d4c4a8 70%, #8a6b50 100%)', images: [
-        { src: 'https://images.unsplash.com/photo-1600607687644-c7171b42498f?q=80&w=800&auto=format&fit=crop', alt: 'Fusion quartzite statement kitchen', caption: 'Fusion quartzite statement kitchen' },
-        { src: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?q=80&w=800&auto=format&fit=crop', alt: 'Exotic quartzite vanity', caption: 'Exotic quartzite vanity' },
-        { src: 'https://images.unsplash.com/photo-1600585154526-990dced4ea0d?q=80&w=800&auto=format&fit=crop', alt: 'Fusion quartzite waterfall', caption: 'Fusion quartzite waterfall' },
-        { src: 'https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?q=80&w=800&auto=format&fit=crop', alt: 'Fusion quartzite accent feature', caption: 'Fusion quartzite accent feature' },
+        { src: '/materials/var-quartzite-fusion.webp', alt: 'Fusion Wow exotic quartzite slab detail with dramatic earth-tone veining', caption: 'Fusion Wow — dramatic earth-tone statement' },
       ]},
     ],
   },

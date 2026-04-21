@@ -65,28 +65,16 @@ const data: StonePageData = {
     ],
     varieties: [
       { name: 'Calacatta Gold', swatch: 'linear-gradient(135deg, #faf6f0 0%, #e8dfd0 30%, #c5a96e 50%, #faf6f0 70%)', images: [
-        { src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop', alt: 'Calacatta Gold marble luxury kitchen', caption: 'Calacatta Gold marble luxury kitchen' },
-        { src: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=800&auto=format&fit=crop', alt: 'Calacatta marble master bath', caption: 'Calacatta marble master bath' },
-        { src: 'https://images.unsplash.com/photo-1600585154526-990dced4ea0d?q=80&w=800&auto=format&fit=crop', alt: 'Gold-veined marble waterfall', caption: 'Gold-veined marble waterfall' },
-        { src: 'https://images.unsplash.com/photo-1600573472556-e636c2acda9e?q=80&w=800&auto=format&fit=crop', alt: 'Calacatta Gold marble entryway', caption: 'Calacatta Gold marble entryway' },
+        { src: '/materials/marble.webp', alt: 'Calacatta Gold marble slab detail with dramatic gold veining', caption: 'Calacatta Gold — dramatic gold veining on warm-white' },
       ]},
       { name: 'Carrara White', swatch: 'linear-gradient(135deg, #f0ece6 0%, #ddd8d0 30%, #b8b0a4 50%, #f0ece6 100%)', images: [
-        { src: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=800&auto=format&fit=crop', alt: 'Carrara marble classic kitchen', caption: 'Carrara marble classic kitchen' },
-        { src: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?q=80&w=800&auto=format&fit=crop', alt: 'Carrara marble bathroom vanity', caption: 'Carrara marble bathroom vanity' },
-        { src: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=800&auto=format&fit=crop', alt: 'Carrara waterfall counter', caption: 'Carrara waterfall counter' },
-        { src: 'https://images.unsplash.com/photo-1600210492493-0946911123ea?q=80&w=800&auto=format&fit=crop', alt: 'Carrara marble fireplace', caption: 'Carrara marble fireplace' },
+        { src: '/materials/var-marble-carrara.webp', alt: 'Carrara White marble slab detail with soft feathery gray veining', caption: 'Carrara White — soft feathery gray on cool white' },
       ]},
       { name: 'Statuario', swatch: 'linear-gradient(135deg, #fefcf8 0%, #eae4da 25%, #524a3e 45%, #fefcf8 65%, #d6cfc2 100%)', images: [
-        { src: 'https://images.unsplash.com/photo-1600607687644-c7171b42498f?q=80&w=800&auto=format&fit=crop', alt: "Statuario marble chef's kitchen", caption: "Statuario marble chef's kitchen" },
-        { src: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?q=80&w=800&auto=format&fit=crop', alt: 'Statuario marble spa bath', caption: 'Statuario marble spa bath' },
-        { src: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=800&auto=format&fit=crop', alt: 'Statuario marble island', caption: 'Statuario marble island' },
-        { src: 'https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?q=80&w=800&auto=format&fit=crop', alt: 'Statuario accent wall', caption: 'Statuario accent wall' },
+        { src: '/materials/var-marble-statuario.webp', alt: 'Statuario marble slab detail with bold black veining on brilliant white', caption: 'Statuario — bold black veining, high contrast' },
       ]},
       { name: 'Emperador Dark', swatch: 'linear-gradient(135deg, #4a3728 0%, #5c4636 40%, #3b2a1c 60%, #4a3728 100%)', images: [
-        { src: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=800&auto=format&fit=crop', alt: 'Emperador marble dramatic kitchen', caption: 'Emperador marble dramatic kitchen' },
-        { src: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=800&auto=format&fit=crop', alt: 'Dark marble powder room', caption: 'Dark marble powder room' },
-        { src: 'https://images.unsplash.com/photo-1600585154526-990dced4ea0d?q=80&w=800&auto=format&fit=crop', alt: 'Emperador marble bar top', caption: 'Emperador marble bar top' },
-        { src: 'https://images.unsplash.com/photo-1600573472556-e636c2acda9e?q=80&w=800&auto=format&fit=crop', alt: 'Dark marble hallway console', caption: 'Dark marble hallway console' },
+        { src: '/materials/var-marble-emperador.webp', alt: 'Emperador Dark marble slab detail with warm cream veining on deep brown', caption: 'Emperador Dark — cream veining on chocolate brown' },
       ]},
     ],
   },

@@ -64,22 +64,13 @@ const data: StonePageData = {
     ],
     varieties: [
       { name: 'Marble Look', swatch: 'linear-gradient(135deg, #f8f5ef 0%, #e8e0d4 30%, #bfb5a5 50%, #f8f5ef 100%)', images: [
-        { src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop', alt: 'Marble-look porcelain kitchen', caption: 'Marble-look porcelain kitchen' },
-        { src: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=800&auto=format&fit=crop', alt: 'Porcelain marble bath counter', caption: 'Porcelain marble bath counter' },
-        { src: 'https://images.unsplash.com/photo-1600585154526-990dced4ea0d?q=80&w=800&auto=format&fit=crop', alt: 'Marble-look porcelain waterfall', caption: 'Marble-look porcelain waterfall' },
-        { src: 'https://images.unsplash.com/photo-1600573472556-e636c2acda9e?q=80&w=800&auto=format&fit=crop', alt: 'Porcelain outdoor kitchen', caption: 'Porcelain outdoor kitchen' },
+        { src: '/materials/var-porcelain-marble-look.webp', alt: 'Marble-look porcelain slab detail with refined gray veining, matte finish', caption: 'Marble Look — honed porcelain mimicking Calacatta' },
       ]},
       { name: 'Concrete Effect', swatch: 'linear-gradient(135deg, #a09890 0%, #8c8480 40%, #787070 60%, #a09890 100%)', images: [
-        { src: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=800&auto=format&fit=crop', alt: 'Concrete porcelain modern kitchen', caption: 'Concrete porcelain modern kitchen' },
-        { src: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?q=80&w=800&auto=format&fit=crop', alt: 'Industrial porcelain vanity', caption: 'Industrial porcelain vanity' },
-        { src: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?q=80&w=800&auto=format&fit=crop', alt: 'Concrete porcelain island', caption: 'Concrete porcelain island' },
-        { src: 'https://images.unsplash.com/photo-1600210492493-0946911123ea?q=80&w=800&auto=format&fit=crop', alt: 'Concrete porcelain bar area', caption: 'Concrete porcelain bar area' },
+        { src: '/materials/porcelain.webp', alt: 'Concrete-look matte porcelain slab detail with subtle directional texture', caption: 'Concrete Effect — matte honed, architectural' },
       ]},
       { name: 'Natural Stone Look', swatch: 'linear-gradient(135deg, #e0d8cc 0%, #c8bfb0 30%, #a89880 50%, #e0d8cc 100%)', images: [
-        { src: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=800&auto=format&fit=crop', alt: 'Stone-look porcelain kitchen', caption: 'Stone-look porcelain kitchen' },
-        { src: 'https://images.unsplash.com/photo-1600607687644-c7171b42498f?q=80&w=800&auto=format&fit=crop', alt: 'Porcelain natural stone bath', caption: 'Porcelain natural stone bath' },
-        { src: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=800&auto=format&fit=crop', alt: 'Natural porcelain countertop', caption: 'Natural porcelain countertop' },
-        { src: 'https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?q=80&w=800&auto=format&fit=crop', alt: 'Porcelain patio counter', caption: 'Porcelain patio counter' },
+        { src: '/materials/var-porcelain-natural-stone.webp', alt: 'Natural-stone-look porcelain slab detail with warm cream and beige tones', caption: 'Natural Stone Look — warm cream, grounded' },
       ]},
     ],
   },

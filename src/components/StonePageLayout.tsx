@@ -101,11 +101,11 @@ function VarietySelector({ varieties }: { varieties: StoneVariety[] }) {
           </button>
         ))}
       </div>
-      <h3 className="font-display text-[20px] font-medium text-vein-white mt-8 mb-3">See It In Your Space</h3>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <h3 className="font-display text-[20px] font-medium text-vein-white mt-8 mb-3">Up Close</h3>
+      <div className="grid grid-cols-1 gap-4">
         {v.images.map((img, idx) => (
           <figure key={`${active}-${idx}`} className="rounded-[12px] overflow-hidden aspect-[4/3] relative group border border-stone-gold/10" style={{ animation: 'fadeIn 0.5s ease forwards', animationDelay: `${idx * 0.1}s`, opacity: 0 }}>
-            <img src={img.src} alt={img.alt} loading="lazy" className="w-full h-full object-cover brightness-[0.85] group-hover:scale-[1.04] transition-transform duration-600" />
+            <img src={img.src} alt={img.alt} loading="lazy" className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-[1200ms] ease-out" />
             <figcaption className="absolute bottom-0 inset-x-0 px-3.5 py-2.5 bg-gradient-to-t from-black/70 to-transparent text-vein-white text-[12px] font-light tracking-wide">{img.caption}</figcaption>
           </figure>
         ))}

@@ -52,22 +52,13 @@ const data: StonePageData = {
     ],
     varieties: [
       { name: 'Classic Soapstone', swatch: 'linear-gradient(135deg, #5a5a5a 0%, #4a4a4a 40%, #3a3a3a 60%, #5a5a5a 100%)', images: [
-        { src: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=800&auto=format&fit=crop', alt: 'Classic soapstone farmhouse kitchen', caption: 'Classic soapstone farmhouse kitchen' },
-        { src: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?q=80&w=800&auto=format&fit=crop', alt: 'Soapstone bathroom vanity', caption: 'Soapstone bathroom vanity' },
-        { src: 'https://images.unsplash.com/photo-1600585154526-990dced4ea0d?q=80&w=800&auto=format&fit=crop', alt: 'Soapstone waterfall counter', caption: 'Soapstone waterfall counter' },
-        { src: 'https://images.unsplash.com/photo-1600210492493-0946911123ea?q=80&w=800&auto=format&fit=crop', alt: 'Soapstone utility sink', caption: 'Soapstone utility sink' },
+        { src: '/materials/var-soapstone-classic.webp', alt: 'Classic soapstone slab detail, uniform slate-gray with matte velvety finish', caption: 'Classic Soapstone — matte, velvety, soft-touch' },
       ]},
       { name: 'Backlit Onyx', swatch: 'linear-gradient(135deg, #e8d8b8 0%, #c9a86c 30%, #f0e0c0 50%, #8b6914 70%, #e8d8b8 100%)', images: [
-        { src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop', alt: 'Backlit onyx luxury bar', caption: 'Backlit onyx luxury bar' },
-        { src: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=800&auto=format&fit=crop', alt: 'Illuminated onyx powder room', caption: 'Illuminated onyx powder room' },
-        { src: 'https://images.unsplash.com/photo-1600607687644-c7171b42498f?q=80&w=800&auto=format&fit=crop', alt: 'Onyx accent wall', caption: 'Onyx accent wall' },
-        { src: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=800&auto=format&fit=crop', alt: 'Backlit onyx reception desk', caption: 'Backlit onyx reception desk' },
+        { src: '/materials/onyx.webp', alt: 'Backlit onyx slab detail with translucent amber glow and natural layered banding', caption: 'Backlit Onyx — translucent, glowing, dramatic' },
       ]},
       { name: 'Green Soapstone', swatch: 'linear-gradient(135deg, #5a6b5a 0%, #4a5b4a 40%, #3a4b3a 60%, #5a6b5a 100%)', images: [
-        { src: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=800&auto=format&fit=crop', alt: 'Green soapstone rustic kitchen', caption: 'Green soapstone rustic kitchen' },
-        { src: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?q=80&w=800&auto=format&fit=crop', alt: 'Green soapstone bathroom', caption: 'Green soapstone bathroom' },
-        { src: 'https://images.unsplash.com/photo-1600585154526-990dced4ea0d?q=80&w=800&auto=format&fit=crop', alt: 'Green soapstone apron sink', caption: 'Green soapstone apron sink' },
-        { src: 'https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?q=80&w=800&auto=format&fit=crop', alt: 'Green soapstone mudroom', caption: 'Green soapstone mudroom' },
+        { src: '/materials/var-soapstone-green.webp', alt: 'Green soapstone slab detail, sage and muted forest tones with natural patina', caption: 'Green Soapstone — sage tones, rustic and grounded' },
       ]},
     ],
   },

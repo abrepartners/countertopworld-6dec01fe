@@ -68,28 +68,16 @@ const data: StonePageData = {
     ],
     varieties: [
       { name: 'Calacatta Look', swatch: 'linear-gradient(135deg, #f5f0ea 0%, #e8ddd0 40%, #c9bfb0 60%, #f5f0ea 100%)', images: [
-        { src: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=800&auto=format&fit=crop', alt: 'Calacatta quartz kitchen island', caption: 'Calacatta quartz kitchen island' },
-        { src: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=800&auto=format&fit=crop', alt: 'Calacatta quartz bathroom vanity', caption: 'Calacatta quartz bathroom vanity' },
-        { src: 'https://images.unsplash.com/photo-1600585154526-990dced4ea0d?q=80&w=800&auto=format&fit=crop', alt: 'Calacatta waterfall edge detail', caption: 'Calacatta waterfall edge detail' },
-        { src: 'https://images.unsplash.com/photo-1600573472556-e636c2acda9e?q=80&w=800&auto=format&fit=crop', alt: 'Calacatta quartz backsplash', caption: 'Calacatta quartz backsplash' },
+        { src: '/materials/engineered-quartz.webp', alt: 'Calacatta-style engineered quartz slab detail with refined gray veining', caption: 'Calacatta Look — refined gray veining on warm-white' },
       ]},
       { name: 'Concrete Gray', swatch: 'linear-gradient(135deg, #9e9e9e 0%, #b0b0b0 40%, #888 60%, #a5a5a5 100%)', images: [
-        { src: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=800&auto=format&fit=crop', alt: 'Concrete gray quartz modern kitchen', caption: 'Concrete gray quartz modern kitchen' },
-        { src: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?q=80&w=800&auto=format&fit=crop', alt: 'Industrial gray quartz vanity', caption: 'Industrial gray quartz vanity' },
-        { src: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?q=80&w=800&auto=format&fit=crop', alt: 'Gray quartz waterfall counter', caption: 'Gray quartz waterfall counter' },
-        { src: 'https://images.unsplash.com/photo-1600210492493-0946911123ea?q=80&w=800&auto=format&fit=crop', alt: 'Concrete quartz laundry room', caption: 'Concrete quartz laundry room' },
+        { src: '/materials/var-eq-concrete-gray.webp', alt: 'Concrete gray engineered quartz slab detail, matte honed finish', caption: 'Concrete Gray — matte honed, architectural' },
       ]},
       { name: 'Solid White', swatch: 'linear-gradient(135deg, #fff 0%, #f8f8f8 40%, #f0eded 60%, #fff 100%)', images: [
-        { src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop', alt: 'Pure white quartz open kitchen', caption: 'Pure white quartz open kitchen' },
-        { src: 'https://images.unsplash.com/photo-1600573472556-e636c2acda9e?q=80&w=800&auto=format&fit=crop', alt: 'White quartz bathroom', caption: 'White quartz bathroom' },
-        { src: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=800&auto=format&fit=crop', alt: 'White quartz minimalist counter', caption: 'White quartz minimalist counter' },
-        { src: 'https://images.unsplash.com/photo-1600607687644-c7171b42498f?q=80&w=800&auto=format&fit=crop', alt: "White quartz butler's pantry", caption: "White quartz butler's pantry" },
+        { src: '/materials/var-eq-solid-white.webp', alt: 'Solid white engineered quartz slab detail, pristine uniform surface', caption: 'Solid White — minimal, clean, timeless' },
       ]},
       { name: 'Bold Veining', swatch: 'linear-gradient(135deg, #f0ebe4 0%, #d4c9ba 30%, #3a3530 50%, #f0ebe4 70%, #c4b9aa 100%)', images: [
-        { src: 'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?q=80&w=800&auto=format&fit=crop', alt: 'Dramatic veined quartz island', caption: 'Dramatic veined quartz island' },
-        { src: 'https://images.unsplash.com/photo-1600585154526-990dced4ea0d?q=80&w=800&auto=format&fit=crop', alt: 'Veined quartz spa bathroom', caption: 'Veined quartz spa bathroom' },
-        { src: 'https://images.unsplash.com/photo-1600607688969-a5bfcd646154?q=80&w=800&auto=format&fit=crop', alt: 'Bold vein waterfall detail', caption: 'Bold vein waterfall detail' },
-        { src: 'https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?q=80&w=800&auto=format&fit=crop', alt: 'Veined quartz fireplace surround', caption: 'Veined quartz fireplace surround' },
+        { src: '/materials/var-eq-bold-veining.webp', alt: 'Bold-vein engineered quartz slab detail with thick black veining on white', caption: 'Bold Veining — dramatic black rivers on white' },
       ]},
     ],
   },

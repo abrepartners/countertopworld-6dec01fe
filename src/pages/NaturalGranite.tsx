@@ -63,22 +63,13 @@ const data: StonePageData = {
     ],
     varieties: [
       { name: 'Black Galaxy', swatch: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #0f0f23 60%, #1a1a2e 100%)', images: [
-        { src: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=800&auto=format&fit=crop', alt: 'Black Galaxy granite kitchen', caption: 'Black Galaxy granite kitchen' },
-        { src: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?q=80&w=800&auto=format&fit=crop', alt: 'Dark granite powder room', caption: 'Dark granite powder room' },
-        { src: 'https://images.unsplash.com/photo-1600585154526-990dced4ea0d?q=80&w=800&auto=format&fit=crop', alt: 'Black granite waterfall edge', caption: 'Black granite waterfall edge' },
-        { src: 'https://images.unsplash.com/photo-1600210492493-0946911123ea?q=80&w=800&auto=format&fit=crop', alt: 'Black granite outdoor kitchen', caption: 'Black granite outdoor kitchen' },
+        { src: '/materials/natural-granite.webp', alt: 'Black Galaxy granite slab detail with metallic gold crystalline flecks', caption: 'Black Galaxy — metallic gold flecks on deep dark' },
       ]},
       { name: 'White Ice', swatch: 'linear-gradient(135deg, #f2efe8 0%, #e0dbd2 30%, #c9c2b6 50%, #eae5dc 100%)', images: [
-        { src: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=800&auto=format&fit=crop', alt: 'White Ice granite bright kitchen', caption: 'White Ice granite bright kitchen' },
-        { src: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=800&auto=format&fit=crop', alt: 'Light granite bathroom', caption: 'Light granite bathroom' },
-        { src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop', alt: 'White granite island countertop', caption: 'White granite island countertop' },
-        { src: 'https://images.unsplash.com/photo-1600573472556-e636c2acda9e?q=80&w=800&auto=format&fit=crop', alt: 'White granite laundry counter', caption: 'White granite laundry counter' },
+        { src: '/materials/var-granite-white-ice.webp', alt: 'White Ice granite slab detail with cool gray speckling and crystalline flecks', caption: 'White Ice — bright with cool gray crystalline flecks' },
       ]},
       { name: 'Santa Cecilia', swatch: 'linear-gradient(135deg, #d4b896 0%, #c4a67a 40%, #a8895e 60%, #d4b896 100%)', images: [
-        { src: 'https://images.unsplash.com/photo-1600607687644-c7171b42498f?q=80&w=800&auto=format&fit=crop', alt: 'Santa Cecilia granite traditional kitchen', caption: 'Santa Cecilia granite traditional kitchen' },
-        { src: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?q=80&w=800&auto=format&fit=crop', alt: 'Warm granite vanity top', caption: 'Warm granite vanity top' },
-        { src: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=800&auto=format&fit=crop', alt: 'Santa Cecilia granite breakfast bar', caption: 'Santa Cecilia granite breakfast bar' },
-        { src: 'https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?q=80&w=800&auto=format&fit=crop', alt: 'Gold granite accent wall', caption: 'Gold granite accent wall' },
+        { src: '/materials/var-granite-santa-cecilia.webp', alt: 'Santa Cecilia granite slab detail with warm golden base and dark mineral flecks', caption: 'Santa Cecilia — warm golden-amber with dark flecks' },
       ]},
     ],
   },
