@@ -544,6 +544,62 @@ function Reviews() {
   );
 }
 
+/* ── CREDENTIALS & FINANCING ── */
+const credentials = [
+  { src: '/credentials/ays-best-2025.webp',           alt: "AY's Best of 2025 Winner",         label: "AY's Best 2025" },
+  { src: '/credentials/bbb.webp',                      alt: 'BBB A+ Accredited',                 label: 'BBB A+' },
+  { src: '/credentials/natural-stone-institute.webp',  alt: 'Natural Stone Institute member',    label: 'NSI Member' },
+  { src: '/credentials/stone-fabricators-alliance.webp', alt: 'Stone Fabricators Alliance member', label: 'SFA Member' },
+  { src: '/credentials/isfa.webp',                     alt: 'International Surface Fabricators Association member', label: 'ISFA Member' },
+  { src: '/credentials/rockheads.webp',                alt: 'Rockheads Group member',            label: 'Rockheads' },
+  { src: '/credentials/lr-hba.webp',                   alt: 'Home Builders Association of Greater Little Rock member', label: 'HBA Little Rock' },
+  { src: '/credentials/nwa-hba.webp',                  alt: 'NWA Home Builders Association member', label: 'NWA HBA' },
+];
+
+function Credentials() {
+  return (
+    <Reveal>
+      <section id="credentials" aria-labelledby="credentials-heading" className="py-24 md:py-32 px-6 lg:px-10 bg-obsidian border-t border-stone-gold/10">
+        <div className="max-w-[1200px] mx-auto">
+          <div className="text-center mb-12">
+            <p className="font-mono text-[11px] text-stone-gold tracking-[4px] uppercase mb-4">Recognized</p>
+            <h2 id="credentials-heading" className="font-display text-[clamp(1.8rem,4vw,3rem)] font-light text-vein-white tracking-tight leading-tight mb-4">Vetted by the people who know stone.</h2>
+            <p className="text-[15px] text-cool-gray font-light max-w-xl mx-auto leading-relaxed">Award recognition and industry memberships that take years to earn.</p>
+          </div>
+          <ul className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-8 gap-6 md:gap-8 items-center justify-items-center" role="list">
+            {credentials.map((c) => (
+              <li key={c.alt} className="group relative" role="listitem">
+                <img src={c.src} alt={c.alt} loading="lazy" className="w-[100px] h-[100px] md:w-[110px] md:h-[110px] object-contain opacity-70 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500" />
+                <span className="sr-only">{c.label}</span>
+              </li>
+            ))}
+          </ul>
+
+          <div className="mt-20 rounded-[12px] border border-stone-gold/15 bg-granite/40 p-8 md:p-10 flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-10">
+            <div className="flex-1">
+              <p className="font-mono text-[10px] text-stone-gold tracking-[3px] uppercase mb-2">Financing</p>
+              <h3 className="font-display text-[22px] md:text-[26px] text-vein-white font-light tracking-tight leading-snug mb-2">
+                Financing options through Enhancify.
+              </h3>
+              <p className="text-[14px] text-cool-gray font-light leading-relaxed max-w-lg">
+                Check your rate in under a minute. Soft credit pull. Monthly payment plans that fit a kitchen remodel without draining the reno budget.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-3">
+              <a href="https://www.enhancify.com/countertop-world-llc" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 rounded-[6px] text-[13px] font-medium tracking-wide bg-stone-gold text-obsidian hover:bg-stone-gold-light transition-all duration-500">
+                Check your rate <ArrowUpRight size={14} />
+              </a>
+              <a href="https://www.enhancify.com/payment-calculator" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 rounded-[6px] text-[13px] font-medium border border-stone-gold/25 text-cool-gray hover:border-stone-gold/50 hover:text-vein-white transition-all duration-500">
+                Payment calculator <ArrowUpRight size={14} />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </Reveal>
+  );
+}
+
 function HomePage() {
   useEffect(() => {
     // Reset the dynamic head to homepage defaults when returning from a stone page.
@@ -559,7 +615,7 @@ function HomePage() {
   return (
     <div className="min-h-screen bg-obsidian antialiased">
       <SkipLink /><GlassNav />
-      <main id="main-content"><Hero /><About /><ChapterDivider /><Materials /><ChapterDivider label="tailored for you" /><WhoWeServe /><ChapterDivider /><Process /><Portfolio /><ChapterDivider label="what people are saying" /><Reviews /><ChapterDivider label="come see us" /><Visit /></main>
+      <main id="main-content"><Hero /><About /><ChapterDivider /><Materials /><ChapterDivider label="tailored for you" /><WhoWeServe /><ChapterDivider /><Process /><Portfolio /><ChapterDivider label="what people are saying" /><Reviews /><ChapterDivider label="recognized by" /><Credentials /><ChapterDivider label="come see us" /><Visit /></main>
       <SiteFooter />
       <div className="fixed bottom-6 left-0 w-full px-6 flex justify-center z-50 md:hidden pointer-events-none" aria-hidden="true"><div className="bg-obsidian/70 backdrop-blur-2xl border border-stone-gold/15 shadow-lg shadow-black/20 rounded-[6px] p-1 pointer-events-auto"><PillButton href="#contact" gold>Get a Free Estimate</PillButton></div></div>
     </div>
