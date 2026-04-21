@@ -109,7 +109,7 @@ function Hero() {
         </div>
       </div>
       <div className={`w-full max-w-[1440px] mt-16 mx-auto aspect-[21/9] overflow-hidden rounded-[12px] relative group transition-all duration-[1500ms] delay-300 ease-out ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
-        <video autoPlay muted loop playsInline poster="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2560&auto=format&fit=crop" className="w-full h-full object-cover brightness-[0.7] contrast-[1.05]"><source src="https://videos.pexels.com/video-files/6585028/6585028-uhd_2560_1440_30fps.mp4" type="video/mp4" /></video>
+        <video autoPlay muted loop playsInline preload="metadata" poster="/video/cw-hero-poster.webp" className="w-full h-full object-cover brightness-[0.7] contrast-[1.05]"><source src="/video/cw-hero.mp4" type="video/mp4" /></video>
         <div className="absolute inset-0 bg-gradient-to-t from-obsidian/40 via-transparent to-transparent pointer-events-none" />
       </div>
       <div className={`w-full border-t border-stone-gold/15 bg-granite/50 mt-0 transition-all duration-1000 delay-700 ${loaded ? 'opacity-100' : 'opacity-0'}`}>
