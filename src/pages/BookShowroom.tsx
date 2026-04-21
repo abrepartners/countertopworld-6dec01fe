@@ -2,28 +2,43 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, MapPin, Clock } from 'lucide-react';
 
-// Two GoHighLevel calendar widgets — one per showroom. Calendar IDs are
-// pulled from the CW GHL sub-account (calendars "Central Arkansas |
-// Showroom Consultation" and "Rogers (NWA) Showroom Consultation").
+// GoHighLevel calendar widgets. Three options total — Bryant splits into a
+// weekday round-robin and a Saturday-only calendar owned by David, since
+// GHL can't do per-member day restrictions in a single round robin.
+type CalConfig = {
+  id: string;
+  title: string;
+  hours: string;
+  address: string;
+};
+
 const CALENDARS = {
-  bryant: {
+  bryant_weekday: {
     id: '7ITzPxNAzfzVzHoYDm5G',
-    label: 'Bryant · Central Arkansas',
+    title: 'Weekdays · Team Consultation',
+    hours: 'Mon–Fri 8am–5pm',
     address: '26096 Interstate 30, Bryant, AR 72022',
-    hours: 'By appointment — books directly with David',
+  },
+  bryant_saturday: {
+    id: 'lqA2vLmq9ao8E1vPdVt0',
+    title: 'Saturday · With David',
+    hours: 'Sat 9am–1pm',
+    address: '26096 Interstate 30, Bryant, AR 72022',
   },
   rogers: {
     id: 'nr2uPqa8ofKqFcSXjhsN',
-    label: 'Rogers · Northwest Arkansas',
+    title: 'Rogers · With David',
+    hours: 'By appointment',
     address: '1706 Commerce Dr, Rogers, AR 72756',
-    hours: 'By appointment — books directly with David',
   },
-} as const;
+} as const satisfies Record<string, CalConfig>;
 
-type Location = keyof typeof CALENDARS;
+type Location = 'bryant' | 'rogers';
+type BryantSub = 'bryant_weekday' | 'bryant_saturday';
 
 export default function BookShowroom() {
-  const [active, setActive] = useState<Location>('bryant');
+  const [location, setLocation] = useState<Location>('bryant');
+  const [bryantSub, setBryantSub] = useState<BryantSub>('bryant_weekday');
 
   useEffect(() => {
     document.title = 'Book a Showroom Visit — Countertop World';
@@ -37,7 +52,8 @@ export default function BookShowroom() {
     window.scrollTo(0, 0);
   }, []);
 
-  const cal = CALENDARS[active];
+  const activeKey = location === 'bryant' ? bryantSub : 'rogers';
+  const cal = CALENDARS[activeKey];
 
   return (
     <main className="min-h-screen bg-obsidian text-vein-white">
@@ -61,27 +77,59 @@ export default function BookShowroom() {
           </p>
         </header>
 
-        <div className="flex flex-wrap gap-3 mb-8" role="tablist" aria-label="Choose a location">
-          {(Object.keys(CALENDARS) as Location[]).map((key) => {
-            const c = CALENDARS[key];
-            const isActive = active === key;
+        {/* Location tabs */}
+        <div className="flex flex-wrap gap-3 mb-4" role="tablist" aria-label="Choose a location">
+          {([
+            { key: 'bryant', label: 'Bryant · Central Arkansas' },
+            { key: 'rogers', label: 'Rogers · Northwest Arkansas' },
+          ] as const).map((t) => {
+            const isActive = location === t.key;
             return (
               <button
-                key={key}
+                key={t.key}
                 role="tab"
                 aria-selected={isActive}
-                onClick={() => setActive(key)}
+                onClick={() => setLocation(t.key)}
                 className={`px-5 py-2.5 rounded-[6px] text-[13px] tracking-wide transition-all duration-500 border ${
                   isActive
                     ? 'border-stone-gold bg-stone-gold text-obsidian'
                     : 'border-stone-gold/20 text-cool-gray hover:border-stone-gold/40 hover:text-vein-white'
                 }`}
               >
-                {c.label}
+                {t.label}
               </button>
             );
           })}
         </div>
+
+        {/* Bryant day-of-week sub-tabs */}
+        {location === 'bryant' && (
+          <div className="flex flex-wrap gap-2 mb-8" role="tablist" aria-label="Bryant visit type">
+            {([
+              { key: 'bryant_weekday' as const, label: 'Weekday visit' },
+              { key: 'bryant_saturday' as const, label: 'Saturday appointment' },
+            ]).map((t) => {
+              const isActive = bryantSub === t.key;
+              return (
+                <button
+                  key={t.key}
+                  role="tab"
+                  aria-selected={isActive}
+                  onClick={() => setBryantSub(t.key)}
+                  className={`px-4 py-2 rounded-[6px] text-[12px] tracking-wide transition-all duration-500 border ${
+                    isActive
+                      ? 'border-stone-gold/60 bg-stone-gold/10 text-vein-white'
+                      : 'border-stone-gold/15 text-cool-gray hover:border-stone-gold/30 hover:text-vein-white'
+                  }`}
+                >
+                  {t.label}
+                </button>
+              );
+            })}
+          </div>
+        )}
+
+        {location === 'rogers' && <div className="mb-8" />}
 
         <div className="mb-8 flex flex-col sm:flex-row gap-6 text-[13px] text-cool-gray font-light">
           <span className="inline-flex items-center gap-2">
@@ -98,7 +146,7 @@ export default function BookShowroom() {
           <iframe
             key={cal.id}
             src={`https://api.leadconnectorhq.com/widget/booking/${cal.id}`}
-            title={`Book a visit at ${cal.label}`}
+            title={`Book — ${cal.title}`}
             loading="lazy"
             style={{ width: '100%', border: 'none', minHeight: '900px' }}
           />
