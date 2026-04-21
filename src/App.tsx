@@ -5,6 +5,7 @@ import {
   Shield, Gem, Ruler, Home, Hammer, PenTool
 } from 'lucide-react';
 import { useReveal } from './hooks/useReveal';
+import { applyPageHead } from './lib/pageHead';
 import './index.css';
 
 import EngineeredQuartzPage from './pages/EngineeredQuartz';
@@ -535,6 +536,17 @@ function Reviews() {
 }
 
 function HomePage() {
+  useEffect(() => {
+    // Reset the dynamic head to homepage defaults when returning from a stone page.
+    return applyPageHead({
+      title: 'Countertop World — Granite, Quartz & Marble Countertops in Arkansas | Bryant & Rogers',
+      description:
+        'Family-owned stone fabrication in Arkansas. Granite, quartz, marble, and quartzite countertops — cut, finished, and installed in-house. 1,000+ slabs in stock. Showrooms in Bryant and Rogers. Free estimates.',
+      path: '/',
+      ogImage:
+        'https://storage.googleapis.com/gpt-engineer-file-uploads/wQneyghQcNSs2stXUaHo0G5Qhxe2/social-images/social-1772306326393-countertop_world_northwest_arkansas1.webp',
+    });
+  }, []);
   return (
     <div className="min-h-screen bg-obsidian antialiased">
       <SkipLink /><GlassNav />

@@ -1,6 +1,7 @@
 import { useState, useCallback, useRef, useEffect, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, ChevronDown } from 'lucide-react';
+import { applyPageHead } from '../lib/pageHead';
 
 /* ── Types ──────────────────────────────────────────── */
 
@@ -176,9 +177,17 @@ export default function StonePageLayout({ data }: { data: StonePageData }) {
   const tabListRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    document.title = data.metaTitle;
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute('content', data.metaDescription);
+    const cleanupHead = applyPageHead({
+      title: data.metaTitle,
+      description: data.metaDescription,
+      path: `/stones/${data.slug}`,
+      ogImage: data.heroImage,
+      breadcrumbs: [
+        { name: 'Home', path: '/' },
+        { name: 'Materials', path: '/#materials' },
+        { name: data.title, path: `/stones/${data.slug}` },
+      ],
+    });
 
     // Inject FAQ structured data for AEO/SEO
     const existingScript = document.getElementById('faq-schema');
@@ -197,9 +206,11 @@ export default function StonePageLayout({ data }: { data: StonePageData }) {
     });
     document.head.appendChild(script);
 
-    window.scrollTo(0, 0);
-    return () => { script.remove(); };
-  }, [data.metaTitle, data.metaDescription, data.faq]);
+    return () => {
+      cleanupHead();
+      script.remove();
+    };
+  }, [data.metaTitle, data.metaDescription, data.faq, data.slug, data.heroImage, data.title]);
 
   const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
     const keys = tabLabels.map(t => t.key);

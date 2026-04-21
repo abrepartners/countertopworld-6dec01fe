@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, MapPin, Clock } from 'lucide-react';
+import { applyPageHead } from '../lib/pageHead';
 
 // GoHighLevel calendar widgets. Three options total — Bryant splits into a
 // weekday round-robin and a Saturday-only calendar owned by David, since
@@ -41,15 +42,17 @@ export default function BookShowroom() {
   const [bryantSub, setBryantSub] = useState<BryantSub>('bryant_weekday');
 
   useEffect(() => {
-    document.title = 'Book a Showroom Visit — Countertop World';
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) {
-      meta.setAttribute(
-        'content',
+    const cleanup = applyPageHead({
+      title: 'Book a Showroom Visit — Countertop World',
+      description:
         'Schedule a showroom visit at Countertop World in Bryant or Rogers, Arkansas. Pick a time that works — no phone tag.',
-      );
-    }
-    window.scrollTo(0, 0);
+      path: '/book',
+      breadcrumbs: [
+        { name: 'Home', path: '/' },
+        { name: 'Book a Visit', path: '/book' },
+      ],
+    });
+    return cleanup;
   }, []);
 
   const activeKey = location === 'bryant' ? bryantSub : 'rogers';
