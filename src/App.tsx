@@ -247,7 +247,7 @@ const audienceData = {
       { Icon: Star, title: 'One point of contact.', desc: 'You get a dedicated project manager from spec to install. No chasing down updates.' },
     ],
     cta: { text: 'Start a project', href: '#contact' },
-    secondaryCta: { text: 'View portfolio', href: '/#work', external: false },
+    secondaryCta: { text: 'See inspiration', href: '/#work', external: false },
   },
 };
 
