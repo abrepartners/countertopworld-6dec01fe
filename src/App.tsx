@@ -168,12 +168,12 @@ function About() {
 /* ── MATERIALS ── */
 function Materials() {
   const materials = [
-    { name: 'Engineered Quartz', tag: 'Most Popular', desc: 'Non-porous. Low maintenance. Endlessly versatile. All major brands with new shipments weekly.', link: '/stones/engineered-quartz' },
-    { name: 'Natural Granite', tag: 'Timeless', desc: 'Each slab one-of-a-kind. Durable. Heat-resistant. Eternally beautiful. Irreplaceable character.', link: '/stones/natural-granite' },
-    { name: 'Marble', tag: 'Luxury', desc: 'The gold standard of elegance. Dramatic veining and sophisticated palettes that demand attention.', link: '/stones/marble' },
-    { name: 'Quartzite', tag: 'Premium', desc: 'The look of marble with the strength of granite. Beauty without compromise.', link: '/stones/quartzite' },
-    { name: 'Porcelain', tag: 'Modern', desc: 'Ultra-thin. Ultra-durable. Stain-proof. Contemporary precision for kitchens and outdoor spaces.', link: '/stones/porcelain' },
-    { name: 'Soapstone & Onyx', tag: 'Exotic', desc: "Soapstone's velvety warmth. Onyx's translucent drama. Statement pieces. Engineered to last.", link: '/stones/soapstone-onyx' },
+    { name: 'Engineered Quartz', tag: 'Most Popular', desc: 'Non-porous. Low maintenance. Endlessly versatile. All major brands with new shipments weekly.', link: '/stones/engineered-quartz', img: '/materials/engineered-quartz.webp', imgAlt: 'Macro detail of polished engineered quartz slab with subtle gray veining on a warm-white base' },
+    { name: 'Natural Granite', tag: 'Timeless', desc: 'Each slab one-of-a-kind. Durable. Heat-resistant. Eternally beautiful. Irreplaceable character.', link: '/stones/natural-granite', img: '/materials/natural-granite.webp', imgAlt: 'Macro detail of Black Galaxy granite slab with metallic gold crystalline flecks on a deep dark base' },
+    { name: 'Marble', tag: 'Luxury', desc: 'The gold standard of elegance. Dramatic veining and sophisticated palettes that demand attention.', link: '/stones/marble', img: '/materials/marble.webp', imgAlt: 'Macro detail of polished Calacatta Gold marble with bold gold and taupe veining across a warm-white base' },
+    { name: 'Quartzite', tag: 'Premium', desc: 'The look of marble with the strength of granite. Beauty without compromise.', link: '/stones/quartzite', img: '/materials/quartzite.webp', imgAlt: 'Macro detail of Taj Mahal quartzite with soft taupe and amber movement across a creamy off-white base' },
+    { name: 'Porcelain', tag: 'Modern', desc: 'Ultra-thin. Ultra-durable. Stain-proof. Contemporary precision for kitchens and outdoor spaces.', link: '/stones/porcelain', img: '/materials/porcelain.webp', imgAlt: 'Macro detail of matte concrete-look porcelain slab with subtle gray directional texture' },
+    { name: 'Soapstone & Onyx', tag: 'Exotic', desc: "Soapstone's velvety warmth. Onyx's translucent drama. Statement pieces. Engineered to last.", link: '/stones/soapstone-onyx', img: '/materials/onyx.webp', imgAlt: 'Macro detail of backlit onyx slab glowing with translucent amber and honey tones and natural layered banding' },
   ];
   return (
     <Reveal><section id="materials" aria-labelledby="materials-heading" className="py-28 md:py-36 px-6 lg:px-10 bg-obsidian">
@@ -183,11 +183,16 @@ function Materials() {
           <p className="text-[14px] text-cool-gray font-light max-w-sm leading-relaxed">New shipments arrive every week. Come pick your exact slab in person at either showroom.</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[1px] bg-stone-gold/15 rounded-[12px] overflow-hidden">
-          {materials.map((mat, idx) => <Link key={idx} to={mat.link} className="bg-granite p-8 md:p-10 group cursor-pointer hover:bg-elevated transition-all duration-500 no-underline">
-            <span className="inline-block font-mono text-[9px] font-medium tracking-[3px] uppercase text-stone-gold border border-stone-gold/25 rounded-[6px] px-3 py-1 mb-6">{mat.tag}</span>
-            <h3 className="font-display text-[22px] text-vein-white font-medium tracking-tight mb-3 group-hover:translate-x-1 transition-transform duration-500">{mat.name}</h3>
-            <p className="text-[13px] text-cool-gray leading-relaxed font-light">{mat.desc}</p>
-            <span className="inline-flex items-center gap-1 mt-4 text-[12px] text-stone-gold/60 group-hover:text-stone-gold transition-colors duration-500">Explore guide <ArrowRight size={12} /></span>
+          {materials.map((mat, idx) => <Link key={idx} to={mat.link} className="bg-granite group cursor-pointer hover:bg-elevated transition-all duration-500 no-underline flex flex-col">
+            <div className="aspect-[4/3] overflow-hidden bg-obsidian">
+              <img src={mat.img} alt={mat.imgAlt} loading="lazy" className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-[1200ms] ease-out" />
+            </div>
+            <div className="p-8 md:p-10 flex-1 flex flex-col">
+              <span className="inline-block self-start font-mono text-[9px] font-medium tracking-[3px] uppercase text-stone-gold border border-stone-gold/25 rounded-[6px] px-3 py-1 mb-6">{mat.tag}</span>
+              <h3 className="font-display text-[22px] text-vein-white font-medium tracking-tight mb-3 group-hover:translate-x-1 transition-transform duration-500">{mat.name}</h3>
+              <p className="text-[13px] text-cool-gray leading-relaxed font-light">{mat.desc}</p>
+              <span className="inline-flex items-center gap-1 mt-4 text-[12px] text-stone-gold/60 group-hover:text-stone-gold transition-colors duration-500">Explore guide <ArrowRight size={12} /></span>
+            </div>
           </Link>)}
         </div>
         <div className="mt-12 text-center"><a href="#work" className="inline-flex items-center gap-1.5 text-[13px] text-stone-gold font-medium hover:text-stone-gold-light transition-colors">See recent installs <ArrowRight size={13} /></a></div>
