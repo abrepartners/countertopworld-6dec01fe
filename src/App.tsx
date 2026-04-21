@@ -416,7 +416,7 @@ function Visit() {
   const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
   const locations = [
     { name: 'Northwest Arkansas', city: 'Rogers', badge: 'New', address: '1706 Commerce Dr, Rogers, AR 72756', phone: '(479) 900-9119', hours: 'Mon–Fri 8am–5pm · Sat by appt', features: ['18,700 sq ft facility', '1,000+ slabs on-site', 'Expert design team'], img: 'https://storage.googleapis.com/gpt-engineer-file-uploads/wQneyghQcNSs2stXUaHo0G5Qhxe2/social-images/social-1772306326393-countertop_world_northwest_arkansas1.webp' },
-    { name: 'Central Arkansas', city: 'Bryant', badge: 'Flagship', address: '26096 Interstate 30, Bryant, AR 72022', phone: '(501) 481-8117', hours: 'Mon–Fri 8am–5pm · Sat 9am–1pm', features: ['5,000+ sq ft showroom', 'On-site fabrication', 'Sasso-Lux technology center'], img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop' },
+    { name: 'Central Arkansas', city: 'Bryant', badge: 'Flagship', address: '26096 Interstate 30, Bryant, AR 72022', phone: '(501) 481-8117', hours: 'Mon–Fri 8am–5pm · Sat 9am–1pm', features: ['5,000+ sq ft showroom', 'On-site fabrication', 'Sasso-Lux technology center'], img: '/showrooms/bryant.webp' },
   ];
   return (
     <section className="bg-obsidian">
