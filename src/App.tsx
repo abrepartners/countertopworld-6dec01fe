@@ -238,7 +238,7 @@ const audienceData = {
     Icon: PenTool, label: 'Designers & Architects',
     heading: <>The fabrication partner<br /><span className="text-stone-gold">your clients expect.</span></>,
     description: "We carry stones you won't find at other Arkansas shops — and we can finish them in ways other fabricators can't. Your spec, executed exactly.",
-    image: 'https://images.unsplash.com/photo-1600585154526-990dced4ea0d?q=80&w=1600&auto=format&fit=crop', imageAlt: 'Luxury stone design detail',
+    image: '/materials/insp/aud-designers.webp', imageAlt: 'Vein-matched bookmatched Calacatta Gold marble slab joint with leathered edge finish — designer detail',
     testimonial: { text: "The pricing was great and they turned it around in just over a week. The quality of the stone and finish is truly exceptional.", cite: 'Design Professional' },
     benefits: [
       { Icon: Gem, title: 'Stones you can\'t get elsewhere.', desc: 'We source globally — Calacatta, Taj Mahal quartzite, backlit onyx. If your client wants it, we can probably get it.' },
