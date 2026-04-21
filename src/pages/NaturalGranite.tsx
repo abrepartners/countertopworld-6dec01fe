@@ -6,7 +6,7 @@ const data: StonePageData = {
   title: 'Natural Granite Countertops',
   metaTitle: 'Natural Granite Countertops — Care, Cost & Design Guide | Countertop World',
   metaDescription: 'Complete guide to natural granite countertops in Arkansas. Care & sealing tips, pricing ($40-$200/sq ft), design ideas, and whether granite is right for you.',
-  heroImage: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1800&auto=format&fit=crop',
+  heroImage: '/materials/hero-natural-granite.webp',
   heroImageAlt: 'Natural granite countertop showing unique mineral patterns and crystals',
   subtitle: 'Each slab one-of-a-kind. Durable, heat-resistant, and eternally beautiful — irreplaceable character formed over millions of years.',
   stoneInterest: 'Natural Granite',

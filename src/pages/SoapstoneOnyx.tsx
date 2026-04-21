@@ -6,7 +6,7 @@ const data: StonePageData = {
   title: 'Soapstone & Onyx Countertops',
   metaTitle: 'Soapstone & Onyx Countertops — Care, Cost & Design Guide | Countertop World',
   metaDescription: 'Complete guide to soapstone and onyx countertops in Arkansas. Care tips, pricing, design ideas, and whether these exotic stones are right for your home.',
-  heroImage: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1800&auto=format&fit=crop',
+  heroImage: '/materials/hero-onyx.webp',
   heroImageAlt: 'Dark soapstone countertop with velvety matte finish',
   subtitle: "From soapstone's velvety warmth to onyx's translucent drama. Statement pieces for homeowners who dare to be different.",
   stoneInterest: 'Soapstone & Onyx',

@@ -6,7 +6,7 @@ const data: StonePageData = {
   title: 'Engineered Quartz Countertops',
   metaTitle: 'Engineered Quartz Countertops — Care, Cost & Design Guide | Countertop World',
   metaDescription: 'Complete guide to engineered quartz countertops in Arkansas. Care tips, cost ranges ($50-$150/sq ft), design ideas, and whether quartz is right for you.',
-  heroImage: 'https://images.unsplash.com/photo-1600585154526-990dced4ea0d?q=80&w=1800&auto=format&fit=crop',
+  heroImage: '/materials/hero-engineered-quartz.webp',
   heroImageAlt: 'Beautiful engineered quartz countertop with waterfall edge in a modern kitchen',
   subtitle: 'Non-porous, low maintenance, and endlessly versatile. The modern standard for kitchens and bathrooms across Arkansas.',
   stoneInterest: 'Engineered Quartz',

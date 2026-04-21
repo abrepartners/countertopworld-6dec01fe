@@ -6,7 +6,7 @@ const data: StonePageData = {
   title: 'Marble Countertops',
   metaTitle: 'Marble Countertops — Care, Cost & Design Guide | Countertop World',
   metaDescription: 'Complete guide to marble countertops in Arkansas. Honest care advice, pricing ($75-$250+/sq ft), design ideas, and whether marble is right for your home.',
-  heroImage: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=1800&auto=format&fit=crop',
+  heroImage: '/materials/hero-marble.webp',
   heroImageAlt: 'Elegant marble kitchen island with dramatic Calacatta veining',
   subtitle: 'The gold standard of elegance. Dramatic veining and sophisticated palettes that command attention in any space.',
   stoneInterest: 'Marble',
