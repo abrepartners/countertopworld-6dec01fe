@@ -16,7 +16,7 @@ const CALENDARS = {
     id: 'nr2uPqa8ofKqFcSXjhsN',
     label: 'Rogers · Northwest Arkansas',
     address: '1706 Commerce Dr, Rogers, AR 72756',
-    hours: 'Mon–Fri 8am–5pm · Sat by appt',
+    hours: 'By appointment — books directly with David',
   },
 } as const;
 
