@@ -61,8 +61,6 @@
     "@parcel/config-default": "^2.16.4",
     "@parcel/packager-raw-url": "2.16.4",
     "@parcel/transformer-jsonld": "2.16.4",
-    "@prerenderer/renderer-puppeteer": "^1.2.4",
-    "@prerenderer/rollup-plugin": "^0.3.12",
     "@types/node": "^24.10.1",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",

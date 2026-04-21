@@ -65,7 +65,7 @@ function GlassNav() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   useEffect(() => { const onScroll = () => setScrolled(window.scrollY > 50); window.addEventListener('scroll', onScroll, { passive: true }); return () => window.removeEventListener('scroll', onScroll); }, []);
-  const links = [{ label: 'About', href: '#story' },{ label: 'Materials', href: '#materials' },{ label: 'Services', href: '#services' },{ label: 'Process', href: '#process' },{ label: 'Portfolio', href: '#work' },{ label: 'Visit', href: '#showrooms' }];
+  const links = [{ label: 'About', href: '#story' },{ label: 'Materials', href: '#materials' },{ label: 'Services', href: '#services' },{ label: 'Process', href: '#process' },{ label: 'Inspiration', href: '#work' },{ label: 'Visit', href: '#showrooms' }];
   return (
     <header role="banner"><nav aria-label="Main navigation" className={`fixed top-0 w-full z-50 transition-all duration-700 ${scrolled ? 'bg-obsidian/80 backdrop-blur-xl border-b border-stone-gold/10' : 'bg-transparent'}`}>
       <div className="max-w-[1440px] mx-auto px-6 lg:px-10 py-5 flex justify-between items-center">
@@ -383,7 +383,7 @@ function Portfolio() {
     <Reveal><section id="work" aria-labelledby="portfolio-heading" className="py-28 md:py-36 bg-obsidian overflow-hidden">
       <div className="px-6 lg:px-10 mb-8 max-w-[1440px] mx-auto">
         <div className="flex items-end justify-between mb-10">
-          <div><p className="font-mono text-[11px] text-stone-gold tracking-[4px] uppercase mb-4">Portfolio</p><h2 id="portfolio-heading" className="font-display text-[clamp(1.8rem,4vw,3rem)] font-light text-vein-white tracking-tight">Recent projects.</h2></div>
+          <div><p className="font-mono text-[11px] text-stone-gold tracking-[4px] uppercase mb-4">Inspiration</p><h2 id="portfolio-heading" className="font-display text-[clamp(1.8rem,4vw,3rem)] font-light text-vein-white tracking-tight">What these stones become.</h2></div>
           <Link to={active.link} className="hidden md:inline-flex items-center gap-1 text-[12px] text-stone-gold font-medium hover:text-stone-gold-light transition-colors">Explore {active.name} guide <ArrowUpRight size={12} /></Link>
         </div>
         <div className="flex gap-3 overflow-x-auto pb-4 -mx-1 px-1 no-scrollbar" role="group">
