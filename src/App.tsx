@@ -2,7 +2,7 @@ import { useEffect, useState, useRef, useCallback, type ReactNode } from 'react'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import {
   ArrowRight, ArrowUpRight, Phone, MapPin, Clock, Star,
-  Shield, Gem, Ruler, Home, Hammer, PenTool
+  Shield, Gem, Ruler, Home, Hammer, PenTool, ChevronDown
 } from 'lucide-react';
 import { useReveal } from './hooks/useReveal';
 import { applyPageHead } from './lib/pageHead';
@@ -67,15 +67,46 @@ function SkipLink() {
 function GlassNav() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   useEffect(() => { const onScroll = () => setScrolled(window.scrollY > 50); window.addEventListener('scroll', onScroll, { passive: true }); return () => window.removeEventListener('scroll', onScroll); }, []);
-  const links = [{ label: 'About', href: '#story' },{ label: 'Materials', href: '#materials' },{ label: 'Services', href: '#services' },{ label: 'Builders', href: '/builders' },{ label: 'Process', href: '#process' },{ label: 'Inspiration', href: '#work' },{ label: 'Visit', href: '#showrooms' }];
+
+  const links = [{ label: 'About', href: '#story' },{ label: 'Materials', href: '#materials' },{ label: 'Process', href: '#process' },{ label: 'Inspiration', href: '#work' },{ label: 'Visit', href: '#showrooms' }];
+  const servicesSub = [{ label: 'Homeowners', href: '#services' },{ label: 'Builders', href: '/builders' },{ label: 'Designers', href: '#services' }];
+
+  const linkClass = "hover:text-vein-white transition-colors duration-500 relative group py-1";
+  const underline = <span className="absolute -bottom-1 left-0 w-0 h-[0.5px] bg-stone-gold transition-all duration-500 group-hover:w-full" />;
+
   return (
     <header role="banner"><nav aria-label="Main navigation" className={`fixed top-0 w-full z-50 transition-all duration-700 ${scrolled ? 'bg-obsidian/80 backdrop-blur-xl border-b border-stone-gold/10' : 'bg-transparent'}`}>
       <div className="max-w-[1440px] mx-auto px-6 lg:px-10 py-5 flex justify-between items-center">
         <Link to="/" className="flex items-baseline gap-1.5 group" aria-label="Countertop World"><span className="font-display text-[18px] font-medium tracking-tight text-stone-gold group-hover:opacity-70 transition-opacity duration-500">Countertop World</span></Link>
         <div className="hidden lg:flex items-center gap-8">
           <div className="flex gap-7 text-[12.5px] text-cool-gray tracking-wide font-light">
-            {links.map(item => item.href.startsWith('/') ? <Link key={item.label} to={item.href} className="hover:text-vein-white transition-colors duration-500 relative group py-1">{item.label}<span className="absolute -bottom-1 left-0 w-0 h-[0.5px] bg-stone-gold transition-all duration-500 group-hover:w-full" /></Link> : <a key={item.label} href={item.href} className="hover:text-vein-white transition-colors duration-500 relative group py-1">{item.label}<span className="absolute -bottom-1 left-0 w-0 h-[0.5px] bg-stone-gold transition-all duration-500 group-hover:w-full" /></a>)}
+            <a href="#story" className={linkClass}>About{underline}</a>
+            <a href="#materials" className={linkClass}>Materials{underline}</a>
+
+            {/* Services dropdown */}
+            <div className="relative" onMouseEnter={() => setServicesOpen(true)} onMouseLeave={() => setServicesOpen(false)}>
+              <button className={`${linkClass} flex items-center gap-1`} onClick={() => setServicesOpen(!servicesOpen)} aria-expanded={servicesOpen} aria-haspopup="true">
+                Services<ChevronDown size={10} className={`transition-transform duration-300 ${servicesOpen ? 'rotate-180' : ''}`} />{underline}
+              </button>
+              {servicesOpen && (
+                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3">
+                  <div className="bg-obsidian/95 backdrop-blur-xl border border-stone-gold/15 rounded-lg py-2 min-w-[180px] shadow-2xl">
+                    {servicesSub.map(sub => sub.href.startsWith('/') ? (
+                      <Link key={sub.label} to={sub.href} onClick={() => setServicesOpen(false)} className="block px-5 py-2.5 text-[12.5px] text-cool-gray hover:text-vein-white hover:bg-stone-gold/5 transition-colors duration-300">{sub.label}</Link>
+                    ) : (
+                      <a key={sub.label} href={sub.href} onClick={() => setServicesOpen(false)} className="block px-5 py-2.5 text-[12.5px] text-cool-gray hover:text-vein-white hover:bg-stone-gold/5 transition-colors duration-300">{sub.label}</a>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            <a href="#process" className={linkClass}>Process{underline}</a>
+            <a href="#work" className={linkClass}>Inspiration{underline}</a>
+            <a href="#showrooms" className={linkClass}>Visit{underline}</a>
           </div>
           <a href="#contact" className="inline-flex items-center gap-1.5 px-5 py-2 rounded-[6px] text-[12px] font-medium tracking-wide bg-stone-gold text-obsidian hover:bg-stone-gold-light transition-all duration-500">Get a free estimate</a>
         </div>
@@ -84,7 +115,23 @@ function GlassNav() {
         </button>
       </div>
       {menuOpen && <div className="lg:hidden bg-obsidian/95 backdrop-blur-xl border-t border-stone-gold/10 px-6 py-8 flex flex-col gap-5">
-        {links.map(item => item.href.startsWith('/') ? <Link key={item.label} to={item.href} onClick={() => setMenuOpen(false)} className="text-[15px] text-cool-gray hover:text-vein-white transition-colors">{item.label}</Link> : <a key={item.label} href={item.href} onClick={() => setMenuOpen(false)} className="text-[15px] text-cool-gray hover:text-vein-white transition-colors">{item.label}</a>)}
+        <a href="#story" onClick={() => setMenuOpen(false)} className="text-[15px] text-cool-gray hover:text-vein-white transition-colors">About</a>
+        <a href="#materials" onClick={() => setMenuOpen(false)} className="text-[15px] text-cool-gray hover:text-vein-white transition-colors">Materials</a>
+        <div>
+          <button onClick={() => setMobileServicesOpen(!mobileServicesOpen)} className="text-[15px] text-cool-gray hover:text-vein-white transition-colors flex items-center gap-1.5">Services <ChevronDown size={12} className={`transition-transform duration-300 ${mobileServicesOpen ? 'rotate-180' : ''}`} /></button>
+          {mobileServicesOpen && (
+            <div className="ml-4 mt-3 flex flex-col gap-3 border-l border-stone-gold/20 pl-4">
+              {servicesSub.map(sub => sub.href.startsWith('/') ? (
+                <Link key={sub.label} to={sub.href} onClick={() => { setMenuOpen(false); setMobileServicesOpen(false); }} className="text-[14px] text-cool-gray hover:text-vein-white transition-colors">{sub.label}</Link>
+              ) : (
+                <a key={sub.label} href={sub.href} onClick={() => { setMenuOpen(false); setMobileServicesOpen(false); }} className="text-[14px] text-cool-gray hover:text-vein-white transition-colors">{sub.label}</a>
+              ))}
+            </div>
+          )}
+        </div>
+        <a href="#process" onClick={() => setMenuOpen(false)} className="text-[15px] text-cool-gray hover:text-vein-white transition-colors">Process</a>
+        <a href="#work" onClick={() => setMenuOpen(false)} className="text-[15px] text-cool-gray hover:text-vein-white transition-colors">Inspiration</a>
+        <a href="#showrooms" onClick={() => setMenuOpen(false)} className="text-[15px] text-cool-gray hover:text-vein-white transition-colors">Visit</a>
         <a href="#contact" onClick={() => setMenuOpen(false)} className="inline-flex items-center justify-center px-5 py-3 rounded-[6px] text-[13px] font-medium bg-stone-gold text-obsidian w-full mt-2">Get a free estimate</a>
       </div>}
     </nav></header>
@@ -234,7 +281,7 @@ const audienceData = {
       { Icon: Ruler, title: 'Laser-perfect templates.', desc: 'Laser scanning means the stone is right before we cut. No re-cuts, no wasted time.' },
       { Icon: Star, title: 'Volume pricing.', desc: 'Multi-unit and subdivision projects get priority scheduling and builder rates. Call us.' },
     ],
-    cta: { text: 'Partner with us', href: '#contact' },
+    cta: { text: 'Partner with us', href: '/builders' },
     secondaryCta: { text: 'Call (479) 900-9119', href: 'tel:+14799009119', external: false },
   },
   designers: {
@@ -303,7 +350,7 @@ function WhoWeServe() {
                 {data.benefits.map((b, i) => <div key={i}><div className="w-10 h-10 rounded-[8px] border border-stone-gold/15 bg-granite flex items-center justify-center mb-3"><b.Icon size={18} className="text-stone-gold" /></div><h4 className="text-[15px] text-vein-white font-medium tracking-tight mb-1.5">{b.title}</h4><p className="text-[13px] text-cool-gray font-light leading-relaxed">{b.desc}</p></div>)}
               </div>
               <div className="flex flex-wrap gap-4">
-                <a href={data.cta.href} className="inline-flex items-center gap-2 px-7 py-3.5 rounded-[6px] text-[14px] font-medium text-obsidian bg-stone-gold hover:bg-stone-gold-light transition-all duration-500">{data.cta.text} <ArrowRight size={14} /></a>
+                {data.cta.href.startsWith('/') ? <Link to={data.cta.href} className="inline-flex items-center gap-2 px-7 py-3.5 rounded-[6px] text-[14px] font-medium text-obsidian bg-stone-gold hover:bg-stone-gold-light transition-all duration-500">{data.cta.text} <ArrowRight size={14} /></Link> : <a href={data.cta.href} className="inline-flex items-center gap-2 px-7 py-3.5 rounded-[6px] text-[14px] font-medium text-obsidian bg-stone-gold hover:bg-stone-gold-light transition-all duration-500">{data.cta.text} <ArrowRight size={14} /></a>}
                 <a href={data.secondaryCta.href} {...(data.secondaryCta.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})} className="inline-flex items-center gap-2 px-7 py-3.5 rounded-[6px] text-[14px] font-medium border border-stone-gold/25 text-cool-gray hover:border-stone-gold/50 hover:text-vein-white transition-all duration-500">{data.secondaryCta.text} {data.secondaryCta.external && <ArrowUpRight size={14} />}</a>
               </div>
             </div>
