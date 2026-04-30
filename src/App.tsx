@@ -71,7 +71,7 @@ function GlassNav() {
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   useEffect(() => { const onScroll = () => setScrolled(window.scrollY > 50); window.addEventListener('scroll', onScroll, { passive: true }); return () => window.removeEventListener('scroll', onScroll); }, []);
 
-  const servicesSub = [{ label: 'Homeowners', href: '#services' },{ label: 'Builders', href: '/builders' },{ label: 'Designers', href: '#services' }];
+  const servicesSub = [{ label: 'Homeowners', href: '#serve-homeowners' },{ label: 'Builders', href: '/builders' },{ label: 'Designers', href: '#serve-designers' }];
 
   const linkClass = "hover:text-vein-white transition-colors duration-500 relative group py-1";
   const underline = <span className="absolute -bottom-1 left-0 w-0 h-[0.5px] bg-stone-gold transition-all duration-500 group-hover:w-full" />;
@@ -303,7 +303,33 @@ const audienceData = {
 function WhoWeServe() {
   const [active, setActive] = useState<AudienceKey>('homeowners');
   const tabListRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
   const data = audienceData[active];
+
+  useEffect(() => {
+    const hash = window.location.hash;
+    const tabMap: Record<string, AudienceKey> = { '#serve-homeowners': 'homeowners', '#serve-designers': 'designers' };
+    const match = tabMap[hash];
+    if (match) {
+      setActive(match);
+      setTimeout(() => sectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+    }
+  }, []);
+
+  useEffect(() => {
+    const onHash = () => {
+      const hash = window.location.hash;
+      const tabMap: Record<string, AudienceKey> = { '#serve-homeowners': 'homeowners', '#serve-designers': 'designers' };
+      const match = tabMap[hash];
+      if (match) {
+        setActive(match);
+        setTimeout(() => sectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+      }
+    };
+    window.addEventListener('hashchange', onHash);
+    return () => window.removeEventListener('hashchange', onHash);
+  }, []);
+
   const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
     const keys: AudienceKey[] = ['homeowners', 'builders', 'designers']; const idx = keys.indexOf(active); let next = idx;
     if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { next = (idx + 1) % keys.length; e.preventDefault(); }
@@ -312,7 +338,8 @@ function WhoWeServe() {
   }, [active]);
 
   return (
-    <Reveal><section id="services" aria-labelledby="serve-heading" className="py-28 md:py-36 px-6 lg:px-10 bg-obsidian">
+    <Reveal><section ref={sectionRef} id="services" aria-labelledby="serve-heading" className="py-28 md:py-36 px-6 lg:px-10 bg-obsidian">
+      <span id="serve-homeowners" className="absolute -mt-24" /><span id="serve-designers" className="absolute -mt-24" />
       <div className="max-w-[1440px] mx-auto">
         <div className="text-center mb-16 md:mb-20">
           <p className="font-mono text-[11px] text-stone-gold tracking-[4px] uppercase mb-6">Who We Serve</p>
