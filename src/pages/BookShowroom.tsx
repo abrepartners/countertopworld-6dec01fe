@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, MapPin, Clock } from 'lucide-react';
 import { applyPageHead } from '../lib/pageHead';
+import { appendAttributionToUrl } from '../lib/attribution';
 
 // GoHighLevel calendar widgets. Three options total — Bryant splits into a
 // weekday round-robin and a Saturday-only calendar owned by David, since
@@ -57,6 +58,14 @@ export default function BookShowroom() {
 
   const activeKey = location === 'bryant' ? bryantSub : 'rogers';
   const cal = CALENDARS[activeKey];
+
+  // Append captured marketing attribution (gclid, utm_*, fbclid, etc.) to the
+  // GHL calendar widget URL. GHL stores these on the resulting contact/opportunity
+  // which feeds Google Ads offline conversion import via GHL's native integration.
+  const iframeSrc = useMemo(
+    () => appendAttributionToUrl(`https://api.leadconnectorhq.com/widget/booking/${cal.id}`),
+    [cal.id],
+  );
 
   return (
     <main className="min-h-screen bg-obsidian text-vein-white">
@@ -148,7 +157,7 @@ export default function BookShowroom() {
         <div className="rounded-lg border border-stone-gold/10 bg-granite/40 overflow-hidden">
           <iframe
             key={cal.id}
-            src={`https://api.leadconnectorhq.com/widget/booking/${cal.id}`}
+            src={iframeSrc}
             title={`Book — ${cal.title}`}
             loading="lazy"
             style={{ width: '100%', border: 'none', minHeight: '900px' }}

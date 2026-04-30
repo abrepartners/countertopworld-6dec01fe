@@ -21,7 +21,28 @@ type LeadPayload = {
   preferredLocation?: string;
   scope?: string;
   details?: string;
+  // Marketing attribution — forwarded from the website's attribution capture.
+  // These feed GHL's native Google Ads integration for offline conversions.
+  gclid?: string;
+  gbraid?: string;
+  wbraid?: string;
+  fbclid?: string;
+  ttclid?: string;
+  msclkid?: string;
+  li_fat_id?: string;
+  utm_source?: string;
+  utm_medium?: string;
+  utm_campaign?: string;
+  utm_term?: string;
+  utm_content?: string;
+  landing_path?: string;
 };
+
+const ATTRIBUTION_KEYS = [
+  'gclid', 'gbraid', 'wbraid', 'fbclid', 'ttclid', 'msclkid', 'li_fat_id',
+  'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content',
+  'landing_path',
+] as const;
 
 function bad(status: number, error: string) {
   return new Response(JSON.stringify({ ok: false, error }), {
@@ -61,6 +82,16 @@ function tags_for(p: LeadPayload): string[] {
   if (ct.includes("builder") || ct.includes("contractor")) out.add("builder");
   else if (ct.includes("designer") || ct.includes("architect")) out.add("designer");
   else out.add("retail");
+
+  // Attribution-derived tags — makes it easy to filter GHL contact lists by paid
+  // source for Customer Match audience sync + reporting.
+  if (p.gclid || p.gbraid || p.wbraid) out.add("source:google-ads");
+  if (p.fbclid) out.add("source:meta-ads");
+  if (p.ttclid) out.add("source:tiktok-ads");
+  if (p.msclkid) out.add("source:bing-ads");
+  if (p.utm_source) out.add(`utm:${p.utm_source.toLowerCase()}`);
+  if (p.utm_campaign) out.add(`campaign:${p.utm_campaign.toLowerCase()}`);
+
   return [...out];
 }
 
@@ -97,6 +128,30 @@ export default async function handler(req: Request): Promise<Response> {
   if (body.scope) noteLines.push(`Project scope: ${body.scope}`);
   if (body.details) noteLines.push(`Details: ${body.details}`);
 
+  // Attribution section in notes — always human-readable, never lost even if
+  // a custom field mapping drifts.
+  const attrLines: string[] = [];
+  for (const key of ATTRIBUTION_KEYS) {
+    const val = body[key];
+    if (val) attrLines.push(`  ${key}: ${val}`);
+  }
+  if (attrLines.length) {
+    noteLines.push("");
+    noteLines.push("— Marketing attribution —");
+    noteLines.push(...attrLines);
+  }
+
+  // customFields payload uses GHL's field-key format. If fields with these keys
+  // exist in the CW location (gclid, utm_source, etc.), GHL auto-maps them;
+  // if not, this array is silently ignored and the attribution still lives in
+  // notes + tags above. One-time setup: GHL → Settings → Custom Fields → create
+  // each as text type (see tracking-setup.md Phase 5).
+  const customFields: Array<{ key: string; field_value: string }> = [];
+  for (const key of ATTRIBUTION_KEYS) {
+    const val = body[key];
+    if (val) customFields.push({ key, field_value: val });
+  }
+
   const contactPayload: Record<string, unknown> = {
     locationId,
     firstName,
@@ -106,6 +161,7 @@ export default async function handler(req: Request): Promise<Response> {
   if (lastName) contactPayload.lastName = lastName;
   if (body.email) contactPayload.email = body.email;
   if (body.phone) contactPayload.phone = body.phone;
+  if (customFields.length) contactPayload.customFields = customFields;
 
   const resp = await fetch(`${GHL_BASE}/contacts/`, {
     method: "POST",
