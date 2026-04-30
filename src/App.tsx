@@ -71,7 +71,6 @@ function GlassNav() {
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   useEffect(() => { const onScroll = () => setScrolled(window.scrollY > 50); window.addEventListener('scroll', onScroll, { passive: true }); return () => window.removeEventListener('scroll', onScroll); }, []);
 
-  const links = [{ label: 'About', href: '#story' },{ label: 'Materials', href: '#materials' },{ label: 'Process', href: '#process' },{ label: 'Inspiration', href: '#work' },{ label: 'Visit', href: '#showrooms' }];
   const servicesSub = [{ label: 'Homeowners', href: '#services' },{ label: 'Builders', href: '/builders' },{ label: 'Designers', href: '#services' }];
 
   const linkClass = "hover:text-vein-white transition-colors duration-500 relative group py-1";

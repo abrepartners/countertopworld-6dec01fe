@@ -1,7 +1,7 @@
 import { useEffect, useState, useCallback, useRef, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import {
-  ArrowLeft, ArrowRight, ArrowUpRight, Clock, Shield, Ruler, Star,
+  ArrowLeft, ArrowRight, Clock, Shield, Ruler, Star,
   Hammer, Phone, MapPin, ChevronDown, Wrench, Building2, Home,
 } from 'lucide-react';
 import { applyPageHead } from '../lib/pageHead';
