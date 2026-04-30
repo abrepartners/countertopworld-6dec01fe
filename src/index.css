@@ -39,6 +39,13 @@
   body {
     @apply bg-obsidian text-vein-white font-body;
     overflow-x: hidden;
+    cursor: default;
+  }
+  a, button, [role="button"], input, textarea, select, label {
+    cursor: pointer;
+  }
+  input[type="text"], input[type="email"], input[type="tel"], input[type="number"], textarea {
+    cursor: text;
   }
   ::selection {
     background: #C9A96E;
