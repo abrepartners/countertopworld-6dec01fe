@@ -18,6 +18,7 @@ import SoapstoneOnyxPage from './pages/SoapstoneOnyx';
 import BookShowroom from './pages/BookShowroom';
 import Packages from './pages/Packages';
 import BuildersPage from './pages/Builders';
+import DesignersPage from './pages/Designers';
 
 /* ── MARBLE VEIN SVG ── */
 function MarbleVeins({ className = '' }: { className?: string }) {
@@ -71,7 +72,7 @@ function GlassNav() {
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   useEffect(() => { const onScroll = () => setScrolled(window.scrollY > 50); window.addEventListener('scroll', onScroll, { passive: true }); return () => window.removeEventListener('scroll', onScroll); }, []);
 
-  const servicesSub = [{ label: 'Homeowners', href: '#serve-homeowners' },{ label: 'Builders', href: '/builders' },{ label: 'Designers', href: '#serve-designers' }];
+  const servicesSub = [{ label: 'Homeowners', href: '#serve-homeowners' },{ label: 'Builders', href: '/builders' },{ label: 'Designers', href: '/designers' }];
 
   const linkClass = "hover:text-vein-white transition-colors duration-500 relative group py-1";
   const underline = <span className="absolute -bottom-1 left-0 w-0 h-[0.5px] bg-stone-gold transition-all duration-500 group-hover:w-full" />;
@@ -308,7 +309,7 @@ function WhoWeServe() {
 
   useEffect(() => {
     const hash = window.location.hash;
-    const tabMap: Record<string, AudienceKey> = { '#serve-homeowners': 'homeowners', '#serve-designers': 'designers' };
+    const tabMap: Record<string, AudienceKey> = { '#serve-homeowners': 'homeowners' };
     const match = tabMap[hash];
     if (match) {
       setActive(match);
@@ -319,7 +320,7 @@ function WhoWeServe() {
   useEffect(() => {
     const onHash = () => {
       const hash = window.location.hash;
-      const tabMap: Record<string, AudienceKey> = { '#serve-homeowners': 'homeowners', '#serve-designers': 'designers' };
+      const tabMap: Record<string, AudienceKey> = { '#serve-homeowners': 'homeowners' };
       const match = tabMap[hash];
       if (match) {
         setActive(match);
@@ -339,7 +340,7 @@ function WhoWeServe() {
 
   return (
     <Reveal><section ref={sectionRef} id="services" aria-labelledby="serve-heading" className="py-28 md:py-36 px-6 lg:px-10 bg-obsidian">
-      <span id="serve-homeowners" className="absolute -mt-24" /><span id="serve-designers" className="absolute -mt-24" />
+      <span id="serve-homeowners" className="absolute -mt-24" />
       <div className="max-w-[1440px] mx-auto">
         <div className="text-center mb-16 md:mb-20">
           <p className="font-mono text-[11px] text-stone-gold tracking-[4px] uppercase mb-6">Who We Serve</p>
@@ -749,6 +750,7 @@ export default function App() {
       <Route path="/stones/porcelain" element={<PorcelainPage />} />
       <Route path="/stones/soapstone-onyx" element={<SoapstoneOnyxPage />} />
       <Route path="/builders" element={<BuildersPage />} />
+      <Route path="/designers" element={<DesignersPage />} />
       <Route path="/book" element={<BookShowroom />} />
       <Route path="/packages" element={<Packages />} />
       <Route path="*" element={<NotFound />} />
