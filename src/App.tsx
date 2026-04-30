@@ -6,6 +6,7 @@ import {
 } from 'lucide-react';
 import { useReveal } from './hooks/useReveal';
 import { applyPageHead } from './lib/pageHead';
+import { getAttribution } from './lib/attribution';
 import './index.css';
 
 import EngineeredQuartzPage from './pages/EngineeredQuartz';
@@ -15,6 +16,8 @@ import QuartzitePage from './pages/Quartzite';
 import PorcelainPage from './pages/Porcelain';
 import SoapstoneOnyxPage from './pages/SoapstoneOnyx';
 import BookShowroom from './pages/BookShowroom';
+import Packages from './pages/Packages';
+import BuildersPage from './pages/Builders';
 
 /* ── MARBLE VEIN SVG ── */
 function MarbleVeins({ className = '' }: { className?: string }) {
@@ -65,14 +68,14 @@ function GlassNav() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   useEffect(() => { const onScroll = () => setScrolled(window.scrollY > 50); window.addEventListener('scroll', onScroll, { passive: true }); return () => window.removeEventListener('scroll', onScroll); }, []);
-  const links = [{ label: 'About', href: '#story' },{ label: 'Materials', href: '#materials' },{ label: 'Services', href: '#services' },{ label: 'Process', href: '#process' },{ label: 'Inspiration', href: '#work' },{ label: 'Visit', href: '#showrooms' }];
+  const links = [{ label: 'About', href: '#story' },{ label: 'Materials', href: '#materials' },{ label: 'Services', href: '#services' },{ label: 'Builders', href: '/builders' },{ label: 'Process', href: '#process' },{ label: 'Inspiration', href: '#work' },{ label: 'Visit', href: '#showrooms' }];
   return (
     <header role="banner"><nav aria-label="Main navigation" className={`fixed top-0 w-full z-50 transition-all duration-700 ${scrolled ? 'bg-obsidian/80 backdrop-blur-xl border-b border-stone-gold/10' : 'bg-transparent'}`}>
       <div className="max-w-[1440px] mx-auto px-6 lg:px-10 py-5 flex justify-between items-center">
         <Link to="/" className="flex items-baseline gap-1.5 group" aria-label="Countertop World"><span className="font-display text-[18px] font-medium tracking-tight text-stone-gold group-hover:opacity-70 transition-opacity duration-500">Countertop World</span></Link>
         <div className="hidden lg:flex items-center gap-8">
           <div className="flex gap-7 text-[12.5px] text-cool-gray tracking-wide font-light">
-            {links.map(item => <a key={item.label} href={item.href} className="hover:text-vein-white transition-colors duration-500 relative group py-1">{item.label}<span className="absolute -bottom-1 left-0 w-0 h-[0.5px] bg-stone-gold transition-all duration-500 group-hover:w-full" /></a>)}
+            {links.map(item => item.href.startsWith('/') ? <Link key={item.label} to={item.href} className="hover:text-vein-white transition-colors duration-500 relative group py-1">{item.label}<span className="absolute -bottom-1 left-0 w-0 h-[0.5px] bg-stone-gold transition-all duration-500 group-hover:w-full" /></Link> : <a key={item.label} href={item.href} className="hover:text-vein-white transition-colors duration-500 relative group py-1">{item.label}<span className="absolute -bottom-1 left-0 w-0 h-[0.5px] bg-stone-gold transition-all duration-500 group-hover:w-full" /></a>)}
           </div>
           <a href="#contact" className="inline-flex items-center gap-1.5 px-5 py-2 rounded-[6px] text-[12px] font-medium tracking-wide bg-stone-gold text-obsidian hover:bg-stone-gold-light transition-all duration-500">Get a free estimate</a>
         </div>
@@ -81,7 +84,7 @@ function GlassNav() {
         </button>
       </div>
       {menuOpen && <div className="lg:hidden bg-obsidian/95 backdrop-blur-xl border-t border-stone-gold/10 px-6 py-8 flex flex-col gap-5">
-        {links.map(item => <a key={item.label} href={item.href} onClick={() => setMenuOpen(false)} className="text-[15px] text-cool-gray hover:text-vein-white transition-colors">{item.label}</a>)}
+        {links.map(item => item.href.startsWith('/') ? <Link key={item.label} to={item.href} onClick={() => setMenuOpen(false)} className="text-[15px] text-cool-gray hover:text-vein-white transition-colors">{item.label}</Link> : <a key={item.label} href={item.href} onClick={() => setMenuOpen(false)} className="text-[15px] text-cool-gray hover:text-vein-white transition-colors">{item.label}</a>)}
         <a href="#contact" onClick={() => setMenuOpen(false)} className="inline-flex items-center justify-center px-5 py-3 rounded-[6px] text-[13px] font-medium bg-stone-gold text-obsidian w-full mt-2">Get a free estimate</a>
       </div>}
     </nav></header>
@@ -454,7 +457,30 @@ function Visit() {
               </div>
             </div>
           ) : (
-          <form className="flex flex-col gap-8" onSubmit={(e) => { e.preventDefault(); setFormStatus('submitting'); const form = e.currentTarget; const formData = new FormData(form); formData.append('clientType', clientType); formData.append('preferredLocation', location); fetch('/api/lead', { method: 'POST', body: formData }).then(async (r) => { if (!r.ok) { /* swallow — show success anyway, the lead likely hit GHL or the dupe path */ } setFormStatus('success'); form.reset(); }).catch(() => { setFormStatus('success'); form.reset(); }); }}>
+          <form className="flex flex-col gap-8" onSubmit={(e) => {
+            e.preventDefault();
+            setFormStatus('submitting');
+            const form = e.currentTarget;
+            const formData = new FormData(form);
+            formData.append('clientType', clientType);
+            formData.append('preferredLocation', location);
+            // Append marketing attribution captured on first page load — GCLID,
+            // UTMs, etc. The edge function writes them to GHL as custom fields +
+            // contact notes so the native GHL↔Google Ads integration can fire
+            // offline conversions with the original click ID.
+            const attr = getAttribution();
+            for (const [k, v] of Object.entries(attr)) {
+              if (v) formData.append(k, v);
+            }
+            formData.append('landing_path', window.location.pathname + window.location.search);
+            fetch('/api/lead', { method: 'POST', body: formData })
+              .then(async (r) => {
+                if (!r.ok) { /* swallow — show success anyway, the lead likely hit GHL or the dupe path */ }
+                setFormStatus('success');
+                form.reset();
+              })
+              .catch(() => { setFormStatus('success'); form.reset(); });
+          }}>
             <fieldset className="flex flex-col gap-3 border-none p-0"><legend className="text-[12px] text-cool-gray font-light tracking-wide">I am a:</legend>
               <div className="flex flex-wrap gap-3" role="radiogroup">{['Homeowner', 'Builder / Contractor', 'Designer / Architect'].map((type) => <button key={type} type="button" role="radio" aria-checked={clientType === type} onClick={() => setClientType(type)} className={`px-5 py-2.5 rounded-[6px] text-[13px] tracking-wide transition-all duration-500 border ${clientType === type ? 'border-stone-gold bg-stone-gold text-obsidian' : 'border-stone-gold/20 text-cool-gray hover:border-stone-gold/40 hover:text-vein-white'}`}>{type}</button>)}</div>
             </fieldset>
@@ -649,7 +675,9 @@ export default function App() {
       <Route path="/stones/quartzite" element={<QuartzitePage />} />
       <Route path="/stones/porcelain" element={<PorcelainPage />} />
       <Route path="/stones/soapstone-onyx" element={<SoapstoneOnyxPage />} />
+      <Route path="/builders" element={<BuildersPage />} />
       <Route path="/book" element={<BookShowroom />} />
+      <Route path="/packages" element={<Packages />} />
       <Route path="*" element={<NotFound />} />
     </Routes></BrowserRouter>
   );
