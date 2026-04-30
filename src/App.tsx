@@ -140,7 +140,7 @@ function About() {
             <h2 id="story-heading" className="font-display text-[clamp(1.8rem,4vw,3rem)] font-light text-vein-white tracking-tight leading-tight mb-8">Started with a napkin sketch.<br />Now the largest in Arkansas.</h2>
             <div className="space-y-5 text-[16px] text-cool-gray font-light leading-relaxed">
               <p>David McDougall was working corporate sales in Denver when he lost his brothers. He came home to Arkansas and needed to do something with his hands. He took a job at a small granite shop in Jonesboro and never looked back.</p>
-              <p>He sketched out a plan on the back of a napkin. That became Countertop World. He and co-owner Conor Lawrence have grown it into the largest stone fabricator in Central Arkansas — with a front-office team that has nearly 100 years of combined experience.</p>
+              <p>He sketched out a plan on the back of a napkin. That became Countertop World. He and co-owner Chad Crank have grown it into the largest stone fabricator in Central Arkansas — with a front-office team that has nearly 100 years of combined experience.</p>
               <p>Today they run two locations: the flagship shop in Bryant and a brand-new 18,700 sq ft facility in Rogers. Every slab is cut, finished, and installed by their own crew.</p>
             </div>
             <div className="mt-10"><PillButton href="#showrooms">Visit a showroom <ArrowRight size={14} className="ml-2" /></PillButton></div>
