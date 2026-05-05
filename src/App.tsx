@@ -9,6 +9,11 @@ import { applyPageHead } from './lib/pageHead';
 import { getAttribution } from './lib/attribution';
 import './index.css';
 
+function scrollTo(id: string, e?: React.MouseEvent) {
+  e?.preventDefault();
+  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
 import EngineeredQuartzPage from './pages/EngineeredQuartz';
 import NaturalGranitePage from './pages/NaturalGranite';
 import MarblePage from './pages/Marble';
@@ -47,6 +52,8 @@ function PillButton({ children, href, onClick, gold = false, size = 'default', c
   const outline = 'border-stone-gold/30 text-vein-white hover:bg-stone-gold hover:text-obsidian hover:border-stone-gold';
   const goldS = 'bg-stone-gold text-obsidian border-stone-gold hover:bg-stone-gold-light';
   const cls = `${base} ${gold ? goldS : outline} ${extra}`;
+  if (href && href.startsWith('#')) return <a href={href} onClick={e => scrollTo(href.slice(1), e)} className={cls}>{children}</a>;
+  if (href && href.startsWith('/#')) return <a href={href} onClick={e => scrollTo(href.slice(2), e)} className={cls}>{children}</a>;
   if (href) return <a href={href} className={cls} {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>{children}</a>;
   return <button onClick={onClick} className={cls}>{children}</button>;
 }
@@ -72,7 +79,7 @@ function GlassNav() {
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   useEffect(() => { const onScroll = () => setScrolled(window.scrollY > 50); window.addEventListener('scroll', onScroll, { passive: true }); return () => window.removeEventListener('scroll', onScroll); }, []);
 
-  const servicesSub = [{ label: 'Homeowners', href: '#serve-homeowners' },{ label: 'Builders', href: '/builders' },{ label: 'Designers', href: '/designers' }];
+  const servicesSub = [{ label: 'Homeowners', href: '#serve-homeowners', scrollId: 'serve-homeowners' },{ label: 'Builders', href: '/builders' },{ label: 'Designers', href: '/designers' }];
 
   const linkClass = "hover:text-vein-white transition-colors duration-500 relative group py-1";
   const underline = <span className="absolute -bottom-1 left-0 w-0 h-[0.5px] bg-stone-gold transition-all duration-500 group-hover:w-full" />;
@@ -83,8 +90,8 @@ function GlassNav() {
         <Link to="/" className="flex items-baseline gap-1.5 group" aria-label="Countertop World"><span className="font-display text-[18px] font-medium tracking-tight text-stone-gold group-hover:opacity-70 transition-opacity duration-500">Countertop World</span></Link>
         <div className="hidden lg:flex items-center gap-8">
           <div className="flex gap-7 text-[12.5px] text-cool-gray tracking-wide font-light">
-            <a href="#story" className={linkClass}>About{underline}</a>
-            <a href="#materials" className={linkClass}>Materials{underline}</a>
+            <a href="#story" onClick={e => scrollTo('story', e)} className={linkClass}>About{underline}</a>
+            <a href="#materials" onClick={e => scrollTo('materials', e)} className={linkClass}>Materials{underline}</a>
 
             {/* Services dropdown */}
             <div className="relative" onMouseEnter={() => setServicesOpen(true)} onMouseLeave={() => setServicesOpen(false)}>
@@ -97,26 +104,26 @@ function GlassNav() {
                     {servicesSub.map(sub => sub.href.startsWith('/') ? (
                       <Link key={sub.label} to={sub.href} onClick={() => setServicesOpen(false)} className="block px-5 py-2.5 text-[12.5px] text-cool-gray hover:text-vein-white hover:bg-stone-gold/5 transition-colors duration-300">{sub.label}</Link>
                     ) : (
-                      <a key={sub.label} href={sub.href} onClick={() => setServicesOpen(false)} className="block px-5 py-2.5 text-[12.5px] text-cool-gray hover:text-vein-white hover:bg-stone-gold/5 transition-colors duration-300">{sub.label}</a>
+                      <a key={sub.label} href={sub.href} onClick={e => { scrollTo(sub.href.slice(1), e); setServicesOpen(false); }} className="block px-5 py-2.5 text-[12.5px] text-cool-gray hover:text-vein-white hover:bg-stone-gold/5 transition-colors duration-300">{sub.label}</a>
                     ))}
                   </div>
                 </div>
               )}
             </div>
 
-            <a href="#process" className={linkClass}>Process{underline}</a>
-            <a href="#work" className={linkClass}>Inspiration{underline}</a>
-            <a href="#showrooms" className={linkClass}>Visit{underline}</a>
+            <a href="#process" onClick={e => scrollTo('process', e)} className={linkClass}>Process{underline}</a>
+            <a href="#work" onClick={e => scrollTo('work', e)} className={linkClass}>Inspiration{underline}</a>
+            <a href="#showrooms" onClick={e => scrollTo('showrooms', e)} className={linkClass}>Visit{underline}</a>
           </div>
-          <a href="#contact" className="inline-flex items-center gap-1.5 px-5 py-2 rounded-[6px] text-[12px] font-medium tracking-wide bg-stone-gold text-obsidian hover:bg-stone-gold-light transition-all duration-500">Get a free estimate</a>
+          <a href="#contact" onClick={e => scrollTo('contact', e)} className="inline-flex items-center gap-1.5 px-5 py-2 rounded-[6px] text-[12px] font-medium tracking-wide bg-stone-gold text-obsidian hover:bg-stone-gold-light transition-all duration-500">Get a free estimate</a>
         </div>
         <button className="lg:hidden text-vein-white p-2" onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? 'Close menu' : 'Open menu'} aria-expanded={menuOpen}>
           <div className="w-5 flex flex-col gap-[5px]"><span className={`h-[1px] bg-vein-white transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-[6px]' : ''}`} /><span className={`h-[1px] bg-vein-white transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`} /><span className={`h-[1px] bg-vein-white transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-[6px]' : ''}`} /></div>
         </button>
       </div>
       {menuOpen && <div className="lg:hidden bg-obsidian/95 backdrop-blur-xl border-t border-stone-gold/10 px-6 py-8 flex flex-col gap-5">
-        <a href="#story" onClick={() => setMenuOpen(false)} className="text-[15px] text-cool-gray hover:text-vein-white transition-colors">About</a>
-        <a href="#materials" onClick={() => setMenuOpen(false)} className="text-[15px] text-cool-gray hover:text-vein-white transition-colors">Materials</a>
+        <a href="#story" onClick={e => { scrollTo('story', e); setMenuOpen(false); }} className="text-[15px] text-cool-gray hover:text-vein-white transition-colors">About</a>
+        <a href="#materials" onClick={e => { scrollTo('materials', e); setMenuOpen(false); }} className="text-[15px] text-cool-gray hover:text-vein-white transition-colors">Materials</a>
         <div>
           <button onClick={() => setMobileServicesOpen(!mobileServicesOpen)} className="text-[15px] text-cool-gray hover:text-vein-white transition-colors flex items-center gap-1.5">Services <ChevronDown size={12} className={`transition-transform duration-300 ${mobileServicesOpen ? 'rotate-180' : ''}`} /></button>
           {mobileServicesOpen && (
@@ -124,15 +131,15 @@ function GlassNav() {
               {servicesSub.map(sub => sub.href.startsWith('/') ? (
                 <Link key={sub.label} to={sub.href} onClick={() => { setMenuOpen(false); setMobileServicesOpen(false); }} className="text-[14px] text-cool-gray hover:text-vein-white transition-colors">{sub.label}</Link>
               ) : (
-                <a key={sub.label} href={sub.href} onClick={() => { setMenuOpen(false); setMobileServicesOpen(false); }} className="text-[14px] text-cool-gray hover:text-vein-white transition-colors">{sub.label}</a>
+                <a key={sub.label} href={sub.href} onClick={e => { scrollTo(sub.href.slice(1), e); setMenuOpen(false); setMobileServicesOpen(false); }} className="text-[14px] text-cool-gray hover:text-vein-white transition-colors">{sub.label}</a>
               ))}
             </div>
           )}
         </div>
-        <a href="#process" onClick={() => setMenuOpen(false)} className="text-[15px] text-cool-gray hover:text-vein-white transition-colors">Process</a>
-        <a href="#work" onClick={() => setMenuOpen(false)} className="text-[15px] text-cool-gray hover:text-vein-white transition-colors">Inspiration</a>
-        <a href="#showrooms" onClick={() => setMenuOpen(false)} className="text-[15px] text-cool-gray hover:text-vein-white transition-colors">Visit</a>
-        <a href="#contact" onClick={() => setMenuOpen(false)} className="inline-flex items-center justify-center px-5 py-3 rounded-[6px] text-[13px] font-medium bg-stone-gold text-obsidian w-full mt-2">Get a free estimate</a>
+        <a href="#process" onClick={e => { scrollTo('process', e); setMenuOpen(false); }} className="text-[15px] text-cool-gray hover:text-vein-white transition-colors">Process</a>
+        <a href="#work" onClick={e => { scrollTo('work', e); setMenuOpen(false); }} className="text-[15px] text-cool-gray hover:text-vein-white transition-colors">Inspiration</a>
+        <a href="#showrooms" onClick={e => { scrollTo('showrooms', e); setMenuOpen(false); }} className="text-[15px] text-cool-gray hover:text-vein-white transition-colors">Visit</a>
+        <a href="#contact" onClick={e => { scrollTo('contact', e); setMenuOpen(false); }} className="inline-flex items-center justify-center px-5 py-3 rounded-[6px] text-[13px] font-medium bg-stone-gold text-obsidian w-full mt-2">Get a free estimate</a>
       </div>}
     </nav></header>
   );
@@ -245,7 +252,7 @@ function Materials() {
             </div>
           </Link>)}
         </div>
-        <div className="mt-12 text-center"><a href="#work" className="inline-flex items-center gap-1.5 text-[13px] text-stone-gold font-medium hover:text-stone-gold-light transition-colors">See recent installs <ArrowRight size={13} /></a></div>
+        <div className="mt-12 text-center"><a href="#work" onClick={e => scrollTo('work', e)} className="inline-flex items-center gap-1.5 text-[13px] text-stone-gold font-medium hover:text-stone-gold-light transition-colors">See recent installs <ArrowRight size={13} /></a></div>
       </div>
     </section></Reveal>
   );

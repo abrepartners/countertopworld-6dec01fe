@@ -191,7 +191,7 @@ export default function DesignersPage() {
           <Link to="/" className="hidden md:flex items-center gap-1.5 text-[13px] text-cool-gray hover:text-vein-white transition-colors no-underline">
             <ArrowLeft size={16} /> Home
           </Link>
-          <a href="#designer-contact" className="inline-flex items-center gap-1.5 px-5 py-2 rounded-[6px] text-[12px] font-medium tracking-wide bg-stone-gold text-obsidian hover:bg-stone-gold-light transition-all duration-500">Start a project</a>
+          <a href="#designer-contact" onClick={e => { e.preventDefault(); document.getElementById('designer-contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }} className="inline-flex items-center gap-1.5 px-5 py-2 rounded-[6px] text-[12px] font-medium tracking-wide bg-stone-gold text-obsidian hover:bg-stone-gold-light transition-all duration-500">Start a project</a>
         </div>
       </nav>
 
