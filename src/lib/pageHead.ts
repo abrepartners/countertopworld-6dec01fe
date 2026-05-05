@@ -1,9 +1,7 @@
-// Runtime head tag manager for SPA routes. Until we move to static prerendering,
-// every page has to inject its own canonical, OG, Twitter, and BreadcrumbList
-// via useEffect so social scrapers + AI crawlers that DO render JS catch them.
-//
-// TODO: replace with vite-prerender-plugin or Next.js SSG so non-JS crawlers
-// (ChatGPT, Perplexity, etc.) see these tags in the initial HTML response.
+// Runtime head tag manager for SPA client-side navigation. The initial HTML
+// for each route is prerendered by scripts/prerender.mjs at build time, so
+// non-JS crawlers already see correct meta. This module updates tags during
+// in-app navigation after the first load.
 
 const SITE_ORIGIN = 'https://countertopworldar.com';
 
