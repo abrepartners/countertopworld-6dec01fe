@@ -1,5 +1,6 @@
 import { useEffect, useState, useCallback, useRef, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
+import SiteFooter from '../components/SiteFooter';
 import {
   ArrowLeft, ArrowRight, Clock, Shield, Ruler, Star,
   Hammer, MapPin, ChevronDown, Wrench, Building2, Home,
@@ -502,19 +503,7 @@ export default function BuildersPage() {
         </Reveal>
       </main>
 
-      {/* ── FOOTER ── */}
-      <footer className="py-16 px-6 lg:px-10 bg-granite border-t border-stone-gold/10" role="contentinfo">
-        <div className="max-w-[1440px] mx-auto flex flex-col sm:flex-row justify-between items-center gap-6 text-[12px] text-cool-gray font-light">
-          <div className="flex items-center gap-4">
-            <Link to="/" className="font-display text-[16px] font-medium text-stone-gold tracking-tight no-underline">Countertop World</Link>
-            <span className="text-stone-gold/30">|</span>
-            <span>Strength. Set in Stone.</span>
-          </div>
-          <div className="flex items-center gap-6">
-            <span>&copy; {new Date().getFullYear()} Countertop World, LLC</span>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
 
       {/* Mobile sticky CTA */}
       <div className="fixed bottom-6 left-0 w-full px-6 flex justify-center z-50 md:hidden pointer-events-none" aria-hidden="true">

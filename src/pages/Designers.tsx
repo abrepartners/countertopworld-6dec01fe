@@ -1,5 +1,6 @@
 import { useEffect, useState, useCallback, useRef, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
+import SiteFooter from '../components/SiteFooter';
 import {
   ArrowLeft, ArrowRight, Clock, Shield, Ruler, Star,
   PenTool, Phone, MapPin, ChevronDown, Gem, Palette, Eye,
@@ -516,20 +517,7 @@ export default function DesignersPage() {
         </Reveal>
       </main>
 
-      <footer className="py-16 px-6 lg:px-10 bg-granite border-t border-stone-gold/10" role="contentinfo">
-        <div className="max-w-[1440px] mx-auto flex flex-col sm:flex-row justify-between items-center gap-6 text-[12px] text-cool-gray font-light">
-          <div className="flex items-center gap-4">
-            <Link to="/" className="font-display text-[16px] font-medium text-stone-gold tracking-tight no-underline">Countertop World</Link>
-            <span className="text-stone-gold/30">|</span>
-            <span>Strength. Set in Stone.</span>
-          </div>
-          <div className="flex items-center gap-6">
-            <a href="tel:+15014818117" className="hover:text-vein-white transition-colors">(501) 481-8117</a>
-            <a href="tel:+14799009119" className="hover:text-vein-white transition-colors">(479) 900-9119</a>
-            <span>&copy; {new Date().getFullYear()} Countertop World, LLC</span>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
 
       <div className="fixed bottom-6 left-0 w-full px-6 flex justify-center z-50 md:hidden pointer-events-none" aria-hidden="true">
         <div className="bg-obsidian/70 backdrop-blur-2xl border border-stone-gold/15 shadow-lg shadow-black/20 rounded-[6px] p-1 pointer-events-auto">

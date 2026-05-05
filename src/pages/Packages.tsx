@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import SiteFooter from '../components/SiteFooter';
 import {
   ArrowLeft,
   ArrowRight,
@@ -219,6 +220,7 @@ export default function Packages() {
   }, []);
 
   return (
+    <>
     <main className="bg-obsidian text-vein-white min-h-screen">
       {/* Back link */}
       <div className="max-w-7xl mx-auto px-6 pt-6">
@@ -718,5 +720,7 @@ export default function Packages() {
         </p>
       </section>
     </main>
+    <SiteFooter />
+    </>
   );
 }

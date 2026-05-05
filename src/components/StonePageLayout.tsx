@@ -2,6 +2,7 @@ import { useState, useCallback, useRef, useEffect, type ReactNode } from 'react'
 import { Link } from 'react-router-dom';
 import { ArrowLeft, ChevronDown } from 'lucide-react';
 import { applyPageHead } from '../lib/pageHead';
+import SiteFooter from './SiteFooter';
 
 /* ── Types ──────────────────────────────────────────── */
 
@@ -412,17 +413,7 @@ export default function StonePageLayout({ data }: { data: StonePageData }) {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-10 px-6 text-center text-[13px] text-cool-gray/50 bg-obsidian border-t border-stone-gold/10">
-        <p>&copy; {new Date().getFullYear()} Countertop World. Strength. Set in Stone.</p>
-        <p className="mt-2">
-          <Link to="/" className="text-cool-gray no-underline hover:text-stone-gold">Home</Link>
-          {' · '}
-          <Link to="/#materials" className="text-cool-gray no-underline hover:text-stone-gold">All Materials</Link>
-          {' · '}
-          <Link to="/#showrooms" className="text-cool-gray no-underline hover:text-stone-gold">Visit Us</Link>
-        </p>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
+import SiteFooter from '../components/SiteFooter';
 import { ArrowLeft, MapPin, Clock } from 'lucide-react';
 import { applyPageHead } from '../lib/pageHead';
 import { appendAttributionToUrl } from '../lib/attribution';
@@ -68,6 +69,7 @@ export default function BookShowroom() {
   );
 
   return (
+    <>
     <main className="min-h-screen bg-obsidian text-vein-white">
       <div className="max-w-[1100px] mx-auto px-6 lg:px-10 py-16 md:py-24">
         <Link
@@ -172,5 +174,7 @@ export default function BookShowroom() {
         </p>
       </div>
     </main>
+    <SiteFooter />
+    </>
   );
 }
