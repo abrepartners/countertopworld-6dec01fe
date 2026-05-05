@@ -33,6 +33,7 @@ export default function SiteFooter() {
             <li><Link to="/designers" className="hover:text-vein-white transition-colors no-underline">Designers</Link></li>
             <li><Link to="/packages" className="hover:text-vein-white transition-colors no-underline">Packages</Link></li>
             <li><Link to="/book" className="hover:text-vein-white transition-colors no-underline">Book a Visit</Link></li>
+            <li><Link to="/blog" className="hover:text-vein-white transition-colors no-underline">Blog</Link></li>
           </ul>
         </nav>
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px] text-cool-gray font-light">

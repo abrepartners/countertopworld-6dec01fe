@@ -24,6 +24,8 @@ import BookShowroom from './pages/BookShowroom';
 import Packages from './pages/Packages';
 import BuildersPage from './pages/Builders';
 import DesignersPage from './pages/Designers';
+import Blog from './pages/Blog';
+import BlogPostPage from './pages/BlogPost';
 
 /* ── MARBLE VEIN SVG ── */
 function MarbleVeins({ className = '' }: { className?: string }) {
@@ -794,6 +796,8 @@ export default function App() {
       <Route path="/designers" element={<DesignersPage />} />
       <Route path="/book" element={<BookShowroom />} />
       <Route path="/packages" element={<Packages />} />
+      <Route path="/blog" element={<Blog />} />
+      <Route path="/blog/:slug" element={<BlogPostPage />} />
       <Route path="*" element={<NotFound />} />
     </Routes></BrowserRouter>
   );

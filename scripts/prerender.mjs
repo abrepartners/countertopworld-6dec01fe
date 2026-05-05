@@ -78,6 +78,33 @@ const routes = [
     description: 'Three honest countertop packages. 40 sq ft installed, laser-templated to 1/16 inch, fabricated under our Arkansas roof. Bryant & Rogers, AR.',
     breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Packages', path: '/packages' }],
   },
+  {
+    path: '/blog',
+    title: 'Blog — Countertop Guides, Pricing & Trends | Countertop World',
+    description: 'Countertop guides from an Arkansas fabricator. Granite vs. quartz comparisons, pricing breakdowns, 2026 trends, and maintenance tips.',
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Blog', path: '/blog' }],
+  },
+  {
+    path: '/blog/granite-vs-quartz-countertops-arkansas',
+    title: 'Granite vs. Quartz Countertops in Arkansas — Which Is Right for You? | Countertop World',
+    description: 'Side-by-side comparison of granite and quartz countertops — durability, cost, maintenance, and style. From a family-owned Arkansas fabricator with 1,000+ slabs in stock.',
+    ogImage: '/materials/hero-natural-granite.webp',
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Blog', path: '/blog' }, { name: 'Granite vs. Quartz', path: '/blog/granite-vs-quartz-countertops-arkansas' }],
+  },
+  {
+    path: '/blog/countertop-cost-arkansas-2026',
+    title: 'Countertop Cost in Arkansas (2026) — Granite, Quartz, Marble Pricing | Countertop World',
+    description: 'Real countertop pricing from an Arkansas fabricator. Granite $40–$100/sf, quartz $50–$120/sf, marble $50–$150/sf — installed. What drives cost and how to budget.',
+    ogImage: '/materials/hero-engineered-quartz.webp',
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Blog', path: '/blog' }, { name: 'Countertop Cost 2026', path: '/blog/countertop-cost-arkansas-2026' }],
+  },
+  {
+    path: '/blog/countertop-trends-arkansas-2026',
+    title: '2026 Countertop Trends in Arkansas — Materials, Colors & Finishes | Countertop World',
+    description: 'What Arkansas homeowners are choosing for countertops in 2026. Warm neutrals, honed finishes, quartzite, waterfall edges, and the move away from gray. From our showroom floor.',
+    ogImage: '/materials/hero-quartzite.webp',
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Blog', path: '/blog' }, { name: '2026 Trends', path: '/blog/countertop-trends-arkansas-2026' }],
+  },
 ];
 
 const template = readFileSync(join(DIST, 'index.html'), 'utf-8');
