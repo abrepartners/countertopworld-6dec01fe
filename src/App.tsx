@@ -499,8 +499,8 @@ function Visit() {
   const [location, setLocation] = useState('Rogers');
   const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
   const locations = [
-    { name: 'Northwest Arkansas', city: 'Rogers', badge: 'New', address: '1706 Commerce Dr, Rogers, AR 72756', phone: '(479) 900-9119', hours: 'Mon–Fri 8am–5pm · Sat by appt', features: ['18,700 sq ft facility', '1,000+ slabs on-site', 'Expert design team'], img: '/showrooms/rogers.webp' },
-    { name: 'Central Arkansas', city: 'Bryant', badge: 'Flagship', address: '26096 Interstate 30, Bryant, AR 72022', phone: '(501) 481-8117', hours: 'Mon–Fri 8am–5pm · Sat 9am–1pm', features: ['5,000+ sq ft showroom', 'On-site fabrication', 'Sasso-Lux technology center'], img: '/showrooms/bryant.webp' },
+    { name: 'Northwest Arkansas', city: 'Rogers', badge: 'New', address: '1706 Commerce Dr, Rogers, AR 72756', phone: '(479) 900-9119', hours: 'Mon–Fri 8am–5pm · Sat by appt', features: ['18,700 sq ft facility', '1,000+ slabs on-site', 'Expert design team'], img: '/showrooms/rogers.webp', mapQuery: 'Countertop+World,1706+Commerce+Dr,Rogers,AR+72756' },
+    { name: 'Central Arkansas', city: 'Bryant', badge: 'Flagship', address: '26096 Interstate 30, Bryant, AR 72022', phone: '(501) 481-8117', hours: 'Mon–Fri 8am–5pm · Sat 9am–1pm', features: ['5,000+ sq ft showroom', 'On-site fabrication', 'Sasso-Lux technology center'], img: '/showrooms/bryant.webp', mapQuery: 'Countertop+World,26096+Interstate+30,Bryant,AR+72022' },
   ];
   return (
     <section className="bg-obsidian">
@@ -517,7 +517,8 @@ function Visit() {
                   <div className="flex items-center gap-3"><Phone size={14} className="text-stone-gold/60 flex-shrink-0" /><a href={`tel:${loc.phone.replace(/[^0-9]/g, '')}`} className="text-[13px] text-vein-white font-medium hover:text-stone-gold transition-colors">{loc.phone}</a></div>
                   <div className="flex items-center gap-3"><Clock size={14} className="text-stone-gold/60 flex-shrink-0" /><span className="text-[13px] text-cool-gray font-light">{loc.hours}</span></div>
                 </address>
-                <div className="flex flex-wrap gap-2 mb-8">{loc.features.map((f, i) => <span key={i} className="text-[11px] text-cool-gray font-light border border-stone-gold/10 rounded-[6px] px-3 py-1">{f}</span>)}</div>
+                <div className="flex flex-wrap gap-2 mb-6">{loc.features.map((f, i) => <span key={i} className="text-[11px] text-cool-gray font-light border border-stone-gold/10 rounded-[6px] px-3 py-1">{f}</span>)}</div>
+                <div className="rounded-[8px] overflow-hidden border border-stone-gold/10 mb-8"><iframe title={`${loc.name} showroom map`} src={`https://www.google.com/maps?q=${loc.mapQuery}&output=embed`} width="100%" height="200" style={{ border: 0, filter: 'brightness(0.8) contrast(1.1)' }} loading="lazy" referrerPolicy="no-referrer-when-downgrade" /></div>
                 <PillButton href="/book">Schedule a visit <ArrowRight size={14} className="ml-2" /></PillButton>
               </div>
             </article></Reveal>)}
