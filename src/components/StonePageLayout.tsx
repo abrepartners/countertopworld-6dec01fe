@@ -1,6 +1,6 @@
 import { useState, useCallback, useRef, useEffect, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, ChevronDown } from 'lucide-react';
+import { ArrowLeft, ChevronDown, ChevronRight } from 'lucide-react';
 import { applyPageHead } from '../lib/pageHead';
 import SiteFooter from './SiteFooter';
 
@@ -236,6 +236,17 @@ export default function StonePageLayout({ data }: { data: StonePageData }) {
         <Link to="/#materials" className="flex items-center gap-1.5 text-[13px] text-cool-gray hover:text-vein-white transition-colors no-underline">
           <ArrowLeft size={16} /> Back to Materials
         </Link>
+      </nav>
+
+      {/* Breadcrumb */}
+      <nav aria-label="Breadcrumb" className="pt-16 pb-0 px-6 bg-obsidian">
+        <ol className="flex items-center gap-1.5 text-[12px] max-w-[900px] mx-auto">
+          <li><Link to="/" className="text-cool-gray/60 hover:text-vein-white transition-colors no-underline">Home</Link></li>
+          <li><ChevronRight size={12} className="text-stone-gold/30" /></li>
+          <li><Link to="/#materials" className="text-cool-gray/60 hover:text-vein-white transition-colors no-underline">Materials</Link></li>
+          <li><ChevronRight size={12} className="text-stone-gold/30" /></li>
+          <li aria-current="page" className="text-stone-gold font-medium">{data.title}</li>
+        </ol>
       </nav>
 
       {/* Hero */}

@@ -587,6 +587,64 @@ function Visit() {
 /* ── FOOTER ── */
 import SiteFooter from './components/SiteFooter';
 
+/* ── HOMEPAGE FAQ ── */
+const homeFaqItems = [
+  { q: 'How much do granite countertops cost in Arkansas?', a: 'Granite countertops in Arkansas typically range from $40 to $100+ per square foot installed, depending on the slab grade, edge profile, and cutout complexity. Countertop World offers free in-home estimates so you get an exact price for your layout.' },
+  { q: 'What is the difference between quartz and quartzite?', a: 'Quartz (engineered stone) is a manufactured slab made from crushed quartz bound with resin — it never needs sealing. Quartzite is a natural stone quarried from the earth — extremely hard and heat-resistant but requires periodic sealing. We carry both at our Bryant and Rogers showrooms.' },
+  { q: 'How long does countertop installation take?', a: 'Most kitchen countertop installations are completed in a single day. The full process — template, fabrication, and install — typically takes 7–10 business days from your first showroom visit.' },
+  { q: 'Do you offer free estimates?', a: 'Yes. We provide free in-home or virtual estimates for every project. Call either showroom or fill out the contact form on this page to get started.' },
+  { q: 'What areas in Arkansas do you serve?', a: 'We serve the entire state of Arkansas from two locations. Our Bryant showroom covers Central Arkansas, Little Rock, Hot Springs, and surrounding communities. Our Rogers showroom serves Northwest Arkansas including Bentonville, Fayetteville, Springdale, and the surrounding region.' },
+  { q: 'Do I need to seal my countertops?', a: 'It depends on the material. Engineered quartz and porcelain never need sealing. Natural stones like granite, marble, and quartzite should be sealed upon installation and periodically thereafter — we handle the initial seal and can advise on maintenance schedules.' },
+];
+
+function HomepageFAQ() {
+  const [open, setOpen] = useState<number | null>(null);
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.setAttribute('data-faq-schema', 'homepage');
+    script.textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: homeFaqItems.map(({ q, a }) => ({
+        '@type': 'Question',
+        name: q,
+        acceptedAnswer: { '@type': 'Answer', text: a },
+      })),
+    });
+    document.head.appendChild(script);
+    return () => { script.remove(); };
+  }, []);
+
+  return (
+    <section id="faq" aria-labelledby="faq-heading" className="py-28 md:py-36 px-6 lg:px-10 bg-obsidian border-t border-stone-gold/10">
+      <div className="max-w-[800px] mx-auto">
+        <div className="text-center mb-16">
+          <p className="font-mono text-[11px] text-stone-gold tracking-[4px] uppercase mb-4">FAQ</p>
+          <h2 id="faq-heading" className="font-display text-[clamp(2rem,5vw,3.5rem)] font-light text-vein-white tracking-tight leading-tight">Common questions.</h2>
+        </div>
+        <div className="divide-y divide-stone-gold/10">
+          {homeFaqItems.map((item, i) => (
+            <div key={i}>
+              <button
+                onClick={() => setOpen(open === i ? null : i)}
+                aria-expanded={open === i}
+                className="w-full flex items-center justify-between py-6 text-left group"
+              >
+                <span className="text-[16px] text-vein-white font-light leading-snug pr-4 group-hover:text-stone-gold transition-colors">{item.q}</span>
+                <ChevronDown size={18} className={`text-stone-gold/50 flex-shrink-0 transition-transform duration-300 ${open === i ? 'rotate-180' : ''}`} />
+              </button>
+              <div className={`overflow-hidden transition-all duration-300 ${open === i ? 'max-h-[500px] pb-6' : 'max-h-0'}`}>
+                <p className="text-[15px] text-cool-gray font-light leading-relaxed">{item.a}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ── HOME PAGE ── */
 /* ── REVIEWS (GHL Reputation widget) ── */
 function Reviews() {
@@ -698,6 +756,7 @@ function HomePage() {
     <div className="min-h-screen bg-obsidian antialiased">
       <SkipLink /><GlassNav />
       <main id="main-content"><Hero /><About /><ChapterDivider /><Materials /><ChapterDivider label="tailored for you" /><WhoWeServe /><ChapterDivider /><Process /><Portfolio /><ChapterDivider label="what people are saying" /><Reviews /><ChapterDivider label="recognized by" /><Credentials /><ChapterDivider label="come see us" /><Visit /></main>
+      <HomepageFAQ />
       <SiteFooter />
       <div className="fixed bottom-6 left-0 w-full px-6 flex justify-center z-50 md:hidden pointer-events-none" aria-hidden="true"><div className="bg-obsidian/70 backdrop-blur-2xl border border-stone-gold/15 shadow-lg shadow-black/20 rounded-[6px] p-1 pointer-events-auto"><PillButton href="#contact" gold>Get a Free Estimate</PillButton></div></div>
     </div>
