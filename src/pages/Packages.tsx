@@ -216,7 +216,22 @@ export default function Packages() {
         { name: 'Packages', path: '/packages' },
       ],
     });
-    return cleanup;
+
+    const faqScript = document.createElement('script');
+    faqScript.id = 'faq-schema';
+    faqScript.type = 'application/ld+json';
+    faqScript.textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: FAQ.map(item => ({
+        '@type': 'Question',
+        name: item.q,
+        acceptedAnswer: { '@type': 'Answer', text: item.a },
+      })),
+    });
+    document.head.appendChild(faqScript);
+
+    return () => { cleanup(); faqScript.remove(); };
   }, []);
 
   return (

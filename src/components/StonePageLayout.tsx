@@ -276,20 +276,17 @@ export default function StonePageLayout({ data }: { data: StonePageData }) {
         </div>
       </div>
 
-      {/* Tab Panels */}
-      <main className="max-w-[900px] mx-auto px-6 py-12 animate-fade-in" key={activeTab}>
-        {activeTab === 'overview' && (
-          <div role="tabpanel" id="panel-overview" aria-labelledby="tab-overview">
+      {/* Tab Panels — all rendered in DOM for crawlers, hidden via CSS */}
+      <main className="max-w-[900px] mx-auto px-6 py-12">
+        <div role="tabpanel" id="panel-overview" aria-labelledby="tab-overview" className={activeTab === 'overview' ? 'animate-fade-in' : 'hidden'}>
             <h2 className="font-display text-[clamp(1.5rem,3vw,2.2rem)] font-light tracking-tight mb-6 text-vein-white">{data.overview.heading}</h2>
             <p className="text-[15px] text-cool-gray font-light leading-relaxed mb-4">{data.overview.intro}</p>
             <InfoCards cards={data.overview.cards} />
             {data.overview.brandsTitle && <h3 className="font-display text-[20px] font-medium text-vein-white mt-8 mb-3">{data.overview.brandsTitle}</h3>}
             {data.overview.brandsText && <p className="text-[15px] text-cool-gray font-light leading-relaxed">{data.overview.brandsText}</p>}
-          </div>
-        )}
+        </div>
 
-        {activeTab === 'care' && (
-          <div role="tabpanel" id="panel-care" aria-labelledby="tab-care">
+        <div role="tabpanel" id="panel-care" aria-labelledby="tab-care" className={activeTab === 'care' ? 'animate-fade-in' : 'hidden'}>
             <h2 className="font-display text-[clamp(1.5rem,3vw,2.2rem)] font-light tracking-tight mb-6 text-vein-white">Care & Maintenance</h2>
             <Highlight>{data.care.highlight}</Highlight>
             {data.care.sections.map((s, i) => (
@@ -305,11 +302,9 @@ export default function StonePageLayout({ data }: { data: StonePageData }) {
               </div>
             ))}
             {data.care.bottomHighlight && <Highlight>{data.care.bottomHighlight}</Highlight>}
-          </div>
-        )}
+        </div>
 
-        {activeTab === 'cost' && (
-          <div role="tabpanel" id="panel-cost" aria-labelledby="tab-cost">
+        <div role="tabpanel" id="panel-cost" aria-labelledby="tab-cost" className={activeTab === 'cost' ? 'animate-fade-in' : 'hidden'}>
             <h2 className="font-display text-[clamp(1.5rem,3vw,2.2rem)] font-light tracking-tight mb-6 text-vein-white">Cost Guide</h2>
             <p className="text-[15px] text-cool-gray font-light leading-relaxed mb-4" dangerouslySetInnerHTML={{ __html: data.cost.intro }} />
             {data.cost.factors.length > 0 && (
@@ -341,11 +336,9 @@ export default function StonePageLayout({ data }: { data: StonePageData }) {
             </div>
             {data.cost.footnote && <p className="text-[12px] text-cool-gray/50 mt-2">{data.cost.footnote}</p>}
             <Highlight>{data.cost.highlight}</Highlight>
-          </div>
-        )}
+        </div>
 
-        {activeTab === 'design' && (
-          <div role="tabpanel" id="panel-design" aria-labelledby="tab-design">
+        <div role="tabpanel" id="panel-design" aria-labelledby="tab-design" className={activeTab === 'design' ? 'animate-fade-in' : 'hidden'}>
             <h2 className="font-display text-[clamp(1.5rem,3vw,2.2rem)] font-light tracking-tight mb-6 text-vein-white">Design Inspiration</h2>
             <p className="text-[15px] text-cool-gray font-light leading-relaxed mb-4">{data.design.intro}</p>
             <InfoCards cards={data.design.cards} />
@@ -361,11 +354,9 @@ export default function StonePageLayout({ data }: { data: StonePageData }) {
                 <VarietySelector varieties={data.design.varieties} />
               </>
             )}
-          </div>
-        )}
+        </div>
 
-        {activeTab === 'fit' && (
-          <div role="tabpanel" id="panel-fit" aria-labelledby="tab-fit">
+        <div role="tabpanel" id="panel-fit" aria-labelledby="tab-fit" className={activeTab === 'fit' ? 'animate-fade-in' : 'hidden'}>
             <h2 className="font-display text-[clamp(1.5rem,3vw,2.2rem)] font-light tracking-tight mb-6 text-vein-white">{data.fit.heading}</h2>
             {data.fit.sections ? (
               data.fit.sections.map((section, i) => (
@@ -378,15 +369,12 @@ export default function StonePageLayout({ data }: { data: StonePageData }) {
               <DecisionGrid cards={data.fit.cards} />
             ) : null}
             <Highlight>{data.fit.highlight}</Highlight>
-          </div>
-        )}
+        </div>
 
-        {activeTab === 'faq' && (
-          <div role="tabpanel" id="panel-faq" aria-labelledby="tab-faq">
+        <div role="tabpanel" id="panel-faq" aria-labelledby="tab-faq" className={activeTab === 'faq' ? 'animate-fade-in' : 'hidden'}>
             <h2 className="font-display text-[clamp(1.5rem,3vw,2.2rem)] font-light tracking-tight mb-6 text-vein-white">Frequently Asked Questions</h2>
             <FAQAccordion items={data.faq} />
-          </div>
-        )}
+        </div>
       </main>
 
       {/* CTA */}

@@ -139,6 +139,8 @@ function GlassNav() {
         <a href="#process" onClick={e => { scrollTo('process', e); setMenuOpen(false); }} className="text-[15px] text-cool-gray hover:text-vein-white transition-colors">Process</a>
         <a href="#work" onClick={e => { scrollTo('work', e); setMenuOpen(false); }} className="text-[15px] text-cool-gray hover:text-vein-white transition-colors">Inspiration</a>
         <a href="#showrooms" onClick={e => { scrollTo('showrooms', e); setMenuOpen(false); }} className="text-[15px] text-cool-gray hover:text-vein-white transition-colors">Visit</a>
+        <Link to="/packages" onClick={() => setMenuOpen(false)} className="text-[15px] text-cool-gray hover:text-vein-white transition-colors">Packages</Link>
+        <Link to="/book" onClick={() => setMenuOpen(false)} className="text-[15px] text-cool-gray hover:text-vein-white transition-colors">Book a Visit</Link>
         <a href="#contact" onClick={e => { scrollTo('contact', e); setMenuOpen(false); }} className="inline-flex items-center justify-center px-5 py-3 rounded-[6px] text-[13px] font-medium bg-stone-gold text-obsidian w-full mt-2">Get a free estimate</a>
       </div>}
     </nav></header>
@@ -684,7 +686,7 @@ function HomePage() {
   useEffect(() => {
     // Reset the dynamic head to homepage defaults when returning from a stone page.
     return applyPageHead({
-      title: 'Countertop World — Granite, Quartz & Marble Countertops in Arkansas | Bryant & Rogers',
+      title: 'Countertop World | Granite & Quartz Countertops in Arkansas',
       description:
         'Family-owned stone fabrication in Arkansas. Granite, quartz, marble, and quartzite countertops — cut, finished, and installed in-house. 1,000+ slabs in stock. Showrooms in Bryant and Rogers. Free estimates.',
       path: '/',
