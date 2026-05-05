@@ -2,7 +2,7 @@ import { useEffect, useState, useCallback, useRef, type ReactNode } from 'react'
 import { Link } from 'react-router-dom';
 import {
   ArrowLeft, ArrowRight, Clock, Shield, Ruler, Star,
-  Hammer, Phone, MapPin, ChevronDown, Wrench, Building2, Home,
+  Hammer, MapPin, ChevronDown, Wrench, Building2, Home,
 } from 'lucide-react';
 import { applyPageHead } from '../lib/pageHead';
 import { getAttribution } from '../lib/attribution';
@@ -207,7 +207,6 @@ export default function BuildersPage() {
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <PillButton href="#builder-contact" gold size="lg">Partner with us <ArrowRight size={14} className="ml-2" /></PillButton>
-              <PillButton href="tel:+14799009119" size="lg"><Phone size={14} className="mr-2" /> (479) 900-9119</PillButton>
             </div>
           </div>
           <div className={`w-full max-w-[1440px] mt-16 mx-auto aspect-[21/9] overflow-hidden rounded-[12px] relative transition-all duration-[1500ms] delay-300 ease-out ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
@@ -424,8 +423,7 @@ export default function BuildersPage() {
                   <h3 className="font-display text-[28px] text-vein-white font-light tracking-tight mb-4">We'll be in touch.</h3>
                   <p className="text-[16px] text-cool-gray font-light leading-relaxed max-w-md mx-auto mb-8">We've received your inquiry. David or a member of our team will follow up within one business day. In the meantime, feel free to call us directly.</p>
                   <div className="flex justify-center gap-4 flex-wrap">
-                    <a href="tel:+15014818117" className="inline-flex items-center gap-2 px-6 py-3 rounded-[6px] text-[13px] font-medium border border-stone-gold/25 text-cool-gray hover:border-stone-gold/50 hover:text-vein-white transition-all duration-500"><Phone size={14} /> (501) 481-8117 Bryant</a>
-                    <a href="tel:+14799009119" className="inline-flex items-center gap-2 px-6 py-3 rounded-[6px] text-[13px] font-medium border border-stone-gold/25 text-cool-gray hover:border-stone-gold/50 hover:text-vein-white transition-all duration-500"><Phone size={14} /> (479) 900-9119 Rogers</a>
+                    <PillButton href="/" gold>Back to homepage</PillButton>
                   </div>
                 </div>
               ) : (
@@ -476,8 +474,8 @@ export default function BuildersPage() {
               </div>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 {[
-                  { name: 'Northwest Arkansas', city: 'Rogers', badge: 'New', address: '1706 Commerce Dr, Rogers, AR 72756', phone: '(479) 900-9119', hours: 'Mon-Fri 8am-5pm', features: ['18,700 sq ft facility', '1,000+ slabs on-site'], img: '/showrooms/rogers.webp' },
-                  { name: 'Central Arkansas', city: 'Bryant', badge: 'Flagship', address: '26096 Interstate 30, Bryant, AR 72022', phone: '(501) 481-8117', hours: 'Mon-Fri 8am-5pm / Sat 9am-1pm', features: ['5,000+ sq ft showroom', 'Sasso-Lux technology center'], img: '/showrooms/bryant.webp' },
+                  { name: 'Northwest Arkansas', city: 'Rogers', badge: 'New', address: '1706 Commerce Dr, Rogers, AR 72756', hours: 'Mon-Fri 8am-5pm', features: ['18,700 sq ft facility', '1,000+ slabs on-site'], img: '/showrooms/rogers.webp' },
+                  { name: 'Central Arkansas', city: 'Bryant', badge: 'Flagship', address: '26096 Interstate 30, Bryant, AR 72022', hours: 'Mon-Fri 8am-5pm / Sat 9am-1pm', features: ['5,000+ sq ft showroom', 'Sasso-Lux technology center'], img: '/showrooms/bryant.webp' },
                 ].map((loc, idx) => (
                   <article key={idx} className="border border-stone-gold/10 rounded-[12px] overflow-hidden group hover:border-stone-gold/25 transition-all duration-500 bg-granite">
                     <div className="aspect-[16/9] overflow-hidden bg-obsidian">
@@ -490,7 +488,7 @@ export default function BuildersPage() {
                       </div>
                       <address className="not-italic space-y-2 mb-5">
                         <div className="flex items-start gap-3"><MapPin size={14} className="text-stone-gold/60 mt-0.5 flex-shrink-0" /><span className="text-[13px] text-cool-gray font-light">{loc.address}</span></div>
-                        <div className="flex items-center gap-3"><Phone size={14} className="text-stone-gold/60 flex-shrink-0" /><a href={`tel:${loc.phone.replace(/[^0-9]/g, '')}`} className="text-[13px] text-vein-white font-medium hover:text-stone-gold transition-colors">{loc.phone}</a></div>
+                        <div className="flex items-center gap-3"><Clock size={14} className="text-stone-gold/60 flex-shrink-0" /><span className="text-[13px] text-cool-gray font-light">By appointment</span></div>
                         <div className="flex items-center gap-3"><Clock size={14} className="text-stone-gold/60 flex-shrink-0" /><span className="text-[13px] text-cool-gray font-light">{loc.hours}</span></div>
                       </address>
                       <div className="flex flex-wrap gap-2">{loc.features.map((f, i) => <span key={i} className="text-[11px] text-cool-gray font-light border border-stone-gold/10 rounded-[6px] px-3 py-1">{f}</span>)}</div>
@@ -512,8 +510,6 @@ export default function BuildersPage() {
             <span>Strength. Set in Stone.</span>
           </div>
           <div className="flex items-center gap-6">
-            <a href="tel:+15014818117" className="hover:text-vein-white transition-colors">(501) 481-8117</a>
-            <a href="tel:+14799009119" className="hover:text-vein-white transition-colors">(479) 900-9119</a>
             <span>&copy; {new Date().getFullYear()} Countertop World, LLC</span>
           </div>
         </div>
