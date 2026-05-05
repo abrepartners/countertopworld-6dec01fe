@@ -110,8 +110,8 @@ const routes = [
 const template = readFileSync(join(DIST, 'index.html'), 'utf-8');
 
 function resolveImage(route) {
-  if (route.ogImage?.startsWith('/')) return ORIGIN + route.ogImage;
-  return route.ogImage || DEFAULT_OG_IMAGE;
+  const slug = route.path === '/' ? 'home' : route.path.slice(1).replace(/\//g, '-');
+  return `${ORIGIN}/og/${slug}.png`;
 }
 
 function buildMetaTags(route) {

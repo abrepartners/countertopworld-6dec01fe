@@ -38,7 +38,7 @@ export default function BlogPostPage() {
       title: post.metaTitle,
       description: post.metaDescription,
       path: `/blog/${post.slug}`,
-      ogImage: post.heroImage.startsWith('http') ? post.heroImage : `https://countertopworldar.com${post.heroImage}`,
+      ogImage: `https://countertopworldar.com/og/blog-${post.slug}.png`,
     });
 
     const script = document.createElement('script');

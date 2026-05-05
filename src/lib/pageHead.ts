@@ -9,9 +9,15 @@ type PageHeadOptions = {
   title: string;
   description: string;
   path: string;           // e.g. "/stones/marble" — no origin, no trailing slash
-  ogImage?: string;       // absolute URL
+  ogImage?: string;       // absolute URL — if omitted, resolves from /og/ cards
   breadcrumbs?: { name: string; path: string }[];
 };
+
+function resolveOgImage(path: string, explicit?: string): string {
+  if (explicit?.startsWith('http')) return explicit;
+  const slug = path === '/' ? 'home' : path.slice(1).replace(/\//g, '-');
+  return `${SITE_ORIGIN}/og/${slug}.png`;
+}
 
 function setMeta(attr: 'name' | 'property', key: string, content: string) {
   let el = document.head.querySelector<HTMLMetaElement>(`meta[${attr}="${key}"]`);
@@ -59,12 +65,13 @@ export function applyPageHead(opts: PageHeadOptions): () => void {
   setMeta('property', 'og:description', opts.description);
   setMeta('property', 'og:url', canonical);
   setMeta('property', 'og:type', 'website');
-  if (opts.ogImage) setMeta('property', 'og:image', opts.ogImage);
+  const ogImage = resolveOgImage(opts.path, opts.ogImage);
+  setMeta('property', 'og:image', ogImage);
 
   setMeta('name', 'twitter:card', 'summary_large_image');
   setMeta('name', 'twitter:title', opts.title);
   setMeta('name', 'twitter:description', opts.description);
-  if (opts.ogImage) setMeta('name', 'twitter:image', opts.ogImage);
+  setMeta('name', 'twitter:image', ogImage);
 
   if (opts.breadcrumbs && opts.breadcrumbs.length > 0) {
     upsertJsonLd('breadcrumb-schema', {
