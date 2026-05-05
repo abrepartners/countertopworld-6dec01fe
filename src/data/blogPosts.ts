@@ -1,3 +1,5 @@
+export interface RelatedLink { title: string; href: string }
+
 export interface BlogPost {
   slug: string;
   title: string;
@@ -13,6 +15,7 @@ export interface BlogPost {
   tags: string[];
   sections: { heading: string; body: string }[];
   faq?: { q: string; a: string }[];
+  relatedLinks?: RelatedLink[];
 }
 
 export const blogPosts: BlogPost[] = [
@@ -31,7 +34,7 @@ export const blogPosts: BlogPost[] = [
     sections: [
       {
         heading: 'The short answer',
-        body: `Neither material is objectively "better." Granite is a natural stone quarried from the earth — every slab is one of a kind. Quartz is engineered from crushed quartz crystals bound with resin, giving you more control over color and pattern consistency. The right pick depends on your priorities: maintenance tolerance, design preferences, and budget.`
+        body: `Neither material is objectively "better." <a href="/stones/natural-granite" class="text-stone-gold hover:text-stone-gold-light transition-colors">Granite</a> is a natural stone quarried from the earth — every slab is one of a kind. <a href="/stones/engineered-quartz" class="text-stone-gold hover:text-stone-gold-light transition-colors">Quartz</a> is engineered from crushed quartz crystals bound with resin, giving you more control over color and pattern consistency. The right pick depends on your priorities: maintenance tolerance, design preferences, and budget.`
       },
       {
         heading: 'Durability',
@@ -59,7 +62,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         heading: 'Our recommendation',
-        body: `Choose granite if you want a one-of-a-kind natural surface, love the depth and character of real stone, don't mind annual sealing, and want the best heat resistance. Choose quartz if you want zero maintenance, prefer consistent color and pattern, need maximum stain resistance, or want a marble look without marble upkeep. Either way, we recommend visiting the slab in person before committing. Photos don't capture movement, depth, or how light plays across the surface. We keep over 1,000 slabs in stock across our Bryant and Rogers showrooms — walk through and touch the stone. That's usually what makes the decision.`
+        body: `Choose <a href="/stones/natural-granite" class="text-stone-gold hover:text-stone-gold-light transition-colors">granite</a> if you want a one-of-a-kind natural surface, love the depth and character of real stone, don't mind annual sealing, and want the best heat resistance. Choose <a href="/stones/engineered-quartz" class="text-stone-gold hover:text-stone-gold-light transition-colors">quartz</a> if you want zero maintenance, prefer consistent color and pattern, need maximum stain resistance, or want a <a href="/stones/marble" class="text-stone-gold hover:text-stone-gold-light transition-colors">marble</a> look without marble upkeep. Either way, we recommend visiting the slab in person before committing. Photos don't capture movement, depth, or how light plays across the surface. We keep over 1,000 slabs in stock across our Bryant and Rogers showrooms — walk through and touch the stone. That's usually what makes the decision.`
       },
     ],
     faq: [
@@ -67,6 +70,12 @@ export const blogPosts: BlogPost[] = [
       { q: 'Which is more durable, granite or quartz?', a: 'Both are highly durable for kitchen use. Granite is harder and more heat-resistant. Quartz is more flexible and less prone to chipping. Neither will fail under normal daily use — the durability difference is marginal in practice.' },
       { q: 'Do quartz countertops look fake?', a: 'Modern quartz has improved dramatically. Premium brands produce slabs with realistic veining and depth that rival natural marble. The engineered look of early quartz is largely gone. That said, natural granite has organic variation that engineered stone cannot fully replicate.' },
       { q: 'Can I install granite or quartz myself?', a: 'We strongly recommend professional installation. Countertop slabs weigh 15–20 pounds per square foot — a typical kitchen island slab weighs 400+ pounds. Fabrication requires diamond tooling, CNC machinery, and precise templating. A DIY mistake on a $3,000 slab is expensive.' },
+    ],
+    relatedLinks: [
+      { title: 'Natural Granite Guide', href: '/stones/natural-granite' },
+      { title: 'Engineered Quartz Guide', href: '/stones/engineered-quartz' },
+      { title: 'Countertop Cost in Arkansas (2026)', href: '/blog/countertop-cost-arkansas-2026' },
+      { title: '2026 Countertop Trends', href: '/blog/countertop-trends-arkansas-2026' },
     ],
   },
   {
@@ -88,7 +97,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         heading: 'Countertop cost by material (installed)',
-        body: `These are per-square-foot ranges for fabricated and installed countertops in Arkansas as of 2026. Includes standard edge profile, cutouts for sink, and installation.\n\n<strong>Natural Granite:</strong> $40–$100+ per square foot. Entry-level slabs (Luna Pearl, Uba Tuba, Giallo Ornamental) start around $40. Mid-range (White Ice, Steel Grey, Colonial White) run $55–$75. Exotic granites (Blue Bahia, Patagonia, Van Gogh) can exceed $100.\n\n<strong>Engineered Quartz:</strong> $50–$120+ per square foot. Brand matters — Silestone, Caesarstone, and Cambria command premium pricing. Other quality brands offer similar durability at lower price points.\n\n<strong>Marble:</strong> $50–$150+ per square foot. Carrara starts around $50. Calacatta — the white marble with bold gray veining — ranges $80–$150+ depending on grade and origin.\n\n<strong>Quartzite:</strong> $60–$150+ per square foot. Taj Mahal quartzite — the hottest natural stone for 2026 — runs $80–$120. Super White and Fantasy Brown fall in the $60–$90 range.\n\n<strong>Porcelain:</strong> $55–$100 per square foot. Large-format porcelain slabs offer a thinner, lighter alternative with excellent stain and heat resistance. Growing fast in commercial projects.`
+        body: `These are per-square-foot ranges for fabricated and installed countertops in Arkansas as of 2026. Includes standard edge profile, cutouts for sink, and installation.\n\n<strong><a href="/stones/natural-granite" class="text-stone-gold hover:text-stone-gold-light transition-colors">Natural Granite</a>:</strong> $40–$100+ per square foot. Entry-level slabs (Luna Pearl, Uba Tuba, Giallo Ornamental) start around $40. Mid-range (White Ice, Steel Grey, Colonial White) run $55–$75. Exotic granites (Blue Bahia, Patagonia, Van Gogh) can exceed $100.\n\n<strong><a href="/stones/engineered-quartz" class="text-stone-gold hover:text-stone-gold-light transition-colors">Engineered Quartz</a>:</strong> $50–$120+ per square foot. Brand matters — Silestone, Caesarstone, and Cambria command premium pricing. Other quality brands offer similar durability at lower price points.\n\n<strong><a href="/stones/marble" class="text-stone-gold hover:text-stone-gold-light transition-colors">Marble</a>:</strong> $50–$150+ per square foot. Carrara starts around $50. Calacatta — the white marble with bold gray veining — ranges $80–$150+ depending on grade and origin.\n\n<strong><a href="/stones/quartzite" class="text-stone-gold hover:text-stone-gold-light transition-colors">Quartzite</a>:</strong> $60–$150+ per square foot. Taj Mahal quartzite — the hottest natural stone for 2026 — runs $80–$120. Super White and Fantasy Brown fall in the $60–$90 range.\n\n<strong><a href="/stones/porcelain" class="text-stone-gold hover:text-stone-gold-light transition-colors">Porcelain</a>:</strong> $55–$100 per square foot. Large-format porcelain slabs offer a thinner, lighter alternative with excellent stain and heat resistance. Growing fast in commercial projects.`
       },
       {
         heading: 'What drives the price up',
@@ -112,6 +121,13 @@ export const blogPosts: BlogPost[] = [
       { q: 'How much counter space does a typical kitchen have?', a: 'Most kitchens we measure in Arkansas have 35–45 square feet of counter space. A kitchen with an island typically adds 15–25 square feet to that total.' },
       { q: 'Does Countertop World offer free estimates?', a: 'Yes. We provide free in-home or virtual estimates for every project. We laser-template your exact layout so the quote is precise. Call either showroom or submit the form on our website.' },
       { q: 'Are countertops a good investment for resale?', a: 'Yes. Updated countertops are consistently ranked among the top kitchen improvements for return on investment. Both granite and quartz signal quality to buyers and can help a home sell faster.' },
+    ],
+    relatedLinks: [
+      { title: 'Granite vs. Quartz Comparison', href: '/blog/granite-vs-quartz-countertops-arkansas' },
+      { title: '2026 Countertop Trends', href: '/blog/countertop-trends-arkansas-2026' },
+      { title: 'Countertop Packages', href: '/packages' },
+      { title: 'Marble Guide', href: '/stones/marble' },
+      { title: 'Quartzite Guide', href: '/stones/quartzite' },
     ],
   },
   {
@@ -141,7 +157,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         heading: 'Quartzite is the material of the moment',
-        body: `Quartzite has gone from a niche natural stone to the most requested premium material in both our showrooms. Taj Mahal quartzite — a warm, creamy stone with soft gold veining — is the single most popular slab we carry right now.\n\nWhy quartzite? It delivers the veined, organic look of marble with dramatically better durability. Quartzite rates a 7 on the Mohs hardness scale, making it harder than granite. It resists heat, scratches, and etching far better than marble.\n\nThe catch: quartzite requires sealing (like granite) and costs more than most other materials, typically $60–$150 per square foot installed. But for homeowners willing to invest, it's the stone that gets the most compliments.`
+        body: `<a href="/stones/quartzite" class="text-stone-gold hover:text-stone-gold-light transition-colors">Quartzite</a> has gone from a niche natural stone to the most requested premium material in both our showrooms. Taj Mahal quartzite — a warm, creamy stone with soft gold veining — is the single most popular slab we carry right now.\n\nWhy quartzite? It delivers the veined, organic look of <a href="/stones/marble" class="text-stone-gold hover:text-stone-gold-light transition-colors">marble</a> with dramatically better durability. Quartzite rates a 7 on the Mohs hardness scale, making it harder than granite. It resists heat, scratches, and etching far better than marble.\n\nThe catch: quartzite requires sealing (like granite) and costs more than most other materials, typically $60–$150 per square foot installed. But for homeowners willing to invest, it's the stone that gets the most compliments.`
       },
       {
         heading: 'Waterfall edges aren\'t slowing down',
@@ -164,6 +180,13 @@ export const blogPosts: BlogPost[] = [
       { q: 'What is the most popular countertop material in 2026?', a: 'Quartz remains the number one choice nationally, accounting for roughly 33% of countertop selections. In our Arkansas showrooms, quartz and granite are neck and neck, with quartzite gaining fast as the premium choice.' },
       { q: 'Are granite countertops outdated?', a: 'No. Granite is evolving, not declining. The busy speckle patterns from the 2000s are out, but granites with bold veining, movement, and honed or leathered finishes are very much current. Granite\'s natural uniqueness is something engineered stone cannot replicate.' },
       { q: 'What countertop color is timeless?', a: 'White and off-white countertops with subtle veining have the longest track record of not dating a kitchen. Warm whites are the safest bet for 2026 and beyond — they pair with virtually any cabinet color and adapt as surrounding design trends shift.' },
+    ],
+    relatedLinks: [
+      { title: 'Quartzite Guide', href: '/stones/quartzite' },
+      { title: 'Natural Granite Guide', href: '/stones/natural-granite' },
+      { title: 'Granite vs. Quartz Comparison', href: '/blog/granite-vs-quartz-countertops-arkansas' },
+      { title: 'Countertop Cost in Arkansas (2026)', href: '/blog/countertop-cost-arkansas-2026' },
+      { title: 'Porcelain Guide', href: '/stones/porcelain' },
     ],
   },
 ];

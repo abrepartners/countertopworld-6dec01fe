@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
-import { ArrowLeft, ChevronRight, ChevronDown, Clock, Calendar } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ChevronRight, ChevronDown, Clock, Calendar } from 'lucide-react';
 import { applyPageHead } from '../lib/pageHead';
 import { getPostBySlug } from '../data/blogPosts';
 import SiteFooter from '../components/SiteFooter';
@@ -138,6 +138,20 @@ export default function BlogPostPage() {
             <h2 className="font-display text-[clamp(1.3rem,3vw,1.8rem)] font-light tracking-tight text-vein-white mb-2">Frequently Asked Questions</h2>
             <PostFAQ items={post.faq} />
           </section>
+        )}
+
+        {post.relatedLinks && post.relatedLinks.length > 0 && (
+          <nav className="mt-16" aria-label="Related guides">
+            <h2 className="font-display text-[clamp(1.3rem,3vw,1.8rem)] font-light tracking-tight text-vein-white mb-4">Related guides</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {post.relatedLinks.map((link, i) => (
+                <Link key={i} to={link.href} className="flex items-center gap-3 p-4 rounded-[8px] border border-stone-gold/10 hover:border-stone-gold/30 hover:bg-stone-gold/5 transition-all no-underline group">
+                  <ArrowRight size={14} className="text-stone-gold/40 group-hover:text-stone-gold flex-shrink-0" />
+                  <span className="text-[14px] text-cool-gray font-light group-hover:text-vein-white transition-colors">{link.title}</span>
+                </Link>
+              ))}
+            </div>
+          </nav>
         )}
 
         <div className="mt-16 p-8 rounded-[12px] bg-stone-gold/5 border border-stone-gold/15 text-center">

@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef, useCallback, type ReactNode } from 'react';
+import { useEffect, useState, useRef, useCallback, lazy, Suspense, type ReactNode } from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import {
   ArrowRight, ArrowUpRight, Phone, MapPin, Clock, Star,
@@ -14,18 +14,18 @@ function scrollTo(id: string, e?: React.MouseEvent) {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-import EngineeredQuartzPage from './pages/EngineeredQuartz';
-import NaturalGranitePage from './pages/NaturalGranite';
-import MarblePage from './pages/Marble';
-import QuartzitePage from './pages/Quartzite';
-import PorcelainPage from './pages/Porcelain';
-import SoapstoneOnyxPage from './pages/SoapstoneOnyx';
-import BookShowroom from './pages/BookShowroom';
-import Packages from './pages/Packages';
-import BuildersPage from './pages/Builders';
-import DesignersPage from './pages/Designers';
-import Blog from './pages/Blog';
-import BlogPostPage from './pages/BlogPost';
+const EngineeredQuartzPage = lazy(() => import('./pages/EngineeredQuartz'));
+const NaturalGranitePage = lazy(() => import('./pages/NaturalGranite'));
+const MarblePage = lazy(() => import('./pages/Marble'));
+const QuartzitePage = lazy(() => import('./pages/Quartzite'));
+const PorcelainPage = lazy(() => import('./pages/Porcelain'));
+const SoapstoneOnyxPage = lazy(() => import('./pages/SoapstoneOnyx'));
+const BookShowroom = lazy(() => import('./pages/BookShowroom'));
+const Packages = lazy(() => import('./pages/Packages'));
+const BuildersPage = lazy(() => import('./pages/Builders'));
+const DesignersPage = lazy(() => import('./pages/Designers'));
+const Blog = lazy(() => import('./pages/Blog'));
+const BlogPostPage = lazy(() => import('./pages/BlogPost'));
 
 /* ── MARBLE VEIN SVG ── */
 function MarbleVeins({ className = '' }: { className?: string }) {
@@ -782,9 +782,13 @@ function NotFound() {
 }
 
 /* ── APP ROUTER ── */
+function PageLoader() {
+  return <div className="min-h-screen bg-obsidian flex items-center justify-center"><div className="w-6 h-6 border-2 border-stone-gold/30 border-t-stone-gold rounded-full animate-spin" /></div>;
+}
+
 export default function App() {
   return (
-    <BrowserRouter><Routes>
+    <BrowserRouter><Suspense fallback={<PageLoader />}><Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/stones/engineered-quartz" element={<EngineeredQuartzPage />} />
       <Route path="/stones/natural-granite" element={<NaturalGranitePage />} />
@@ -799,6 +803,6 @@ export default function App() {
       <Route path="/blog" element={<Blog />} />
       <Route path="/blog/:slug" element={<BlogPostPage />} />
       <Route path="*" element={<NotFound />} />
-    </Routes></BrowserRouter>
+    </Routes></Suspense></BrowserRouter>
   );
 }

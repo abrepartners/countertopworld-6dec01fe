@@ -167,10 +167,10 @@ export default function BookShowroom() {
         </div>
 
         <p className="mt-10 text-[12px] font-mono text-cool-gray tracking-[2px] uppercase text-center">
-          Prefer to write first?{' '}
-          <Link to="/#contact" className="text-stone-gold hover:text-stone-gold-light transition-colors">
-            Send us a note instead
-          </Link>
+          Prefer to call?{' '}
+          <a href="tel:+15014818117" className="text-stone-gold hover:text-stone-gold-light transition-colors">(501) 481-8117</a>
+          {' · '}
+          <a href="tel:+14799009119" className="text-stone-gold hover:text-stone-gold-light transition-colors">(479) 900-9119</a>
         </p>
       </div>
     </main>
