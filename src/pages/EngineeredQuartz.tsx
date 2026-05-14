@@ -4,7 +4,7 @@ const data: StonePageData = {
   slug: 'engineered-quartz',
   tag: 'Most Popular',
   title: 'Engineered Quartz Countertops',
-  metaTitle: 'Engineered Quartz Countertops — Care, Cost & Design Guide | Countertop World',
+  metaTitle: 'Quartz Countertops: Care, Cost Engineered Quartz Countertops — Care, Cost & Design Guide | Countertop World Design Guide (AR)',
   metaDescription: 'Complete guide to engineered quartz countertops in Arkansas. Care tips, cost ranges ($50-$150/sq ft), design ideas, and whether quartz is right for you.',
   heroImage: '/materials/hero-engineered-quartz.webp',
   heroImageAlt: 'Beautiful engineered quartz countertop with waterfall edge in a modern kitchen',

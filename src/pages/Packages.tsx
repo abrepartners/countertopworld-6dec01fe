@@ -207,7 +207,7 @@ const FAQ = [
 export default function Packages() {
   useEffect(() => {
     const cleanup = applyPageHead({
-      title: 'Countertop Packages — Entry, Signature, Premium | Countertop World',
+      title: 'Countertop Packages: Entry, Signature, Premium',
       description:
         'Three honest countertop packages. 40 sq ft installed, laser-templated to 1/16 inch, fabricated under our Arkansas roof. Bryant & Rogers, AR.',
       path: '/packages',
