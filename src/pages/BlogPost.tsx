@@ -39,6 +39,7 @@ export default function BlogPostPage() {
       description: post.metaDescription,
       path: `/blog/${post.slug}`,
       ogImage: `https://countertopworldar.com/og/blog-${post.slug}.png`,
+      ogType: 'article',
     });
 
     const script = document.createElement('script');
