@@ -1,0 +1,23 @@
+# Countertop World
+
+> Family-owned stone fabrication serving Arkansas since 2016. Granite, quartz, marble, quartzite, porcelain, soapstone & onyx countertops — cut, finished, and installed in-house from showrooms in Bryant and Rogers, AR.
+
+Countertop World fabricates and installs natural and engineered stone countertops for homeowners, builders, and designers across Arkansas. We carry 1,000+ slabs in stock, run a Sasso-Lux CNC and digital laser templating, and offer 48-hour template-to-install turnaround on qualifying projects within a 150-mile radius of our Bryant and Rogers locations.
+
+## Pages
+
+- [Home](/): Overview of services, locations, and value propositions.
+- [Builders](/builders): B2B program for production builders — pricing, scheduling, and turnaround commitments.
+- [Designers](/designers): Trade program for kitchen and bath designers.
+- [Packages](/packages): Entry, Signature, and Premium countertop packages with transparent pricing.
+- [Book a Showroom Visit](/book): Schedule an in-person consultation in Bryant or Rogers.
+- [Blog](/blog): Guides on countertop selection, care, pricing, and design.
+
+## Stone Guides
+
+- [Granite Countertops](/stones/natural-granite): Care, cost ($40-$200/sq ft), and design guide.
+- [Engineered Quartz](/stones/engineered-quartz): Care, cost ($50-$150/sq ft), and design guide.
+- [Marble Countertops](/stones/marble): Care, cost ($75-$250+/sq ft), and design guide.
+- [Quartzite Countertops](/stones/quartzite): Care, cost ($70-$200+/sq ft), and design guide.
+- [Porcelain Countertops](/stones/porcelain): Care, cost ($60-$150/sq ft), and design guide.
+- [Soapstone & Onyx](/stones/soapstone-onyx): Statement stones for accents and bars.
