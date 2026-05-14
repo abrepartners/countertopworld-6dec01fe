@@ -151,8 +151,9 @@ function GlassNav() {
 
 /* ── HERO ── */
 function Hero() {
-  const [loaded, setLoaded] = useState(false);
-  useEffect(() => { setLoaded(true); }, []);
+  // Start visible so the H1 (LCP candidate) paints immediately. The fade-in was
+  // delaying Largest Contentful Paint by ~1.2s.
+  const [loaded] = useState(true);
   const metrics = [{ value: '18,700', label: 'Sq ft Rogers facility' },{ value: 'Only', label: 'Sasso-Lux in Arkansas' },{ value: '100+', label: 'Years combined experience' },{ value: '4.4★', label: '109+ verified reviews' }];
   return (
     <section aria-labelledby="hero-heading" className="relative min-h-screen flex flex-col items-center justify-center pt-28 pb-0 px-6 overflow-hidden bg-obsidian">

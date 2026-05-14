@@ -51,7 +51,7 @@ module.exports = {
           dark: '#A8893E',
         },
         'vein-white': '#E8E2D6',
-        'cool-gray': '#8A8A8A',
+        'cool-gray': '#A8A8A8',
         copper: '#B87333',
         'accent-marble': '#F5F0E8',
       },
