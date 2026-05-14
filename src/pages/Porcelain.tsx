@@ -4,7 +4,7 @@ const data: StonePageData = {
   slug: 'porcelain',
   tag: 'Modern',
   title: 'Porcelain Countertops',
-  metaTitle: 'Porcelain Countertops — Care, Cost & Design Guide | Countertop World',
+  metaTitle: 'Porcelain Countertops: Care, Cost & Design',
   metaDescription: 'Complete guide to porcelain countertops in Arkansas. Care tips, pricing ($60-$150/sq ft), design ideas, and whether porcelain slab surfaces are right for you.',
   heroImage: '/materials/hero-porcelain.webp',
   heroImageAlt: 'Sleek modern kitchen with porcelain slab countertops',
