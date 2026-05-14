@@ -4,7 +4,7 @@ const data: StonePageData = {
   slug: 'quartzite',
   tag: 'Premium',
   title: 'Quartzite Countertops',
-  metaTitle: 'Quartzite Countertops: Care, Cost Quartzite Countertops — Care, Cost & Design Guide | Countertop World Design',
+  metaTitle: 'Quartzite Countertops: Care, Cost & Design',
   metaDescription: 'Complete guide to quartzite countertops in Arkansas. Care tips, pricing ($70-$200+/sq ft), design ideas, and whether quartzite is the right stone for you.',
   heroImage: '/materials/hero-quartzite.webp',
   heroImageAlt: 'White quartzite countertop with soft veining in a luxury bathroom',
