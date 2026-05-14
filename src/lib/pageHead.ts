@@ -10,6 +10,7 @@ type PageHeadOptions = {
   description: string;
   path: string;           // e.g. "/stones/marble" — no origin, no trailing slash
   ogImage?: string;       // absolute URL — if omitted, resolves from /og/ cards
+  ogType?: 'website' | 'article';
   breadcrumbs?: { name: string; path: string }[];
 };
 
