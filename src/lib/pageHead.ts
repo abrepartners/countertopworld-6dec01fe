@@ -65,7 +65,7 @@ export function applyPageHead(opts: PageHeadOptions): () => void {
   setMeta('property', 'og:title', opts.title);
   setMeta('property', 'og:description', opts.description);
   setMeta('property', 'og:url', canonical);
-  setMeta('property', 'og:type', 'website');
+  setMeta('property', 'og:type', opts.ogType ?? 'website');
   const ogImage = resolveOgImage(opts.path, opts.ogImage);
   setMeta('property', 'og:image', ogImage);
 
