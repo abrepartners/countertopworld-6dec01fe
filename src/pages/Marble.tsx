@@ -4,7 +4,7 @@ const data: StonePageData = {
   slug: 'marble',
   tag: 'Luxury',
   title: 'Marble Countertops',
-  metaTitle: 'Marble Countertops: Care, Cost Marble Countertops — Care, Cost & Design Guide | Countertop World Design Guide',
+  metaTitle: 'Marble Countertops: Care, Cost & Design Guide',
   metaDescription: 'Complete guide to marble countertops in Arkansas. Honest care advice, pricing ($75-$250+/sq ft), design ideas, and whether marble is right for your home.',
   heroImage: '/materials/hero-marble.webp',
   heroImageAlt: 'Elegant marble kitchen island with dramatic Calacatta veining',
