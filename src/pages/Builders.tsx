@@ -7,6 +7,7 @@ import {
 } from 'lucide-react';
 import { applyPageHead } from '../lib/pageHead';
 import { getAttribution } from '../lib/attribution';
+import { trackLead } from '../lib/tracking';
 import { useReveal } from '../hooks/useReveal';
 
 function Reveal({ children, className = '', delay = 0 }: { children: ReactNode; className?: string; delay?: number }) {
@@ -128,8 +129,8 @@ export default function BuildersPage() {
     }
     formData.append('landing_path', window.location.pathname + window.location.search);
     fetch('/api/lead', { method: 'POST', body: formData })
-      .then(() => { setFormStatus('success'); form.reset(); })
-      .catch(() => { setFormStatus('success'); form.reset(); });
+      .then(() => { trackLead(); setFormStatus('success'); form.reset(); })
+      .catch(() => { trackLead(); setFormStatus('success'); form.reset(); });
   }, [location]);
 
   const metrics = [

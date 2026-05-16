@@ -7,6 +7,7 @@ import {
 import { useReveal } from './hooks/useReveal';
 import { applyPageHead } from './lib/pageHead';
 import { getAttribution } from './lib/attribution';
+import { trackLead } from './lib/tracking';
 import './index.css';
 
 function scrollTo(id: string, e?: React.MouseEvent) {
@@ -563,10 +564,11 @@ function Visit() {
             fetch('/api/lead', { method: 'POST', body: formData })
               .then(async (r) => {
                 if (!r.ok) { /* swallow — show success anyway, the lead likely hit GHL or the dupe path */ }
+                trackLead();
                 setFormStatus('success');
                 form.reset();
               })
-              .catch(() => { setFormStatus('success'); form.reset(); });
+              .catch(() => { trackLead(); setFormStatus('success'); form.reset(); });
           }}>
             <fieldset className="flex flex-col gap-3 border-none p-0"><legend className="text-[12px] text-cool-gray font-light tracking-wide">I am a:</legend>
               <div className="flex flex-wrap gap-3" role="radiogroup">{['Homeowner', 'Builder / Contractor', 'Designer / Architect'].map((type) => <button key={type} type="button" role="radio" aria-checked={clientType === type} onClick={() => setClientType(type)} className={`px-5 py-2.5 rounded-[6px] text-[13px] tracking-wide transition-all duration-500 border ${clientType === type ? 'border-stone-gold bg-stone-gold text-obsidian' : 'border-stone-gold/20 text-cool-gray hover:border-stone-gold/40 hover:text-vein-white'}`}>{type}</button>)}</div>
