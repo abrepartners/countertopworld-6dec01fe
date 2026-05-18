@@ -1,4 +1,32 @@
 {
+  "redirects": [
+    { "source": "/home/about-us", "destination": "/", "permanent": true },
+    { "source": "/home/about-us/", "destination": "/", "permanent": true },
+    { "source": "/about", "destination": "/", "permanent": true },
+    { "source": "/about/", "destination": "/", "permanent": true },
+    { "source": "/work", "destination": "/", "permanent": true },
+    { "source": "/work/", "destination": "/", "permanent": true },
+    { "source": "/stone-information", "destination": "/stones/natural-granite", "permanent": true },
+    { "source": "/stone-information/", "destination": "/stones/natural-granite", "permanent": true },
+    { "source": "/why", "destination": "/", "permanent": true },
+    { "source": "/why/", "destination": "/", "permanent": true },
+    { "source": "/press", "destination": "/", "permanent": true },
+    { "source": "/press/", "destination": "/", "permanent": true },
+    { "source": "/posts", "destination": "/blog", "permanent": true },
+    { "source": "/posts/", "destination": "/blog", "permanent": true },
+    { "source": "/quartz", "destination": "/stones/engineered-quartz", "permanent": true },
+    { "source": "/quartz/", "destination": "/stones/engineered-quartz", "permanent": true },
+    { "source": "/sinks", "destination": "/packages", "permanent": true },
+    { "source": "/sinks/", "destination": "/packages", "permanent": true },
+    { "source": "/inventory", "destination": "/", "permanent": true },
+    { "source": "/inventory/", "destination": "/", "permanent": true },
+    { "source": "/contact", "destination": "/book", "permanent": true },
+    { "source": "/contact/", "destination": "/book", "permanent": true },
+    { "source": "/the-best-countertop-materials-for-outdoor-spaces", "destination": "/blog/outdoor-kitchen-countertops-arkansas", "permanent": true },
+    { "source": "/the-best-countertop-materials-for-outdoor-spaces/", "destination": "/blog/outdoor-kitchen-countertops-arkansas", "permanent": true },
+    { "source": "/low-maintenance-countertops-find-the-easiest-surface-to-care-for", "destination": "/blog/granite-vs-quartz-countertops-arkansas", "permanent": true },
+    { "source": "/low-maintenance-countertops-find-the-easiest-surface-to-care-for/", "destination": "/blog/granite-vs-quartz-countertops-arkansas", "permanent": true }
+  ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ]
