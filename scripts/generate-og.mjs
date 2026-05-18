@@ -55,6 +55,15 @@ const pages = [
   { slug: 'blog-granite-vs-quartz-countertops-arkansas', title: 'Granite vs. Quartz\nCountertops', subtitle: 'An Arkansas Homeowner\'s Guide', tag: 'BLOG' },
   { slug: 'blog-countertop-cost-arkansas-2026', title: 'Countertop Cost\nin Arkansas (2026)', subtitle: 'Granite, Quartz, Marble Pricing', tag: 'BLOG' },
   { slug: 'blog-countertop-trends-arkansas-2026', title: '2026 Countertop\nTrends in Arkansas', subtitle: 'Materials, Colors & Finishes', tag: 'BLOG' },
+  // City / Service Area pages
+  { slug: 'areas-little-rock', title: 'Countertops in\nLittle Rock, AR', subtitle: '~15 min from Bryant Showroom', tag: 'SERVICE AREA' },
+  { slug: 'areas-bryant', title: 'Countertops in\nBryant, AR', subtitle: 'Flagship Showroom & Fabrication', tag: 'SERVICE AREA' },
+  { slug: 'areas-rogers', title: 'Countertops in\nRogers, AR', subtitle: '18,700 sq ft NWA Facility', tag: 'SERVICE AREA' },
+  { slug: 'areas-bentonville', title: 'Countertops in\nBentonville, AR', subtitle: '~10 min from Rogers Showroom', tag: 'SERVICE AREA' },
+  { slug: 'areas-fayetteville', title: 'Countertops in\nFayetteville, AR', subtitle: '~25 min via I-49', tag: 'SERVICE AREA' },
+  { slug: 'areas-springdale', title: 'Countertops in\nSpringdale, AR', subtitle: '~15 min from Rogers Showroom', tag: 'SERVICE AREA' },
+  { slug: 'areas-conway', title: 'Countertops in\nConway, AR', subtitle: '~30 min from Bryant Showroom', tag: 'SERVICE AREA' },
+  { slug: 'areas-hot-springs', title: 'Countertops in\nHot Springs, AR', subtitle: '~50 min from Bryant Showroom', tag: 'SERVICE AREA' },
 ];
 
 function buildCard({ title, subtitle, tag }) {

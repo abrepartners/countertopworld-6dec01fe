@@ -105,6 +105,55 @@ const routes = [
     ogImage: '/materials/hero-quartzite.webp',
     breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Blog', path: '/blog' }, { name: '2026 Trends', path: '/blog/countertop-trends-arkansas-2026' }],
   },
+  // City / Service Area pages
+  {
+    path: '/areas/little-rock',
+    title: 'Countertops in Little Rock, AR | Granite, Quartz & Marble — Countertop World',
+    description: 'Little Rock countertop fabrication and installation. Granite, quartz, marble, and quartzite — cut and installed by our own crew. Free estimates. Bryant showroom is 15 minutes south.',
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Service Areas', path: '/areas' }, { name: 'Little Rock', path: '/areas/little-rock' }],
+  },
+  {
+    path: '/areas/bryant',
+    title: 'Countertops in Bryant, AR | Granite, Quartz & Marble — Countertop World',
+    description: 'Bryant countertop fabrication and installation. Visit our flagship showroom on I-30 with 1,000+ slabs, Sasso-Lux finishing, and in-house installation. Free estimates.',
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Service Areas', path: '/areas' }, { name: 'Bryant', path: '/areas/bryant' }],
+  },
+  {
+    path: '/areas/rogers',
+    title: 'Countertops in Rogers, AR | Granite, Quartz & Marble — Countertop World',
+    description: 'Rogers countertop fabrication and installation from our brand-new 18,700 sq ft facility on Commerce Dr. 1,000+ slabs. Granite, quartz, marble, quartzite. Free estimates.',
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Service Areas', path: '/areas' }, { name: 'Rogers', path: '/areas/rogers' }],
+  },
+  {
+    path: '/areas/bentonville',
+    title: 'Countertops in Bentonville, AR | Granite, Quartz & Marble — Countertop World',
+    description: 'Bentonville countertop fabrication and installation. Our Rogers showroom is 10 minutes away with 1,000+ slabs. Granite, quartz, marble, quartzite. Free estimates.',
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Service Areas', path: '/areas' }, { name: 'Bentonville', path: '/areas/bentonville' }],
+  },
+  {
+    path: '/areas/fayetteville',
+    title: 'Countertops in Fayetteville, AR | Granite, Quartz & Marble — Countertop World',
+    description: 'Fayetteville countertop fabrication and installation. Our Rogers showroom is 25 minutes north with 1,000+ slabs. Granite, quartz, marble, quartzite. Free estimates.',
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Service Areas', path: '/areas' }, { name: 'Fayetteville', path: '/areas/fayetteville' }],
+  },
+  {
+    path: '/areas/springdale',
+    title: 'Countertops in Springdale, AR | Granite, Quartz & Marble — Countertop World',
+    description: 'Springdale countertop fabrication and installation. Our Rogers showroom is 15 minutes away with 1,000+ slabs. Granite, quartz, marble, quartzite. Free estimates.',
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Service Areas', path: '/areas' }, { name: 'Springdale', path: '/areas/springdale' }],
+  },
+  {
+    path: '/areas/conway',
+    title: 'Countertops in Conway, AR | Granite, Quartz & Marble — Countertop World',
+    description: 'Conway countertop fabrication and installation. Our Bryant showroom is 30 minutes south with 1,000+ slabs. Granite, quartz, marble, quartzite. Free estimates.',
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Service Areas', path: '/areas' }, { name: 'Conway', path: '/areas/conway' }],
+  },
+  {
+    path: '/areas/hot-springs',
+    title: 'Countertops in Hot Springs, AR | Granite, Quartz & Marble — Countertop World',
+    description: 'Hot Springs countertop fabrication and installation. Our Bryant showroom is 50 minutes east with 1,000+ slabs. Granite, quartz, marble, quartzite. Free estimates.',
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Service Areas', path: '/areas' }, { name: 'Hot Springs', path: '/areas/hot-springs' }],
+  },
 ];
 
 const template = readFileSync(join(DIST, 'index.html'), 'utf-8');

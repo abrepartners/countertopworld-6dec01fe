@@ -21,4 +21,4 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-Sitemap: https://countertopworld.lovable.app/sitemap.xml
+Sitemap: https://countertopworldar.com/sitemap.xml

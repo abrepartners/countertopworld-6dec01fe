@@ -35,6 +35,17 @@ export default function SiteFooter() {
             <li><Link to="/book" className="hover:text-vein-white transition-colors no-underline">Book a Visit</Link></li>
             <li><Link to="/blog" className="hover:text-vein-white transition-colors no-underline">Blog</Link></li>
           </ul>
+          <p className="font-mono text-[9px] text-cool-gray/50 tracking-[2px] uppercase mt-6 mb-3">Service Areas</p>
+          <ul className="flex flex-wrap gap-x-6 gap-y-2 text-[12px] text-cool-gray font-light list-none p-0 m-0">
+            <li><Link to="/areas/little-rock" className="hover:text-vein-white transition-colors no-underline">Little Rock</Link></li>
+            <li><Link to="/areas/bryant" className="hover:text-vein-white transition-colors no-underline">Bryant</Link></li>
+            <li><Link to="/areas/rogers" className="hover:text-vein-white transition-colors no-underline">Rogers</Link></li>
+            <li><Link to="/areas/bentonville" className="hover:text-vein-white transition-colors no-underline">Bentonville</Link></li>
+            <li><Link to="/areas/fayetteville" className="hover:text-vein-white transition-colors no-underline">Fayetteville</Link></li>
+            <li><Link to="/areas/springdale" className="hover:text-vein-white transition-colors no-underline">Springdale</Link></li>
+            <li><Link to="/areas/conway" className="hover:text-vein-white transition-colors no-underline">Conway</Link></li>
+            <li><Link to="/areas/hot-springs" className="hover:text-vein-white transition-colors no-underline">Hot Springs</Link></li>
+          </ul>
         </nav>
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px] text-cool-gray font-light">
           <p>&copy; {new Date().getFullYear()} Countertop World, LLC. All rights reserved.</p>

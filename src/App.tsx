@@ -27,6 +27,7 @@ const BuildersPage = lazy(() => import('./pages/Builders'));
 const DesignersPage = lazy(() => import('./pages/Designers'));
 const Blog = lazy(() => import('./pages/Blog'));
 const BlogPostPage = lazy(() => import('./pages/BlogPost'));
+const CityPage = lazy(() => import('./pages/CityPage'));
 
 /* ── MARBLE VEIN SVG ── */
 function MarbleVeins({ className = '' }: { className?: string }) {
@@ -815,6 +816,7 @@ export default function App() {
       <Route path="/packages" element={<Packages />} />
       <Route path="/blog" element={<Blog />} />
       <Route path="/blog/:slug" element={<BlogPostPage />} />
+      <Route path="/areas/:slug" element={<CityPage />} />
       <Route path="*" element={<NotFound />} />
     </Routes></Suspense></BrowserRouter>
   );
