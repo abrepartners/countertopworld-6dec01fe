@@ -61,6 +61,11 @@ const pages = [
   // Knowledge Center
   { slug: 'knowledge', title: 'Stone Knowledge\nCenter', subtitle: 'Countertop Materials Guide', tag: 'LEARN' },
   { slug: 'knowledge-stone-types-compared', title: 'Countertop Materials\nCompared (2026)', subtitle: 'Six Materials Side by Side', tag: 'KNOWLEDGE' },
+  { slug: 'knowledge-countertop-fabrication-process', title: 'Countertop Fabrication\nProcess Explained', subtitle: 'Slab Selection to Installation', tag: 'KNOWLEDGE' },
+  { slug: 'knowledge-countertop-pricing-guide', title: 'Countertop Pricing\nGuide (2026)', subtitle: 'What Drives Cost by Material', tag: 'KNOWLEDGE' },
+  { slug: 'knowledge-countertop-care-maintenance', title: 'Countertop Care\n& Maintenance', subtitle: 'Sealing, Cleaning & Durability', tag: 'KNOWLEDGE' },
+  { slug: 'knowledge-countertop-design-selection', title: 'Countertop Design\n& Selection', subtitle: 'Choosing the Right Stone', tag: 'KNOWLEDGE' },
+  { slug: 'knowledge-working-with-countertop-professionals', title: 'Working with\nCountertop Professionals', subtitle: 'Builders, Designers & Homeowners', tag: 'KNOWLEDGE' },
   // City / Service Area pages
   { slug: 'areas-little-rock', title: 'Countertops in\nLittle Rock, AR', subtitle: '~15 min from Bryant Showroom', tag: 'SERVICE AREA' },
   { slug: 'areas-bryant', title: 'Countertops in\nBryant, AR', subtitle: 'Flagship Showroom & Fabrication', tag: 'SERVICE AREA' },

@@ -224,6 +224,7 @@ export const blogPosts: BlogPost[] = [
       { title: 'Granite vs. Quartz Comparison', href: '/blog/granite-vs-quartz-countertops-arkansas' },
       { title: 'Countertop Cost in Arkansas (2026)', href: '/blog/countertop-cost-arkansas-2026' },
       { title: 'Porcelain Guide', href: '/stones/porcelain' },
+      { title: 'Design & Selection Guide', href: '/knowledge/countertop-design-selection' },
     ],
   },
   {
@@ -284,6 +285,7 @@ export const blogPosts: BlogPost[] = [
       { title: '2026 Countertop Trends', href: '/blog/countertop-trends-arkansas-2026' },
       { title: 'Granite vs. Quartz Comparison', href: '/blog/granite-vs-quartz-countertops-arkansas' },
       { title: 'Quartzite Guide', href: '/stones/quartzite' },
+      { title: 'Care & Maintenance Guide', href: '/knowledge/countertop-care-maintenance' },
     ],
   },
   {
@@ -344,6 +346,8 @@ export const blogPosts: BlogPost[] = [
       { title: 'Countertop Packages', href: '/packages' },
       { title: 'Countertop Cost Guide', href: '/blog/countertop-cost-arkansas-2026' },
       { title: 'Builder Services', href: '/builders' },
+      { title: 'Working with Countertop Professionals', href: '/knowledge/working-with-countertop-professionals' },
+      { title: 'Fabrication Process Explained', href: '/knowledge/countertop-fabrication-process' },
     ],
   },
   {
@@ -409,6 +413,7 @@ export const blogPosts: BlogPost[] = [
       { title: 'Porcelain Guide', href: '/stones/porcelain' },
       { title: 'Countertop Cost Guide', href: '/blog/countertop-cost-arkansas-2026' },
       { title: 'Little Rock Service Area', href: '/areas/little-rock' },
+      { title: 'Care & Maintenance Guide', href: '/knowledge/countertop-care-maintenance' },
     ],
   },
 ];

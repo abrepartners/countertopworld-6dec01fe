@@ -140,6 +140,41 @@ const routes = [
     ogImage: '/materials/hero-natural-granite.webp',
     breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Knowledge Center', path: '/knowledge' }, { name: 'Stone Types Compared', path: '/knowledge/stone-types-compared' }],
   },
+  {
+    path: '/knowledge/countertop-fabrication-process',
+    title: 'Countertop Fabrication Process Explained | Countertop World Arkansas',
+    description: 'How countertops are made — laser templating, CNC cutting, seam placement, edge profiles, and installation. Step-by-step from an Arkansas fabricator.',
+    ogImage: '/materials/hero-quartzite.webp',
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Knowledge Center', path: '/knowledge' }, { name: 'Fabrication Process', path: '/knowledge/countertop-fabrication-process' }],
+  },
+  {
+    path: '/knowledge/countertop-pricing-guide',
+    title: 'Countertop Pricing Guide (2026) | Countertop World Arkansas',
+    description: 'What countertops actually cost in Arkansas — material ranges, fabrication fees, edge profiles, cutouts, and what drives the final price. No guessing.',
+    ogImage: '/materials/hero-engineered-quartz.webp',
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Knowledge Center', path: '/knowledge' }, { name: 'Pricing Guide', path: '/knowledge/countertop-pricing-guide' }],
+  },
+  {
+    path: '/knowledge/countertop-care-maintenance',
+    title: 'Countertop Care & Maintenance Guide | Countertop World Arkansas',
+    description: 'How to clean, seal, and protect every countertop material — granite, quartz, quartzite, marble, porcelain, and soapstone. From an Arkansas fabricator.',
+    ogImage: '/materials/hero-marble.webp',
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Knowledge Center', path: '/knowledge' }, { name: 'Care & Maintenance', path: '/knowledge/countertop-care-maintenance' }],
+  },
+  {
+    path: '/knowledge/countertop-design-selection',
+    title: 'Countertop Design & Selection Guide | Countertop World Arkansas',
+    description: 'How to choose the right countertop material, color, edge profile, and finish for your kitchen or bathroom. Practical guidance from an Arkansas fabricator.',
+    ogImage: '/materials/hero-porcelain.webp',
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Knowledge Center', path: '/knowledge' }, { name: 'Design & Selection', path: '/knowledge/countertop-design-selection' }],
+  },
+  {
+    path: '/knowledge/working-with-countertop-professionals',
+    title: 'Working with Countertop Professionals | Countertop World Arkansas',
+    description: 'What to expect when working with a countertop fabricator — timelines, communication, builder coordination, and how to avoid common project delays.',
+    ogImage: '/materials/hero-natural-granite.webp',
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Knowledge Center', path: '/knowledge' }, { name: 'Working with Professionals', path: '/knowledge/working-with-countertop-professionals' }],
+  },
   // City / Service Area pages
   {
     path: '/areas/little-rock',
