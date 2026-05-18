@@ -55,6 +55,9 @@ const pages = [
   { slug: 'blog-granite-vs-quartz-countertops-arkansas', title: 'Granite vs. Quartz\nCountertops', subtitle: 'An Arkansas Homeowner\'s Guide', tag: 'BLOG' },
   { slug: 'blog-countertop-cost-arkansas-2026', title: 'Countertop Cost\nin Arkansas (2026)', subtitle: 'Granite, Quartz, Marble Pricing', tag: 'BLOG' },
   { slug: 'blog-countertop-trends-arkansas-2026', title: '2026 Countertop\nTrends in Arkansas', subtitle: 'Materials, Colors & Finishes', tag: 'BLOG' },
+  { slug: 'blog-leathered-granite-countertops-arkansas', title: 'Leathered Granite\nCountertops', subtitle: 'What It Is & Why It\'s Trending', tag: 'BLOG' },
+  { slug: 'blog-how-to-choose-countertop-fabricator-arkansas', title: 'How to Choose a\nCountertop Fabricator', subtitle: 'An Arkansas Buyer\'s Guide', tag: 'BLOG' },
+  { slug: 'blog-outdoor-kitchen-countertops-arkansas', title: 'Outdoor Kitchen\nCountertops', subtitle: 'Best Materials for Arkansas Weather', tag: 'BLOG' },
   // City / Service Area pages
   { slug: 'areas-little-rock', title: 'Countertops in\nLittle Rock, AR', subtitle: '~15 min from Bryant Showroom', tag: 'SERVICE AREA' },
   { slug: 'areas-bryant', title: 'Countertops in\nBryant, AR', subtitle: 'Flagship Showroom & Fabrication', tag: 'SERVICE AREA' },

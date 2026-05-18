@@ -93,8 +93,8 @@ const routes = [
   },
   {
     path: '/blog/countertop-cost-arkansas-2026',
-    title: 'Countertop Cost in Arkansas (2026) — Granite, Quartz, Marble Pricing | Countertop World',
-    description: 'Real countertop pricing from an Arkansas fabricator. Granite $40–$100/sf, quartz $50–$120/sf, marble $50–$150/sf — installed. What drives cost and how to budget.',
+    title: 'Countertop Cost in Arkansas (2026) — Real Pricing by Material | Countertop World',
+    description: 'Real countertop pricing from an Arkansas fabricator. Granite $40–$100/sf, quartz $50–$120/sf, quartzite $60–$150/sf — installed. Sample budgets, what\'s included, and how to save.',
     ogImage: '/materials/hero-engineered-quartz.webp',
     breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Blog', path: '/blog' }, { name: 'Countertop Cost 2026', path: '/blog/countertop-cost-arkansas-2026' }],
   },
@@ -104,6 +104,27 @@ const routes = [
     description: 'What Arkansas homeowners are choosing for countertops in 2026. Warm neutrals, honed finishes, quartzite, waterfall edges, and the move away from gray. From our showroom floor.',
     ogImage: '/materials/hero-quartzite.webp',
     breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Blog', path: '/blog' }, { name: '2026 Trends', path: '/blog/countertop-trends-arkansas-2026' }],
+  },
+  {
+    path: '/blog/leathered-granite-countertops-arkansas',
+    title: 'Leathered Granite Countertops in Arkansas — What It Is & Why It\'s Trending | Countertop World',
+    description: 'Leathered granite explained — how it\'s made, cost premium, best colors, pros and cons. From an Arkansas fabricator that actually does the finishing in-house.',
+    ogImage: '/materials/hero-natural-granite.webp',
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Blog', path: '/blog' }, { name: 'Leathered Granite', path: '/blog/leathered-granite-countertops-arkansas' }],
+  },
+  {
+    path: '/blog/how-to-choose-countertop-fabricator-arkansas',
+    title: 'How to Choose a Countertop Fabricator in Arkansas — 10 Questions to Ask | Countertop World',
+    description: 'The fabricator matters more than the stone. 10 questions to ask before signing, red flags to watch for, and what separates great fabrication from average work.',
+    ogImage: '/materials/hero-engineered-quartz.webp',
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Blog', path: '/blog' }, { name: 'Choosing a Fabricator', path: '/blog/how-to-choose-countertop-fabricator-arkansas' }],
+  },
+  {
+    path: '/blog/outdoor-kitchen-countertops-arkansas',
+    title: 'Outdoor Kitchen Countertops in Arkansas — Best Materials for Hot Summers & Ice Storms | Countertop World',
+    description: 'Which countertop materials survive Arkansas heat, humidity, and freeze-thaw cycles outdoors? Granite, quartzite, porcelain — ranked by durability, cost, and maintenance.',
+    ogImage: '/materials/hero-quartzite.webp',
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Blog', path: '/blog' }, { name: 'Outdoor Countertops', path: '/blog/outdoor-kitchen-countertops-arkansas' }],
   },
   // City / Service Area pages
   {
