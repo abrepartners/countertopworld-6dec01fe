@@ -129,7 +129,7 @@ const MACHINES = [
     count: 1,
     description: 'High-pressure water cuts the slab with zero thermal shock. Clean cuts, no micro-fractures, any stone.',
     icon: Scissors,
-    image: '/process/saber.jpg',
+    image: '/process/saber.webp',
   },
   {
     name: 'Park Industries TITAN',
@@ -137,7 +137,7 @@ const MACHINES = [
     count: 4,
     description: 'Four on the floor. Shapes edges, sink cutouts, and detail work in parallel — four slabs in progress at once.',
     icon: Scissors,
-    image: '/process/titan.jpg',
+    image: '/process/titan.webp',
   },
   {
     name: 'Sasso-Lux K-Lux',
