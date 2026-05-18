@@ -34,3 +34,15 @@ export function trackBooking() {
     });
   }
 }
+
+export function trackViewContent(contentName?: string) {
+  if (typeof window === 'undefined') return;
+
+  if (window.fbq) {
+    window.fbq('track', 'ViewContent', contentName ? { content_name: contentName } : undefined);
+  }
+
+  if (window.gtag) {
+    window.gtag('event', 'view_item', contentName ? { item_name: contentName } : undefined);
+  }
+}

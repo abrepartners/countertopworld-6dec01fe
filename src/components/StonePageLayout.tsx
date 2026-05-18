@@ -2,6 +2,7 @@ import { useState, useCallback, useRef, useEffect, type ReactNode } from 'react'
 import { Link } from 'react-router-dom';
 import { ArrowLeft, ChevronDown, ChevronRight } from 'lucide-react';
 import { applyPageHead } from '../lib/pageHead';
+import { trackViewContent } from '../lib/tracking';
 import SiteFooter from './SiteFooter';
 
 /* ── Types ──────────────────────────────────────────── */
@@ -178,6 +179,7 @@ export default function StonePageLayout({ data }: { data: StonePageData }) {
   const tabListRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    trackViewContent(data.title);
     const cleanupHead = applyPageHead({
       title: data.metaTitle,
       description: data.metaDescription,

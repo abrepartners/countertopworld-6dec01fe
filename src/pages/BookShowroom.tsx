@@ -4,6 +4,7 @@ import SiteFooter from '../components/SiteFooter';
 import { ArrowLeft, MapPin, Clock } from 'lucide-react';
 import { applyPageHead } from '../lib/pageHead';
 import { appendAttributionToUrl } from '../lib/attribution';
+import { trackBooking } from '../lib/tracking';
 
 // GoHighLevel calendar widgets. Three options total — Bryant splits into a
 // weekday round-robin and a Saturday-only calendar owned by David, since
@@ -44,6 +45,7 @@ export default function BookShowroom() {
   const [bryantSub, setBryantSub] = useState<BryantSub>('bryant_weekday');
 
   useEffect(() => {
+    trackBooking();
     const cleanup = applyPageHead({
       title: 'Book a Showroom Visit — Countertop World',
       description:
