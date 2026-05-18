@@ -87,6 +87,7 @@ export const blogPosts: BlogPost[] = [
       { q: 'Which material is better for bathroom vanities?', a: 'Both work well for bathrooms. Quartz\'s zero-maintenance surface is especially appealing in bathrooms where water contact is constant. Granite is a great choice if you want to match a natural stone shower surround. For small vanities, ask about granite remnant pricing — leftover pieces from kitchen jobs at a fraction of the cost.' },
     ],
     relatedLinks: [
+      { title: 'All Six Materials Compared', href: '/knowledge/stone-types-compared' },
       { title: 'Natural Granite Guide', href: '/stones/natural-granite' },
       { title: 'Engineered Quartz Guide', href: '/stones/engineered-quartz' },
       { title: 'Countertop Cost in Arkansas (2026)', href: '/blog/countertop-cost-arkansas-2026' },
@@ -158,11 +159,11 @@ export const blogPosts: BlogPost[] = [
       { q: 'Is quartz cheaper than granite?', a: 'Not usually. Entry-level granite ($40–$55/sf) is less expensive than entry-level quartz ($50–$65/sf). At the mid-range and premium tiers, the two materials overlap significantly. Brand selection in quartz and slab rarity in granite are the biggest price drivers.' },
     ],
     relatedLinks: [
+      { title: 'All Six Materials Compared', href: '/knowledge/stone-types-compared' },
       { title: 'Granite vs. Quartz Comparison', href: '/blog/granite-vs-quartz-countertops-arkansas' },
       { title: 'Leathered Granite Guide', href: '/blog/leathered-granite-countertops-arkansas' },
       { title: 'Outdoor Kitchen Countertops', href: '/blog/outdoor-kitchen-countertops-arkansas' },
       { title: 'How to Choose a Fabricator', href: '/blog/how-to-choose-countertop-fabricator-arkansas' },
-      { title: '2026 Countertop Trends', href: '/blog/countertop-trends-arkansas-2026' },
       { title: 'Countertop Packages', href: '/packages' },
     ],
   },

@@ -28,6 +28,8 @@ const DesignersPage = lazy(() => import('./pages/Designers'));
 const Blog = lazy(() => import('./pages/Blog'));
 const BlogPostPage = lazy(() => import('./pages/BlogPost'));
 const CityPage = lazy(() => import('./pages/CityPage'));
+const KnowledgeCenter = lazy(() => import('./pages/KnowledgeCenter'));
+const KnowledgePage = lazy(() => import('./pages/KnowledgePage'));
 
 /* ── MARBLE VEIN SVG ── */
 function MarbleVeins({ className = '' }: { className?: string }) {
@@ -118,6 +120,7 @@ function GlassNav() {
             <a href="#process" onClick={e => scrollTo('process', e)} className={linkClass}>Process{underline}</a>
             <a href="#work" onClick={e => scrollTo('work', e)} className={linkClass}>Inspiration{underline}</a>
             <a href="#showrooms" onClick={e => scrollTo('showrooms', e)} className={linkClass}>Visit{underline}</a>
+            <Link to="/knowledge" className={linkClass}>Learn{underline}</Link>
           </div>
           <a href="#contact" onClick={e => scrollTo('contact', e)} className="inline-flex items-center gap-1.5 px-5 py-2 rounded-[6px] text-[12px] font-medium tracking-wide bg-stone-gold text-obsidian hover:bg-stone-gold-light transition-all duration-500">Get a free estimate</a>
         </div>
@@ -144,6 +147,7 @@ function GlassNav() {
         <a href="#work" onClick={e => { scrollTo('work', e); setMenuOpen(false); }} className="text-[15px] text-cool-gray hover:text-vein-white transition-colors">Inspiration</a>
         <a href="#showrooms" onClick={e => { scrollTo('showrooms', e); setMenuOpen(false); }} className="text-[15px] text-cool-gray hover:text-vein-white transition-colors">Visit</a>
         <Link to="/packages" onClick={() => setMenuOpen(false)} className="text-[15px] text-cool-gray hover:text-vein-white transition-colors">Packages</Link>
+        <Link to="/knowledge" onClick={() => setMenuOpen(false)} className="text-[15px] text-cool-gray hover:text-vein-white transition-colors">Learn</Link>
         <Link to="/book" onClick={() => setMenuOpen(false)} className="text-[15px] text-cool-gray hover:text-vein-white transition-colors">Book a Visit</Link>
         <a href="#contact" onClick={e => { scrollTo('contact', e); setMenuOpen(false); }} className="inline-flex items-center justify-center px-5 py-3 rounded-[6px] text-[13px] font-medium bg-stone-gold text-obsidian w-full mt-2">Get a free estimate</a>
       </div>}
@@ -816,6 +820,8 @@ export default function App() {
       <Route path="/packages" element={<Packages />} />
       <Route path="/blog" element={<Blog />} />
       <Route path="/blog/:slug" element={<BlogPostPage />} />
+      <Route path="/knowledge" element={<KnowledgeCenter />} />
+      <Route path="/knowledge/:slug" element={<KnowledgePage />} />
       <Route path="/areas/:slug" element={<CityPage />} />
       <Route path="*" element={<NotFound />} />
     </Routes></Suspense></BrowserRouter>

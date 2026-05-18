@@ -33,6 +33,7 @@ export default function SiteFooter() {
             <li><Link to="/designers" className="hover:text-vein-white transition-colors no-underline">Designers</Link></li>
             <li><Link to="/packages" className="hover:text-vein-white transition-colors no-underline">Packages</Link></li>
             <li><Link to="/book" className="hover:text-vein-white transition-colors no-underline">Book a Visit</Link></li>
+            <li><Link to="/knowledge" className="hover:text-vein-white transition-colors no-underline">Knowledge Center</Link></li>
             <li><Link to="/blog" className="hover:text-vein-white transition-colors no-underline">Blog</Link></li>
           </ul>
           <p className="font-mono text-[9px] text-cool-gray/50 tracking-[2px] uppercase mt-6 mb-3">Service Areas</p>

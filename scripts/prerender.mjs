@@ -126,6 +126,20 @@ const routes = [
     ogImage: '/materials/hero-quartzite.webp',
     breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Blog', path: '/blog' }, { name: 'Outdoor Countertops', path: '/blog/outdoor-kitchen-countertops-arkansas' }],
   },
+  // Knowledge Center
+  {
+    path: '/knowledge',
+    title: 'Stone Knowledge Center — Countertop Guides | Countertop World',
+    description: 'Everything you need to know about countertop materials, fabrication, pricing, and care. Straight talk from an Arkansas stone fabricator.',
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Knowledge Center', path: '/knowledge' }],
+  },
+  {
+    path: '/knowledge/stone-types-compared',
+    title: 'Countertop Materials Compared (2026) | Countertop World Arkansas',
+    description: 'Six countertop materials compared side by side — cost, durability, maintenance, heat resistance, and best uses. Honest breakdown from an Arkansas fabricator.',
+    ogImage: '/materials/hero-natural-granite.webp',
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Knowledge Center', path: '/knowledge' }, { name: 'Stone Types Compared', path: '/knowledge/stone-types-compared' }],
+  },
   // City / Service Area pages
   {
     path: '/areas/little-rock',

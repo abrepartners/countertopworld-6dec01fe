@@ -58,6 +58,9 @@ const pages = [
   { slug: 'blog-leathered-granite-countertops-arkansas', title: 'Leathered Granite\nCountertops', subtitle: 'What It Is & Why It\'s Trending', tag: 'BLOG' },
   { slug: 'blog-how-to-choose-countertop-fabricator-arkansas', title: 'How to Choose a\nCountertop Fabricator', subtitle: 'An Arkansas Buyer\'s Guide', tag: 'BLOG' },
   { slug: 'blog-outdoor-kitchen-countertops-arkansas', title: 'Outdoor Kitchen\nCountertops', subtitle: 'Best Materials for Arkansas Weather', tag: 'BLOG' },
+  // Knowledge Center
+  { slug: 'knowledge', title: 'Stone Knowledge\nCenter', subtitle: 'Countertop Materials Guide', tag: 'LEARN' },
+  { slug: 'knowledge-stone-types-compared', title: 'Countertop Materials\nCompared (2026)', subtitle: 'Six Materials Side by Side', tag: 'KNOWLEDGE' },
   // City / Service Area pages
   { slug: 'areas-little-rock', title: 'Countertops in\nLittle Rock, AR', subtitle: '~15 min from Bryant Showroom', tag: 'SERVICE AREA' },
   { slug: 'areas-bryant', title: 'Countertops in\nBryant, AR', subtitle: 'Flagship Showroom & Fabrication', tag: 'SERVICE AREA' },
