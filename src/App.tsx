@@ -152,9 +152,15 @@ function GlassNav() {
 
 /* ── HERO ── */
 function Hero() {
-  // Start visible so the H1 (LCP candidate) paints immediately. The fade-in was
-  // delaying Largest Contentful Paint by ~1.2s.
   const [loaded] = useState(true);
+  const [isDesktop, setIsDesktop] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia('(min-width: 768px)');
+    setIsDesktop(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
+    mq.addEventListener('change', handler);
+    return () => mq.removeEventListener('change', handler);
+  }, []);
   const metrics = [{ value: '18,700', label: 'Sq ft Rogers facility' },{ value: 'Only', label: 'Sasso-Lux in Arkansas' },{ value: '100+', label: 'Years combined experience' },{ value: '4.4★', label: '109+ verified reviews' }];
   return (
     <section aria-labelledby="hero-heading" className="relative min-h-screen flex flex-col items-center justify-center pt-28 pb-0 px-6 overflow-hidden bg-obsidian">
@@ -172,7 +178,11 @@ function Hero() {
         </div>
       </div>
       <div className={`w-full max-w-[1440px] mt-16 mx-auto aspect-[21/9] overflow-hidden rounded-[12px] relative group transition-all duration-[1500ms] delay-300 ease-out ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
-        <video autoPlay muted loop playsInline preload="none" poster="/video/cw-hero-poster.webp" className="w-full h-full object-cover brightness-[0.7] contrast-[1.05]"><source src="/video/cw-hero-compressed.mp4" type="video/mp4" /></video>
+        {isDesktop ? (
+          <video autoPlay muted loop playsInline preload="none" poster="/video/cw-hero-poster.webp" className="w-full h-full object-cover brightness-[0.7] contrast-[1.05]"><source src="/video/cw-hero-compressed.mp4" type="video/mp4" /></video>
+        ) : (
+          <img src="/video/cw-hero-poster.webp" alt="" className="w-full h-full object-cover brightness-[0.7] contrast-[1.05]" />
+        )}
         <div className="absolute inset-0 bg-gradient-to-t from-obsidian/40 via-transparent to-transparent pointer-events-none" />
       </div>
       <div className={`w-full border-t border-stone-gold/15 bg-granite/50 mt-0 transition-all duration-1000 delay-700 ${loaded ? 'opacity-100' : 'opacity-0'}`}>

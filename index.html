@@ -6,7 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="image" href="/video/cw-hero-poster.webp" fetchpriority="high">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <title>Countertop World | Granite & Quartz Countertops in Arkansas</title>
     <meta name="description" content="Family-owned Arkansas stone fabrication. Granite, quartz, marble & quartzite — 1,000+ slabs. Bryant & Rogers showrooms. Free estimates.">
     <meta name="author" content="Countertop World, LLC" />
@@ -162,36 +162,50 @@
     ]
     </script>
 
-    <!-- Meta Pixel -->
+    <!-- Meta Pixel + Google Ads — deferred to unblock first paint -->
     <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '792842851522941');
-    fbq('track', 'PageView');
+    function cwLoadTracking(){
+      // Meta Pixel
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '792842851522941');
+      fbq('track', 'PageView');
+      // Google Ads
+      var g=document.createElement('script');g.async=!0;
+      g.src='https://www.googletagmanager.com/gtag/js?id=AW-6873435929';
+      document.head.appendChild(g);
+      window.dataLayer=window.dataLayer||[];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag=gtag;
+      gtag('js',new Date());
+      gtag('config','AW-6873435929');
+    }
+    if('requestIdleCallback' in window){requestIdleCallback(cwLoadTracking)}
+    else{setTimeout(cwLoadTracking,2000)}
     </script>
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=792842851522941&ev=PageView&noscript=1"
     /></noscript>
-
-    <!-- Google Ads (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-6873435929"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'AW-6873435929');
-    </script>
   </head>
 
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <script src="https://beta.leadconnectorhq.com/loader.js" data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="69f36d8d4e29b94e21873510"></script>
+    <script>
+    // LeadConnector chat widget — deferred to unblock first paint
+    window.addEventListener('load', function(){
+      var s=document.createElement('script');
+      s.src='https://beta.leadconnectorhq.com/loader.js';
+      s.setAttribute('data-resources-url','https://beta.leadconnectorhq.com/chat-widget/loader.js');
+      s.setAttribute('data-widget-id','69f36d8d4e29b94e21873510');
+      document.body.appendChild(s);
+    });
+    </script>
   </body>
 </html>

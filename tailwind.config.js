@@ -58,7 +58,7 @@ module.exports = {
       fontFamily: {
         display: ['"Cormorant Garamond"', 'serif'],
         body: ['"Inter"', '-apple-system', 'sans-serif'],
-        mono: ['"JetBrains Mono"', 'monospace'],
+        mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
       },
       borderRadius: {
         lg: "var(--radius)",
