@@ -215,7 +215,7 @@ function About() {
             </div>
             <div className="mt-10"><PillButton href="#showrooms">Visit a showroom <ArrowRight size={14} className="ml-2" /></PillButton></div>
           </div></Reveal>
-          <Reveal delay={1}><div className="aspect-[4/5] overflow-hidden bg-granite rounded-[12px] border border-stone-gold/10"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1600&auto=format&fit=crop" alt="Countertop World craftsmanship" className="w-full h-full object-cover brightness-[0.8] contrast-[1.05]" loading="lazy" /></div></Reveal>
+          <Reveal delay={1}><div className="aspect-[4/5] overflow-hidden bg-granite rounded-[12px] border border-stone-gold/10"><img src="/team/david-mcdougall.webp" alt="David McDougall, owner of Countertop World, in the showroom" className="w-full h-full object-cover brightness-[0.8] contrast-[1.05]" loading="lazy" /></div></Reveal>
         </div>
       </div>
       <div className="py-28 md:py-36 px-6 lg:px-10 bg-granite/50 border-y border-stone-gold/10">
