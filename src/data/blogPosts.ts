@@ -88,6 +88,7 @@ export const blogPosts: BlogPost[] = [
     ],
     relatedLinks: [
       { title: 'All Six Materials Compared', href: '/knowledge/stone-types-compared' },
+      { title: 'Quartzite vs Quartz: The Difference', href: '/knowledge/quartzite-vs-quartz-difference' },
       { title: 'Natural Granite Guide', href: '/stones/natural-granite' },
       { title: 'Engineered Quartz Guide', href: '/stones/engineered-quartz' },
       { title: 'Countertop Cost in Arkansas (2026)', href: '/blog/countertop-cost-arkansas-2026' },
@@ -160,6 +161,7 @@ export const blogPosts: BlogPost[] = [
     ],
     relatedLinks: [
       { title: 'All Six Materials Compared', href: '/knowledge/stone-types-compared' },
+      { title: 'Cost by Kitchen Size', href: '/knowledge/countertop-cost-by-kitchen-size' },
       { title: 'Granite vs. Quartz Comparison', href: '/blog/granite-vs-quartz-countertops-arkansas' },
       { title: 'Leathered Granite Guide', href: '/blog/leathered-granite-countertops-arkansas' },
       { title: 'Outdoor Kitchen Countertops', href: '/blog/outdoor-kitchen-countertops-arkansas' },
@@ -220,6 +222,7 @@ export const blogPosts: BlogPost[] = [
     ],
     relatedLinks: [
       { title: 'Quartzite Guide', href: '/stones/quartzite' },
+      { title: 'Honed vs Polished Countertops', href: '/knowledge/honed-vs-polished-countertops' },
       { title: 'Natural Granite Guide', href: '/stones/natural-granite' },
       { title: 'Granite vs. Quartz Comparison', href: '/blog/granite-vs-quartz-countertops-arkansas' },
       { title: 'Countertop Cost in Arkansas (2026)', href: '/blog/countertop-cost-arkansas-2026' },
@@ -282,6 +285,7 @@ export const blogPosts: BlogPost[] = [
     ],
     relatedLinks: [
       { title: 'Natural Granite Guide', href: '/stones/natural-granite' },
+      { title: 'Honed vs Polished Countertops', href: '/knowledge/honed-vs-polished-countertops' },
       { title: '2026 Countertop Trends', href: '/blog/countertop-trends-arkansas-2026' },
       { title: 'Granite vs. Quartz Comparison', href: '/blog/granite-vs-quartz-countertops-arkansas' },
       { title: 'Quartzite Guide', href: '/stones/quartzite' },
@@ -343,6 +347,7 @@ export const blogPosts: BlogPost[] = [
     ],
     relatedLinks: [
       { title: 'Book a Showroom Visit', href: '/book' },
+      { title: 'Questions to Ask Your Fabricator', href: '/knowledge/questions-to-ask-countertop-fabricator' },
       { title: 'Countertop Packages', href: '/packages' },
       { title: 'Countertop Cost Guide', href: '/blog/countertop-cost-arkansas-2026' },
       { title: 'Builder Services', href: '/builders' },
@@ -411,6 +416,7 @@ export const blogPosts: BlogPost[] = [
       { title: 'Natural Granite Guide', href: '/stones/natural-granite' },
       { title: 'Quartzite Guide', href: '/stones/quartzite' },
       { title: 'Porcelain Guide', href: '/stones/porcelain' },
+      { title: 'Outdoor Countertop Winter Care', href: '/knowledge/outdoor-countertop-winter-care' },
       { title: 'Countertop Cost Guide', href: '/blog/countertop-cost-arkansas-2026' },
       { title: 'Little Rock Service Area', href: '/areas/little-rock' },
       { title: 'Care & Maintenance Guide', href: '/knowledge/countertop-care-maintenance' },

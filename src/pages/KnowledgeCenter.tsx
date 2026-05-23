@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { applyPageHead } from '../lib/pageHead';
-import { knowledgePages } from '../data/knowledgePages';
+import { knowledgePages, getClusterPages } from '../data/knowledgePages';
 import SiteFooter from '../components/SiteFooter';
 
 export default function KnowledgeCenter() {
@@ -58,6 +58,20 @@ export default function KnowledgeCenter() {
                   </div>
                 </div>
               </Link>
+              {(() => {
+                const clusters = getClusterPages(page.slug);
+                if (clusters.length === 0) return null;
+                return (
+                  <div className="mt-3 ml-6 md:ml-[284px] grid gap-1.5">
+                    {clusters.map(c => (
+                      <Link key={c.slug} to={`/knowledge/${c.slug}`} className="flex items-center gap-2 py-1.5 text-[13px] text-cool-gray/80 hover:text-stone-gold transition-colors no-underline group/cluster">
+                        <ArrowRight size={11} className="text-stone-gold/30 group-hover/cluster:text-stone-gold flex-shrink-0" />
+                        {c.title}
+                      </Link>
+                    ))}
+                  </div>
+                );
+              })()}
             </article>
           ))}
         </div>
