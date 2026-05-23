@@ -6,30 +6,201 @@
     { "source": "/about/", "destination": "/", "permanent": true },
     { "source": "/work", "destination": "/", "permanent": true },
     { "source": "/work/", "destination": "/", "permanent": true },
-    { "source": "/stone-information", "destination": "/stones/natural-granite", "permanent": true },
-    { "source": "/stone-information/", "destination": "/stones/natural-granite", "permanent": true },
+    {
+      "source": "/stone-information",
+      "destination": "/stones/natural-granite",
+      "permanent": true
+    },
+    {
+      "source": "/stone-information/",
+      "destination": "/stones/natural-granite",
+      "permanent": true
+    },
     { "source": "/why", "destination": "/", "permanent": true },
     { "source": "/why/", "destination": "/", "permanent": true },
     { "source": "/press", "destination": "/", "permanent": true },
     { "source": "/press/", "destination": "/", "permanent": true },
     { "source": "/posts", "destination": "/blog", "permanent": true },
     { "source": "/posts/", "destination": "/blog", "permanent": true },
-    { "source": "/quartz", "destination": "/stones/engineered-quartz", "permanent": true },
-    { "source": "/quartz/", "destination": "/stones/engineered-quartz", "permanent": true },
+    {
+      "source": "/quartz",
+      "destination": "/stones/engineered-quartz",
+      "permanent": true
+    },
+    {
+      "source": "/quartz/",
+      "destination": "/stones/engineered-quartz",
+      "permanent": true
+    },
     { "source": "/sinks", "destination": "/packages", "permanent": true },
     { "source": "/sinks/", "destination": "/packages", "permanent": true },
     { "source": "/inventory", "destination": "/", "permanent": true },
     { "source": "/inventory/", "destination": "/", "permanent": true },
     { "source": "/contact", "destination": "/book", "permanent": true },
     { "source": "/contact/", "destination": "/book", "permanent": true },
-    { "source": "/the-best-countertop-materials-for-outdoor-spaces", "destination": "/blog/outdoor-kitchen-countertops-arkansas", "permanent": true },
-    { "source": "/the-best-countertop-materials-for-outdoor-spaces/", "destination": "/blog/outdoor-kitchen-countertops-arkansas", "permanent": true },
-    { "source": "/low-maintenance-countertops-find-the-easiest-surface-to-care-for", "destination": "/blog/granite-vs-quartz-countertops-arkansas", "permanent": true },
-    { "source": "/low-maintenance-countertops-find-the-easiest-surface-to-care-for/", "destination": "/blog/granite-vs-quartz-countertops-arkansas", "permanent": true },
-    { "source": "/northwest-arkansas-countertops", "destination": "/areas/rogers", "permanent": true },
-    { "source": "/northwest-arkansas-countertops/", "destination": "/areas/rogers", "permanent": true }
+    {
+      "source": "/the-best-countertop-materials-for-outdoor-spaces",
+      "destination": "/blog/outdoor-kitchen-countertops-arkansas",
+      "permanent": true
+    },
+    {
+      "source": "/the-best-countertop-materials-for-outdoor-spaces/",
+      "destination": "/blog/outdoor-kitchen-countertops-arkansas",
+      "permanent": true
+    },
+    {
+      "source": "/low-maintenance-countertops-find-the-easiest-surface-to-care-for",
+      "destination": "/blog/granite-vs-quartz-countertops-arkansas",
+      "permanent": true
+    },
+    {
+      "source": "/low-maintenance-countertops-find-the-easiest-surface-to-care-for/",
+      "destination": "/blog/granite-vs-quartz-countertops-arkansas",
+      "permanent": true
+    },
+    {
+      "source": "/northwest-arkansas-countertops",
+      "destination": "/areas/rogers",
+      "permanent": true
+    },
+    {
+      "source": "/northwest-arkansas-countertops/",
+      "destination": "/areas/rogers",
+      "permanent": true
+    },
+
+    { "source": "/our-work", "destination": "/", "permanent": true },
+    { "source": "/our-work/", "destination": "/", "permanent": true },
+    { "source": "/gallery", "destination": "/", "permanent": true },
+    { "source": "/gallery/", "destination": "/", "permanent": true },
+    { "source": "/services", "destination": "/", "permanent": true },
+    { "source": "/services/", "destination": "/", "permanent": true },
+    { "source": "/testimonials", "destination": "/", "permanent": true },
+    { "source": "/testimonials/", "destination": "/", "permanent": true },
+    { "source": "/faq", "destination": "/knowledge", "permanent": true },
+    { "source": "/faq/", "destination": "/knowledge", "permanent": true },
+    { "source": "/countertops", "destination": "/", "permanent": true },
+    { "source": "/countertops/", "destination": "/", "permanent": true },
+    {
+      "source": "/granite",
+      "destination": "/stones/natural-granite",
+      "permanent": true
+    },
+    {
+      "source": "/granite/",
+      "destination": "/stones/natural-granite",
+      "permanent": true
+    },
+    { "source": "/marble", "destination": "/stones/marble", "permanent": true },
+    {
+      "source": "/marble/",
+      "destination": "/stones/marble",
+      "permanent": true
+    },
+    {
+      "source": "/porcelain",
+      "destination": "/stones/porcelain",
+      "permanent": true
+    },
+    {
+      "source": "/porcelain/",
+      "destination": "/stones/porcelain",
+      "permanent": true
+    },
+    {
+      "source": "/quartzite",
+      "destination": "/stones/quartzite",
+      "permanent": true
+    },
+    {
+      "source": "/quartzite/",
+      "destination": "/stones/quartzite",
+      "permanent": true
+    },
+    { "source": "/residential", "destination": "/", "permanent": true },
+    { "source": "/residential/", "destination": "/", "permanent": true },
+    { "source": "/commercial", "destination": "/builders", "permanent": true },
+    { "source": "/commercial/", "destination": "/builders", "permanent": true },
+    { "source": "/showroom", "destination": "/book", "permanent": true },
+    { "source": "/showroom/", "destination": "/book", "permanent": true },
+    { "source": "/showrooms", "destination": "/book", "permanent": true },
+    { "source": "/showrooms/", "destination": "/book", "permanent": true },
+    { "source": "/reviews", "destination": "/", "permanent": true },
+    { "source": "/reviews/", "destination": "/", "permanent": true },
+    { "source": "/financing", "destination": "/packages", "permanent": true },
+    { "source": "/financing/", "destination": "/packages", "permanent": true },
+    { "source": "/careers", "destination": "/", "permanent": true },
+    { "source": "/careers/", "destination": "/", "permanent": true },
+    { "source": "/team", "destination": "/", "permanent": true },
+    { "source": "/team/", "destination": "/", "permanent": true },
+    {
+      "source": "/process",
+      "destination": "/knowledge/countertop-fabrication-process",
+      "permanent": true
+    },
+    {
+      "source": "/process/",
+      "destination": "/knowledge/countertop-fabrication-process",
+      "permanent": true
+    },
+    { "source": "/areas", "destination": "/", "permanent": true },
+    { "source": "/areas/", "destination": "/", "permanent": true },
+    { "source": "/locations", "destination": "/", "permanent": true },
+    { "source": "/locations/", "destination": "/", "permanent": true },
+    { "source": "/nwa", "destination": "/areas/rogers", "permanent": true },
+    { "source": "/nwa/", "destination": "/areas/rogers", "permanent": true },
+    {
+      "source": "/little-rock",
+      "destination": "/areas/little-rock",
+      "permanent": true
+    },
+    {
+      "source": "/little-rock/",
+      "destination": "/areas/little-rock",
+      "permanent": true
+    },
+    { "source": "/bryant", "destination": "/areas/bryant", "permanent": true },
+    { "source": "/bryant/", "destination": "/areas/bryant", "permanent": true },
+    {
+      "source": "/bentonville",
+      "destination": "/areas/bentonville",
+      "permanent": true
+    },
+    {
+      "source": "/bentonville/",
+      "destination": "/areas/bentonville",
+      "permanent": true
+    },
+    {
+      "source": "/fayetteville",
+      "destination": "/areas/fayetteville",
+      "permanent": true
+    },
+    {
+      "source": "/fayetteville/",
+      "destination": "/areas/fayetteville",
+      "permanent": true
+    },
+    {
+      "source": "/springdale",
+      "destination": "/areas/springdale",
+      "permanent": true
+    },
+    {
+      "source": "/springdale/",
+      "destination": "/areas/springdale",
+      "permanent": true
+    },
+    {
+      "source": "/spotlight-on-the-best-backsplash-companions-for-your-countertops",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/spotlight-on-the-best-backsplash-companions-for-your-countertops/",
+      "destination": "/blog",
+      "permanent": true
+    }
   ],
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
-  ]
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
 }
