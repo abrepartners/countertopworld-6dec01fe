@@ -197,15 +197,5 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <script>
-    // LeadConnector chat widget — deferred to unblock first paint
-    window.addEventListener('load', function(){
-      var s=document.createElement('script');
-      s.src='https://beta.leadconnectorhq.com/loader.js';
-      s.setAttribute('data-resources-url','https://beta.leadconnectorhq.com/chat-widget/loader.js');
-      s.setAttribute('data-widget-id','69f36d8d4e29b94e21873510');
-      document.body.appendChild(s);
-    });
-    </script>
   </body>
 </html>
