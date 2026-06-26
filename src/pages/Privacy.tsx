@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { applyPageHead } from "../lib/pageHead";
-import SiteFooter from "../components/SiteFooter";
+import LegalPageLayout from "../components/LegalPageLayout";
 
 const LAST_UPDATED = "June 26, 2026";
 
@@ -20,37 +20,14 @@ export default function Privacy() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-obsidian antialiased">
-      <nav
-        className="fixed top-0 inset-x-0 z-50 bg-obsidian/80 backdrop-blur-xl border-b border-stone-gold/10 px-6 h-14 flex items-center justify-between"
-        aria-label="Site navigation"
-      >
-        <Link
-          to="/"
-          className="font-display text-[16px] font-medium text-stone-gold tracking-tight no-underline"
-        >
-          Countertop World
-        </Link>
-        <Link
-          to="/#materials"
-          className="text-[13px] text-cool-gray hover:text-vein-white transition-colors no-underline"
-        >
-          Materials
-        </Link>
-      </nav>
-
-      <header className="pt-24 pb-16 px-6 text-center bg-granite border-b border-stone-gold/10">
-        <span className="inline-block font-mono text-[10px] tracking-[4px] uppercase text-stone-gold bg-stone-gold/10 border border-stone-gold/20 px-3.5 py-1 rounded-[6px] mb-4">
-          Legal
-        </span>
-        <h1 className="font-display text-[clamp(2rem,5vw,3.5rem)] font-light tracking-tight text-vein-white mb-4">
-          Privacy Policy
-        </h1>
+    <LegalPageLayout
+      title="Privacy Policy"
+      subtitle={
         <p className="text-[13px] text-cool-gray font-light">
           Last updated: {LAST_UPDATED}
         </p>
-      </header>
-
+      }
+    >
       <main className="max-w-[760px] mx-auto px-6 py-16 text-[15px] text-cool-gray font-light leading-relaxed [&_h2]:font-display [&_h2]:text-vein-white [&_h2]:font-light [&_h2]:tracking-tight [&_h2]:text-[clamp(1.3rem,3vw,1.7rem)] [&_h2]:mt-14 [&_h2]:mb-4 [&_h3]:text-vein-white [&_h3]:font-medium [&_h3]:text-[16px] [&_h3]:mt-8 [&_h3]:mb-3 [&_p]:mb-4 [&_ul]:mb-4 [&_ul]:space-y-2 [&_ul]:pl-5 [&_li]:list-disc [&_strong]:text-vein-white [&_strong]:font-medium [&_a]:text-stone-gold [&_a:hover]:text-stone-gold-light [&_a]:transition-colors">
         <p>
           This Privacy Policy explains how Countertop World LLC ("Countertop
@@ -93,8 +70,8 @@ export default function Privacy() {
 
         <h2>Text Messaging (SMS)</h2>
         <p>
-          When you provide your mobile number to Countertop World LLC (through
-          a form on this website, by phone, or in person), we may send you SMS
+          When you provide your mobile number to Countertop World LLC (through a
+          form on this website, by phone, or in person), we may send you SMS
           text messages related to your inquiry, appointment scheduling and
           reminders, quotes, order and installation updates, and customer
           service.
@@ -203,8 +180,6 @@ export default function Privacy() {
           at <a href="tel:+14799009119">(479) 900-9119</a>.
         </p>
       </main>
-
-      <SiteFooter />
-    </div>
+    </LegalPageLayout>
   );
 }
