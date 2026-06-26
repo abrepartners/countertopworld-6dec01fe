@@ -351,6 +351,19 @@ const routes = [
     description: 'Hot Springs countertop fabrication and installation. Our Bryant showroom is 50 minutes east with 1,000+ slabs. Granite, quartz, marble, quartzite. Free estimates.',
     breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Service Areas', path: '/areas' }, { name: 'Hot Springs', path: '/areas/hot-springs' }],
   },
+  // Legal / compliance
+  {
+    path: '/privacy',
+    title: 'Privacy Policy | Countertop World',
+    description: 'How Countertop World LLC collects, uses, and protects your information — including our SMS / text messaging practices. We never share your SMS consent or mobile information with third parties for marketing.',
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Privacy Policy', path: '/privacy' }],
+  },
+  {
+    path: '/sms-terms',
+    title: 'SMS Terms & Conditions | Countertop World',
+    description: 'Countertop World LLC SMS Terms & Conditions — message types, frequency, message & data rates, STOP/HELP keywords, and how we protect your mobile information.',
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'SMS Terms', path: '/sms-terms' }],
+  },
 ];
 
 const template = readFileSync(join(DIST, 'index.html'), 'utf-8');

@@ -1,6 +1,7 @@
 import { useEffect, useState, useCallback, useRef, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import SiteFooter from '../components/SiteFooter';
+import SmsConsent from '../components/SmsConsent';
 import {
   ArrowLeft, ArrowRight, Clock, Shield, Ruler, Star,
   PenTool, Phone, MapPin, ChevronDown, Gem, Palette, Eye,
@@ -472,6 +473,7 @@ export default function DesignersPage() {
                   </div>
                   <div><label htmlFor="d-scope" className="sr-only">Project description</label><input id="d-scope" name="scope" type="text" placeholder="Project type (e.g., residential kitchen, commercial lobby, bath remodel)" className="w-full bg-transparent border-b border-stone-gold/15 py-4 text-[15px] text-vein-white font-light placeholder:text-cool-gray/60 outline-none focus:border-stone-gold transition-colors duration-500" /></div>
                   <div><label htmlFor="d-details" className="sr-only">Details</label><textarea id="d-details" name="details" placeholder="Tell us about the project — materials, finishes, edge profiles, or specs you have in mind..." rows={3} className="w-full bg-transparent border-b border-stone-gold/15 py-4 text-[15px] text-vein-white font-light placeholder:text-cool-gray/60 outline-none focus:border-stone-gold transition-colors duration-500 resize-none" /></div>
+                  <SmsConsent idPrefix="d-" />
                   <div className="mt-4 text-center"><PillButton gold size="lg">{formStatus === 'submitting' ? 'Sending...' : 'Submit inquiry'}</PillButton></div>
                 </form>
               )}

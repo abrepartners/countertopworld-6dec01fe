@@ -35,6 +35,8 @@ export default function SiteFooter() {
             <li><Link to="/book" className="hover:text-vein-white transition-colors no-underline">Book a Visit</Link></li>
             <li><Link to="/knowledge" className="hover:text-vein-white transition-colors no-underline">Knowledge Center</Link></li>
             <li><Link to="/blog" className="hover:text-vein-white transition-colors no-underline">Blog</Link></li>
+            <li><Link to="/privacy" className="hover:text-vein-white transition-colors no-underline">Privacy Policy</Link></li>
+            <li><Link to="/sms-terms" className="hover:text-vein-white transition-colors no-underline">SMS Terms</Link></li>
           </ul>
           <p className="font-mono text-[9px] text-cool-gray/50 tracking-[2px] uppercase mt-6 mb-3">Service Areas</p>
           <ul className="flex flex-wrap gap-x-6 gap-y-2 text-[12px] text-cool-gray font-light list-none p-0 m-0">
@@ -48,6 +50,12 @@ export default function SiteFooter() {
             <li><Link to="/areas/hot-springs" className="hover:text-vein-white transition-colors no-underline">Hot Springs</Link></li>
           </ul>
         </nav>
+        <p className="text-[11px] text-cool-gray/60 font-light leading-relaxed mb-6 max-w-3xl">
+          By providing your number you agree to receive SMS from Countertop World LLC. Msg &amp; data rates may apply. Msg frequency varies. Reply STOP to cancel, HELP for help.{' '}
+          <Link to="/privacy" className="text-stone-gold/80 hover:text-stone-gold transition-colors no-underline">Privacy Policy</Link>
+          {' · '}
+          <Link to="/sms-terms" className="text-stone-gold/80 hover:text-stone-gold transition-colors no-underline">SMS Terms</Link>
+        </p>
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px] text-cool-gray font-light">
           <p>&copy; {new Date().getFullYear()} Countertop World, LLC. All rights reserved.</p>
           <div className="flex items-center gap-6"><span>BBB A+ Accredited</span><span className="text-stone-gold/30">·</span><span>4.4 ★ · 109+ Reviews</span><span className="text-stone-gold/30">·</span><span>Family-owned since 2016</span></div>

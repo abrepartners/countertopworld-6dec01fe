@@ -8,6 +8,7 @@ import { useReveal } from './hooks/useReveal';
 import { applyPageHead } from './lib/pageHead';
 import { getAttribution } from './lib/attribution';
 import { trackLead } from './lib/tracking';
+import SmsConsent from './components/SmsConsent';
 import './index.css';
 
 function scrollTo(id: string, e?: React.MouseEvent) {
@@ -30,6 +31,8 @@ const BlogPostPage = lazy(() => import('./pages/BlogPost'));
 const CityPage = lazy(() => import('./pages/CityPage'));
 const KnowledgeCenter = lazy(() => import('./pages/KnowledgeCenter'));
 const KnowledgePage = lazy(() => import('./pages/KnowledgePage'));
+const Privacy = lazy(() => import('./pages/Privacy'));
+const SmsTerms = lazy(() => import('./pages/SmsTerms'));
 
 /* ── MARBLE VEIN SVG ── */
 function MarbleVeins({ className = '' }: { className?: string }) {
@@ -595,6 +598,7 @@ function Visit() {
             <div><label htmlFor="email" className="sr-only">Email</label><input id="email" name="email" type="email" placeholder="Email" required className="w-full bg-transparent border-b border-stone-gold/15 py-4 text-[15px] text-vein-white font-light placeholder:text-cool-gray/60 outline-none focus:border-stone-gold transition-colors duration-500" /></div>
             <div><label htmlFor="scope" className="sr-only">Project scope</label><input id="scope" name="scope" type="text" placeholder="Project scope (e.g., Kitchen remodel, new build, commercial)" className="w-full bg-transparent border-b border-stone-gold/15 py-4 text-[15px] text-vein-white font-light placeholder:text-cool-gray/60 outline-none focus:border-stone-gold transition-colors duration-500" /></div>
             <div><label htmlFor="details" className="sr-only">Project details</label><textarea id="details" name="details" placeholder="Tell us more about your project..." rows={3} className="w-full bg-transparent border-b border-stone-gold/15 py-4 text-[15px] text-vein-white font-light placeholder:text-cool-gray/60 outline-none focus:border-stone-gold transition-colors duration-500 resize-none" /></div>
+            <SmsConsent />
             <div className="mt-4 text-center"><PillButton gold size="lg">{formStatus === 'submitting' ? 'Sending…' : 'Submit inquiry'}</PillButton></div>
           </form>
           )}
@@ -823,6 +827,8 @@ export default function App() {
       <Route path="/knowledge" element={<KnowledgeCenter />} />
       <Route path="/knowledge/:slug" element={<KnowledgePage />} />
       <Route path="/areas/:slug" element={<CityPage />} />
+      <Route path="/privacy" element={<Privacy />} />
+      <Route path="/sms-terms" element={<SmsTerms />} />
       <Route path="*" element={<NotFound />} />
     </Routes></Suspense></BrowserRouter>
   );

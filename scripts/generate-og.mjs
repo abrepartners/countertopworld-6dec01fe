@@ -94,6 +94,9 @@ const pages = [
   { slug: 'areas-springdale', title: 'Countertops in\nSpringdale, AR', subtitle: '~15 min from Rogers Showroom', tag: 'SERVICE AREA' },
   { slug: 'areas-conway', title: 'Countertops in\nConway, AR', subtitle: '~30 min from Bryant Showroom', tag: 'SERVICE AREA' },
   { slug: 'areas-hot-springs', title: 'Countertops in\nHot Springs, AR', subtitle: '~50 min from Bryant Showroom', tag: 'SERVICE AREA' },
+  // Legal / compliance
+  { slug: 'privacy', title: 'Privacy\nPolicy', subtitle: 'How We Handle Your Information', tag: 'LEGAL' },
+  { slug: 'sms-terms', title: 'SMS Terms\n& Conditions', subtitle: 'Our Text Messaging Program', tag: 'LEGAL' },
 ];
 
 function buildCard({ title, subtitle, tag }) {

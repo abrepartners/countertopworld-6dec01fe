@@ -1,6 +1,7 @@
 import { useEffect, useState, useCallback, useRef, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import SiteFooter from '../components/SiteFooter';
+import SmsConsent from '../components/SmsConsent';
 import {
   ArrowLeft, ArrowRight, Clock, Shield, Ruler, Star,
   Hammer, MapPin, ChevronDown, Wrench, Building2, Home,
@@ -458,6 +459,7 @@ export default function BuildersPage() {
                   </div>
                   <div><label htmlFor="b-scope" className="sr-only">Project scope</label><input id="b-scope" name="scope" type="text" placeholder="Project scope (e.g., 12-unit subdivision, kitchen remodel, commercial)" className="w-full bg-transparent border-b border-stone-gold/15 py-4 text-[15px] text-vein-white font-light placeholder:text-cool-gray/60 outline-none focus:border-stone-gold transition-colors duration-500" /></div>
                   <div><label htmlFor="b-details" className="sr-only">Details</label><textarea id="b-details" name="details" placeholder="Tell us about your project or what you're looking for in a fabrication partner..." rows={3} className="w-full bg-transparent border-b border-stone-gold/15 py-4 text-[15px] text-vein-white font-light placeholder:text-cool-gray/60 outline-none focus:border-stone-gold transition-colors duration-500 resize-none" /></div>
+                  <SmsConsent idPrefix="b-" />
                   <div className="mt-4 text-center"><PillButton gold size="lg">{formStatus === 'submitting' ? 'Sending...' : 'Submit inquiry'}</PillButton></div>
                 </form>
               )}
