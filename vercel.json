@@ -1,5 +1,11 @@
 {
   "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "www.countertopworldar.com" }],
+      "destination": "https://countertopworldar.com/$1",
+      "permanent": true
+    },
     { "source": "/home/about-us", "destination": "/", "permanent": true },
     { "source": "/home/about-us/", "destination": "/", "permanent": true },
     { "source": "/about", "destination": "/", "permanent": true },
@@ -199,6 +205,146 @@
     {
       "source": "/spotlight-on-the-best-backsplash-companions-for-your-countertops/",
       "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/care-and-maintenance",
+      "destination": "/knowledge/countertop-care-maintenance",
+      "permanent": true
+    },
+    {
+      "source": "/care-and-maintenance/",
+      "destination": "/knowledge/countertop-care-maintenance",
+      "permanent": true
+    },
+    {
+      "source": "/care-and-maintenance/porcelain",
+      "destination": "/stones/porcelain",
+      "permanent": true
+    },
+    {
+      "source": "/care-and-maintenance/porcelain/",
+      "destination": "/stones/porcelain",
+      "permanent": true
+    },
+    {
+      "source": "/care-and-maintenance/granite",
+      "destination": "/stones/natural-granite",
+      "permanent": true
+    },
+    {
+      "source": "/care-and-maintenance/granite/",
+      "destination": "/stones/natural-granite",
+      "permanent": true
+    },
+    {
+      "source": "/care-and-maintenance/quartz",
+      "destination": "/stones/engineered-quartz",
+      "permanent": true
+    },
+    {
+      "source": "/care-and-maintenance/quartz/",
+      "destination": "/stones/engineered-quartz",
+      "permanent": true
+    },
+    {
+      "source": "/care-and-maintenance/marble",
+      "destination": "/stones/marble",
+      "permanent": true
+    },
+    {
+      "source": "/care-and-maintenance/marble/",
+      "destination": "/stones/marble",
+      "permanent": true
+    },
+    {
+      "source": "/care-and-maintenance/quartzite",
+      "destination": "/stones/quartzite",
+      "permanent": true
+    },
+    {
+      "source": "/care-and-maintenance/quartzite/",
+      "destination": "/stones/quartzite",
+      "permanent": true
+    },
+    {
+      "source": "/care-and-maintenance/soapstone",
+      "destination": "/stones/soapstone-onyx",
+      "permanent": true
+    },
+    {
+      "source": "/care-and-maintenance/soapstone/",
+      "destination": "/stones/soapstone-onyx",
+      "permanent": true
+    },
+    {
+      "source": "/author/davidmcdougall",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/author/davidmcdougall/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/schedule-with-a-professional",
+      "destination": "/book",
+      "permanent": true
+    },
+    {
+      "source": "/schedule-with-a-professional/",
+      "destination": "/book",
+      "permanent": true
+    },
+    {
+      "source": "/why-cambria-countertops-are-synonymous-with-luxury-and-durability",
+      "destination": "/stones/engineered-quartz",
+      "permanent": true
+    },
+    {
+      "source": "/why-cambria-countertops-are-synonymous-with-luxury-and-durability/",
+      "destination": "/stones/engineered-quartz",
+      "permanent": true
+    },
+    {
+      "source": "/embracing-eco-friendly-elegance",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/embracing-eco-friendly-elegance/",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/achieve-your-perfect-kitchen-with-countertop-worlds-zero-interest-financing",
+      "destination": "/packages",
+      "permanent": true
+    },
+    {
+      "source": "/achieve-your-perfect-kitchen-with-countertop-worlds-zero-interest-financing/",
+      "destination": "/packages",
+      "permanent": true
+    },
+    {
+      "source": "/are-luxury-countertops-worth-the-investment",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/are-luxury-countertops-worth-the-investment/",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/wp-content/uploads/2024/05/Porcelain-Care-1.pdf",
+      "destination": "/knowledge/countertop-care-maintenance",
+      "permanent": true
+    },
+    {
+      "source": "/wp-content/uploads/2024/05/Quartzite-Care-1.pdf",
+      "destination": "/knowledge/countertop-care-maintenance",
       "permanent": true
     }
   ],
