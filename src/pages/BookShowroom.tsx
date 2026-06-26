@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import SiteFooter from '../components/SiteFooter';
+import SmsConsent from '../components/SmsConsent';
 import { ArrowLeft, MapPin, Clock } from 'lucide-react';
 import { applyPageHead } from '../lib/pageHead';
 import { appendAttributionToUrl } from '../lib/attribution';
@@ -166,6 +167,10 @@ export default function BookShowroom() {
             loading="lazy"
             style={{ width: '100%', border: 'none', minHeight: '900px' }}
           />
+        </div>
+
+        <div className="mt-6 max-w-2xl">
+          <SmsConsent />
         </div>
 
         <p className="mt-10 text-[12px] font-mono text-cool-gray tracking-[2px] uppercase text-center">
