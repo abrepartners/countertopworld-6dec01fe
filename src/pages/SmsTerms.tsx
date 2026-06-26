@@ -26,7 +26,7 @@ const TERMS = [
   },
   {
     title: "Help.",
-    body: "Reply HELP for assistance, or contact us at (501) 778-7177 / info@countertopworldar.com.",
+    body: "Reply HELP for assistance, or contact us at (501) 481-8117 / info@countertopworldar.com.",
   },
   {
     title: "Privacy.",
