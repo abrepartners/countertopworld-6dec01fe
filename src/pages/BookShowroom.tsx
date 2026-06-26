@@ -170,7 +170,7 @@ export default function BookShowroom() {
         </div>
 
         <div className="mt-6 max-w-2xl">
-          <SmsConsent asCheckbox={false} />
+          <SmsConsent />
         </div>
 
         <p className="mt-10 text-[12px] font-mono text-cool-gray tracking-[2px] uppercase text-center">

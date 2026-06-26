@@ -352,7 +352,7 @@ export default function CityPageLayout({ data }: { data: CityPageData }) {
                   <div><label htmlFor="c-email" className="sr-only">Email</label><input id="c-email" name="email" type="email" placeholder="Email" required className="w-full bg-transparent border-b border-stone-gold/15 py-4 text-[15px] text-vein-white font-light placeholder:text-cool-gray/60 outline-none focus:border-stone-gold transition-colors duration-500" /></div>
                   <div><label htmlFor="c-scope" className="sr-only">Project scope</label><input id="c-scope" name="scope" type="text" placeholder="Project scope (e.g., Kitchen remodel, new build, bathroom vanity)" className="w-full bg-transparent border-b border-stone-gold/15 py-4 text-[15px] text-vein-white font-light placeholder:text-cool-gray/60 outline-none focus:border-stone-gold transition-colors duration-500" /></div>
                   <div><label htmlFor="c-details" className="sr-only">Details</label><textarea id="c-details" name="details" placeholder="Tell us about your project..." rows={3} className="w-full bg-transparent border-b border-stone-gold/15 py-4 text-[15px] text-vein-white font-light placeholder:text-cool-gray/60 outline-none focus:border-stone-gold transition-colors duration-500 resize-none" /></div>
-                  <SmsConsent idPrefix="c-" />
+                  <SmsConsent />
                   <div className="mt-4 text-center">
                     <button type="submit" className="inline-flex items-center justify-center px-8 py-3.5 rounded-[6px] text-[14px] tracking-wide font-medium bg-stone-gold text-obsidian border border-stone-gold hover:bg-stone-gold-light transition-all duration-500">
                       {formStatus === 'submitting' ? 'Sending...' : 'Get my free estimate'}

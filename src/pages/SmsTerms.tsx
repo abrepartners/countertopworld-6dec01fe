@@ -30,7 +30,6 @@ const TERMS = [
   },
   {
     title: "Privacy.",
-    body: "Your mobile information is handled per our Privacy Policy. We do not share your SMS consent or mobile information with third parties for their marketing.",
     privacyLink: true,
   },
   {
@@ -44,7 +43,7 @@ export default function SmsTerms() {
     return applyPageHead({
       title: "SMS Terms & Conditions | Countertop World",
       description:
-        "Countertop World LLC SMS Terms & Conditions — message types, frequency, message & data rates, STOP/HELP keywords, and how we protect your mobile information.",
+        "Countertop World LLC SMS Terms & Conditions: message types, frequency, message & data rates, STOP/HELP keywords, and how we protect your mobile information.",
       path: "/sms-terms",
       breadcrumbs: [
         { name: "Home", path: "/" },
@@ -81,7 +80,7 @@ export default function SmsTerms() {
           SMS Terms &amp; Conditions
         </h1>
         <p className="text-[14px] text-cool-gray font-light max-w-[560px] mx-auto">
-          Countertop World LLC — how our text messaging program works.
+          Countertop World LLC. How our text messaging program works.
         </p>
       </header>
 

@@ -10,7 +10,7 @@ export default function Privacy() {
     return applyPageHead({
       title: "Privacy Policy | Countertop World",
       description:
-        "How Countertop World LLC collects, uses, and protects your information — including our SMS / text messaging practices. We never share your SMS consent or mobile information with third parties for marketing.",
+        "How Countertop World LLC collects, uses, and protects your information, including our SMS / text messaging practices. We never share your SMS consent or mobile information with third parties for marketing.",
       path: "/privacy",
       breadcrumbs: [
         { name: "Home", path: "/" },
@@ -51,7 +51,7 @@ export default function Privacy() {
         </p>
       </header>
 
-      <main className="max-w-[760px] mx-auto px-6 py-16 text-[15px] text-cool-gray font-light leading-relaxed [&_h2]:font-display [&_h2]:text-vein-white [&_h2]:font-light [&_h2]:tracking-tight [&_h2]:text-[clamp(1.3rem,3vw,1.7rem)] [&_h2]:mt-14 [&_h2]:mb-4 [&_h3]:text-vein-white [&_h3]:font-medium [&_h3]:text-[16px] [&_h3]:mt-8 [&_h3]:mb-3 [&_p]:mb-4 [&_ul]:mb-4 [&_ul]:space-y-2 [&_ul]:pl-5 [&_li]:list-disc [&_strong]:text-vein-white [&_strong]:font-medium [&_a]:text-stone-gold [&_a]:hover:text-stone-gold-light [&_a]:transition-colors">
+      <main className="max-w-[760px] mx-auto px-6 py-16 text-[15px] text-cool-gray font-light leading-relaxed [&_h2]:font-display [&_h2]:text-vein-white [&_h2]:font-light [&_h2]:tracking-tight [&_h2]:text-[clamp(1.3rem,3vw,1.7rem)] [&_h2]:mt-14 [&_h2]:mb-4 [&_h3]:text-vein-white [&_h3]:font-medium [&_h3]:text-[16px] [&_h3]:mt-8 [&_h3]:mb-3 [&_p]:mb-4 [&_ul]:mb-4 [&_ul]:space-y-2 [&_ul]:pl-5 [&_li]:list-disc [&_strong]:text-vein-white [&_strong]:font-medium [&_a]:text-stone-gold [&_a:hover]:text-stone-gold-light [&_a]:transition-colors">
         <p>
           This Privacy Policy explains how Countertop World LLC ("Countertop
           World," "we," "us," or "our") collects, uses, and shares information
@@ -93,8 +93,8 @@ export default function Privacy() {
 
         <h2>Text Messaging (SMS)</h2>
         <p>
-          When you provide your mobile number to Countertop World LLC — through
-          a form on this website, by phone, or in person — we may send you SMS
+          When you provide your mobile number to Countertop World LLC (through
+          a form on this website, by phone, or in person), we may send you SMS
           text messages related to your inquiry, appointment scheduling and
           reminders, quotes, order and installation updates, and customer
           service.
@@ -146,8 +146,8 @@ export default function Privacy() {
         <h2>How We Share Information</h2>
         <p>
           We share information only with service providers that help us run our
-          business — such as our CRM, scheduling, hosting, analytics, and SMS
-          providers — and only as needed to deliver the services you've
+          business, such as our CRM, scheduling, hosting, analytics, and SMS
+          providers, and only as needed to deliver the services you've
           requested. We may also disclose information when required by law or to
           protect our rights. As stated above,{" "}
           <strong>
