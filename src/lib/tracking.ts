@@ -6,11 +6,13 @@ declare global {
   }
 }
 
-export function trackLead(data?: { value?: number; currency?: string }) {
+export function trackLead(data?: { eventId?: string; value?: number; currency?: string }) {
   if (typeof window === 'undefined') return;
 
   if (window.fbq) {
-    window.fbq('track', 'Lead');
+    // eventID lets Meta dedupe this browser Pixel Lead against the server-side
+    // CAPI Lead fired from /api/lead with the same event_id.
+    window.fbq('track', 'Lead', {}, data?.eventId ? { eventID: data.eventId } : undefined);
   }
 
   if (window.gtag) {

@@ -581,8 +581,8 @@ function Visit() {
             formData.append('landing_path', window.location.pathname + window.location.search);
             fetch('/api/lead', { method: 'POST', body: formData })
               .then(async (r) => {
-                if (!r.ok) { /* swallow — show success anyway, the lead likely hit GHL or the dupe path */ }
-                trackLead();
+                const d = await r.json().catch(() => ({}));
+                trackLead({ eventId: d.event_id });
                 setFormStatus('success');
                 form.reset();
               })

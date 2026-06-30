@@ -130,7 +130,7 @@ export default function BuildersPage() {
     }
     formData.append('landing_path', window.location.pathname + window.location.search);
     fetch('/api/lead', { method: 'POST', body: formData })
-      .then(() => { trackLead(); setFormStatus('success'); form.reset(); })
+      .then(async (r) => { const d = await r.json().catch(() => ({})); trackLead({ eventId: d.event_id }); setFormStatus('success'); form.reset(); })
       .catch(() => { trackLead(); setFormStatus('success'); form.reset(); });
   }, [location]);
 
