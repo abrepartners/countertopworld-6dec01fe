@@ -6,6 +6,16 @@
       "destination": "https://countertopworldar.com/$1",
       "permanent": true
     },
+    {
+      "source": "/privacy",
+      "destination": "/privacy-policy",
+      "permanent": true
+    },
+    {
+      "source": "/privacy/",
+      "destination": "/privacy-policy",
+      "permanent": true
+    },
     { "source": "/home/about-us", "destination": "/", "permanent": true },
     { "source": "/home/about-us/", "destination": "/", "permanent": true },
     { "source": "/about", "destination": "/", "permanent": true },
