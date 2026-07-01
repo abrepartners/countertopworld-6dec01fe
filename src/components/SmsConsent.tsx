@@ -1,33 +1,42 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 /**
- * SMS / A2P consent disclosure shown at the point of phone-number collection on
- * every lead and booking form. Required for AT&T / Office@Hand 10DLC approval:
- * it states the message types, frequency, that message & data rates may apply,
- * the STOP/HELP keywords, that consent is not a condition of purchase, and links
- * to the Privacy Policy + SMS Terms.
- *
- * Passive disclosure (consent is implied by submitting the form), matching the
- * model already used in the footer and on the booking page. The Privacy Policy /
- * SMS Terms links open in a new tab so a user mid-form does not lose entered data.
+ * SMS / A2P opt-in consent CHECKBOX shown at the point of phone-number
+ * collection on every lead and booking form. Its own checkbox, unchecked by
+ * default, not bundled with any other agreement. The label states the message
+ * types (appointment, account, and marketing) per TCR requirements, plus
+ * frequency, rates, STOP/HELP keywords, and links to the Privacy Policy and
+ * SMS Terms (opened in a new tab so a user mid-form does not lose their input).
  */
 export default function SmsConsent({ className = '' }: { className?: string }) {
+  const [checked, setChecked] = useState(false);
   const linkClass =
     'text-stone-gold hover:text-stone-gold-light underline underline-offset-2 transition-colors';
   return (
-    <p className={`text-[12px] text-cool-gray/70 font-light leading-relaxed ${className}`}>
-      By providing your phone number, you agree to receive SMS text messages from Countertop World
-      LLC about your inquiry, appointments, quotes, and service updates. Message frequency varies.
-      Message &amp; data rates may apply. Reply STOP to opt out or HELP for help. Consent is not a
-      condition of purchase. See our{' '}
-      <Link to="/privacy" className={linkClass} target="_blank" rel="noopener noreferrer">
-        Privacy Policy
-      </Link>{' '}
-      and{' '}
-      <Link to="/sms-terms" className={linkClass} target="_blank" rel="noopener noreferrer">
-        SMS Terms
-      </Link>
-      .
-    </p>
+    <label
+      className={`flex items-start gap-2.5 text-[12px] text-cool-gray/70 font-light leading-relaxed cursor-pointer ${className}`}
+    >
+      <input
+        type="checkbox"
+        name="sms_consent"
+        checked={checked}
+        onChange={(e) => setChecked(e.target.checked)}
+        className="mt-[3px] h-4 w-4 flex-shrink-0 accent-stone-gold cursor-pointer"
+      />
+      <span>
+        By checking this box and submitting, I agree to receive SMS text messages from Countertop
+        World LLC at the number provided (appointment, account, and marketing messages). Msg frequency
+        varies. Msg &amp; data rates may apply. Reply STOP to opt out, HELP for help. See{' '}
+        <Link to="/privacy-policy" className={linkClass} target="_blank" rel="noopener noreferrer">
+          Privacy Policy
+        </Link>{' '}
+        and{' '}
+        <Link to="/sms-terms" className={linkClass} target="_blank" rel="noopener noreferrer">
+          SMS Terms
+        </Link>
+        .
+      </span>
+    </label>
   );
 }

@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
 import { applyPageHead } from "../lib/pageHead";
 import LegalPageLayout from "../components/LegalPageLayout";
 
@@ -11,10 +10,10 @@ export default function Privacy() {
       title: "Privacy Policy | Countertop World",
       description:
         "How Countertop World LLC collects, uses, and protects your information, including our SMS / text messaging practices. We never share your SMS consent or mobile information with third parties for marketing.",
-      path: "/privacy",
+      path: "/privacy-policy",
       breadcrumbs: [
         { name: "Home", path: "/" },
-        { name: "Privacy Policy", path: "/privacy" },
+        { name: "Privacy Policy", path: "/privacy-policy" },
       ],
     });
   }, []);
@@ -68,47 +67,42 @@ export default function Privacy() {
           <li>Operate, measure, and improve our website and marketing.</li>
         </ul>
 
-        <h2>Text Messaging (SMS)</h2>
+        <h2>Text Messaging (SMS) Privacy</h2>
         <p>
           When you provide your mobile number to Countertop World LLC (through a
-          form on this website, by phone, or in person), we may send you SMS
-          text messages related to your inquiry, appointment scheduling and
-          reminders, quotes, order and installation updates, and customer
-          service.
+          form on our website, in person, or by replying to a message) we may
+          send you SMS text messages related to your project, appointment,
+          quote, or account.
         </p>
-        <ul>
-          <li>
-            <strong>What we collect:</strong> your name, mobile phone number,
-            and the details you submit with your request.
-          </li>
-          <li>
-            <strong>How we use it:</strong> to respond to you, schedule and
-            confirm appointments, send quote and project updates, and provide
-            customer support.
-          </li>
-          <li>
-            <strong>Who we share it with:</strong>{" "}
-            <strong>
-              We do not share, sell, or rent your SMS consent or mobile
-              information to third parties or affiliates for their marketing
-              purposes.
-            </strong>{" "}
-            Mobile information is used solely by Countertop World LLC and the
-            service providers that help us operate our messaging (for example,
-            our CRM and SMS carrier), strictly to deliver the messages you've
-            asked for.
-          </li>
-          <li>
-            <strong>Your choices:</strong> reply STOP to any message to opt out
-            at any time; reply HELP for assistance. Opting out of SMS does not
-            affect the other ways we can serve you.
-          </li>
-        </ul>
         <p>
-          Message frequency varies. Message &amp; data rates may apply. Carriers
-          are not liable for delayed or undelivered messages. See our{" "}
-          <Link to="/sms-terms">SMS Terms &amp; Conditions</Link> for full
-          details.
+          <strong>What we collect:</strong> Your name, mobile phone number, and
+          the information you submit through our forms (such as project details,
+          address, and email).
+        </p>
+        <p>
+          <strong>How we use it:</strong> To send appointment reminders, quote
+          and order updates, customer-service replies, and occasional marketing
+          messages about our products and services.
+        </p>
+        <p>
+          <strong>Who we share it with:</strong> We do not sell your personal
+          information. We share it only with the service providers that help us
+          operate (for example, our scheduling and messaging platform), and only
+          as needed to deliver these services.
+        </p>
+        <p>
+          SMS consent is not shared with third parties or affiliates. Your
+          mobile opt-in and consent to receive text messages will never be
+          shared with or sold to any third party or affiliate for their
+          marketing purposes.
+        </p>
+        <p>
+          You can opt out of text messages at any time by replying STOP. For
+          help, reply HELP or contact us at{" "}
+          <a href="mailto:contact@countertopworldar.com">
+            contact@countertopworldar.com
+          </a>{" "}
+          or <a href="tel:+15014818117">501-481-8117</a>.
         </p>
 
         <h2>Cookies &amp; Analytics</h2>
@@ -172,8 +166,8 @@ export default function Privacy() {
         <p>
           Questions about this policy or your information? Contact Countertop
           World LLC at{" "}
-          <a href="mailto:info@countertopworldar.com">
-            info@countertopworldar.com
+          <a href="mailto:contact@countertopworldar.com">
+            contact@countertopworldar.com
           </a>
           , or call our Bryant showroom at{" "}
           <a href="tel:+15014818117">(501) 481-8117</a> or our Rogers showroom

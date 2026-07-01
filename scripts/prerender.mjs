@@ -353,15 +353,15 @@ const routes = [
   },
   // Legal / compliance
   {
-    path: '/privacy',
+    path: '/privacy-policy',
     title: 'Privacy Policy | Countertop World',
     description: 'How Countertop World LLC collects, uses, and protects your information, including our SMS / text messaging practices. We never share your SMS consent or mobile information with third parties for marketing.',
-    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Privacy Policy', path: '/privacy' }],
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Privacy Policy', path: '/privacy-policy' }],
   },
   {
     path: '/sms-terms',
-    title: 'SMS Terms & Conditions | Countertop World',
-    description: 'Countertop World LLC SMS Terms & Conditions: message types, frequency, message & data rates, STOP/HELP keywords, and how we protect your mobile information.',
+    title: 'SMS Terms of Service | Countertop World',
+    description: 'Countertop World LLC SMS Terms of Service: message types, frequency, message & data rates, STOP/HELP keywords, and how we protect your mobile information.',
     breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'SMS Terms', path: '/sms-terms' }],
   },
 ];

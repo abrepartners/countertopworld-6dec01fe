@@ -827,7 +827,7 @@ export default function App() {
       <Route path="/knowledge" element={<KnowledgeCenter />} />
       <Route path="/knowledge/:slug" element={<KnowledgePage />} />
       <Route path="/areas/:slug" element={<CityPage />} />
-      <Route path="/privacy" element={<Privacy />} />
+      <Route path="/privacy-policy" element={<Privacy />} />
       <Route path="/sms-terms" element={<SmsTerms />} />
       <Route path="*" element={<NotFound />} />
     </Routes></Suspense></BrowserRouter>

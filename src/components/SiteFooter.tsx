@@ -35,7 +35,7 @@ export default function SiteFooter() {
             <li><Link to="/book" className="hover:text-vein-white transition-colors no-underline">Book a Visit</Link></li>
             <li><Link to="/knowledge" className="hover:text-vein-white transition-colors no-underline">Knowledge Center</Link></li>
             <li><Link to="/blog" className="hover:text-vein-white transition-colors no-underline">Blog</Link></li>
-            <li><Link to="/privacy" className="hover:text-vein-white transition-colors no-underline">Privacy Policy</Link></li>
+            <li><Link to="/privacy-policy" className="hover:text-vein-white transition-colors no-underline">Privacy Policy</Link></li>
             <li><Link to="/sms-terms" className="hover:text-vein-white transition-colors no-underline">SMS Terms</Link></li>
           </ul>
           <p className="font-mono text-[9px] text-cool-gray/50 tracking-[2px] uppercase mt-6 mb-3">Service Areas</p>
@@ -52,7 +52,7 @@ export default function SiteFooter() {
         </nav>
         <p className="text-[11px] text-cool-gray/60 font-light leading-relaxed mb-6 max-w-3xl">
           By providing your number you agree to receive SMS from Countertop World LLC. Msg &amp; data rates may apply. Msg frequency varies. Reply STOP to cancel, HELP for help.{' '}
-          <Link to="/privacy" className="text-stone-gold/80 hover:text-stone-gold transition-colors no-underline">Privacy Policy</Link>
+          <Link to="/privacy-policy" className="text-stone-gold/80 hover:text-stone-gold transition-colors no-underline">Privacy Policy</Link>
           {' · '}
           <Link to="/sms-terms" className="text-stone-gold/80 hover:text-stone-gold transition-colors no-underline">SMS Terms</Link>
         </p>
