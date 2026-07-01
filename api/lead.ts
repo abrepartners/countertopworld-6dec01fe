@@ -49,6 +49,10 @@ type LeadPayload = {
   utm_term?: string;
   utm_content?: string;
   landing_path?: string;
+  // Meta test_event_code — when present, routes the CAPI event to the Test
+  // Events tab tagged as a test (not counted as a real conversion). Used only
+  // by the lead-pipeline smoke test; real leads never send this.
+  test_event_code?: string;
 };
 
 const ATTRIBUTION_KEYS = [
@@ -202,6 +206,11 @@ async function fireMetaLead(
               user_data,
             },
           ],
+          // Only set when the smoke test passes it — tags the event as a test
+          // in Meta's Test Events tool so it isn't counted as a real conversion.
+          ...(body.test_event_code
+            ? { test_event_code: body.test_event_code }
+            : {}),
         }),
       },
     );
