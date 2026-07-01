@@ -348,5 +348,8 @@
       "permanent": true
     }
   ],
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+  "rewrites": [
+    { "source": "/teams", "destination": "/teams/index.html" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
 }
