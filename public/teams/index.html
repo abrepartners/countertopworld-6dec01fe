@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Countertop World — The Home Team</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/teams/base.css">
+<style>
+  /* ---- Concept A: Scoreboard editorial ---- */
+  .hero{padding:110px 0 80px;position:relative;overflow:hidden}
+  .hero:before{content:"";position:absolute;inset:0;background:
+     radial-gradient(120% 80% at 80% 0%,#1a160c 0%,transparent 55%);pointer-events:none}
+  .hero .wrap{position:relative}
+  .hero h1{max-width:14ch}
+  .hero .lede{max-width:52ch;margin:26px 0 34px}
+
+  /* scoreboard strip */
+  .board{margin-top:64px;border:1px solid var(--gold-soft);background:linear-gradient(180deg,#121009,#0d0d0f);position:relative}
+  .board:before,.board:after{content:"";position:absolute;width:10px;height:10px;border:1px solid var(--gold)}
+  .board:before{top:-1px;left:-1px;border-right:0;border-bottom:0}
+  .board:after{top:-1px;right:-1px;border-left:0;border-bottom:0}
+  .board-head{display:flex;justify-content:space-between;align-items:center;padding:12px 20px;border-bottom:1px solid var(--line);font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--cream-dim)}
+  .board-head .live{color:var(--gold);display:flex;align-items:center;gap:8px}
+  .board-head .dot{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px var(--gold)}
+  .board-grid{display:grid;grid-template-columns:repeat(3,1fr)}
+  .stat{padding:34px 28px;text-align:center;border-right:1px solid var(--line)}
+  .stat:last-child{border-right:0}
+  .stat .fig{font-family:var(--serif);font-size:clamp(54px,7vw,82px);color:var(--gold);line-height:.9;font-variant-numeric:tabular-nums}
+  .stat .lab{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--cream-dim);margin-top:12px;font-weight:600}
+  @media(max-width:680px){.board-grid{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid var(--line)}}
+
+  .sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:14px}
+  .sec-head .tab{font-family:var(--serif);font-size:15px;color:var(--gold);border:1px solid var(--gold-soft);padding:3px 11px;letter-spacing:.12em}
+  .divider{display:flex;align-items:center;gap:14px;color:var(--gold);margin:0}
+  .divider .ln{flex:1;height:1px;background:var(--line)}
+  .divider .tk{width:6px;height:6px;border:1px solid var(--gold);transform:rotate(45deg)}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <div class="brand"><b>COUNTERTOP</b> <span>WORLD</span></div>
+  <div class="nav-right">
+    <a href="#thanks">For families</a>
+    <a href="#learn">Stone &amp; family life</a>
+    <a href="#sponsor">Sponsor a team</a>
+    <a href="https://countertopworldar.com">Showroom</a>
+  </div>
+</div></nav>
+
+<!-- HERO -->
+<header class="hero"><div class="wrap">
+  <p class="eyebrow">Countertop World in the community</p>
+  <h1>We&rsquo;d rather back the team than buy the banner.</h1>
+  <p class="lede">When a coach calls asking us to sponsor the season, we skip the logo on the fence and keep the players hydrated. If you scanned this from one of our bottles, welcome. There is something here for you, and something for your team.</p>
+  <div class="btn-row">
+    <a class="btn btn-gold" href="https://countertopworldar.com">See what we build</a>
+    <a class="btn btn-ghost" href="#sponsor">Sponsor a team</a>
+  </div>
+
+  <div class="board">
+    <div class="board-head">
+      <span>Countertop World &middot; how we do it</span>
+      <span class="live"><span class="dot"></span> Bryant + Rogers, AR</span>
+    </div>
+    <div class="board-grid">
+      <div class="stat"><div class="fig"><span style="font-family:var(--sans);font-size:.26em;font-weight:700;letter-spacing:.16em;text-transform:uppercase;vertical-align:.6em;opacity:.82">Over</span> <span id="ozCounter">0</span></div><div class="lab">Ounces of water donated</div></div>
+      <div class="stat"><div class="fig">2</div><div class="lab">Local shops</div></div>
+      <div class="stat"><div class="fig">100%</div><div class="lab">Arkansas made</div></div>
+    </div>
+  </div>
+</div></header>
+
+<div class="rule"></div>
+
+<!-- PARENT PATH: the thank you -->
+<section id="thanks"><div class="wrap">
+  <div class="sec-head"><span class="tab">01</span><span class="section-tag">For the family that scanned</span></div>
+  <div class="paths" style="margin-top:30px">
+    <div class="path">
+      <h2>Scanned from the<br>sideline? This one&rsquo;s on us.</h2>
+      <p class="muted" style="margin-top:18px">That bottle was our way of supporting a local team. Here is ours to you: a credit toward the kitchen you actually live in. Premium stone, measured, cut, and installed by our own crew out of Bryant and Rogers.</p>
+      <p class="muted">No pressure, no sales pitch on your kid&rsquo;s game day. Grab it when you are ready.</p>
+    </div>
+    <div class="path">
+      <div class="offer">
+        <p class="section-tag" style="margin-bottom:8px">A thank-you for scanning</p>
+        <h3 style="font-size:clamp(26px,3vw,34px);margin:0 0 8px">Your kitchen, when you are ready.</h3>
+        <p class="muted" style="font-size:15px;margin:0">Book a free design consultation at our Bryant or Rogers showroom. No pressure, no game-day pitch.</p>
+        <form onsubmit="return false">
+          <div class="field"><label>Name</label><input placeholder="First and last"></div>
+          <div class="grid2">
+            <div class="field"><label>Phone</label><input placeholder="(501) 000-0000"></div>
+            <div class="field"><label>Email</label><input placeholder="you@email.com"></div>
+          </div>
+          <div class="field"><label>Nearest showroom</label>
+            <select><option>Bryant / Little Rock</option><option>Rogers / NWA</option></select>
+          </div>
+          <button class="btn btn-gold" style="justify-content:center">Book a free design consultation</button>
+        </form>
+        <p class="fineprint">Scanned from a bottle? Your project credit is held in your name through June 20, 2027.</p>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- LEARN: the blog / value content -->
+<section id="learn" style="padding-top:30px"><div class="wrap">
+  <div class="divider"><span class="ln"></span><span class="tk"></span><span class="ln"></span></div>
+  <div class="sec-head" style="margin-top:60px"><span class="tab">02</span><span class="section-tag">Stone &amp; real family life</span></div>
+  <h2 style="max-width:18ch;margin-top:8px">Before you renovate, the questions every parent asks.</h2>
+  <div class="cards">
+    <a class="card" href="/teams/blog/durability.html">
+      <div class="kicker">Durability</div>
+      <h3>Which countertops actually survive family life</h3>
+      <p class="muted" style="font-size:15px">Hot pans, homework, and a sink full of cleats. What holds up and what shows every scratch.</p>
+      <span class="read">Read &rarr;</span>
+    </a>
+    <a class="card" href="/teams/blog/compare.html">
+      <div class="kicker">Comparison</div>
+      <h3>Quartz, Granite, or Quartzite around kids</h3>
+      <p class="muted" style="font-size:15px">Three stones, three personalities. A plain-English guide to picking the one that fits your house.</p>
+      <span class="read">Read &rarr;</span>
+    </a>
+    <a class="card" href="/teams/blog/budget.html">
+      <div class="kicker">Budget</div>
+      <h3>Where stone is worth it, and where it is not</h3>
+      <p class="muted" style="font-size:15px">How to spend on the surfaces you touch every day without paying for ones you do not.</p>
+      <span class="read">Read &rarr;</span>
+    </a>
+  </div>
+</div></section>
+
+<!-- ORG PATH: sponsor a team -->
+<section id="sponsor" style="background:var(--ink-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)"><div class="wrap">
+  <div class="sec-head"><span class="tab">03</span><span class="section-tag">For coaches, boards &amp; team parents</span></div>
+  <div class="paths org" style="margin-top:30px">
+    <div style="padding:0">
+      <h2>Coach, board member,<br>team parent? Let us<br>cover the water.</h2>
+      <p class="muted" style="margin-top:22px;max-width:46ch">Tell us about your team and we will get cold Countertop World water onto your sideline, a single case or the whole season. No check for you to chase, no banner to hang. Just water, on us.</p>
+      <p class="muted" style="max-width:46ch">It is the easiest yes we give all year. You keep coaching, and we will keep the cooler full.</p>
+      <p class="note">We back teams across Central Arkansas and Northwest Arkansas.</p>
+    </div>
+    <div style="padding:0">
+      <form onsubmit="return false" style="background:var(--ink);border:1px solid var(--line);padding:34px;border-radius:3px">
+        <div class="field"><label>Team or organization</label><input placeholder="e.g. Bryant Rec, Rogers Middle"></div>
+        <div class="grid2">
+          <div class="field"><label>Type</label><select><option>Youth league</option><option>School</option><option>Club / travel</option><option>Rec / community</option><option>Other</option></select></div>
+          <div class="field"><label>Approx. players</label><input placeholder="e.g. 24"></div>
+        </div>
+        <div class="grid2">
+          <div class="field"><label>Your role</label><select><option>Coach</option><option>Board / booster</option><option>Team parent</option><option>Other</option></select></div>
+          <div class="field"><label>Season / event date</label><input placeholder="Fall 2026"></div>
+        </div>
+        <div class="grid2">
+          <div class="field"><label>Your name</label><input placeholder="First and last"></div>
+          <div class="field"><label>Phone</label><input placeholder="(479) 000-0000"></div>
+        </div>
+        <div class="field"><label>Email</label><input placeholder="you@email.com"></div>
+        <button class="btn btn-gold" style="justify-content:center">Request team water</button>
+      </form>
+    </div>
+  </div>
+</div></section>
+
+<!-- FOOTER -->
+<footer><div class="wrap">
+  <div class="locs">
+    <div class="loc">
+      <div class="lab">Bryant / Little Rock</div>
+      <div class="addr">26096 Interstate 30, Bryant, AR 72022<br>(501) 481-8117</div>
+    </div>
+    <div class="loc">
+      <div class="lab">Rogers / NWA</div>
+      <div class="addr">1706 W. Commerce Dr, Rogers, AR 72756<br>(479) 900-9119</div>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <div class="meta">countertopworldar.com &nbsp;&middot;&nbsp; @countertopworld<br>Premium stone fabrication &middot; CNC fabrication &middot; expert installation</div>
+    <div class="brand"><b>COUNTERTOP</b> <span>WORLD</span></div>
+  </div>
+</div></footer>
+
+<script>
+(function(){
+  // ===== Ounces-of-water-donated counter ============================
+  // PLACEHOLDER demo values — MUST be set to REAL donation figures
+  // before this page is published publicly (it's a factual claim).
+  // Math: 1 case = 24 bottles x 16.9 oz = ~405.6 oz.
+  var OZ_PER_CASE     = 405.6;
+  var CASES_TO_DATE   = 16;   // <-- real cases donated as of START_DATE
+  var CASES_PER_WEEK  = 4;    // <-- real ongoing donation rate
+  var START_DATE      = new Date('2026-07-01T00:00:00-05:00').getTime();
+  // ==================================================================
+  var el = document.getElementById('ozCounter');
+  if(!el) return;
+  var fmt = function(n){ return Math.floor(n).toLocaleString('en-US'); };
+  function currentOz(){
+    var weeks = Math.max(0, (Date.now() - START_DATE) / 6.048e8);
+    return (CASES_TO_DATE + weeks * CASES_PER_WEEK) * OZ_PER_CASE;
+  }
+  var target = currentOz(), t0 = null, DUR = 1800;
+  function ease(p){ return 1 - Math.pow(1 - p, 3); }
+  function anim(ts){
+    if(!t0) t0 = ts;
+    var p = Math.min(1, (ts - t0) / DUR);
+    el.textContent = fmt(target * ease(p));
+    if(p < 1){ requestAnimationFrame(anim); }
+    else { setInterval(function(){ el.textContent = fmt(currentOz()); }, 5000); }
+  }
+  // kick off when the board scrolls into view (falls back to immediate)
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(en){
+      if(en[0].isIntersecting){ requestAnimationFrame(anim); io.disconnect(); }
+    }, {threshold:.4});
+    io.observe(el);
+  } else { requestAnimationFrame(anim); }
+})();
+</script>
+
+</body>
+</html>
