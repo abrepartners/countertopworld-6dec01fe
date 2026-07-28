@@ -378,6 +378,12 @@ export default function CityPageLayout({ data }: { data: CityPageData }) {
                   {area.name}, AR
                 </Link>
               ))}
+              <Link
+                to="/areas"
+                className="px-5 py-2.5 rounded-[6px] text-[13px] tracking-wide border border-stone-gold/20 text-stone-gold/80 hover:border-stone-gold/40 hover:text-stone-gold transition-all duration-500 no-underline"
+              >
+                All Service Areas
+              </Link>
             </div>
           </div>
         </section>

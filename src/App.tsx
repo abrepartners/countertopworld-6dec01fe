@@ -29,6 +29,7 @@ const DesignersPage = lazy(() => import('./pages/Designers'));
 const Blog = lazy(() => import('./pages/Blog'));
 const BlogPostPage = lazy(() => import('./pages/BlogPost'));
 const CityPage = lazy(() => import('./pages/CityPage'));
+const ServiceAreasPage = lazy(() => import('./pages/ServiceAreas'));
 const KnowledgeCenter = lazy(() => import('./pages/KnowledgeCenter'));
 const KnowledgePage = lazy(() => import('./pages/KnowledgePage'));
 const Privacy = lazy(() => import('./pages/Privacy'));
@@ -826,6 +827,7 @@ export default function App() {
       <Route path="/blog/:slug" element={<BlogPostPage />} />
       <Route path="/knowledge" element={<KnowledgeCenter />} />
       <Route path="/knowledge/:slug" element={<KnowledgePage />} />
+      <Route path="/areas" element={<ServiceAreasPage />} />
       <Route path="/areas/:slug" element={<CityPage />} />
       <Route path="/privacy-policy" element={<Privacy />} />
       <Route path="/sms-terms" element={<SmsTerms />} />

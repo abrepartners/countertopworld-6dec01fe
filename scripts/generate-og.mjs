@@ -86,6 +86,7 @@ const pages = [
   { slug: 'knowledge-builder-countertop-program', title: 'Builder Countertop\nPrograms', subtitle: 'Volume Partnerships Explained', tag: 'KNOWLEDGE' },
   { slug: 'knowledge-questions-to-ask-countertop-fabricator', title: 'Questions to Ask\nYour Fabricator', subtitle: 'Before You Sign', tag: 'KNOWLEDGE' },
   // City / Service Area pages
+  { slug: 'areas', title: 'Service Areas\nAcross Arkansas', subtitle: 'Bryant & Rogers Showrooms', tag: 'SERVICE AREAS' },
   { slug: 'areas-little-rock', title: 'Countertops in\nLittle Rock, AR', subtitle: '~15 min from Bryant Showroom', tag: 'SERVICE AREA' },
   { slug: 'areas-bryant', title: 'Countertops in\nBryant, AR', subtitle: 'Flagship Showroom & Fabrication', tag: 'SERVICE AREA' },
   { slug: 'areas-rogers', title: 'Countertops in\nRogers, AR', subtitle: '18,700 sq ft NWA Facility', tag: 'SERVICE AREA' },
