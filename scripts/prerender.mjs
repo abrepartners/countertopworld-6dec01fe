@@ -304,6 +304,12 @@ const routes = [
   },
   // City / Service Area pages
   {
+    path: '/areas',
+    title: 'Service Areas | Countertop World',
+    description: 'Countertop World installs granite, quartz, marble, and quartzite across Arkansas. Our Bryant showroom serves Little Rock, Conway, and Hot Springs. Our Rogers showroom serves Bentonville, Fayetteville, and Springdale.',
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Service Areas', path: '/areas' }],
+  },
+  {
     path: '/areas/little-rock',
     title: 'Countertops in Little Rock, AR | Granite, Quartz & Marble — Countertop World',
     description: 'Little Rock countertop fabrication and installation. Granite, quartz, marble, and quartzite — cut and installed by our own crew. Free estimates. Bryant showroom is 15 minutes south.',
@@ -366,7 +372,43 @@ const routes = [
   },
 ];
 
-const template = readFileSync(join(DIST, 'index.html'), 'utf-8');
+const rawTemplate = readFileSync(join(DIST, 'index.html'), 'utf-8');
+
+// Static in-body links for non-JS crawlers. The React app renders these same
+// links in its footer at runtime, but the raw SPA shell has no anchors at all,
+// which leaves every route looking orphaned to crawlers that skip JavaScript.
+// A <noscript> nav keeps them out of the browser while giving raw-HTML
+// fetchers a real link graph.
+const CRAWL_LINKS = [
+  ['/', 'Home'],
+  ['/stones/engineered-quartz', 'Engineered Quartz'],
+  ['/stones/natural-granite', 'Natural Granite'],
+  ['/stones/marble', 'Marble'],
+  ['/stones/quartzite', 'Quartzite'],
+  ['/stones/porcelain', 'Porcelain'],
+  ['/stones/soapstone-onyx', 'Soapstone and Onyx'],
+  ['/builders', 'Builders'],
+  ['/designers', 'Designers'],
+  ['/packages', 'Packages'],
+  ['/book', 'Book a Visit'],
+  ['/knowledge', 'Knowledge Center'],
+  ['/blog', 'Blog'],
+  ['/areas', 'Service Areas'],
+  ['/areas/little-rock', 'Countertops in Little Rock, AR'],
+  ['/areas/bryant', 'Countertops in Bryant, AR'],
+  ['/areas/conway', 'Countertops in Conway, AR'],
+  ['/areas/hot-springs', 'Countertops in Hot Springs, AR'],
+  ['/areas/rogers', 'Countertops in Rogers, AR'],
+  ['/areas/bentonville', 'Countertops in Bentonville, AR'],
+  ['/areas/fayetteville', 'Countertops in Fayetteville, AR'],
+  ['/areas/springdale', 'Countertops in Springdale, AR'],
+];
+const noscriptNav = `<noscript><nav aria-label="Site links">${CRAWL_LINKS.map(([href, label]) => `<a href="${href}">${label}</a>`).join('\n')}</nav></noscript>`;
+const template = rawTemplate.replace('</body>', `${noscriptNav}\n  </body>`);
+
+// The homepage is served from the base index.html (it is not in the routes
+// list), so write the link-enriched shell back for "/" and the SPA fallback.
+writeFileSync(join(DIST, 'index.html'), template);
 
 function resolveImage(route) {
   const slug = route.path === '/' ? 'home' : route.path.slice(1).replace(/\//g, '-');
