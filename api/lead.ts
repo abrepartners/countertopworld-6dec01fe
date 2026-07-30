@@ -34,6 +34,8 @@ type LeadPayload = {
   preferredLocation?: string;
   scope?: string;
   details?: string;
+  // City landing page the lead came from (set by CityPageLayout forms).
+  source_city?: string;
   // Marketing attribution — forwarded from the website's attribution capture.
   // These feed GHL's native Google Ads integration for offline conversions.
   gclid?: string;
@@ -127,6 +129,8 @@ function tags_for(p: LeadPayload): string[] {
   if (p.msclkid) out.add("source:bing-ads");
   if (p.utm_source) out.add(`utm:${p.utm_source.toLowerCase()}`);
   if (p.utm_campaign) out.add(`campaign:${p.utm_campaign.toLowerCase()}`);
+  // City landing page — lets GHL contact lists filter leads by service area.
+  if (p.source_city) out.add(`city:${p.source_city.toLowerCase()}`);
 
   return [...out];
 }
@@ -253,6 +257,7 @@ export default async function handler(req: Request): Promise<Response> {
   if (body.clientType) noteLines.push(`Client type: ${body.clientType}`);
   if (body.preferredLocation)
     noteLines.push(`Preferred showroom: ${body.preferredLocation}`);
+  if (body.source_city) noteLines.push(`Source city: ${body.source_city}`);
   if (body.scope) noteLines.push(`Project scope: ${body.scope}`);
   if (body.details) noteLines.push(`Details: ${body.details}`);
 
