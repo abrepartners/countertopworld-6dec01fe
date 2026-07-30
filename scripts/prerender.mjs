@@ -6,8 +6,20 @@
 
 import { readFileSync, writeFileSync, mkdirSync } from 'fs';
 import { dirname, join } from 'path';
+import { transform } from 'esbuild';
 
 const DIST = join(import.meta.dirname, '..', 'dist');
+
+// Load the city page data (single source of truth, shared with the React app).
+// esbuild strips the TypeScript types so plain Node can import it.
+const citySource = readFileSync(
+  join(import.meta.dirname, '..', 'src', 'data', 'cityPages.ts'),
+  'utf-8',
+);
+const { code: cityCode } = await transform(citySource, { loader: 'ts', format: 'esm' });
+const { cityPages } = await import(
+  'data:text/javascript;base64,' + Buffer.from(cityCode).toString('base64')
+);
 const ORIGIN = 'https://countertopworldar.com';
 const DEFAULT_OG_IMAGE = 'https://storage.googleapis.com/gpt-engineer-file-uploads/wQneyghQcNSs2stXUaHo0G5Qhxe2/social-images/social-1772306326393-countertop_world_northwest_arkansas1.webp';
 
@@ -454,6 +466,52 @@ function esc(s) {
   return s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
 
+// Escape text and convert inline [label](/path) links to anchors.
+function inline(s) {
+  return esc(s).replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
+}
+
+// Plain-text version of a paragraph (links flattened to their labels),
+// used for JSON-LD where markup does not belong.
+function plain(s) {
+  return s.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '$1');
+}
+
+// Static, crawlable HTML for a city page, injected into <div id="root">.
+// React's createRoot() replaces this content on hydration, so browsers see
+// the full interactive page while raw-HTML fetchers (and crawlers that skip
+// JS) see the real per-city content instead of an empty SPA shell.
+function cityBodyHtml(city) {
+  const s = city.nearestShowroom;
+  const tel = s.phone.replace(/[^0-9]/g, '');
+  const parts = [];
+  parts.push('<article>');
+  parts.push(`<h1>Countertops in ${esc(city.cityName)}, Arkansas</h1>`);
+  parts.push(`<p>${inline(city.heroSubtitle)}</p>`);
+  parts.push(
+    `<p><strong>${esc(s.name)}</strong> · ${esc(s.address)} · <a href="tel:${tel}">${esc(s.phone)}</a> · ${esc(s.hours)} · From ${esc(city.cityName)}: ${esc(city.driveTime)}</p>`,
+  );
+  parts.push(`<h2>Serving ${esc(city.cityName)} homeowners and builders</h2>`);
+  parts.push(`<p>${inline(city.localContext)}</p>`);
+  for (const section of city.sections) {
+    parts.push(`<h2>${esc(section.heading)}</h2>`);
+    for (const p of section.paragraphs) parts.push(`<p>${inline(p)}</p>`);
+  }
+  parts.push(`<h2>Common questions from ${esc(city.cityName)} homeowners</h2>`);
+  for (const f of city.faq) {
+    parts.push(`<h3>${esc(f.q)}</h3>`);
+    parts.push(`<p>${esc(f.a)}</p>`);
+  }
+  parts.push(
+    `<p>Also serving: ${city.nearbyAreas.map((a) => `<a href="/areas/${a.slug}">${esc(a.name)}, AR</a>`).join(' · ')} · <a href="/areas">All service areas</a></p>`,
+  );
+  parts.push(
+    `<p><a href="/book">Book a showroom visit</a> or call <a href="tel:${tel}">${esc(s.phone)}</a> for a free estimate in ${esc(city.cityName)}.</p>`,
+  );
+  parts.push('</article>');
+  return parts.join('\n      ');
+}
+
 function render(route) {
   let html = template;
 
@@ -523,6 +581,31 @@ function render(route) {
     html = html.replace(
       '</head>',
       `    <script type="application/ld+json">${JSON.stringify(schema)}</script>\n  </head>`
+    );
+  }
+
+  // City pages: inject FAQPage JSON-LD + static crawlable body content.
+  const citySlug = route.path.startsWith('/areas/') ? route.path.slice('/areas/'.length) : null;
+  const city = citySlug ? cityPages[citySlug] : null;
+  if (city) {
+    const faqSchema = {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: city.faq.map((item) => ({
+        '@type': 'Question',
+        name: item.q,
+        acceptedAnswer: { '@type': 'Answer', text: plain(item.a) },
+      })),
+    };
+    // The id lets CityPageLayout remove this copy before injecting its own
+    // client-side FAQPage schema, so rendering crawlers never see two.
+    html = html.replace(
+      '</head>',
+      `    <script type="application/ld+json" id="city-faq-schema-ssr">${JSON.stringify(faqSchema)}</script>\n  </head>`
+    );
+    html = html.replace(
+      /<div id="root">\s*<\/div>/,
+      `<div id="root">\n      ${cityBodyHtml(city)}\n    </div>`
     );
   }
 
