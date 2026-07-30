@@ -11,6 +11,7 @@ import { getAttribution } from '../lib/attribution';
 import { trackLead } from '../lib/tracking';
 import { useReveal } from '../hooks/useReveal';
 import type { CityPageData } from '../data/cityPages';
+import { cityStyles } from './cityPageStyles';
 
 function Reveal({ children, className = '', delay = 0 }: { children: ReactNode; className?: string; delay?: number }) {
   const { ref, visible } = useReveal(0.12);
@@ -27,7 +28,7 @@ function TextWithLinks({ text }: { text: string }) {
   while ((m = re.exec(text)) !== null) {
     if (m.index > last) parts.push(text.slice(last, m.index));
     parts.push(
-      <Link key={m.index} to={m[2]} className="text-stone-gold hover:text-stone-gold-light underline underline-offset-4 decoration-stone-gold/30 hover:decoration-stone-gold transition-colors">
+      <Link key={m.index} to={m[2]} className={cityStyles.inlineLink}>
         {m[1]}
       </Link>,
     );
@@ -236,11 +237,11 @@ export default function CityPageLayout({ data }: { data: CityPageData }) {
               {data.sections.map((section, si) => (
                 <Reveal key={si}>
                   <div className={si > 0 ? 'mt-16 md:mt-20' : ''}>
-                    <h2 className="font-display text-[clamp(1.4rem,3vw,2.1rem)] font-light text-vein-white tracking-tight leading-tight mb-6">
+                    <h2 className={cityStyles.sectionHeading}>
                       {section.heading}
                     </h2>
                     {section.paragraphs.map((p, pi) => (
-                      <p key={pi} className="text-[15px] md:text-[16px] text-cool-gray font-light leading-relaxed mb-5 last:mb-0">
+                      <p key={pi} className={cityStyles.sectionParagraph}>
                         <TextWithLinks text={p} />
                       </p>
                     ))}

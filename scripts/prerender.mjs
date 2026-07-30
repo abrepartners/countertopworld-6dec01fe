@@ -10,16 +10,19 @@ import { transform } from 'esbuild';
 
 const DIST = join(import.meta.dirname, '..', 'dist');
 
-// Load the city page data (single source of truth, shared with the React app).
-// esbuild strips the TypeScript types so plain Node can import it.
-const citySource = readFileSync(
-  join(import.meta.dirname, '..', 'src', 'data', 'cityPages.ts'),
-  'utf-8',
-);
-const { code: cityCode } = await transform(citySource, { loader: 'ts', format: 'esm' });
-const { cityPages } = await import(
-  'data:text/javascript;base64,' + Buffer.from(cityCode).toString('base64')
-);
+// Import a dependency-free TypeScript module from src/ (single source of
+// truth, shared with the React app). esbuild strips the types so plain Node
+// can import it.
+async function loadTsModule(...pathFromRoot) {
+  const source = readFileSync(join(import.meta.dirname, '..', ...pathFromRoot), 'utf-8');
+  const { code } = await transform(source, { loader: 'ts', format: 'esm' });
+  return import('data:text/javascript;base64,' + Buffer.from(code).toString('base64'));
+}
+
+const { cityPages } = await loadTsModule('src', 'data', 'cityPages.ts');
+// Class strings shared with CityPageLayout so the prerendered snapshot paints
+// styled (the built CSS is linked in <head>) and visually matches hydration.
+const { cityStyles } = await loadTsModule('src', 'components', 'cityPageStyles.ts');
 const ORIGIN = 'https://countertopworldar.com';
 const DEFAULT_OG_IMAGE = 'https://storage.googleapis.com/gpt-engineer-file-uploads/wQneyghQcNSs2stXUaHo0G5Qhxe2/social-images/social-1772306326393-countertop_world_northwest_arkansas1.webp';
 
@@ -468,7 +471,10 @@ function esc(s) {
 
 // Escape text and convert inline [label](/path) links to anchors.
 function inline(s) {
-  return esc(s).replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
+  return esc(s).replace(
+    /\[([^\]]+)\]\(([^)]+)\)/g,
+    `<a href="$2" class="${cityStyles.inlineLink}">$1</a>`,
+  );
 }
 
 // Plain-text version of a paragraph (links flattened to their labels),
@@ -481,34 +487,44 @@ function plain(s) {
 // React's createRoot() replaces this content on hydration, so browsers see
 // the full interactive page while raw-HTML fetchers (and crawlers that skip
 // JS) see the real per-city content instead of an empty SPA shell.
+//
+// The markup carries the same Tailwind classes CityPageLayout uses (via the
+// shared cityStyles module), so the pre-hydration paint is styled — dark
+// background, correct type — instead of a bare unstyled wall of text. The
+// content stays fully visible to crawlers; no display/visibility tricks.
 function cityBodyHtml(city) {
+  const c = cityStyles;
   const s = city.nearestShowroom;
   const tel = s.phone.replace(/[^0-9]/g, '');
+  const h2 = `${c.sectionHeading} ${c.sectionHeadingSpacing}`;
   const parts = [];
-  parts.push('<article>');
-  parts.push(`<h1>Countertops in ${esc(city.cityName)}, Arkansas</h1>`);
-  parts.push(`<p>${inline(city.heroSubtitle)}</p>`);
+  parts.push(`<div class="${c.pageWrap}">`);
+  parts.push(`<article class="${c.inner}">`);
+  parts.push(`<p class="${c.kicker}">Service Area</p>`);
+  parts.push(`<h1 class="${c.h1}">Countertops in ${esc(city.cityName)}, Arkansas</h1>`);
+  parts.push(`<p class="${c.heroParagraph}">${inline(city.heroSubtitle)}</p>`);
   parts.push(
-    `<p><strong>${esc(s.name)}</strong> · ${esc(s.address)} · <a href="tel:${tel}">${esc(s.phone)}</a> · ${esc(s.hours)} · From ${esc(city.cityName)}: ${esc(city.driveTime)}</p>`,
+    `<p class="${c.showroomLine}"><strong>${esc(s.name)}</strong> · ${esc(s.address)} · <a href="tel:${tel}" class="${c.inlineLink}">${esc(s.phone)}</a> · ${esc(s.hours)} · From ${esc(city.cityName)}: ${esc(city.driveTime)}</p>`,
   );
-  parts.push(`<h2>Serving ${esc(city.cityName)} homeowners and builders</h2>`);
-  parts.push(`<p>${inline(city.localContext)}</p>`);
+  parts.push(`<h2 class="${c.sectionHeading}">Serving ${esc(city.cityName)} homeowners and builders</h2>`);
+  parts.push(`<p class="${c.sectionParagraph}">${inline(city.localContext)}</p>`);
   for (const section of city.sections) {
-    parts.push(`<h2>${esc(section.heading)}</h2>`);
-    for (const p of section.paragraphs) parts.push(`<p>${inline(p)}</p>`);
+    parts.push(`<h2 class="${h2}">${esc(section.heading)}</h2>`);
+    for (const p of section.paragraphs) parts.push(`<p class="${c.sectionParagraph}">${inline(p)}</p>`);
   }
-  parts.push(`<h2>Common questions from ${esc(city.cityName)} homeowners</h2>`);
+  parts.push(`<h2 class="${h2}">Common questions from ${esc(city.cityName)} homeowners</h2>`);
   for (const f of city.faq) {
-    parts.push(`<h3>${esc(f.q)}</h3>`);
-    parts.push(`<p>${esc(f.a)}</p>`);
+    parts.push(`<h3 class="${c.faqQuestion}">${esc(f.q)}</h3>`);
+    parts.push(`<p class="${c.faqAnswer}">${esc(f.a)}</p>`);
   }
   parts.push(
-    `<p>Also serving: ${city.nearbyAreas.map((a) => `<a href="/areas/${a.slug}">${esc(a.name)}, AR</a>`).join(' · ')} · <a href="/areas">All service areas</a></p>`,
+    `<p class="${c.sectionParagraph} ${c.sectionHeadingSpacing}">Also serving: ${city.nearbyAreas.map((a) => `<a href="/areas/${a.slug}" class="${c.inlineLink}">${esc(a.name)}, AR</a>`).join(' · ')} · <a href="/areas" class="${c.inlineLink}">All service areas</a></p>`,
   );
   parts.push(
-    `<p><a href="/book">Book a showroom visit</a> or call <a href="tel:${tel}">${esc(s.phone)}</a> for a free estimate in ${esc(city.cityName)}.</p>`,
+    `<p class="${c.sectionParagraph}"><a href="/book" class="${c.inlineLink}">Book a showroom visit</a> or call <a href="tel:${tel}" class="${c.inlineLink}">${esc(s.phone)}</a> for a free estimate in ${esc(city.cityName)}.</p>`,
   );
   parts.push('</article>');
+  parts.push('</div>');
   return parts.join('\n      ');
 }
 

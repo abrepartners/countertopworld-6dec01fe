@@ -7,7 +7,7 @@ export default function SiteFooter() {
         <div className="flex flex-col lg:flex-row justify-between gap-16 mb-16">
           <div className="max-w-sm">
             <Link to="/" className="font-display text-[20px] font-medium tracking-tight text-stone-gold block mb-4 no-underline">Countertop World</Link>
-            <p className="text-[13px] text-cool-gray font-light leading-relaxed mb-4">Family-owned stone fabrication since 2016. Two Arkansas locations. Everything cut, finished, and installed by our crew.</p>
+            <p className="text-[13px] text-cool-gray font-light leading-relaxed mb-4">Family-owned stone fabrication since 2017. Two Arkansas locations. Everything cut, finished, and installed by our crew.</p>
             <p className="font-mono text-[11px] text-cool-gray tracking-[3px] uppercase mb-4">Strength. Set in Stone.</p>
             <div className="flex items-center gap-4">
               <a href="https://www.instagram.com/countertopworld/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-cool-gray hover:text-stone-gold transition-colors"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></a>
@@ -61,7 +61,7 @@ export default function SiteFooter() {
         </p>
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px] text-cool-gray font-light">
           <p>&copy; {new Date().getFullYear()} Countertop World, LLC. All rights reserved.</p>
-          <div className="flex items-center gap-6"><span>BBB A+ Accredited</span><span className="text-stone-gold/30">·</span><span>4.4 ★ · 109+ Reviews</span><span className="text-stone-gold/30">·</span><span>Family-owned since 2016</span></div>
+          <div className="flex items-center gap-6"><span>BBB A+ Accredited</span><span className="text-stone-gold/30">·</span><span>4.4 ★ · 109+ Reviews</span><span className="text-stone-gold/30">·</span><span>Family-owned since 2017</span></div>
         </div>
       </div>
     </footer>
