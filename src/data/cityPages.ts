@@ -62,7 +62,7 @@ export const cityPages: Record<string, CityPageData> = {
       {
         heading: "The metro's countertops, cut 15 minutes down I-30",
         paragraphs: [
-          "Little Rock is the biggest countertop market in the state, and it gets served by the biggest fabrication shop in Central Arkansas. Countertop World was founded in 2016 by David McDougall and Chad Crank, and our Bryant headquarters sits right on Interstate 30, about 15 minutes south of downtown. Every Little Rock job runs through that one building: the slab you pick, the digital template of your kitchen, the sawjet and CNC router that cut it, and the crew that installs it.",
+          "Little Rock is the biggest countertop market in the state, and it gets served by the biggest fabrication shop in Central Arkansas. Countertop World was founded in 2017 by David McDougall and Chad Crank, and our Bryant headquarters sits right on Interstate 30, about 15 minutes south of downtown. Every Little Rock job runs through that one building: the slab you pick, the digital template of your kitchen, the sawjet and CNC router that cut it, and the crew that installs it.",
           "That matters in a metro this size. A lot of countertop companies in Little Rock are brokers. They sell the stone, then send the cutting and the install to somebody else. We do not. Templating, fabrication, edge profiling, and installation are all handled by our own W-2 employees. No subcontractors touch your project at any stage. When something needs an answer, one shop owns it.",
         ],
       },
@@ -132,7 +132,7 @@ export const cityPages: Record<string, CityPageData> = {
       {
         heading: "This is where the company lives",
         paragraphs: [
-          "Every countertop company has a service area page for its home town. This one is different, because Bryant is not a town we drive to. It is where Countertop World started in 2016, where David McDougall and Chad Crank built the shop, and where every Central Arkansas countertop we make gets cut. The showroom, the slab yard, the sawjet, the CNC router, the edge profilers, and the install crews all work out of 26096 Interstate 30.",
+          "Every countertop company has a service area page for its home town. This one is different, because Bryant is not a town we drive to. It is where Countertop World started in 2017, where David McDougall and Chad Crank built the shop, and where every Central Arkansas countertop we make gets cut. The showroom, the slab yard, the sawjet, the CNC router, the edge profilers, and the install crews all work out of 26096 Interstate 30.",
           "If you live in Bryant, Benton, or anywhere in Saline County, that means the largest stone fabrication operation in Central Arkansas is a few minutes from your driveway. Short trips for you, short trips for us, and no shipping your project out of town.",
         ],
       },
@@ -205,7 +205,7 @@ export const cityPages: Record<string, CityPageData> = {
       {
         heading: "A working fabrication shop, not a satellite office",
         paragraphs: [
-          "The Commerce Drive facility is Countertop World's Northwest Arkansas home base, and it runs the same way our Bryant headquarters has since 2016: everything in-house. Digital templating, sawjet cutting, CNC routing, edge profiling, and installation are all handled by our own W-2 crews. No subcontractors at any stage, which is rarer in the countertop business than it should be.",
+          "The Commerce Drive facility is Countertop World's Northwest Arkansas home base, and it runs the same way our Bryant headquarters has since 2017: everything in-house. Digital templating, sawjet cutting, CNC routing, edge profiling, and installation are all handled by our own W-2 crews. No subcontractors at any stage, which is rarer in the countertop business than it should be.",
           "That is what lets us hold schedules for Rogers homeowners and NWA builders alike. When the shop that cuts the stone also employs the crew that installs it, there is no handoff where your project can stall.",
         ],
       },
