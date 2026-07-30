@@ -18,6 +18,25 @@ function Reveal({ children, className = '', delay = 0 }: { children: ReactNode; 
   return <div ref={ref} className={`reveal ${visible ? 'visible' : ''} ${delayClass} ${className}`}>{children}</div>;
 }
 
+// Renders paragraph text with inline [label](/path) links as router links.
+function TextWithLinks({ text }: { text: string }) {
+  const parts: ReactNode[] = [];
+  const re = /\[([^\]]+)\]\(([^)]+)\)/g;
+  let last = 0;
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(text)) !== null) {
+    if (m.index > last) parts.push(text.slice(last, m.index));
+    parts.push(
+      <Link key={m.index} to={m[2]} className="text-stone-gold hover:text-stone-gold-light underline underline-offset-4 decoration-stone-gold/30 hover:decoration-stone-gold transition-colors">
+        {m[1]}
+      </Link>,
+    );
+    last = m.index + m[0].length;
+  }
+  if (last < text.length) parts.push(text.slice(last));
+  return <>{parts}</>;
+}
+
 const materials = [
   { name: 'Engineered Quartz', tag: 'Most Popular', link: '/stones/engineered-quartz', img: '/materials/engineered-quartz.webp' },
   { name: 'Natural Granite', tag: 'Timeless', link: '/stones/natural-granite', img: '/materials/natural-granite.webp' },
@@ -51,6 +70,9 @@ export default function CityPageLayout({ data }: { data: CityPageData }) {
       ],
     });
 
+    // Remove the prerendered (static HTML) FAQ schema so it is not duplicated
+    // once the client-side schema for the current city is injected.
+    document.getElementById('city-faq-schema-ssr')?.remove();
     const existingFaq = document.getElementById('city-faq-schema');
     if (existingFaq) existingFaq.remove();
     const faqScript = document.createElement('script');
@@ -206,6 +228,28 @@ export default function CityPageLayout({ data }: { data: CityPageData }) {
             </div>
           </section>
         </Reveal>
+
+        {/* City-specific editorial sections */}
+        {data.sections.length > 0 && (
+          <section aria-label={`Working with Countertop World in ${data.cityName}`} className="py-20 md:py-28 px-6 lg:px-10 bg-obsidian">
+            <div className="max-w-[800px] mx-auto">
+              {data.sections.map((section, si) => (
+                <Reveal key={si}>
+                  <div className={si > 0 ? 'mt-16 md:mt-20' : ''}>
+                    <h2 className="font-display text-[clamp(1.4rem,3vw,2.1rem)] font-light text-vein-white tracking-tight leading-tight mb-6">
+                      {section.heading}
+                    </h2>
+                    {section.paragraphs.map((p, pi) => (
+                      <p key={pi} className="text-[15px] md:text-[16px] text-cool-gray font-light leading-relaxed mb-5 last:mb-0">
+                        <TextWithLinks text={p} />
+                      </p>
+                    ))}
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* Benefits */}
         <Reveal>
