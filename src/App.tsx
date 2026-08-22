@@ -34,6 +34,7 @@ const KnowledgeCenter = lazy(() => import('./pages/KnowledgeCenter'));
 const KnowledgePage = lazy(() => import('./pages/KnowledgePage'));
 const Privacy = lazy(() => import('./pages/Privacy'));
 const SmsTerms = lazy(() => import('./pages/SmsTerms'));
+const VisualizerPage = lazy(() => import('./pages/Visualizer'));
 
 /* ── MARBLE VEIN SVG ── */
 function MarbleVeins({ className = '' }: { className?: string }) {
@@ -822,6 +823,7 @@ export default function App() {
       <Route path="/builders" element={<BuildersPage />} />
       <Route path="/designers" element={<DesignersPage />} />
       <Route path="/book" element={<BookShowroom />} />
+      <Route path="/visualizer" element={<VisualizerPage />} />
       <Route path="/packages" element={<Packages />} />
       <Route path="/blog" element={<Blog />} />
       <Route path="/blog/:slug" element={<BlogPostPage />} />
