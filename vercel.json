@@ -586,5 +586,16 @@
       "source": "/(.*)",
       "destination": "/index.html"
     }
-  ]
+  ],
+  "functions": {
+    "api/visualize.ts": {
+      "maxDuration": 180
+    },
+    "api/claim.ts": {
+      "maxDuration": 60
+    },
+    "api/lead.ts": {
+      "maxDuration": 30
+    }
+  }
 }
