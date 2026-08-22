@@ -63,15 +63,23 @@ export async function POST(req: Request): Promise<Response> {
         source: "Stone Visualizer",
       }),
     });
-    if (!contactRes.ok) return bad(502, `GHL contact failed: ${contactRes.status}`);
-    const contact = (await contactRes.json()).contact;
+    // A CRM failure must never block the customer's reveal — the render is
+    // the product moment. Log it loudly; the lead payload is in the request
+    // logs for manual recovery, and the GHL token issue surfaces in monitoring.
+    let contact: { id: string } | null = null;
+    if (contactRes.ok) {
+      contact = (await contactRes.json()).contact;
+    } else {
+      console.error("GHL contact upsert failed:", contactRes.status, await contactRes.text().catch(() => ""),
+        "lead:", JSON.stringify({ name: body.first_name, phone: body.phone, email: body.email, surface: body.surface, stone: body.stone_name }));
+    }
 
     // 2. Host the watermarked image so SMS can carry it.
     const imageUrl = await hostImage(body.render_b64, body.prediction_id || `${Date.now()}`);
 
     // 3. Text the render. Failure here doesn't lose the lead — contact exists.
     let smsSent = false;
-    if (imageUrl) {
+    if (imageUrl && contact) {
       const sms = await fetch(`${GHL_BASE}/conversations/messages`, {
         method: "POST",
         headers: ghl,
@@ -86,7 +94,7 @@ export async function POST(req: Request): Promise<Response> {
       smsSent = sms.ok;
     }
 
-    return new Response(JSON.stringify({ ok: true, sms_sent: smsSent, image_url: imageUrl }), {
+    return new Response(JSON.stringify({ ok: true, sms_sent: smsSent, lead_synced: !!contact, image_url: imageUrl }), {
       status: 200, headers: { "Content-Type": "application/json" },
     });
   } catch (e) {
