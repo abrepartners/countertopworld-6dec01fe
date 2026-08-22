@@ -29,7 +29,7 @@ async function hostImage(b64: string, id: string): Promise<string | null> {
   return `${url}/storage/v1/object/public/visualizer/${path}`;
 }
 
-export default async function handler(req: Request): Promise<Response> {
+export async function POST(req: Request): Promise<Response> {
   if (req.method !== "POST") return bad(405, "POST only");
   const token = process.env.GHL_TOKEN;
   const locationId = process.env.GHL_LOCATION_ID;

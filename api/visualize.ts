@@ -46,7 +46,7 @@ async function uploadToReplicate(b64: string, token: string): Promise<string> {
   return j.urls.get;
 }
 
-export default async function handler(req: Request): Promise<Response> {
+export async function POST(req: Request): Promise<Response> {
   if (req.method !== "POST")
     return new Response(JSON.stringify({ error: "POST only" }), { status: 405 });
 
