@@ -4,7 +4,7 @@ import SiteFooter from '../components/SiteFooter';
 import { ArrowLeft, MapPin, Clock } from 'lucide-react';
 import { applyPageHead } from '../lib/pageHead';
 import { appendAttributionToUrl } from '../lib/attribution';
-import { trackBooking } from '../lib/tracking';
+import { trackBookingComplete } from '../lib/tracking';
 
 // GoHighLevel calendar widgets. Three options total — Bryant splits into a
 // weekday round-robin and a Saturday-only calendar owned by David, since
@@ -45,7 +45,30 @@ export default function BookShowroom() {
   const [bryantSub, setBryantSub] = useState<BryantSub>('bryant_weekday');
 
   useEffect(() => {
-    trackBooking();
+    // Fire the pixel Lead (+ Schedule breadcrumb) only when a booking is
+    // actually completed inside the GHL calendar iframe. The widget posts
+    // ["set-sticky-contacts", "_ud", <contact JSON>, locationId, fingerprint]
+    // to the parent page from its submission-success handler — verified
+    // empirically 2026-08-27: this message does NOT fire on widget load, slot
+    // selection, or reaching the form step, only after a successful submit.
+    let leadFired = false;
+    const onWidgetMessage = (e: MessageEvent) => {
+      if (leadFired) return;
+      if (!/https:\/\/([a-z0-9-]+\.)*(leadconnectorhq\.com|msgsndr\.com)$/.test(e.origin)) return;
+      const d = e.data;
+      if (!Array.isArray(d) || d[0] !== 'set-sticky-contacts') return;
+      // Require actual contact details in the payload as a second guard.
+      try {
+        const contact = typeof d[2] === 'string' ? JSON.parse(d[2]) : d[2];
+        if (!contact || (!contact.email && !contact.phone && !contact.full_name)) return;
+      } catch {
+        return;
+      }
+      leadFired = true;
+      trackBookingComplete();
+    };
+    window.addEventListener('message', onWidgetMessage);
+
     const cleanup = applyPageHead({
       title: 'Book a Showroom Visit — Countertop World',
       description:
@@ -56,7 +79,10 @@ export default function BookShowroom() {
         { name: 'Book a Visit', path: '/book' },
       ],
     });
-    return cleanup;
+    return () => {
+      window.removeEventListener('message', onWidgetMessage);
+      cleanup();
+    };
   }, []);
 
   const activeKey = location === 'bryant' ? bryantSub : 'rogers';

@@ -23,14 +23,24 @@ export function trackLead(data?: { eventId?: string; value?: number; currency?: 
   }
 }
 
-export function trackBooking() {
+// Fired when a booking is actually COMPLETED in the GHL calendar widget on
+// /book (detected via the widget's `set-sticky-contacts` postMessage, which it
+// sends to the parent page only from its submission-success handler).
+//
+// Lead is the primary signal — the Meta retail ads optimize to the pixel LEAD
+// event. Schedule is kept as a secondary breadcrumb, now fired at the honest
+// moment (booking completed, not page load), so the legacy ad set optimizing
+// to SCHEDULE also starts receiving real signal until it is migrated to LEAD.
+export function trackBookingComplete() {
   if (typeof window === 'undefined') return;
 
   if (window.fbq) {
+    window.fbq('track', 'Lead');
     window.fbq('track', 'Schedule');
   }
 
   if (window.gtag) {
+    window.gtag('event', 'generate_lead', { value: 0, currency: 'USD' });
     window.gtag('event', 'conversion', {
       send_to: 'AW-6873435929/booking',
     });
