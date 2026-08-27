@@ -48,7 +48,6 @@ const pages = [
   // Service pages
   { slug: 'builders', title: 'Builder & Contractor\nServices', subtitle: '2-Week Turnaround · Volume Pricing', tag: 'TRADE PROGRAM' },
   { slug: 'designers', title: 'Designer & Architect\nFabrication', subtitle: 'Exotic Stone · Sasso-Lux Finishes', tag: 'TRADE PROGRAM' },
-  { slug: 'packages', title: 'Countertop\nPackages', subtitle: 'Entry · Signature · Premium', tag: 'PRICING' },
   { slug: 'book', title: 'Book a\nShowroom Visit', subtitle: 'Bryant & Rogers, Arkansas', tag: 'SCHEDULE' },
   // Blog
   { slug: 'blog', title: 'Countertop Guides,\nPricing & Trends', subtitle: 'From an Arkansas Fabricator', tag: 'BLOG' },

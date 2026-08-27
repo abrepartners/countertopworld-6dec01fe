@@ -12,6 +12,16 @@
       "permanent": true
     },
     {
+      "source": "/packages",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/packages/",
+      "destination": "/",
+      "permanent": false
+    },
+    {
       "source": "/privacy",
       "destination": "/privacy-policy",
       "permanent": true
@@ -103,12 +113,12 @@
     },
     {
       "source": "/sinks",
-      "destination": "/packages",
+      "destination": "/",
       "permanent": true
     },
     {
       "source": "/sinks/",
-      "destination": "/packages",
+      "destination": "/",
       "permanent": true
     },
     {
@@ -313,12 +323,12 @@
     },
     {
       "source": "/financing",
-      "destination": "/packages",
+      "destination": "/",
       "permanent": true
     },
     {
       "source": "/financing/",
-      "destination": "/packages",
+      "destination": "/",
       "permanent": true
     },
     {
@@ -548,12 +558,12 @@
     },
     {
       "source": "/achieve-your-perfect-kitchen-with-countertop-worlds-zero-interest-financing",
-      "destination": "/packages",
+      "destination": "/",
       "permanent": true
     },
     {
       "source": "/achieve-your-perfect-kitchen-with-countertop-worlds-zero-interest-financing/",
-      "destination": "/packages",
+      "destination": "/",
       "permanent": true
     },
     {

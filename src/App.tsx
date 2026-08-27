@@ -23,7 +23,6 @@ const QuartzitePage = lazy(() => import('./pages/Quartzite'));
 const PorcelainPage = lazy(() => import('./pages/Porcelain'));
 const SoapstoneOnyxPage = lazy(() => import('./pages/SoapstoneOnyx'));
 const BookShowroom = lazy(() => import('./pages/BookShowroom'));
-const Packages = lazy(() => import('./pages/Packages'));
 const BuildersPage = lazy(() => import('./pages/Builders'));
 const DesignersPage = lazy(() => import('./pages/Designers'));
 const Blog = lazy(() => import('./pages/Blog'));
@@ -150,7 +149,6 @@ function GlassNav() {
         <a href="#process" onClick={e => { scrollTo('process', e); setMenuOpen(false); }} className="text-[15px] text-cool-gray hover:text-vein-white transition-colors">Process</a>
         <a href="#work" onClick={e => { scrollTo('work', e); setMenuOpen(false); }} className="text-[15px] text-cool-gray hover:text-vein-white transition-colors">Inspiration</a>
         <a href="#showrooms" onClick={e => { scrollTo('showrooms', e); setMenuOpen(false); }} className="text-[15px] text-cool-gray hover:text-vein-white transition-colors">Visit</a>
-        <Link to="/packages" onClick={() => setMenuOpen(false)} className="text-[15px] text-cool-gray hover:text-vein-white transition-colors">Packages</Link>
         <Link to="/knowledge" onClick={() => setMenuOpen(false)} className="text-[15px] text-cool-gray hover:text-vein-white transition-colors">Learn</Link>
         <Link to="/book" onClick={() => setMenuOpen(false)} className="text-[15px] text-cool-gray hover:text-vein-white transition-colors">Book a Visit</Link>
         <a href="#contact" onClick={e => { scrollTo('contact', e); setMenuOpen(false); }} className="inline-flex items-center justify-center px-5 py-3 rounded-[6px] text-[13px] font-medium bg-stone-gold text-obsidian w-full mt-2">Get a free estimate</a>
@@ -822,7 +820,6 @@ export default function App() {
       <Route path="/builders" element={<BuildersPage />} />
       <Route path="/designers" element={<DesignersPage />} />
       <Route path="/book" element={<BookShowroom />} />
-      <Route path="/packages" element={<Packages />} />
       <Route path="/blog" element={<Blog />} />
       <Route path="/blog/:slug" element={<BlogPostPage />} />
       <Route path="/knowledge" element={<KnowledgeCenter />} />

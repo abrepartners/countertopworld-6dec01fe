@@ -31,7 +31,6 @@ export default function SiteFooter() {
             <li><Link to="/stones/soapstone-onyx" className="hover:text-vein-white transition-colors no-underline">Soapstone &amp; Onyx</Link></li>
             <li><Link to="/builders" className="hover:text-vein-white transition-colors no-underline">Builders</Link></li>
             <li><Link to="/designers" className="hover:text-vein-white transition-colors no-underline">Designers</Link></li>
-            <li><Link to="/packages" className="hover:text-vein-white transition-colors no-underline">Packages</Link></li>
             <li><Link to="/book" className="hover:text-vein-white transition-colors no-underline">Book a Visit</Link></li>
             <li><Link to="/knowledge" className="hover:text-vein-white transition-colors no-underline">Knowledge Center</Link></li>
             <li><Link to="/blog" className="hover:text-vein-white transition-colors no-underline">Blog</Link></li>

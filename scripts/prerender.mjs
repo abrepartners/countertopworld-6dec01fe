@@ -88,12 +88,6 @@ const routes = [
     breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Book a Visit', path: '/book' }],
   },
   {
-    path: '/packages',
-    title: 'Countertop Packages — Entry, Signature, Premium | Countertop World',
-    description: 'Three honest countertop packages. 40 sq ft installed, laser-templated to 1/16 inch, fabricated under our Arkansas roof. Bryant & Rogers, AR.',
-    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Packages', path: '/packages' }],
-  },
-  {
     path: '/blog',
     title: 'Blog — Countertop Guides, Pricing & Trends | Countertop World',
     description: 'Countertop guides from an Arkansas fabricator. Granite vs. quartz comparisons, pricing breakdowns, 2026 trends, and maintenance tips.',
@@ -404,7 +398,6 @@ const CRAWL_LINKS = [
   ['/stones/soapstone-onyx', 'Soapstone and Onyx'],
   ['/builders', 'Builders'],
   ['/designers', 'Designers'],
-  ['/packages', 'Packages'],
   ['/book', 'Book a Visit'],
   ['/knowledge', 'Knowledge Center'],
   ['/blog', 'Blog'],
