@@ -42,7 +42,7 @@ type BryantSub = 'bryant_weekday' | 'bryant_saturday';
 
 export default function BookShowroom() {
   const [location, setLocation] = useState<Location>('bryant');
-  const [bryantSub, setBryantSub] = useState<BryantSub>('bryant_weekday');
+  const bryantSub: BryantSub = 'bryant_weekday'; // Saturday option removed 2026-08-27 per Thomas
 
   useEffect(() => {
     // Fire the pixel Lead (+ Schedule breadcrumb) only when a booking is
@@ -144,32 +144,6 @@ export default function BookShowroom() {
           })}
         </div>
 
-        {/* Bryant day-of-week sub-tabs */}
-        {location === 'bryant' && (
-          <div className="flex flex-wrap gap-2 mb-8" role="tablist" aria-label="Bryant visit type">
-            {([
-              { key: 'bryant_weekday' as const, label: 'Weekday visit' },
-              { key: 'bryant_saturday' as const, label: 'Saturday appointment' },
-            ]).map((t) => {
-              const isActive = bryantSub === t.key;
-              return (
-                <button
-                  key={t.key}
-                  role="tab"
-                  aria-selected={isActive}
-                  onClick={() => setBryantSub(t.key)}
-                  className={`px-4 py-2 rounded-[6px] text-[12px] tracking-wide transition-all duration-500 border ${
-                    isActive
-                      ? 'border-stone-gold/60 bg-stone-gold/10 text-vein-white'
-                      : 'border-stone-gold/15 text-cool-gray hover:border-stone-gold/30 hover:text-vein-white'
-                  }`}
-                >
-                  {t.label}
-                </button>
-              );
-            })}
-          </div>
-        )}
 
         {location === 'rogers' && <div className="mb-8" />}
 
