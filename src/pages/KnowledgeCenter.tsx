@@ -84,13 +84,6 @@ export default function KnowledgeCenter() {
               <span className="block text-[12px] text-cool-gray/60 mt-0.5">Pricing guides, trends, and how-tos</span>
             </div>
           </Link>
-          <Link to="/packages" className="flex items-center gap-3 p-5 rounded-[8px] border border-stone-gold/10 hover:border-stone-gold/30 hover:bg-stone-gold/5 transition-all no-underline group">
-            <ArrowRight size={14} className="text-stone-gold/40 group-hover:text-stone-gold flex-shrink-0" />
-            <div>
-              <span className="block text-[14px] text-vein-white font-medium group-hover:text-stone-gold transition-colors">Packages</span>
-              <span className="block text-[12px] text-cool-gray/60 mt-0.5">Tiered pricing for every budget</span>
-            </div>
-          </Link>
         </div>
       </main>
 

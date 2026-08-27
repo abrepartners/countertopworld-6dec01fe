@@ -9,7 +9,6 @@ Countertop World fabricates and installs natural and engineered stone countertop
 - [Home](/): Overview of services, locations, and value propositions.
 - [Builders](/builders): B2B program for production builders — pricing, scheduling, and turnaround commitments.
 - [Designers](/designers): Trade program for kitchen and bath designers.
-- [Packages](/packages): Entry, Signature, and Premium countertop packages with transparent pricing.
 - [Book a Showroom Visit](/book): Schedule an in-person consultation in Bryant or Rogers.
 - [Blog](/blog): Guides on countertop selection, care, pricing, and design.
 

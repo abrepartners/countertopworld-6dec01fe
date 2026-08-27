@@ -91,7 +91,6 @@ export const knowledgePages: KnowledgePage[] = [
       { title: 'How Much Do Countertops Cost in Arkansas? (2026)', href: '/blog/countertop-cost-arkansas-2026' },
       { title: 'Leathered Granite: The Textured Finish Trend', href: '/blog/leathered-granite-countertops-arkansas' },
       { title: 'Outdoor Kitchen Countertops for Arkansas', href: '/blog/outdoor-kitchen-countertops-arkansas' },
-      { title: 'View our package pricing', href: '/packages' },
       { title: 'Book a showroom visit', href: '/book' },
     ],
   },
@@ -128,7 +127,7 @@ export const knowledgePages: KnowledgePage[] = [
       },
       {
         heading: 'Edge profiles: what each one costs you and why',
-        body: `Edge profiles are cut into the exposed perimeter of your countertop during fabrication. The profile you choose affects the look, how debris collects, how sharp the edge feels, and the cost.\n\n<strong>Eased edge</strong> — a slight softening of the top corner. The most common profile. Included in base pricing. Clean, modern, low-maintenance.\n\n<strong>Beveled edge</strong> — a 45-degree cut along the top. Slightly more machining time than eased. Typically a small upcharge.\n\n<strong>Bullnose</strong> — fully rounded top and bottom. Classic profile. The fully rounded shape requires multiple CNC passes. Standard upcharge.\n\n<strong>Ogee</strong> — an S-curve profile with a raised top lip and concave sweep. Traditional kitchen look. More machining time, more polishing time, higher upcharge.\n\n<strong>Waterfall</strong> — the countertop surface drops straight to the floor on one or both ends, creating a continuous panel effect. This is a structural and fabrication design decision, not just an edge cut. It requires additional material, precise corner mitering, and specific installation support. Cost adds up fast.\n\n<strong>Mitered edges</strong> — stacking two pieces of stone with a 45-degree joint to create a thick-look profile. Adds visual mass without doubling the weight of 3cm stone.\n\nEdge profile upcharges are per linear foot of exposed edge. We walk through this math with every client before they finalize their choice. See our <a href="/packages" class="text-stone-gold hover:text-stone-gold-light transition-colors">package pricing</a> for included versus upgrade edge options.`
+        body: `Edge profiles are cut into the exposed perimeter of your countertop during fabrication. The profile you choose affects the look, how debris collects, how sharp the edge feels, and the cost.\n\n<strong>Eased edge</strong> — a slight softening of the top corner. The most common profile. Included in base pricing. Clean, modern, low-maintenance.\n\n<strong>Beveled edge</strong> — a 45-degree cut along the top. Slightly more machining time than eased. Typically a small upcharge.\n\n<strong>Bullnose</strong> — fully rounded top and bottom. Classic profile. The fully rounded shape requires multiple CNC passes. Standard upcharge.\n\n<strong>Ogee</strong> — an S-curve profile with a raised top lip and concave sweep. Traditional kitchen look. More machining time, more polishing time, higher upcharge.\n\n<strong>Waterfall</strong> — the countertop surface drops straight to the floor on one or both ends, creating a continuous panel effect. This is a structural and fabrication design decision, not just an edge cut. It requires additional material, precise corner mitering, and specific installation support. Cost adds up fast.\n\n<strong>Mitered edges</strong> — stacking two pieces of stone with a 45-degree joint to create a thick-look profile. Adds visual mass without doubling the weight of 3cm stone.\n\nEdge profile upcharges are per linear foot of exposed edge. We walk through this math with every client before they finalize their choice.`
       },
       {
         heading: 'Seam planning: the decision nobody thinks about until it is too late',
@@ -174,7 +173,6 @@ export const knowledgePages: KnowledgePage[] = [
       { title: 'How Much Do Countertops Cost in Arkansas? (2026)', href: '/blog/countertop-cost-arkansas-2026' },
       { title: 'How to Choose a Countertop Fabricator', href: '/blog/how-to-choose-countertop-fabricator-arkansas' },
       { title: 'Stone Types Compared: All Six Materials', href: '/knowledge/stone-types-compared' },
-      { title: 'View package pricing', href: '/packages' },
       { title: 'Book a showroom visit', href: '/book' },
     ],
   },
@@ -211,7 +209,7 @@ export const knowledgePages: KnowledgePage[] = [
       },
       {
         heading: 'Sample budget breakdowns',
-        body: `Here is what real project ranges look like across three budget tiers. Standard cabinet layouts, single sink, one cooktop cutout.\n\n<strong>Budget Kitchen: $2,000–$4,000</strong>\n• Material: Entry-level granite or standard quartz\n• ~45 sqft of countertop space\n• Eased edge profile (standard)\n• Undermount sink cutout, one cooktop cutout\n• Standard installation on main floor\n• What you get: clean, durable countertops that perform well for 15–20 years.\n\n<strong>Mid-Range Kitchen: $4,000–$8,000</strong>\n• Material: Mid-tier granite, quartz (veined pattern), or entry quartzite\n• ~60 sqft of countertop space\n• Upgraded edge profile (beveled or full bullnose)\n• Multiple cutouts, possible 4-inch backsplash strip\n• This is where most of our residential kitchen projects land.\n\n<strong>Premium Kitchen: $8,000–$15,000+</strong>\n• Material: Exotic quartzite, premium marble, high-end quartz, or book-matched stone\n• 70–100+ sqft including island\n• Premium or custom edge profile, waterfall island edge, full stone backsplash\n• The material is doing visual work — it is not just a surface, it is a design element.\n\nSee our <a href="/packages" class="text-stone-gold hover:text-stone-gold-light transition-colors">package pricing</a> for a clearer starting point on what a complete project typically includes.`
+        body: `Here is what real project ranges look like across three budget tiers. Standard cabinet layouts, single sink, one cooktop cutout.\n\n<strong>Budget Kitchen: $2,000–$4,000</strong>\n• Material: Entry-level granite or standard quartz\n• ~45 sqft of countertop space\n• Eased edge profile (standard)\n• Undermount sink cutout, one cooktop cutout\n• Standard installation on main floor\n• What you get: clean, durable countertops that perform well for 15–20 years.\n\n<strong>Mid-Range Kitchen: $4,000–$8,000</strong>\n• Material: Mid-tier granite, quartz (veined pattern), or entry quartzite\n• ~60 sqft of countertop space\n• Upgraded edge profile (beveled or full bullnose)\n• Multiple cutouts, possible 4-inch backsplash strip\n• This is where most of our residential kitchen projects land.\n\n<strong>Premium Kitchen: $8,000–$15,000+</strong>\n• Material: Exotic quartzite, premium marble, high-end quartz, or book-matched stone\n• 70–100+ sqft including island\n• Premium or custom edge profile, waterfall island edge, full stone backsplash\n• The material is doing visual work — it is not just a surface, it is a design element.`
       },
       {
         heading: 'Hidden costs people miss',
@@ -257,7 +255,6 @@ export const knowledgePages: KnowledgePage[] = [
       { title: 'Granite vs Quartz Countertops in Arkansas', href: '/blog/granite-vs-quartz-countertops-arkansas' },
       { title: 'Stone Types Compared — All Six Materials', href: '/knowledge/stone-types-compared' },
       { title: 'How Countertop Fabrication Actually Works', href: '/knowledge/countertop-fabrication-process' },
-      { title: 'View Package Pricing', href: '/packages' },
       { title: 'Schedule a Consultation', href: '/book' },
     ],
   },
@@ -310,7 +307,7 @@ export const knowledgePages: KnowledgePage[] = [
       },
       {
         heading: 'Long-term durability expectations by material',
-        body: `Every material we install should last the life of the home if cared for correctly.\n\n<strong>Granite:</strong> 50+ year material. Seal annually, clean with pH-neutral products, use cutting boards. Granite installed in the 1990s still looks excellent when the sealer schedule was followed.\n\n<strong>Quartz:</strong> Properly cared-for quartz should last 20–30 years before showing meaningful wear under normal indoor kitchen use.\n\n<strong>Quartzite:</strong> Comparable to granite — 50+ years. The harder varieties are nearly maintenance-free beyond annual sealing.\n\n<strong>Marble:</strong> One of the oldest building materials in human history. Marble surfaces with proper care last indefinitely. The trade-off is that improper care shows faster on marble than any other material.\n\n<strong>Porcelain:</strong> Non-porous, UV-stable, and hard. A properly installed porcelain slab can last 25–40 years without maintenance beyond cleaning.\n\n<strong>Soapstone:</strong> Geologically one of the most chemically inert countertop materials. Soapstone from the early 1900s still exists in working condition.\n\nThe single most important habit across all materials: avoid acidic cleaners. More countertop surfaces in Arkansas have been damaged by vinegar-based "natural" cleaners than by any other single cause. If you want to <a href="/book" class="text-stone-gold hover:text-stone-gold-light transition-colors">book a consultation</a> or have questions about a specific material, we are at Bryant (501) 481-8117 and Rogers (479) 900-9119. We also offer <a href="/packages" class="text-stone-gold hover:text-stone-gold-light transition-colors">package pricing</a> that includes installation care documentation.`
+        body: `Every material we install should last the life of the home if cared for correctly.\n\n<strong>Granite:</strong> 50+ year material. Seal annually, clean with pH-neutral products, use cutting boards. Granite installed in the 1990s still looks excellent when the sealer schedule was followed.\n\n<strong>Quartz:</strong> Properly cared-for quartz should last 20–30 years before showing meaningful wear under normal indoor kitchen use.\n\n<strong>Quartzite:</strong> Comparable to granite — 50+ years. The harder varieties are nearly maintenance-free beyond annual sealing.\n\n<strong>Marble:</strong> One of the oldest building materials in human history. Marble surfaces with proper care last indefinitely. The trade-off is that improper care shows faster on marble than any other material.\n\n<strong>Porcelain:</strong> Non-porous, UV-stable, and hard. A properly installed porcelain slab can last 25–40 years without maintenance beyond cleaning.\n\n<strong>Soapstone:</strong> Geologically one of the most chemically inert countertop materials. Soapstone from the early 1900s still exists in working condition.\n\nThe single most important habit across all materials: avoid acidic cleaners. More countertop surfaces in Arkansas have been damaged by vinegar-based "natural" cleaners than by any other single cause. If you want to <a href="/book" class="text-stone-gold hover:text-stone-gold-light transition-colors">book a consultation</a> or have questions about a specific material, we are at Bryant (501) 481-8117 and Rogers (479) 900-9119.`
       }
     ],
     faq: [
@@ -341,7 +338,6 @@ export const knowledgePages: KnowledgePage[] = [
       { title: 'Outdoor Kitchen Countertops for Arkansas', href: '/blog/outdoor-kitchen-countertops-arkansas' },
       { title: 'Stone Types Compared: All Six Materials', href: '/knowledge/stone-types-compared' },
       { title: 'How Countertops Are Fabricated and Installed', href: '/knowledge/countertop-fabrication-process' },
-      { title: 'View our package pricing', href: '/packages' },
       { title: 'Book a showroom visit', href: '/book' },
     ],
   },
@@ -394,7 +390,7 @@ export const knowledgePages: KnowledgePage[] = [
       },
       {
         heading: 'How to start the selection process',
-        body: `Here is the process we walk people through every day.\n\n<strong>Step one: Decide your use requirements.</strong> Be honest about how the kitchen gets used and what maintenance you will actually do. Our <a href="/knowledge/stone-types-compared" class="text-stone-gold hover:text-stone-gold-light transition-colors">stone types comparison guide</a> covers every material side by side.\n\n<strong>Step two: Establish a budget range.</strong> Know your range before you fall in love with a slab that does not fit. Our <a href="/knowledge/countertop-pricing-guide" class="text-stone-gold hover:text-stone-gold-light transition-colors">countertop pricing guide</a> breaks down real installed cost by material. We also offer <a href="/packages" class="text-stone-gold hover:text-stone-gold-light transition-colors">package pricing</a> for common project types.\n\n<strong>Step three: Come in with your room context.</strong> Bring a cabinet door sample, flooring sample, and paint chips. A photo of the space helps too.\n\n<strong>Step four: See full slabs, not samples.</strong> Walk the yard. Stand slabs against each other. Take photos that include your hand for scale.\n\n<strong>Step five: Get a templated measurement and a firm quote.</strong> Our quotes include material, fabrication, and installation.\n\nWe are in Bryant at (501) 481-8117 and Rogers at (479) 900-9119. Or <a href="/book" class="text-stone-gold hover:text-stone-gold-light transition-colors">book a showroom visit online</a> and we will have the right slabs pulled before you arrive.`
+        body: `Here is the process we walk people through every day.\n\n<strong>Step one: Decide your use requirements.</strong> Be honest about how the kitchen gets used and what maintenance you will actually do. Our <a href="/knowledge/stone-types-compared" class="text-stone-gold hover:text-stone-gold-light transition-colors">stone types comparison guide</a> covers every material side by side.\n\n<strong>Step two: Establish a budget range.</strong> Know your range before you fall in love with a slab that does not fit. Our <a href="/knowledge/countertop-pricing-guide" class="text-stone-gold hover:text-stone-gold-light transition-colors">countertop pricing guide</a> breaks down real installed cost by material.\n\n<strong>Step three: Come in with your room context.</strong> Bring a cabinet door sample, flooring sample, and paint chips. A photo of the space helps too.\n\n<strong>Step four: See full slabs, not samples.</strong> Walk the yard. Stand slabs against each other. Take photos that include your hand for scale.\n\n<strong>Step five: Get a templated measurement and a firm quote.</strong> Our quotes include material, fabrication, and installation.\n\nWe are in Bryant at (501) 481-8117 and Rogers at (479) 900-9119. Or <a href="/book" class="text-stone-gold hover:text-stone-gold-light transition-colors">book a showroom visit online</a> and we will have the right slabs pulled before you arrive.`
       }
     ],
     faq: [
@@ -425,7 +421,6 @@ export const knowledgePages: KnowledgePage[] = [
       { title: 'Granite vs. Quartz: The Complete Arkansas Guide', href: '/blog/granite-vs-quartz-countertops-arkansas' },
       { title: 'Stone Types Compared: Side-by-Side Material Breakdown', href: '/knowledge/stone-types-compared' },
       { title: 'Countertop Pricing Guide', href: '/knowledge/countertop-pricing-guide' },
-      { title: 'View Package Pricing', href: '/packages' },
       { title: 'Book a Showroom Visit', href: '/book' },
     ],
   },
@@ -478,7 +473,7 @@ export const knowledgePages: KnowledgePage[] = [
       },
       {
         heading: 'How to get started with Countertop World',
-        body: `We have two showrooms — <a href="/areas/bryant" class="text-stone-gold hover:text-stone-gold-light transition-colors">Bryant</a> and <a href="/areas/rogers" class="text-stone-gold hover:text-stone-gold-light transition-colors">Rogers</a> — and we work with projects across central and northwest Arkansas. Both locations carry granite, quartz, and quartzite, and both can handle the full project from slab selection through installation.\n\nIf you are a homeowner, come in to see slabs, bring your cabinet dimensions if you have them, and we will walk through your options. If you are a builder or designer, <a href="/book" class="text-stone-gold hover:text-stone-gold-light transition-colors">schedule a project consultation</a> or check out our <a href="/packages" class="text-stone-gold hover:text-stone-gold-light transition-colors">packages page</a>.\n\nBryant showroom: (501) 481-8117. Rogers showroom: (479) 900-9119.\n\nWe do not have a sales process built around pressure. We have a fabrication process built around accuracy. Come in, see the material, ask the questions, and decide from there.`
+        body: `We have two showrooms — <a href="/areas/bryant" class="text-stone-gold hover:text-stone-gold-light transition-colors">Bryant</a> and <a href="/areas/rogers" class="text-stone-gold hover:text-stone-gold-light transition-colors">Rogers</a> — and we work with projects across central and northwest Arkansas. Both locations carry granite, quartz, and quartzite, and both can handle the full project from slab selection through installation.\n\nIf you are a homeowner, come in to see slabs, bring your cabinet dimensions if you have them, and we will walk through your options. If you are a builder or designer, <a href="/book" class="text-stone-gold hover:text-stone-gold-light transition-colors">schedule a project consultation</a>.\n\nBryant showroom: (501) 481-8117. Rogers showroom: (479) 900-9119.\n\nWe do not have a sales process built around pressure. We have a fabrication process built around accuracy. Come in, see the material, ask the questions, and decide from there.`
       }
     ],
     faq: [
@@ -693,7 +688,6 @@ export const knowledgePages: KnowledgePage[] = [
       { title: 'Stone Types Compared: The Full Guide', href: '/knowledge/stone-types-compared' },
       { title: 'Granite vs. Quartz Countertops in Arkansas', href: '/blog/granite-vs-quartz-countertops-arkansas' },
       { title: 'Countertop Design and Selection Guide', href: '/knowledge/countertop-design-selection' },
-      { title: 'View Our Packages', href: '/packages' },
       { title: 'Book a Visit', href: '/book' },
     ],
   },
@@ -798,7 +792,7 @@ export const knowledgePages: KnowledgePage[] = [
       },
       {
         heading: 'How to choose your edge profile',
-        body: 'Three questions will narrow it down fast.\n\n<strong>1. What does your cabinetry look like?</strong>\nFlat-front or shaker cabinets pair best with eased, beveled, or mitered edges. Raised-panel or inset cabinetry allows more decorative profiles like ogee or bullnose without conflict.\n\n<strong>2. What is the overall design direction?</strong>\nModern and contemporary: eased or mitered. Transitional: bevel or half bullnose. Traditional: bullnose or ogee. Architectural statement piece: waterfall.\n\n<strong>3. What is your budget?</strong>\nIf you want premium presence at no additional cost, the eased edge on a well-chosen slab is the right call. The stone does the work. If you have budget to spend on fabrication, a waterfall or mitered edge on an island creates the most impact per dollar versus any other single upgrade.\n\nEdge selection is part of the <a href="/knowledge/countertop-fabrication-process" class="text-stone-gold hover:text-stone-gold-light transition-colors">fabrication process</a> — we confirm your profile before cutting begins. If you are early in the process, visit our showrooms. We keep physical edge samples for every profile we cut. Seeing the actual stone and profile together is worth the trip.\n\nReady to move forward? <a href="/packages" class="text-stone-gold hover:text-stone-gold-light transition-colors">View our packages</a> or <a href="/book" class="text-stone-gold hover:text-stone-gold-light transition-colors">book a consultation</a>. Bryant: (501) 481-8117. Rogers: (479) 900-9119.',
+        body: 'Three questions will narrow it down fast.\n\n<strong>1. What does your cabinetry look like?</strong>\nFlat-front or shaker cabinets pair best with eased, beveled, or mitered edges. Raised-panel or inset cabinetry allows more decorative profiles like ogee or bullnose without conflict.\n\n<strong>2. What is the overall design direction?</strong>\nModern and contemporary: eased or mitered. Transitional: bevel or half bullnose. Traditional: bullnose or ogee. Architectural statement piece: waterfall.\n\n<strong>3. What is your budget?</strong>\nIf you want premium presence at no additional cost, the eased edge on a well-chosen slab is the right call. The stone does the work. If you have budget to spend on fabrication, a waterfall or mitered edge on an island creates the most impact per dollar versus any other single upgrade.\n\nEdge selection is part of the <a href="/knowledge/countertop-fabrication-process" class="text-stone-gold hover:text-stone-gold-light transition-colors">fabrication process</a> — we confirm your profile before cutting begins. If you are early in the process, visit our showrooms. We keep physical edge samples for every profile we cut. Seeing the actual stone and profile together is worth the trip.\n\nReady to move forward? <a href="/book" class="text-stone-gold hover:text-stone-gold-light transition-colors">Book a consultation</a>. Bryant: (501) 481-8117. Rogers: (479) 900-9119.',
       },
     ],
     faq: [
@@ -819,7 +813,6 @@ export const knowledgePages: KnowledgePage[] = [
       { title: 'The Countertop Fabrication Process: From Template to Install', href: '/knowledge/countertop-fabrication-process' },
       { title: 'Countertop Pricing Guide: What You Actually Pay in Arkansas', href: '/knowledge/countertop-pricing-guide' },
       { title: 'Countertop Design Selection: How to Choose the Right Stone', href: '/knowledge/countertop-design-selection' },
-      { title: 'View Our Packages', href: '/packages' },
       { title: 'Book a Consultation', href: '/book' },
     ],
   },
@@ -982,7 +975,7 @@ export const knowledgePages: KnowledgePage[] = [
       },
       {
         heading: 'How We Quote at Countertop World',
-        body: 'We don\'t give ballpark numbers over the phone and call it a quote. Our process starts with an in-home or virtual consultation where we measure the space, discuss material preferences, and walk through your layout. From there, you get an itemized estimate that breaks out every component — material, fabrication, edge, cutouts, template, install, and tear-out if applicable.\n\nEvery line item has a price. Every exclusion is noted. If your project needs plumbing or electrical coordination, we tell you upfront so you can schedule those trades.\n\nWe quote per square foot, not per slab. We include a realistic waste factor. And we stand behind the number — no surprise upcharges at install unless you change the scope.\n\nIf you want to see how our pricing breaks down for different material levels, check out <a href="/packages" class="text-stone-gold hover:text-stone-gold-light transition-colors">our packages</a>. If you\'re ready to get a real number for your project, <a href="/book" class="text-stone-gold hover:text-stone-gold-light transition-colors">schedule a consultation</a> at our Bryant or Rogers location.',
+        body: 'We don\'t give ballpark numbers over the phone and call it a quote. Our process starts with an in-home or virtual consultation where we measure the space, discuss material preferences, and walk through your layout. From there, you get an itemized estimate that breaks out every component — material, fabrication, edge, cutouts, template, install, and tear-out if applicable.\n\nEvery line item has a price. Every exclusion is noted. If your project needs plumbing or electrical coordination, we tell you upfront so you can schedule those trades.\n\nWe quote per square foot, not per slab. We include a realistic waste factor. And we stand behind the number — no surprise upcharges at install unless you change the scope.\n\nIf you\'re ready to get a real number for your project, <a href="/book" class="text-stone-gold hover:text-stone-gold-light transition-colors">schedule a consultation</a> at our Bryant or Rogers location.',
       },
       {
         heading: 'The Bottom Line',
@@ -1011,7 +1004,6 @@ export const knowledgePages: KnowledgePage[] = [
       { title: 'Countertop Pricing Guide', href: '/knowledge/countertop-pricing-guide' },
       { title: 'The Countertop Fabrication Process', href: '/knowledge/countertop-fabrication-process' },
       { title: 'Working with Countertop Professionals', href: '/knowledge/working-with-countertop-professionals' },
-      { title: 'Our Packages', href: '/packages' },
     ],
   },
   {
@@ -1054,7 +1046,7 @@ export const knowledgePages: KnowledgePage[] = [
       },
       {
         heading: 'How to Get an Accurate Quote for Your Kitchen',
-        body: 'Online calculators give you a range. We give you a number.\n\nThe only way to get an accurate countertop quote is a physical template of your kitchen. We laser-measure every surface, account for edge details, backsplash returns, cutout locations, and seam placement. That template drives the fabrication file and the final price.\n\nHere is the process:\n\n1. Browse materials and review <a href="/packages" class="text-stone-gold hover:text-stone-gold-light transition-colors">our packages</a> to narrow your selection.\n2. <a href="/book" class="text-stone-gold hover:text-stone-gold-light transition-colors">Schedule a consultation</a> at Bryant or Rogers.\n3. Select your slab in person — color, movement, and finish look different on a screen than on a 10-foot slab.\n4. We template your kitchen and deliver a fixed-price quote within 48 hours.No deposits on quotes. No pressure on timelines. Just an accurate number so you can make a real decision.\n\n<strong>Bryant:</strong> (501) 481-8117\n\n<strong>Rogers:</strong> (479) 900-9119',
+        body: 'Online calculators give you a range. We give you a number.\n\nThe only way to get an accurate countertop quote is a physical template of your kitchen. We laser-measure every surface, account for edge details, backsplash returns, cutout locations, and seam placement. That template drives the fabrication file and the final price.\n\nHere is the process:\n\n1. Browse materials in person to narrow your selection.\n2. <a href="/book" class="text-stone-gold hover:text-stone-gold-light transition-colors">Schedule a consultation</a> at Bryant or Rogers.\n3. Select your slab in person — color, movement, and finish look different on a screen than on a 10-foot slab.\n4. We template your kitchen and deliver a fixed-price quote within 48 hours.No deposits on quotes. No pressure on timelines. Just an accurate number so you can make a real decision.\n\n<strong>Bryant:</strong> (501) 481-8117\n\n<strong>Rogers:</strong> (479) 900-9119',
       },
     ],
     faq: [
@@ -1078,7 +1070,6 @@ export const knowledgePages: KnowledgePage[] = [
     relatedLinks: [
       { title: 'Countertop Pricing Guide', href: '/knowledge/countertop-pricing-guide' },
       { title: 'Countertop Cost in Arkansas 2026', href: '/blog/countertop-cost-arkansas-2026' },
-      { title: 'Countertop World Packages', href: '/packages' },
       { title: 'Schedule a Consultation', href: '/book' },
     ],
   },
@@ -1616,7 +1607,7 @@ export const knowledgePages: KnowledgePage[] = [
       },
       {
         heading: 'How Countertop World\'s Builder Program Works',
-        body: 'We run builder programs out of both our Bryant and Rogers locations, covering central and northwest Arkansas.\n\nThe process starts with a meeting. We look at your annual volume, your typical floor plans, your current material specs, and your construction timeline patterns. From there, we build a program proposal — base pricing, upgrade tiers, scheduling commitments, and communication protocols.\n\nOnce the program is active, here is what a typical project cycle looks like:\n\n1. You submit the job with floor plan and material selection.\n2. We confirm material availability and schedule the template date.\n3. Template happens on schedule. Digital measurements go to production.\n4. Fabrication runs within our committed turnaround window.\n5. Installation is completed on your construction timeline.\n\nEvery job follows the same process. No re-quoting, no back-and-forth on specs, no scheduling surprises. If a homebuyer selects an upgrade, your account manager updates the job and adjusts the invoice. That is it.\n\nTo explore package options and see what standard tiers look like, check <a href="/packages" class="text-stone-gold hover:text-stone-gold-light transition-colors">our packages</a>.',
+        body: 'We run builder programs out of both our Bryant and Rogers locations, covering central and northwest Arkansas.\n\nThe process starts with a meeting. We look at your annual volume, your typical floor plans, your current material specs, and your construction timeline patterns. From there, we build a program proposal — base pricing, upgrade tiers, scheduling commitments, and communication protocols.\n\nOnce the program is active, here is what a typical project cycle looks like:\n\n1. You submit the job with floor plan and material selection.\n2. We confirm material availability and schedule the template date.\n3. Template happens on schedule. Digital measurements go to production.\n4. Fabrication runs within our committed turnaround window.\n5. Installation is completed on your construction timeline.\n\nEvery job follows the same process. No re-quoting, no back-and-forth on specs, no scheduling surprises. If a homebuyer selects an upgrade, your account manager updates the job and adjusts the invoice. That is it.',
       },
       {
         heading: 'The Upgrade Path for Homebuyers',
@@ -1653,7 +1644,6 @@ export const knowledgePages: KnowledgePage[] = [
       { title: 'Working with Countertop Professionals', href: '/knowledge/working-with-countertop-professionals' },
       { title: 'Builder Services', href: '/builders' },
       { title: 'Countertop Pricing Guide', href: '/knowledge/countertop-pricing-guide' },
-      { title: 'Countertop Packages', href: '/packages' },
       { title: 'Schedule a Builder Program Meeting', href: '/book' },
     ],
   },

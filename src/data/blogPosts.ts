@@ -263,7 +263,6 @@ export const blogPosts: BlogPost[] = [
         title: "How to Choose a Fabricator",
         href: "/blog/how-to-choose-countertop-fabricator-arkansas",
       },
-      { title: "Countertop Packages", href: "/packages" },
     ],
   },
   {
@@ -506,7 +505,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         heading: "Why we built our process this way",
-        body: `We\'re not writing this guide to trash competitors — we\'re sharing what we\'ve learned from 20+ years of fabrication. Every point above reflects something we\'ve seen go wrong when corners get cut.\n\nAt Countertop World, we fabricate everything at our Bryant facility, laser-template every project, install with our own crews, and let you walk our 1,000+ slab inventory to pick your exact stone. We offer a written warranty and provide detailed, itemized quotes.\n\n<a href="/book" class="text-stone-gold hover:text-stone-gold-light transition-colors">Book a showroom visit</a> at our Bryant or <a href="/areas/rogers" class="text-stone-gold hover:text-stone-gold-light transition-colors">Rogers</a> location, or <a href="/packages" class="text-stone-gold hover:text-stone-gold-light transition-colors">view our packages</a> for bundled pricing on popular configurations.`,
+        body: `We\'re not writing this guide to trash competitors — we\'re sharing what we\'ve learned from 20+ years of fabrication. Every point above reflects something we\'ve seen go wrong when corners get cut.\n\nAt Countertop World, we fabricate everything at our Bryant facility, laser-template every project, install with our own crews, and let you walk our 1,000+ slab inventory to pick your exact stone. We offer a written warranty and provide detailed, itemized quotes.\n\n<a href="/book" class="text-stone-gold hover:text-stone-gold-light transition-colors">Book a showroom visit</a> at our Bryant or <a href="/areas/rogers" class="text-stone-gold hover:text-stone-gold-light transition-colors">Rogers</a> location.`,
       },
     ],
     faq: [
@@ -537,7 +536,6 @@ export const blogPosts: BlogPost[] = [
         title: "Questions to Ask Your Fabricator",
         href: "/knowledge/questions-to-ask-countertop-fabricator",
       },
-      { title: "Countertop Packages", href: "/packages" },
       {
         title: "Countertop Cost Guide",
         href: "/blog/countertop-cost-arkansas-2026",
