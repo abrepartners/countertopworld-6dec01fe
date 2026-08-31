@@ -110,7 +110,7 @@ const ADDONS: AddOn[] = [
   { name: 'Honed Finish',            price: '$399',  description: 'Matte, tactile, glare-free. Only on a Sasso-Lux.', exclusive: true },
   { name: 'Leathered Finish',        price: '$399',  description: 'Textured organic surface. Only on a Sasso-Lux.', exclusive: true },
   { name: '10-Year Craftsmanship Warranty', price: '$499', description: 'Extended coverage from our in-house crew — not a subcontractor promise.', scope: 'Entry & Signature only — included in Premium' },
-  { name: 'Rush Install',            price: '$299',  description: 'Cut the install window from 7 days to 5' },
+  { name: 'Rush Install',            price: '$299',  description: 'Priority scheduling, the fastest available install slot' },
   { name: 'Slab Reservation',        price: '$99',   description: 'Hold any slab in the showroom for 30 days with your name on it' },
 ];
 
