@@ -253,7 +253,7 @@ export const cityPages: Record<string, CityPageData> = {
       },
       {
         q: "Do you work with NWA builders and contractors?",
-        a: "Yes. We partner with Northwest Arkansas builders and general contractors on new construction, spec homes, and multi-family developments. Our builder program offers volume pricing, priority scheduling, 2-week turnaround, and phased delivery for multi-unit projects. Contact us at (479) 900-9119 for builder pricing.",
+        a: "Yes. We partner with Northwest Arkansas builders and general contractors on new construction, spec homes, and multi-family developments. Our builder program offers volume pricing, priority scheduling, 14 to 21 day turnaround, and phased delivery for multi-unit projects. Contact us at (479) 900-9119 for builder pricing.",
       },
       {
         q: "What makes Countertop World different from other NWA countertop shops?",
