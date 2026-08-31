@@ -1,0 +1,10 @@
+{
+  "_comment": "SINGLE SOURCE OF TRUTH for CW business facts. Change facts HERE. scripts/check-claims.mjs fails the build if any bannedStale phrase still exists anywhere in src/ or scripts/.",
+  "turnaroundDays": "14 to 21 days",
+  "turnaroundPhrase": "14 to 21 day turnaround",
+  "turnaroundChip": "14-21 Day",
+  "slabs": "1,000+",
+  "rating": "4.4",
+  "reviews": "109+",
+  "bannedStale": ["2-week turnaround", "2-Week Turnaround", "Two weeks from template", "two-week turnaround", "10 to 14 days", "10-14 days", "Seven days from template"]
+}

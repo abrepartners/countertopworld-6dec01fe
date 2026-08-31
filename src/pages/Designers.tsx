@@ -1,3 +1,4 @@
+import claims from '@/data/claims.json';
 import { useEffect, useState, useCallback, useRef, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import SiteFooter from '../components/SiteFooter';
@@ -43,7 +44,7 @@ const faqItems = [
   { q: 'Can I bring my clients to pick their slab in person?', a: 'Yes. We encourage it. Both showrooms have 1,000+ slabs on-site. Your clients can see full slabs, not just samples, and pick the exact piece that goes in their project. We are happy to coordinate around your schedule.' },
   { q: 'What finishes do you offer beyond polished?', a: 'We are the only shop in Arkansas with a Sasso-Lux finishing system. That gives us leathered, honed, brushed, and custom texture finishes in-house. Other fabricators have to outsource these or skip them entirely.' },
   { q: 'Do you work from architect specs and construction drawings?', a: 'Yes. Send us your drawings, material specs, and edge profiles. We review the spec, confirm material availability, and provide a detailed quote. We can also advise on material substitutions if a specified stone is unavailable.' },
-  { q: 'What is your lead time for a typical residential project?', a: '14 to 21 days from template to install for standard kitchen countertop projects. Complex projects with exotic materials or custom finishes may take longer. We provide a firm timeline before starting.' },
+  { q: 'What is your lead time for a typical residential project?', a: `${claims.turnaroundDays} from template to install for standard kitchen countertop projects. Complex projects with exotic materials or custom finishes may take longer. We provide a firm timeline before starting.` },
   { q: 'Can you vein-match across seams and waterfall edges?', a: 'Yes. We digitize slab veining patterns and use digital vein-matching software to align patterns across seams, miters, and waterfall edges. This is standard for our designer projects, not an upcharge.' },
   { q: 'What exotic or specialty stones do you carry?', a: 'We source globally. Current inventory typically includes Calacatta, Taj Mahal Quartzite, backlit Onyx, Patagonia Granite, Super White Quartzite, and other specialty stones. New shipments arrive weekly. Call ahead if you need a specific material.' },
   { q: 'Do you handle commercial and hospitality projects?', a: 'Yes. We fabricate and install for commercial kitchens, reception desks, bar tops, restaurant surfaces, and hotel vanities. Commercial projects get dedicated scheduling and a single point of contact.' },
@@ -146,7 +147,7 @@ export default function DesignersPage() {
   const metrics = [
     { value: 'Only', label: 'Sasso-Lux in Arkansas' },
     { value: '1,000+', label: 'Slabs on Site' },
-    { value: '14-21 Day', label: 'Template to Install' },
+    { value: claims.turnaroundChip, label: 'Template to Install' },
     { value: 'Global', label: 'Stone Sourcing' },
   ];
 
