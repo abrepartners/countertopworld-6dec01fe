@@ -46,7 +46,7 @@ const pages = [
   { slug: 'stones-porcelain', title: 'Porcelain\nCountertops', subtitle: 'Care, Cost & Design Guide', tag: 'MATERIAL GUIDE' },
   { slug: 'stones-soapstone-onyx', title: 'Soapstone & Onyx\nCountertops', subtitle: 'Care, Cost & Design Guide', tag: 'MATERIAL GUIDE' },
   // Service pages
-  { slug: 'builders', title: 'Builder & Contractor\nServices', subtitle: '2-Week Turnaround · Volume Pricing', tag: 'TRADE PROGRAM' },
+  { slug: 'builders', title: 'Builder & Contractor\nServices', subtitle: '14-21 Day Turnaround · Volume Pricing', tag: 'TRADE PROGRAM' },
   { slug: 'designers', title: 'Designer & Architect\nFabrication', subtitle: 'Exotic Stone · Sasso-Lux Finishes', tag: 'TRADE PROGRAM' },
   { slug: 'book', title: 'Book a\nShowroom Visit', subtitle: 'Bryant & Rogers, Arkansas', tag: 'SCHEDULE' },
   // Blog

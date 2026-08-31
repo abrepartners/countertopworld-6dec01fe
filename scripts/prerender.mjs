@@ -72,7 +72,7 @@ const routes = [
   {
     path: '/builders',
     title: 'Builder & Contractor Countertop Services | Countertop World — Bryant & Rogers, AR',
-    description: 'Arkansas stone fabrication for builders and contractors. 2-week turnaround, volume pricing, laser templating, and in-house installation. Granite, Quartz, Marble, Quartzite countertops. Two locations: Bryant and Rogers.',
+    description: 'Arkansas stone fabrication for builders and contractors. 14 to 21 day turnaround, volume pricing, laser templating, and in-house installation. Granite, Quartz, Marble, Quartzite countertops. Two locations: Bryant and Rogers.',
     breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Builders & Contractors', path: '/builders' }],
   },
   {

@@ -1519,7 +1519,7 @@ export const knowledgePages: KnowledgePage[] = [
     sections: [
       {
         heading: 'The full timeline at a glance',
-        body: 'From first phone call to using your new countertops, a standard residential kitchen project runs two to four weeks. That is not two to four weeks of active work on your kitchen — most of that time is fabrication happening in our shop while you go about your life.\n\nHere is the general sequence:\n\n<strong>Selection and consultation:</strong> 1–2 weeks\n<strong>Template appointment:</strong> 1 day (about 45–90 minutes on site)\n<strong>Fabrication:</strong> 5–10 business days\n<strong>Installation:</strong> 1 day (typically 2–4 hours for a standard kitchen)\n\nThe fastest projects we run — where the client has material picked, cabinets done, and sink on site — can go from template to install in under two weeks. The slowest projects stretch to six weeks or longer, usually because something outside our shop is not ready.\n\nUnderstanding what happens at each phase and what we need from you at each step is how you keep the timeline tight. For a broader view of how the full process works, see our <a href="/knowledge/working-with-countertop-professionals" class="text-stone-gold hover:text-stone-gold-light transition-colors">Working with Professionals Guide</a>.',
+        body: 'From first phone call to using your new countertops, a standard residential kitchen project runs three to five weeks. That is not two to four weeks of active work on your kitchen — most of that time is fabrication happening in our shop while you go about your life.\n\nHere is the general sequence:\n\n<strong>Selection and consultation:</strong> 1–2 weeks\n<strong>Template appointment:</strong> 1 day (about 45–90 minutes on site)\n<strong>Fabrication:</strong> 5–10 business days\n<strong>Installation:</strong> 1 day (typically 2–4 hours for a standard kitchen)\n\nThe fastest projects we run — where the client has material picked, cabinets done, and sink on site — can go from template to install in under two weeks. The slowest projects stretch to six weeks or longer, usually because something outside our shop is not ready.\n\nUnderstanding what happens at each phase and what we need from you at each step is how you keep the timeline tight. For a broader view of how the full process works, see our <a href="/knowledge/working-with-countertop-professionals" class="text-stone-gold hover:text-stone-gold-light transition-colors">Working with Professionals Guide</a>.',
       },
       {
         heading: 'Phase 1: Selection and consultation',
@@ -1553,7 +1553,7 @@ export const knowledgePages: KnowledgePage[] = [
     faq: [
       {
         q: 'How long does a countertop project take from start to finish?',
-        a: 'Most residential kitchen projects take two to four weeks from first consultation to finished installation. The biggest variable is the selection phase — clients who come in with material and specs ready can move from template to install in under two weeks. Projects with material backorders or cabinet delays can stretch to six weeks.',
+        a: 'Most residential kitchen projects take three to five weeks from first consultation to finished installation. The biggest variable is the selection phase — clients who come in with material and specs ready can move from template to install in about two weeks. Projects with material backorders or cabinet delays can stretch to six weeks.',
       },
       {
         q: 'What is the fastest way to get my countertops installed?',
