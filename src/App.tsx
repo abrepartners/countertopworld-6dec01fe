@@ -306,7 +306,7 @@ const audienceData = {
     image: '/materials/insp/aud-builders.webp', imageAlt: 'New-construction kitchen at handoff — polished white granite counters with protective cloth pulled back, laser measure and steel tape on the island',
     testimonial: { text: "Used David and Countertop World for four houses now. Best selection of slabs in Arkansas with great prices. Turnaround time is unmatched.", cite: 'Builder Customer, NWA' },
     benefits: [
-      { Icon: Clock, title: '2-week turnaround.', desc: 'Standard projects go from template to install in two weeks. We keep your build on schedule.' },
+      { Icon: Clock, title: '14 to 21 day turnaround.', desc: 'Standard projects go from template to install in 14 to 21 days. We keep your build on schedule.' },
       { Icon: Shield, title: '100% in-house.', desc: "We don't sub anything out. Every cut, every finish, every install is done by our crew." },
       { Icon: Ruler, title: 'Laser-perfect templates.', desc: 'Laser scanning means the stone is right before we cut. No re-cuts, no wasted time.' },
       { Icon: Star, title: 'Volume pricing.', desc: 'Multi-unit and subdivision projects get priority scheduling and builder rates. Call us.' },

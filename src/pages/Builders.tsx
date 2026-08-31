@@ -40,7 +40,7 @@ function MarbleVeins() {
 }
 
 const faqItems = [
-  { q: 'What is your standard turnaround time for builder projects?', a: 'Two weeks from template to install for standard kitchen countertop projects. Multi-unit projects get dedicated scheduling to keep your build on track. We provide a firm timeline before we start.' },
+  { q: 'What is your standard turnaround time for builder projects?', a: '14 to 21 days from template to install for standard kitchen countertop projects. Multi-unit projects get dedicated scheduling to keep your build on track. We provide a firm timeline before we start.' },
   { q: 'Do you offer volume pricing for subdivisions and multi-unit builds?', a: 'Yes. Multi-unit and subdivision projects receive builder rates with priority scheduling. Contact us with your project scope and unit count for a custom quote.' },
   { q: 'What areas do you serve?', a: 'We serve all of Arkansas from two locations — Bryant (Central Arkansas) and Rogers (Northwest Arkansas). We handle projects in both regions with our own install crews.' },
   { q: 'Do you handle templating and installation, or just fabrication?', a: 'Everything is in-house. We laser-template, fabricate on CNC saws with Sasso-Lux finishing, and install with our own crew. No subcontractors at any stage.' },
@@ -61,7 +61,7 @@ export default function BuildersPage() {
   useEffect(() => {
     const cleanupHead = applyPageHead({
       title: 'Builder & Contractor Countertop Services | Countertop World — Bryant & Rogers, AR',
-      description: 'Arkansas stone fabrication for builders and contractors. 2-week turnaround, volume pricing, laser templating, and in-house installation. Granite, Quartz, Marble, Quartzite countertops. Two locations: Bryant and Rogers.',
+      description: 'Arkansas stone fabrication for builders and contractors. 14 to 21 day turnaround, volume pricing, laser templating, and in-house installation. Granite, Quartz, Marble, Quartzite countertops. Two locations: Bryant and Rogers.',
       path: '/builders',
       breadcrumbs: [
         { name: 'Home', path: '/' },
@@ -106,7 +106,7 @@ export default function BuildersPage() {
       },
       serviceType: 'Stone Countertop Fabrication and Installation',
       areaServed: { '@type': 'State', name: 'Arkansas' },
-      description: 'In-house stone countertop fabrication and installation for builders and contractors. 2-week turnaround, volume pricing, laser templating, CNC fabrication, and Sasso-Lux finishing.',
+      description: 'In-house stone countertop fabrication and installation for builders and contractors. 14 to 21 day turnaround, volume pricing, laser templating, CNC fabrication, and Sasso-Lux finishing.',
     });
     document.head.appendChild(svcScript);
 
@@ -135,14 +135,14 @@ export default function BuildersPage() {
   }, [location]);
 
   const metrics = [
-    { value: '2-Week', label: 'Template to Install' },
+    { value: '14-21 Day', label: 'Template to Install' },
     { value: '100%', label: 'In-House Fabrication' },
     { value: '1,000+', label: 'Slabs in Stock' },
     { value: '2', label: 'Arkansas Locations' },
   ];
 
   const benefits = [
-    { Icon: Clock, title: '2-week turnaround.', desc: 'Standard projects go from template to install in two weeks. Multi-unit projects get dedicated scheduling. We give you a firm date and hit it.' },
+    { Icon: Clock, title: '14 to 21 day turnaround.', desc: 'Standard projects go from template to install in 14 to 21 days. Multi-unit projects get dedicated scheduling. We give you a firm date and hit it.' },
     { Icon: Shield, title: '100% in-house.', desc: 'Every cut, every finish, every install is done by our crew. No subcontractors. One team, one point of accountability.' },
     { Icon: Ruler, title: 'Laser-perfect templates.', desc: 'We laser-scan your spaces down to the millimeter. The stone fits right the first time. No re-cuts, no wasted days.' },
     { Icon: Star, title: 'Volume pricing.', desc: 'Multi-unit and subdivision projects get builder rates and priority scheduling. The more you build, the better the pricing.' },
@@ -206,7 +206,7 @@ export default function BuildersPage() {
               On time, on budget,<br /><span className="font-semibold text-stone-gold">every project.</span>
             </h1>
             <p className="text-[17px] md:text-[19px] text-cool-gray font-light leading-relaxed max-w-xl mb-10">
-              You need a fabricator who won't hold up your build. Two Arkansas locations, 1,000+ slabs in stock, and a 2-week turnaround from template to install. No middlemen. No subcontractors.
+              You need a fabricator who won't hold up your build. Two Arkansas locations, 1,000+ slabs in stock, and a 14 to 21 day turnaround from template to install. No middlemen. No subcontractors.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <PillButton href="#builder-contact" gold size="lg">Partner with us <ArrowRight size={14} className="ml-2" /></PillButton>
