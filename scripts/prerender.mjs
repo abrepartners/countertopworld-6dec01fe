@@ -4,6 +4,8 @@
 // (ChatGPT, Perplexity, social scrapers) see correct metadata.
 // No browser required — runs on Vercel's build container.
 
+import fs__claims from 'node:fs';
+const CLAIMS = JSON.parse(fs__claims.readFileSync(new URL('../src/data/claims.json', import.meta.url)));
 import { readFileSync, writeFileSync, mkdirSync } from 'fs';
 import { dirname, join } from 'path';
 import { transform } from 'esbuild';
@@ -72,7 +74,7 @@ const routes = [
   {
     path: '/builders',
     title: 'Builder & Contractor Countertop Services | Countertop World — Bryant & Rogers, AR',
-    description: 'Arkansas stone fabrication for builders and contractors. 14 to 21 day turnaround, volume pricing, laser templating, and in-house installation. Granite, Quartz, Marble, Quartzite countertops. Two locations: Bryant and Rogers.',
+    description: `Arkansas stone fabrication for builders and contractors. ${CLAIMS.turnaroundPhrase}, volume pricing, laser templating, and in-house installation. Granite, Quartz, Marble, Quartzite countertops. Two locations: Bryant and Rogers.`,
     breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Builders & Contractors', path: '/builders' }],
   },
   {

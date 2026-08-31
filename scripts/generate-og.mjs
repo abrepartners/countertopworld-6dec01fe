@@ -3,6 +3,8 @@
 // Uses satori (JSX → SVG) + @resvg/resvg-js (SVG → PNG).
 // Runs at build time — zero runtime cost.
 
+import fs__claims from 'node:fs';
+const CLAIMS = JSON.parse(fs__claims.readFileSync(new URL('../src/data/claims.json', import.meta.url)));
 import { writeFileSync, mkdirSync } from 'fs';
 import satori from 'satori';
 import { Resvg } from '@resvg/resvg-js';
@@ -46,7 +48,7 @@ const pages = [
   { slug: 'stones-porcelain', title: 'Porcelain\nCountertops', subtitle: 'Care, Cost & Design Guide', tag: 'MATERIAL GUIDE' },
   { slug: 'stones-soapstone-onyx', title: 'Soapstone & Onyx\nCountertops', subtitle: 'Care, Cost & Design Guide', tag: 'MATERIAL GUIDE' },
   // Service pages
-  { slug: 'builders', title: 'Builder & Contractor\nServices', subtitle: '14-21 Day Turnaround · Volume Pricing', tag: 'TRADE PROGRAM' },
+  { slug: 'builders', title: 'Builder & Contractor\nServices', subtitle: `${CLAIMS.turnaroundChip} Turnaround · Volume Pricing`, tag: 'TRADE PROGRAM' },
   { slug: 'designers', title: 'Designer & Architect\nFabrication', subtitle: 'Exotic Stone · Sasso-Lux Finishes', tag: 'TRADE PROGRAM' },
   { slug: 'book', title: 'Book a\nShowroom Visit', subtitle: 'Bryant & Rogers, Arkansas', tag: 'SCHEDULE' },
   // Blog
