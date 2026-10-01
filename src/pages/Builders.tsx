@@ -136,7 +136,7 @@ export default function BuildersPage() {
   }, [location]);
 
   const metrics = [
-    { value: claims.turnaroundChip, label: 'Template to Install' },
+    { value: claims.turnaroundChip, label: 'Business Days, Template to Install' },
     { value: '100%', label: 'In-House Fabrication' },
     { value: '1,000+', label: 'Slabs in Stock' },
     { value: '2', label: 'Arkansas Locations' },

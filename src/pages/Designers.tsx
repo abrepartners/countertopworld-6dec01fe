@@ -147,7 +147,7 @@ export default function DesignersPage() {
   const metrics = [
     { value: 'Only', label: 'Sasso-Lux in Arkansas' },
     { value: '1,000+', label: 'Slabs on Site' },
-    { value: claims.turnaroundChip, label: 'Template to Install' },
+    { value: claims.turnaroundChip, label: 'Business Days, Template to Install' },
     { value: 'Global', label: 'Stone Sourcing' },
   ];
 

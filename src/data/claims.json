@@ -1,10 +1,26 @@
 {
-  "_comment": "SINGLE SOURCE OF TRUTH for CW business facts. Change facts HERE. scripts/check-claims.mjs fails the build if any bannedStale phrase still exists anywhere in src/ or scripts/.",
-  "turnaroundDays": "14 to 21 days",
-  "turnaroundPhrase": "14 to 21 day turnaround",
-  "turnaroundChip": "14-21 Day",
+  "_comment": "SINGLE SOURCE OF TRUTH for CW business facts. Change facts HERE. scripts/check-claims.mjs fails the build if any bannedStale phrase still exists anywhere in src/ or scripts/. Turnaround set to 5 to 10 business days 2026-10-01 per David's written iMessage (2026-09-30 4:22pm: 'The goal is 5 to 10 business days'). Change only with David's written approval.",
+  "turnaroundDays": "5 to 10 business days",
+  "turnaroundPhrase": "5 to 10 business day turnaround",
+  "turnaroundChip": "5-10",
   "slabs": "1,000+",
   "rating": "4.4",
   "reviews": "109+",
-  "bannedStale": ["2-week turnaround", "2-Week Turnaround", "Two weeks from template", "two-week turnaround", "10 to 14 days", "10-14 days", "Seven days from template"]
+  "bannedStale": [
+    "2-week turnaround",
+    "2-Week Turnaround",
+    "Two weeks from template",
+    "two-week turnaround",
+    "10 to 14 days",
+    "10-14 days",
+    "Seven days from template",
+    "14 to 21",
+    "14-21",
+    "two to three weeks from template",
+    "two-to-three week window",
+    "10–15 business days",
+    "7–10 business days",
+    "Total: 10–15"
+  ],
+  "turnaroundTitle": "5 to 10 Business Day Turnaround"
 }
