@@ -307,7 +307,7 @@ const audienceData = {
     image: '/materials/insp/aud-builders.webp', imageAlt: 'New-construction kitchen at handoff — polished white granite counters with protective cloth pulled back, laser measure and steel tape on the island',
     testimonial: { text: "Used David and Countertop World for four houses now. Best selection of slabs in Arkansas with great prices. Turnaround time is unmatched.", cite: 'Builder Customer, NWA' },
     benefits: [
-      { Icon: Clock, title: `${claims.installDatePhrase}.`, desc: 'You get a firm install date at the template appointment. We keep your build on schedule.' },
+      { Icon: Clock, title: `${claims.turnaroundPhrase}.`, desc: `Standard projects go from template to install in ${claims.turnaroundDays}. We keep your build on schedule.` },
       { Icon: Shield, title: '100% in-house.', desc: "We don't sub anything out. Every cut, every finish, every install is done by our crew." },
       { Icon: Ruler, title: 'Laser-perfect templates.', desc: 'Laser scanning means the stone is right before we cut. No re-cuts, no wasted time.' },
       { Icon: Star, title: 'Volume pricing.', desc: 'Multi-unit and subdivision projects get priority scheduling and builder rates. Call us.' },
@@ -615,7 +615,7 @@ import SiteFooter from './components/SiteFooter';
 const homeFaqItems = [
   { q: 'How much do granite countertops cost in Arkansas?', a: 'Granite countertops in Arkansas typically range from $40 to $100+ per square foot installed, depending on the slab grade, edge profile, and cutout complexity. Countertop World offers free in-home estimates so you get an exact price for your layout.' },
   { q: 'What is the difference between quartz and quartzite?', a: 'Quartz (engineered stone) is a manufactured slab made from crushed quartz bound with resin — it never needs sealing. Quartzite is a natural stone quarried from the earth — extremely hard and heat-resistant but requires periodic sealing. We carry both at our Bryant and Rogers showrooms.' },
-  { q: 'How long does countertop installation take?', a: 'Most kitchen countertop installations are completed in a single day. We set your install date at the template appointment, based on your material and our shop schedule.' },
+  { q: 'How long does countertop installation take?', a: 'Most kitchen countertop installations are completed in a single day. The full process — template, fabrication, and install — typically takes 7–10 business days from your first showroom visit.' },
   { q: 'Do you offer free estimates?', a: 'Yes. We provide free in-home or virtual estimates for every project. Call either showroom or fill out the contact form on this page to get started.' },
   { q: 'What areas in Arkansas do you serve?', a: 'We serve the entire state of Arkansas from two locations. Our Bryant showroom covers Central Arkansas, Little Rock, Hot Springs, and surrounding communities. Our Rogers showroom serves Northwest Arkansas including Bentonville, Fayetteville, Springdale, and the surrounding region.' },
   { q: 'Do I need to seal my countertops?', a: 'It depends on the material. Engineered quartz and porcelain never need sealing. Natural stones like granite, marble, and quartzite should be sealed upon installation and periodically thereafter — we handle the initial seal and can advise on maintenance schedules.' },
