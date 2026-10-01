@@ -1,10 +1,23 @@
 {
-  "_comment": "SINGLE SOURCE OF TRUTH for CW business facts. Change facts HERE. scripts/check-claims.mjs fails the build if any bannedStale phrase still exists anywhere in src/ or scripts/.",
-  "turnaroundDays": "14 to 21 days",
-  "turnaroundPhrase": "14 to 21 day turnaround",
-  "turnaroundChip": "14-21 Day",
+  "_comment": "SINGLE SOURCE OF TRUTH for CW business facts. Change facts HERE. scripts/check-claims.mjs fails the build if any bannedStale phrase still exists anywhere in src/ or scripts/. Turnaround number REMOVED 2026-10-01 per David (not approved). Do not publish any template-to-install time claim without David's written approval.",
   "slabs": "1,000+",
   "rating": "4.4",
   "reviews": "109+",
-  "bannedStale": ["2-week turnaround", "2-Week Turnaround", "Two weeks from template", "two-week turnaround", "10 to 14 days", "10-14 days", "Seven days from template"]
+  "bannedStale": [
+    "2-week turnaround",
+    "2-Week Turnaround",
+    "Two weeks from template",
+    "two-week turnaround",
+    "10 to 14 days",
+    "10-14 days",
+    "Seven days from template",
+    "14 to 21",
+    "14-21",
+    "two to three weeks from template",
+    "two-to-three week window",
+    "10–15 business days",
+    "7–10 business days",
+    "Total: 10–15"
+  ],
+  "installDatePhrase": "Firm install dates"
 }

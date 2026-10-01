@@ -74,7 +74,7 @@ const routes = [
   {
     path: '/builders',
     title: 'Builder & Contractor Countertop Services | Countertop World — Bryant & Rogers, AR',
-    description: `Arkansas stone fabrication for builders and contractors. ${CLAIMS.turnaroundPhrase}, volume pricing, laser templating, and in-house installation. Granite, Quartz, Marble, Quartzite countertops. Two locations: Bryant and Rogers.`,
+    description: `Arkansas stone fabrication for builders and contractors. ${CLAIMS.installDatePhrase}, volume pricing, laser templating, and in-house installation. Granite, Quartz, Marble, Quartzite countertops. Two locations: Bryant and Rogers.`,
     breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Builders & Contractors', path: '/builders' }],
   },
   {
