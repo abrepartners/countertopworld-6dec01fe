@@ -185,7 +185,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         heading: "Our quoting process",
-        body: `Getting an accurate quote from Countertop World takes three steps:\n\n<strong>1. Free estimate:</strong> Call either showroom or submit the form on our website. Tell us the basics — kitchen size, material preference, timeline. We\'ll give you a ballpark range so you know if we\'re in the right budget zone.\n\n<strong>2. Slab selection:</strong> Visit our <a href="/areas/bryant" class="text-stone-gold hover:text-stone-gold-light transition-colors">Bryant</a> or <a href="/areas/rogers" class="text-stone-gold hover:text-stone-gold-light transition-colors">Rogers</a> showroom to walk the slab yard. Pick your exact stone — not a sample chip, the actual slab that will go in your kitchen. This locks in the material cost.\n\n<strong>3. Laser template:</strong> Our templater visits your home with a digital laser to measure every inch of your layout. This generates the exact square footage, edge measurements, and cutout placements. The final quote comes from this template — precise to the fraction of an inch.\n\nFrom template to installation is typically 10–15 business days. The entire process from first call to finished countertops usually takes 3–4 weeks.`,
+        body: `Getting an accurate quote from Countertop World takes three steps:\n\n<strong>1. Free estimate:</strong> Call either showroom or submit the form on our website. Tell us the basics — kitchen size, material preference, timeline. We\'ll give you a ballpark range so you know if we\'re in the right budget zone.\n\n<strong>2. Slab selection:</strong> Visit our <a href="/areas/bryant" class="text-stone-gold hover:text-stone-gold-light transition-colors">Bryant</a> or <a href="/areas/rogers" class="text-stone-gold hover:text-stone-gold-light transition-colors">Rogers</a> showroom to walk the slab yard. Pick your exact stone — not a sample chip, the actual slab that will go in your kitchen. This locks in the material cost.\n\n<strong>3. Laser template:</strong> Our templater visits your home with a digital laser to measure every inch of your layout. This generates the exact square footage, edge measurements, and cutout placements. The final quote comes from this template — precise to the fraction of an inch.\n\nFrom template to installation is typically 5 to 10 business days.`,
       },
       {
         heading: "Financing",
@@ -215,7 +215,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         q: "How long does a countertop project take?",
-        a: "From first call to finished installation, typically 3–4 weeks. The laser template visit happens early, then fabrication takes 10–15 business days. Installation itself usually takes one day for a standard kitchen.",
+        a: "From first call to finished installation, typically 3–4 weeks. The laser template visit happens early, then template to install typically takes 5 to 10 business days. Installation itself usually takes one day for a standard kitchen.",
       },
       {
         q: "Is quartz cheaper than granite?",
@@ -493,7 +493,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         heading: "What a good timeline looks like",
-        body: `For a standard kitchen countertop replacement, here\'s what to expect from a well-run fabrication shop:\n\n<strong>Day 1:</strong> Showroom consultation. Choose your material and edge profile. Review the estimate.\n\n<strong>Days 2–5:</strong> Laser templating at your home. Takes 30–60 minutes. Your old counters stay in place during this step.\n\n<strong>Days 5–10:</strong> Fabrication. CNC cutting, edge profiling, cutouts, polishing or leathered finishing, sealing.\n\n<strong>Day 10–15:</strong> Installation. Old counters removed, new counters installed, sink and cooktop reconnected. Most kitchens are done in one day.\n\n<strong>Total: 10–15 business days</strong> from template to installed countertops. If a shop quotes 4–8 weeks for a straightforward kitchen, they\'re either backlogged, outsourcing, or both.`,
+        body: `For a standard kitchen countertop replacement, here\'s what to expect from a well-run fabrication shop:\n\n<strong>Day 1:</strong> Showroom consultation. Choose your material and edge profile. Review the estimate.\n\n<strong>Days 2–5:</strong> Laser templating at your home. Takes 30–60 minutes. Your old counters stay in place during this step.\n\n<strong>Days 5–10:</strong> Fabrication. CNC cutting, edge profiling, cutouts, polishing or leathered finishing, sealing.\n\n<strong>Days 7–15:</strong> Installation. Old counters removed, new counters installed, sink and cooktop reconnected. Most kitchens are done in one day.\n\n<strong>Total: 5 to 10 business days</strong> from template to installed countertops. If a shop quotes 4–8 weeks for a straightforward kitchen, they\'re either backlogged, outsourcing, or both.`,
       },
       {
         heading: "How to compare quotes",
