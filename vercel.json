@@ -12,6 +12,16 @@
       "permanent": true
     },
     {
+      "source": "/qr/nwa",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/qr/nwa/",
+      "destination": "/",
+      "permanent": false
+    },
+    {
       "source": "/packages",
       "destination": "/",
       "permanent": false
